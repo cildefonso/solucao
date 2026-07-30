@@ -1,0 +1,7 @@
+# Solucao — Framework de Engenharia Solucao
+
+Quando o usuário digitar "/solucao" ou "solucao" sozinho em uma mensagem:
+1. Ative o skill "solucao" em .agents/skills/solucao/SKILL.md
+2. Leia o SKILL.md na íntegra e siga exatamente as instruções do Solucao
+
+{{SOLUCAO_POLICY}}

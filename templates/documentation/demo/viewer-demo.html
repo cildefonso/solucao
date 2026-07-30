@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo do Viewer | Sistema de Pagamentos Lendário</title>
+
+    <meta name="solucao-category" content="review">
+    <meta name="solucao-template" content="annotated-pr">
+    <meta name="solucao-source-md" content="audit.md">
+    <meta name="solucao-producer-agent" content="solucao-security-auditor">
+    <meta name="solucao-generated-at" content="2026-05-16T15:00:00Z">
+    <meta name="solucao-schema-version" content="1">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-style="sober" data-page="demo">
+
+    <header class="solucao-doc-header">
+        <a class="solucao-doc-logo" href="#" aria-label="Início">
+            <span class="seal" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="32" height="32">
+                    <circle cx="16" cy="16" r="14" fill="currentColor" opacity="0.15"/>
+                    <circle cx="16" cy="16" r="7" fill="currentColor"/>
+                    <circle cx="22" cy="10" r="3" fill="currentColor" opacity="0.6"/>
+                </svg>
+            </span>
+            <span class="project-name">Sistema de Pagamentos Lendário</span>
+        </a>
+        <nav class="solucao-doc-nav" aria-label="Seções da documentação">
+            <a href="#" class="is-active">Visão geral</a>
+            <a href="#">Arquitetura</a>
+            <a href="#">Módulos</a>
+            <a href="#">Métricas</a>
+            <a href="#">Timeline</a>
+            <a href="#">Glossário</a>
+        </nav>
+        <div class="solucao-doc-toolbar">
+            <button type="button" class="theme-toggle" aria-label="Alternar tema visual">
+                <span class="theme-toggle-label">Sober</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="solucao-doc-main" role="main">
+        <div class="solucao-doc-payload">
+            <h1 class="solucao-doc-title">Demonstração do Chassis Visual</h1>
+
+            <p>
+                Esta página existe para validar visualmente as quatro variantes
+                de estilo do chassis compartilhado do Solucao. Use o botão no
+                canto superior direito para alternar entre <code>sober</code>,
+                <code>premium</code>, <code>dense</code> e <code>exploratory</code>.
+                A escolha persiste em <code>localStorage</code>.
+            </p>
+
+            <section>
+                <h2>Cards e grid responsivo</h2>
+                <div class="solucao-grid">
+                    <div class="solucao-card">
+                        <h3>Code City</h3>
+                        <p>Visualização 3D com cada arquivo como prédio. Altura por LOC, largura por complexidade.</p>
+                        <span class="solucao-pill is-info">3D</span>
+                    </div>
+                    <div class="solucao-card">
+                        <h3>Module Map</h3>
+                        <p>Força repulsiva entre nós, força atrativa entre dependentes. Detecção de ciclos automática.</p>
+                        <span class="solucao-pill is-info">D3</span>
+                    </div>
+                    <div class="solucao-card">
+                        <h3>Métricas</h3>
+                        <p>Treemap de tamanho por pasta, top 20 mais complexos, distribuição de LOC.</p>
+                        <span class="solucao-pill is-info">Highcharts</span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Findings de exemplo (Annotated PR)</h2>
+                <div class="solucao-card">
+                    <h3>SQL injection em endpoint /api/orders</h3>
+                    <p>
+                        <span class="solucao-pill is-critical">CRITICAL</span>
+                        <span class="solucao-pill">src/api/orders.ts:47</span>
+                        <span class="solucao-pill">OWASP A03:2021</span>
+                    </p>
+                    <pre><code>query = `SELECT * FROM orders WHERE id = ${userId}`</code></pre>
+                    <p>
+                        Concatenação direta de <code>userId</code> em SQL permite
+                        injeção. Use parameterized queries com prepared statements.
+                    </p>
+                </div>
+                <div class="solucao-card">
+                    <h3>Cookie de sessão sem flag HttpOnly</h3>
+                    <p>
+                        <span class="solucao-pill is-high">HIGH</span>
+                        <span class="solucao-pill">src/auth/session.ts:23</span>
+                    </p>
+                    <p>
+                        Cookies de sessão devem usar flags <code>HttpOnly</code>,
+                        <code>Secure</code> e <code>SameSite=Lax</code>.
+                    </p>
+                </div>
+                <div class="solucao-card">
+                    <h3>Validação de input parcial em /signup</h3>
+                    <p>
+                        <span class="solucao-pill is-medium">MEDIUM</span>
+                        <span class="solucao-pill">src/api/signup.ts:12</span>
+                    </p>
+                    <p>
+                        Email tem regex, senha não. Adicionar validação de
+                        comprimento mínimo e complexidade.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Tipografia e código inline</h2>
+                <p>
+                    O título da página usa <code>--solucao-font-heading</code>,
+                    enquanto o corpo usa <code>--solucao-font-body</code>. Em
+                    variante <code>premium</code>, o corpo vira serifa Lora;
+                    nas demais é Inter.
+                </p>
+                <pre><code>function colorForModule(module) {
+    if (module.isHotPath) return 0xff5a4f;
+    return TYPE_COLORS[module.type] || 0xcccccc;
+}</code></pre>
+            </section>
+        </div>
+    </main>
+
+    <aside class="solucao-doc-sidebar" aria-label="Controles" data-page="demo">
+        <h3>Controles de exemplo</h3>
+
+        <label>
+            Profundidade
+            <input type="range" min="1" max="10" value="5" step="1"
+                   data-param="depth" data-default="5">
+        </label>
+
+        <label>
+            Threshold de hot path
+            <input type="range" min="0" max="100" value="50" step="5"
+                   data-param="hotThreshold" data-default="50">
+        </label>
+
+        <label>
+            <input type="checkbox" data-param="showLabels" data-default="true" checked>
+            Labels visíveis
+        </label>
+
+        <label>
+            <input type="checkbox" data-param="highlightCycles" data-default="false">
+            Destacar ciclos
+        </label>
+
+        <label>
+            Filtrar pasta
+            <select data-param="folder" data-default="all">
+                <option value="all">Todas</option>
+                <option value="src/auth">src/auth</option>
+                <option value="src/api">src/api</option>
+                <option value="src/db">src/db</option>
+            </select>
+        </label>
+
+        <div style="margin-top: 24px; display: flex; gap: 8px;">
+            <button type="button" data-action="reset" id="reset">Reset</button>
+            <button type="button" data-action="export-png" id="export-png">Exportar PNG</button>
+        </div>
+
+        <div style="margin-top: 24px; font-size: 12px; opacity: 0.7;">
+            <p>
+                Alterações nos controles disparam o evento
+                <code>solucao:param-change</code> e persistem em
+                <code>localStorage</code>.
+            </p>
+        </div>
+    </aside>
+
+    <footer class="solucao-doc-footer">
+        <span class="solucao-doc-footer-text">
+            Gerado por Solucao em
+            <time datetime="2026-05-16T15:00:00Z">16 de maio de 2026, 15h00</time>
+        </span>
+        <span class="solucao-doc-footer-sep" aria-hidden="true">·</span>
+        <a href="#" class="solucao-doc-source-link">Fonte em markdown</a>
+    </footer>
+
+    <script src="../assets/js/nav.js"></script>
+    <script src="../assets/js/sidebar.js"></script>
+    <script>
+        // Demonstração de captura do evento custom
+        document.addEventListener("solucao:param-change", (e) => {
+            console.log("[demo] parâmetro alterado:", e.detail);
+        });
+    </script>
+</body>
+</html>

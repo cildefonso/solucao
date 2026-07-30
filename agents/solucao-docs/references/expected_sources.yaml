@@ -1,0 +1,60 @@
+# Fontes esperadas pelo Time Solucao Docs
+# Cada item declara um artefato do core do Solucao que, se presente, alimenta uma ou mais páginas do mini-site.
+# Ausência nunca bloqueia: páginas dependentes da fonte são omitidas graciosamente.
+
+sources:
+  - id: soul
+    path: ".solucao/soul.md"
+    producer: "solucao-extract-soul"
+    consumed_by:
+      - "Storyteller (glossario.html, deck.html)"
+      - "Publisher (seed sha256, hero)"
+    required_for:
+      - "glossario.html"
+      - "deck.html (parcialmente)"
+    description: "Síntese executiva do projeto. Origem do glossário e do título do hero."
+
+  - id: chronicle
+    path: ".solucao/chronicle.md"
+    producer: "solucao-chronicler"
+    consumed_by:
+      - "Analyst (timeline.html)"
+    required_for:
+      - "timeline.html"
+    description: "Histórico de eventos, releases e incidentes. Origem da timeline interativa."
+
+  - id: topology
+    path: "_solucao_sdd/architecture.md"
+    producer: "solucao-architect"
+    consumed_by:
+      - "Mapper (topologia.html)"
+    required_for:
+      - "topologia.html"
+    description: "Topologia detectada (legado vs moderno vs híbrido). Origem da página side-by-side."
+    optional: true
+
+  - id: sdd_specs
+    path: "_solucao_sdd/"
+    pattern: "*/requirements.md"
+    producer: "solucao-writer"
+    consumed_by:
+      - "Storyteller (features/*.html)"
+    required_for:
+      - "features/<spec>.html (uma página por spec)"
+    description: "Specs SDD por feature. Cada subpasta com requirements.md vira uma página detalhada."
+
+  - id: source_code
+    path: "."
+    pattern: "(arquivos do projeto legado)"
+    producer: "(humano + git)"
+    consumed_by:
+      - "Mapper (arquitetura.html, modulos.html, modules.json, deps.json)"
+      - "Analyst (metricas.html via modules.json)"
+    required_for:
+      - "arquitetura.html"
+      - "modulos.html"
+      - "metricas.html"
+    description: "Código fonte do projeto legado. Origem das métricas de LOC, complexidade e dependências."
+    extraction_scripts:
+      - "extract_modules.py"
+      - "extract_deps.py"

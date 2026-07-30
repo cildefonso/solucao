@@ -1,0 +1,52 @@
+# hooks.yml
+# Ganchos opcionais executados antes ou depois dos skills forward do Solucao.
+#
+# Esquema por gancho:
+#   command:     comando que será sugerido (optional: true) ou exigido (optional: false)
+#   description: texto curto exibido ao usuário
+#   enabled:     true | false. Sem esse campo, vale como true.
+#   optional:    true (apresenta link clicável) | false (executa automaticamente e aguarda)
+#
+# Regras:
+#   YAML inválido aqui é tolerado: o skill segue normalmente, apenas sem ganchos.
+#   Não há DSL de condição neste arquivo. Se um gancho não deve rodar, use enabled: false.
+#
+# Por padrão, todos os ganchos chegam vazios. Adicione apenas os que fazem sentido para o seu projeto.
+
+schema-version: 1
+
+# Ganchos do /solucao-requirements
+before-requirements: []
+after-requirements: []
+
+# Ganchos do /solucao-clarify
+before-clarify: []
+after-clarify: []
+
+# Ganchos do /solucao-plan
+before-plan: []
+after-plan: []
+
+# Ganchos do /solucao-to-do
+before-to-do: []
+after-to-do: []
+
+# Ganchos do /solucao-audit
+before-audit: []
+after-audit: []
+
+# Ganchos do /solucao-quality
+before-quality: []
+after-quality: []
+
+# Ganchos do /solucao-coding
+before-coding: []
+after-coding: []
+
+# Ganchos do /solucao-sync
+before-sync: []
+after-sync: []
+
+# Ganchos do /solucao-principles
+before-principles: []
+after-principles: []

@@ -1,0 +1,46 @@
+# Solucao — Configuração do Projeto
+# Este arquivo é gerenciado pelo instalador. Para customizações, edite config.user.toml
+
+[project]
+name = ""
+version = "1.0.0"
+
+[user]
+name = ""
+chat_language = "pt-br"
+doc_language = "pt-br"
+
+[output]
+folder = "_solucao_sdd"
+
+[agents]
+installed = [
+  "solucao-scout",
+  "solucao-archaeologist",
+  "solucao-detective",
+  "solucao-architect",
+  "solucao-writer",
+  "solucao-reviewer",
+  "solucao-visor",
+  "solucao-data-master",
+  "solucao-design-system",
+  "solucao-extract-soul"
+]
+
+[engines]
+installed = []
+
+[analysis]
+answer_mode = "chat"
+doc_level = "completo"
+
+# Organização das specs geradas pelos agentes.
+# Esta seção é preenchida pelo Solucao após o Scout sugerir uma estrutura
+# e o usuário confirmar a escolha no menu (logo após a pergunta de doc_level).
+# Para reapresentar o menu, remova a seção [specs] inteira e rode o Solucao de novo.
+[specs]
+layout = ""              # constante "feature-folder" após a primeira execução
+granularity = ""         # module | use-case | endpoint | hybrid | feature | custom
+custom_folders = []      # preenchido apenas quando granularity == "custom"
+scout_suggestion = ""    # registro da sugestão original do Scout, imutável após a 1a execução
+decided_at = ""          # timestamp ISO 8601 da escolha do usuário

@@ -1,0 +1,24 @@
+{
+  "schema-version": 1,
+  "solucao-version": "{{VERSION}}",
+  "installed-at": "{{INSTALLED_AT}}",
+  "project-name": "{{PROJECT_NAME}}",
+  "prefix-format": "sequencial",
+  "language": "pt-BR",
+  "watch": {
+    "archive-after": 3,
+    "block-on-red": false
+  },
+  "paths": {
+    "sdd-dir": "_solucao_sdd",
+    "forward-dir": "_solucao_forward",
+    "config-dir": ".solucao"
+  },
+  "principles": {
+    "enabled": true,
+    "auto-load-into-plan": true
+  },
+  "telemetry": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,149 @@
+# Os agentes do Forward
+
+Dez agentes formam o time **Code Forward Agents**. O orquestrador (`/solucao-forward`) detecta o estágio físico da feature ativa e sugere o próximo skill. Os outros nove cobrem o ciclo de vida da ideia em texto livre até o código em execução.
+
+O orquestrador roda em **dois cenários**: evolução de legado com `_solucao_sdd/` populado, ou greenfield, sem extração ainda. Em ambos os casos prepara as pastas e nunca bloqueia o pipeline.
+
+---
+
+## Pipeline
+
+```
+Solucao Forward (orquestrador, ponto de entrada opcional)
+        │
+        ▼
+Requirements → Clarify → Quality → Plan → To-Do → Audit → Coding
+                (opcional)  (opcional)             (opcional)
+
+Principles e Resume rodam fora desse fluxo linear.
+```
+
+Há um checkpoint `CONTINUAR` entre agentes. Cada skill verifica suas próprias precondições e se recusa a rodar se um predecessor obrigatório está ausente. `solucao-coding` é o mais rigoroso: aborta a menos que `_solucao_sdd/` tenha uma âncora de contexto, seja o par de legado `architecture.md` + `domain.md` (do `/solucao`), seja o par greenfield `prd.md` + pelo menos uma spec em `sdd/` (do `/solucao-new`), para manter a ponte specs-código sólida.
+
+---
+
+## 1. Solucao Forward (orquestrador)
+
+**Comando:** `/solucao-forward`
+
+Olha `.solucao/state.json` e `_solucao_forward/<feature>/` para detectar o estágio físico inspecionando os artefatos no disco (não metadados). Sugere o próximo skill, nunca executa automaticamente: toda transição termina com pedido de `CONTINUAR`.
+
+Detecta greenfield (sem `_solucao_sdd/`), cria as pastas que `/solucao` criaria e deixa o pipeline rodar sem bloqueio.
+
+**Produz:** nada por conta própria. Apenas roteia.
+
+---
+
+## 2. Requirements
+
+**Comando:** `/solucao-requirements`
+
+Transforma uma ideia em texto livre ("quero que o usuário exporte faturas em PDF") em um `requirements.md` completo, ancorado em `_solucao_sdd/architecture.md`, `domain.md`, `state-machines.md` e no glossário. Marca pontos abertos com `[DOUBT]`, lista gaps e registra a feature em `.solucao/active-requirements.json`.
+
+Detecta features em andamento: se outra estiver ativa, pergunta ao usuário se quer continuar, rodar em paralelo (pausando a anterior) ou abandonar. Nunca decide sozinho.
+
+**Produz:** `requirements.md` e entrada em `active-requirements.json`.
+
+---
+
+## 3. Clarify
+
+**Comando:** `/solucao-clarify`
+
+Gera até cinco perguntas direcionadas para resolver marcadores `[DOUBT]`, frases vagas ("provavelmente", "talvez") e gaps óbvios. Perguntas são múltipla escolha ou resposta curta, nunca abertas. As respostas são integradas de volta em `requirements.md` sob uma seção `## Clarifications` datada.
+
+**Produz:** edições in-place em `requirements.md`.
+
+---
+
+## 4. Quality
+
+**Comando:** `/solucao-quality`
+
+Auditor read-only de clareza textual. Pergunta: *esse texto está bom o suficiente para planejar em cima sem retrabalho?*. Categorias: clareza, completude, terminologia, cobertura de cenários, edge cases, jargão, soluções implícitas, alinhamento com `principles.md`. Veredito: Aprovado, Aprovado com ressalvas ou Reprovado. Não verifica testes de implementação.
+
+**Produz:** `audit/requirements-audit.md`.
+
+---
+
+## 5. Plan
+
+**Comando:** `/solucao-plan`
+
+O arquiteto da evolução. Traduz requirements em uma proposta técnica concreta expressa como **delta sobre o legado**, nunca uma re-arquitetura completa. Cada decisão carrega um marcador de confiança (🟢 evidência forte, 🟡 parcial ou baseada em premissas aceitas, 🔴 fraca). Conflitos com `principles.md` são sinalizados, mas nunca silenciosamente sobrescritos.
+
+**Produz:** `roadmap.md`, `investigation.md`, `data-delta.md`, `onboarding.md`, `interfaces/*` (um arquivo por contrato externo afetado).
+
+---
+
+## 6. To-Do
+
+**Comando:** `/solucao-to-do`
+
+Decompõe o roadmap em ações atômicas distribuídas em cinco fases fixas: Preparação, Testes, Core, Integração, Polimento. Cada ação recebe ID estável (`T001`, `T002`, ..., nunca reciclados), dependências explícitas, arquivo alvo, marcador de confiança herdado e flag `[//]` quando pode rodar em paralelo com irmãs.
+
+**Produz:** `actions.md`.
+
+---
+
+## 7. Audit
+
+**Comando:** `/solucao-audit`
+
+Cross-check read-only entre requirements, roadmap e actions. Achados são reportados com severidade (CRITICAL, HIGH, MEDIUM, LOW), agrupados em quatro eixos: cobertura, consistência, coerência com o legado (`_solucao_sdd/domain.md`, `architecture.md`) e sanidade do grafo de actions (sem ciclos, tarefas paralelas não compartilham arquivos). O skill nunca edita os documentos analisados, mesmo se o usuário pedir.
+
+**Produz:** `audit/cross-check.md`.
+
+---
+
+## 8. Coding
+
+**Comando:** `/solucao-coding`
+
+O executor. Percorre `actions.md` fase por fase, respeita o paralelismo `[//]` e as dependências, vira checkboxes de `[ ]` para `[X]` apenas em sucesso e adiciona uma linha por action em `progress.jsonl`. Ao concluir (total ou parcial), escreve duas trilhas para a próxima execução do Discovery:
+
+- `legacy-impact.md`: quais arquivos do legado foram tocados.
+- `regression-watch.md`: invariantes que devem permanecer verdadeiros na próxima extração solucao.
+
+**Produz:** código fonte, checkboxes atualizados em `actions.md`, `progress.jsonl`, `legacy-impact.md`, `regression-watch.md`.
+
+---
+
+## 9. Principles
+
+**Comando:** `/solucao-principles`
+
+Gerencia regras duráveis do projeto em `.solucao/principles.md`, separadas dos requirements de feature. Princípios são raros (tipicamente menos que uma vez por mês), usam algarismos romanos (I, II, III, ...) que nunca são reciclados e mudanças são rastreadas em uma seção de histórico. Quando um princípio muda, o skill emite um relatório de impacto (`principles-impact-YYYYMMDD.md`) sugerindo ajustes em templates. O humano aplica, o skill nunca reescreve templates automaticamente.
+
+**Produz:** `.solucao/principles.md` e `principles-impact-YYYYMMDD.md` em cada mudança.
+
+---
+
+## 10. Resume
+
+**Comando:** `/solucao-resume`
+
+Troca a feature ativa por uma de `paused-features`. Detecta o estágio físico de cada feature pausada, mostra entradas órfãs (pasta deletada manualmente) e nunca cria features novas.
+
+**Produz:** swap in-place de `active-requirements.json`. Nenhum artefato de feature é tocado.
+
+---
+
+## Execução manual
+
+`/solucao-forward` é o ponto de entrada recomendado quando você não lembra onde a feature ativa parou. Mas cada skill pode ser ativado avulso:
+
+```
+/solucao-forward                 # detecta estágio e sugere próximo skill
+/solucao-requirements <ideia>    # nova feature a partir de ideia em texto livre
+/solucao-clarify                 # resolve marcadores [DOUBT] em requirements.md
+/solucao-quality                 # audita clareza textual (read-only)
+/solucao-plan                    # delta sobre legado a partir de requirements.md
+/solucao-to-do                   # ações atômicas a partir de roadmap.md
+/solucao-audit                   # cross-check entre os três docs (read-only)
+/solucao-coding                  # executa actions.md
+/solucao-principles              # gerencia regras duráveis
+/solucao-resume                  # troca por uma feature pausada
+```
+
+Hooks declarados em `.solucao/hooks.yml` (slots `before-<stage>` e `after-<stage>`) se aplicam em toda transição.
