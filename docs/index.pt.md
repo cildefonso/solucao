@@ -19,7 +19,7 @@ O Solucao é um framework de engenharia solucao de especificações. Você o ins
 Na raiz do seu projeto:
 
 ```bash
-npx solucao install
+npx github:cildefonso/solucao install
 ```
 
 Depois, abra o projeto no seu agente de IA favorito e escolha o fluxo:

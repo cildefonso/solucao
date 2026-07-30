@@ -19,7 +19,7 @@ Solucao es un framework de ingeniería inversa de especificaciones. Lo instalas 
 En la raíz de tu proyecto:
 
 ```bash
-npx solucao install
+npx github:cildefonso/solucao install
 ```
 
 Luego abre el proyecto en tu agente de IA favorito y elige el flujo:

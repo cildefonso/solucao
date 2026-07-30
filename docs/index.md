@@ -19,7 +19,7 @@ Solucao is a specification reverse-engineering framework. You install it inside 
 In the root of your project:
 
 ```bash
-npx solucao install
+npx github:cildefonso/solucao install
 ```
 
 Then open the project in your favorite AI agent and choose the workflow:

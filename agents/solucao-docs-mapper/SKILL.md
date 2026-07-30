@@ -136,7 +136,7 @@ Apenas escreve em `_solucao_docs/`. Código fonte do projeto legado é lido para
 | Código fonte (projeto vazio) | Omite arquitetura.html e modulos.html. Gera apenas placeholder mínimo. |
 | `_solucao_sdd/architecture.md` | Omite topologia.html. |
 | Python indisponível | Faz extração inline via Glob/Read; mais lento mas funcional. |
-| Skill `solucao-arquitetura-3d` ausente | Aborta com mensagem "Instale com npx solucao install antes de rodar /solucao-docs-mapper". |
+| Skill `solucao-arquitetura-3d` ausente | Aborta com mensagem "Instale com npx github:cildefonso/solucao install antes de rodar /solucao-docs-mapper". |
 
 ## Encerramento
 

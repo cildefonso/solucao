@@ -13,7 +13,7 @@ Si no tienes Node.js, instálalo en [nodejs.org](https://nodejs.org) y vuelve aq
 En la raíz del proyecto heredado que quieres analizar:
 
 ```bash
-npx solucao install
+npx github:cildefonso/solucao install
 ```
 
 El instalador hace todo esto por ti:

@@ -30,7 +30,7 @@ Formato esperado:
 ### `install`
 
 ```bash
-npx solucao install
+npx github:cildefonso/solucao install
 ```
 
 Instala Solucao en el proyecto heredado actual. Detecta los motores presentes, pregunta tus preferencias y crea toda la estructura necesaria.

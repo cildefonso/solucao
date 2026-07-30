@@ -134,7 +134,7 @@ Apenas escreve em `_solucao_docs/`. `chronicle.md`, `modules.json`, `deps.json` 
 | `modules.json`/`deps.json` (Mapper não rodou) | Invoca scripts de extração antes de seguir. |
 | `chronicle.md` | Omite timeline.html, registra motivo em `pagesOmitted`. |
 | Python indisponível | Faz parsing inline via Read + regex. |
-| Skill `solucao-highcharts-visualizer` ausente | Aborta com mensagem clara indicando `npx solucao install`. |
+| Skill `solucao-highcharts-visualizer` ausente | Aborta com mensagem clara indicando `npx github:cildefonso/solucao install`. |
 
 ## Encerramento
 

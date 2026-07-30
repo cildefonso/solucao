@@ -13,7 +13,7 @@ If you don't have Node.js, install it at [nodejs.org](https://nodejs.org) and co
 In the root of the legacy project you want to analyze:
 
 ```bash
-npx solucao install
+npx github:cildefonso/solucao install
 ```
 
 The installer does all of this for you:

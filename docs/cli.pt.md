@@ -30,7 +30,7 @@ Formato esperado:
 ### `install`
 
 ```bash
-npx solucao install
+npx github:cildefonso/solucao install
 ```
 
 Instala o Solucao no projeto legado atual. Detecta as engines presentes, pergunta suas preferências e cria toda a estrutura necessária.

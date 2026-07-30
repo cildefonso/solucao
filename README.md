@@ -38,7 +38,7 @@ The result is not documentation for humans to read. These are **operational cont
 In the root of the legacy project:
 
 ```bash
-npx solucao install
+npx github:cildefonso/solucao install
 ```
 
 The installer will:
@@ -362,7 +362,7 @@ Every statement in the specs is marked with:
 ## CLI commands
 
 ```bash
-npx solucao install      # Install Solucao in the project
+npx github:cildefonso/solucao install      # Install Solucao in the project
 npx solucao status       # Show current analysis state
 npx solucao update       # Update agents to the latest version
 npx solucao add-agent    # Add an agent to the project

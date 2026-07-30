@@ -30,7 +30,7 @@ Expected format:
 ### `install`
 
 ```bash
-npx solucao install
+npx github:cildefonso/solucao install
 ```
 
 Installs Solucao in the current legacy project. Detects present engines, asks for your preferences, and creates the entire required structure.
