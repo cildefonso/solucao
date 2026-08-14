@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/cli/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/cli/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/cli/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/cli/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/configuracao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/configuracao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/configuracao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/configuracao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/contribuindo/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/contribuindo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/contribuindo/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/contribuindo/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/desenvolvendo-com-specs/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/desenvolvendo-com-specs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/desenvolvendo-com-specs/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/desenvolvendo-com-specs/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/engines/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/engines/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/engines/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/engines/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/escala-confianca/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/escala-confianca/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/escala-confianca/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/escala-confianca/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/instalacao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/instalacao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/instalacao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/instalacao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pipeline/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/pipeline/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/pipeline/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/pipeline/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/por-que-solucao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/por-que-solucao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/por-que-solucao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/por-que-solucao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/uso/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/uso/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/uso/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/uso/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/agents-help/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/agents-help/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/agents-help/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/agents-help/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/arqueologo/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/arqueologo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/arqueologo/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/arqueologo/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/arquiteto/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/arquiteto/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/arquiteto/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/arquiteto/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/data-master/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/data-master/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/data-master/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/data-master/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/design-system/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/design-system/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/design-system/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/design-system/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/detetive/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/detetive/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/detetive/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/detetive/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/extract-soul/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/extract-soul/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/extract-soul/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/extract-soul/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/n8n/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/n8n/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/n8n/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/n8n/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/reconstructor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/reconstructor/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/reconstructor/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/reconstructor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/redator/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/redator/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/redator/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/redator/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/revisor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/revisor/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/revisor/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/revisor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/scout/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/scout/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/scout/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/scout/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/solucao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/solucao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/solucao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/solucao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/agentes/visor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/visor/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/visor/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/visor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/bugs/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/bugs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/bugs/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/bugs/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/documentation/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/documentation/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/documentation/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/documentation/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/documentation/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/documentation/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/documentation/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/documentation/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/forward/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/forward/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/forward/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/forward/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/forward/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/forward/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/forward/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/forward/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/migracao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/migracao/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/migracao/brief/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/brief/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/brief/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/brief/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/migracao/estrategias/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/estrategias/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/estrategias/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/estrategias/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/migracao/paradigma/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/paradigma/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/paradigma/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/paradigma/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/newproject/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/newproject/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/newproject/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/newproject/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/newproject/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/newproject/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/newproject/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/newproject/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pricing/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/pricing/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/pricing/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/pricing/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/refactor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/refactor/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/refactor/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/refactor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/saidas/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/saidas/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/saidas/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/saidas/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/cli/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/cli/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/cli/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/cli/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/configuracao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/configuracao/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/configuracao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/configuracao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/contribuindo/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/contribuindo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/contribuindo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/contribuindo/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/desenvolvendo-com-specs/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/desenvolvendo-com-specs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/desenvolvendo-com-specs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/desenvolvendo-com-specs/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/engines/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/engines/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/engines/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/engines/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/escala-confianca/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/escala-confianca/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/escala-confianca/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/escala-confianca/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/instalacao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/instalacao/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/instalacao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/instalacao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/pipeline/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/pipeline/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/pipeline/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/pipeline/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/por-que-solucao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/por-que-solucao/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/por-que-solucao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/por-que-solucao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/uso/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/uso/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/uso/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/uso/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/agents-help/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/agents-help/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/agents-help/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/agents-help/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/arqueologo/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/arqueologo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/arqueologo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/arqueologo/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/arquiteto/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/arquiteto/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/arquiteto/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/arquiteto/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/data-master/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/data-master/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/data-master/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/data-master/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/design-system/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/design-system/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/design-system/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/design-system/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/detetive/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/detetive/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/detetive/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/detetive/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/extract-soul/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/extract-soul/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/extract-soul/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/extract-soul/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/n8n/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/n8n/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/n8n/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/n8n/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/reconstructor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/reconstructor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/reconstructor/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/reconstructor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/redator/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/redator/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/redator/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/redator/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/revisor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/revisor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/revisor/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/revisor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/scout/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/scout/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/scout/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/scout/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/solucao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/solucao/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/solucao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/solucao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/agentes/visor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/visor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/visor/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/visor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/bugs/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/bugs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/bugs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/bugs/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/documentation/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/documentation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/documentation/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/documentation/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/documentation/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/documentation/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/documentation/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/documentation/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/forward/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/forward/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/forward/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/forward/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/forward/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/forward/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/forward/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/forward/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/migracao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/migracao/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/migracao/brief/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/brief/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/brief/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/brief/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/migracao/estrategias/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/estrategias/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/estrategias/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/estrategias/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/migracao/paradigma/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/paradigma/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/paradigma/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/paradigma/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/newproject/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/newproject/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/newproject/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/newproject/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/newproject/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/newproject/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/newproject/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/newproject/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/pricing/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/pricing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/pricing/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/pricing/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/refactor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/refactor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/refactor/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/refactor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/pt/saidas/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/saidas/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/saidas/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/saidas/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/cli/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/cli/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/cli/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/cli/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/configuracao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/configuracao/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/configuracao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/configuracao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/contribuindo/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/contribuindo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/contribuindo/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/contribuindo/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/desenvolvendo-com-specs/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/desenvolvendo-com-specs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/desenvolvendo-com-specs/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/desenvolvendo-com-specs/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/engines/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/engines/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/engines/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/engines/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/escala-confianca/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/escala-confianca/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/escala-confianca/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/escala-confianca/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/instalacao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/instalacao/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/instalacao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/instalacao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/pipeline/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/pipeline/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/pipeline/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/pipeline/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/por-que-solucao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/por-que-solucao/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/por-que-solucao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/por-que-solucao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/uso/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/uso/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/uso/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/uso/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/agents-help/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/agents-help/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/agents-help/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/agents-help/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/arqueologo/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/arqueologo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/arqueologo/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/arqueologo/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/arquiteto/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/arquiteto/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/arquiteto/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/arquiteto/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/data-master/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/data-master/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/data-master/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/data-master/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/design-system/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/design-system/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/design-system/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/design-system/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/detetive/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/detetive/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/detetive/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/detetive/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/extract-soul/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/extract-soul/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/extract-soul/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/extract-soul/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/n8n/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/n8n/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/n8n/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/n8n/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/reconstructor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/reconstructor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/reconstructor/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/reconstructor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/redator/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/redator/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/redator/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/redator/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/revisor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/revisor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/revisor/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/revisor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/scout/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/scout/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/scout/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/scout/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/solucao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/solucao/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/solucao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/solucao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/agentes/visor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/agentes/visor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/agentes/visor/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/agentes/visor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/bugs/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/bugs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/bugs/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/bugs/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/documentation/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/documentation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/documentation/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/documentation/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/documentation/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/documentation/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/documentation/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/documentation/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/forward/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/forward/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/forward/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/forward/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/forward/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/forward/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/forward/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/forward/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/migracao/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/migracao/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/migracao/brief/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/brief/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/brief/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/brief/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/migracao/estrategias/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/estrategias/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/estrategias/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/estrategias/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/migracao/paradigma/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/migracao/paradigma/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/migracao/paradigma/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/migracao/paradigma/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/newproject/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/newproject/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/newproject/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/newproject/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/newproject/agentes/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/newproject/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/newproject/agentes/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/newproject/agentes/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/pricing/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/pricing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/pricing/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/pricing/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/refactor/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/refactor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/refactor/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/refactor/"/>
+    </url>
+    <url>
+        <loc>http://localhost:8080/cildefonso/solucao/es/saidas/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="http://localhost:8080/cildefonso/solucao/es/saidas/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8080/cildefonso/solucao/saidas/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="http://localhost:8080/cildefonso/solucao/pt/saidas/"/>
+    </url>
+</urlset>
