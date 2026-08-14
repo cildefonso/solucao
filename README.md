@@ -1,31 +1,31 @@
-# Solucao 
-<small>by cildefonso</small>
+# Solução 
+<small>by solucao</small>
 
 **Turn legacy systems into executable specifications for AI agents.**
 
-> 📄 **Paper:** [Solucao: A Reverse Documentation Engineering Framework for Converting Legacy Software into Operational Specifications for AI Agents](https://arxiv.org/abs/2605.18684) — Macedo & da Costa, May 2026.
+> 📄 **Paper:** [Solicao: A Reverse Documentation Engineering Framework for Converting Legacy Software into Operational Specifications for AI Agents](https://arxiv.org/abs/2605.18684) — Macedo & da Costa, May 2026.
 
-[![Solucao paper](http://localhost:8080/cildefonso/solucao/main/docs/img/solucao-paper.png)](https://arxiv.org/abs/2605.18684)
+[![Solucao paper](solucao-paper.png)](https://arxiv.org/abs/2605.18684)
 
-[![English Docs](https://img.shields.io/badge/DOCS-English-009c3b?style=for-the-badge&logo=material-for-mkdocs&logoColor=white&labelColor=2d2d2d)](http://localhost:8080/cildefonso/solucao/)<br>
-[![Português Docs](https://img.shields.io/badge/DOCS-Portugu%C3%AAs-ffcc00?style=for-the-badge&logo=material-for-mkdocs&logoColor=black&labelColor=2d2d2d)](http://localhost:8080/cildefonso/solucao/pt/)<br>
-[![Español Docs](https://img.shields.io/badge/DOCS-Espa%C3%B1ol-c60b1e?style=for-the-badge&logo=material-for-mkdocs&logoColor=white&labelColor=2d2d2d)](http://localhost:8080/cildefonso/solucao/es/)
+[![English Docs](https://img.shields.io/badge/DOCS-English-009c3b?style=for-the-badge&logo=material-for-mkdocs&logoColor=white&labelColor=2d2d2d)](https://cildefonso.github.io/solucao/)<br>
+[![Português Docs](https://img.shields.io/badge/DOCS-Portugu%C3%AAs-ffcc00?style=for-the-badge&logo=material-for-mkdocs&logoColor=black&labelColor=2d2d2d)](https://cildefonso.github.io/solucao/pt/)<br>
+[![Español Docs](https://img.shields.io/badge/DOCS-Espa%C3%B1ol-c60b1e?style=for-the-badge&logo=material-for-mkdocs&logoColor=white&labelColor=2d2d2d)](https://sandeco.github.io/solucao/es/)
 
-Solucao is a specification reverse-engineering framework. Install it inside a legacy project and it coordinates a team of specialized AI agents to analyze the existing code and generate complete, traceable specifications ready for use by any coding agent.
-
----
-
-![Solucao installer](http://localhost:8080/cildefonso/solucao/main/docs/img/solucao-installer.png)
+A Solução é um framework de engenharia solucao de especificações. Ao instalá-lo em um projeto legado, ele coordena uma equipe de agentes de IA especializados para analisar o código existente e gerar especificações completas e rastreáveis, prontas para uso por qualquer agente de programação.
 
 ---
 
-## Why Solucao exists
+![Solucao installer](solucao-installer.png)
+
+---
+
+## Porque a Solução existe?
 
 Most production systems carry years of accumulated knowledge: implicit business rules, undocumented architectural decisions, critical logic buried in code nobody wants to touch. That knowledge exists, but it's trapped.
 
 AI agents are transformative for creating and evolving software, but they depend on specifications to operate safely. For new systems, you write the spec and the agent executes. For legacy systems — or those built with pure vibe coding — there is no spec: the agent has no way of knowing what it cannot break.
 
-**Solucao is the bridge between the legacy system and AI agents.**
+**A Solução é a ponte entre o sistema legado e os agentes de IA.**
 
 It analyzes the existing code, extracts accumulated knowledge (business rules, flows, module contracts, retroactive architectural decisions) and transforms everything into executable, traceable specifications ready for any coding agent.
 
@@ -38,7 +38,7 @@ The result is not documentation for humans to read. These are **operational cont
 In the root of the legacy project:
 
 ```bash
-npx github:cildefonso/solucao install
+npx solucao install
 ```
 
 The installer will:
@@ -50,7 +50,7 @@ The installer will:
 6. Create the `.solucao/` structure with state, configuration, and plan
 7. Generate SHA-256 manifest for safe updates
 
-> Solucao **never deletes or modifies** existing files in your project.
+> Solução **never deletes or modifies** existing files in your project.
 > Agents write only to `.solucao/` and the output folder (`_solucao_sdd/` by default).
 
 **Requirements:** Node.js 18+
@@ -65,7 +65,7 @@ The installer will:
 > [!CAUTION]
 > ### 💾 Back up your project before starting
 >
-> Although Solucao never modifies your files, AI agents can make mistakes. **We strongly recommend:**
+> Although Solução never modifies your files, AI agents can make mistakes. **We strongly recommend:**
 >
 > 1. **Version the project in Git** — make sure all files are committed before starting the analysis
 > 2. **Have the repository on GitHub** (or GitLab, Bitbucket) — so you have a safe remote copy
@@ -74,13 +74,13 @@ The installer will:
 > If something unexpected happens during analysis, you can restore the original state with `git restore .` or from the backup copy.
 
 > [!WARNING]
-> 🔑 **Solucao does not request, store, or transmit API keys from any LLM service.** All intelligence is delegated to the AI agent already present in your environment (Claude Code, Codex, Cursor, etc.) — no external authentication dependencies.
+> 🔑 **SOlução não solicita, armazena ou transmite chaves de API de qualquer serviço LLM.** All intelligence is delegated to the AI agent already present in your environment (Claude Code, Codex, Cursor, etc.) — no external authentication dependencies.
 
 ---
 
 ## How to use
 
-After installation, open the project in the AI agent and activate Solucao:
+Após a instalação, abra o projeto no agente AI e ative a Solução:
 
 ```
 /solucao
@@ -92,21 +92,33 @@ For engines without slash command support (like Codex):
 solucao
 ```
 
-Solucao will introduce itself, create a personalized exploration plan, and coordinate the entire analysis. Progress is saved in `.solucao/state.json` at each checkpoint — if the session is interrupted, just type `solucao` to resume where you left off.
+solucao will introduce itself, create a personalized exploration plan, and coordinate the entire analysis. Progress is saved in `.solucao/state.json` at each checkpoint — if the session is interrupted, just type `solucao` to resume where you left off.
 
 For other workflows, use the matching entry command:
 
 | Goal | Command |
 |------|---------|
 | Analyze an existing legacy and produce specs | `/solucao` |
-| Start a brand new project from a one-line idea | `/solucao-new` |
+| Run the same analysis end to end, without intermediate stops | `/solucao-autonomous` |
+| Start a brand new project from a one-line idea | `/solucao-new` (add `expresso` to go all the way to code) |
 | Evolve the system one feature at a time, from spec to code | `/solucao-forward` |
+| Add a short amendment to the feature you just delivered | `/solucao-add` |
+| Converge a delivered feature back into the extraction | `/solucao-sync` |
 | Rebuild the legacy on a modern stack | `/solucao-migrate` |
 | Render the extracted knowledge as an HTML mini-site | `/solucao-docs` |
 | Track and fix defects with causal traceability | `/solucao-debugger`, `/solucao-debugger-fix` |
 | Estimate effort and pricing on top of the specs | `/solucao-pricing-profile`, `/solucao-pricing-size`, `/solucao-pricing-estimate` |
 
 Each orchestrator pauses between agents and asks for `CONTINUAR` before advancing, so you stay in control of every step.
+
+### Unattended runs
+
+Two commands concentrate every question in a **single interview at the start** and then run without stopping, for sessions where nobody is watching the terminal (Claude Code YOLO mode or equivalent):
+
+- `/solucao-autonomous` — the full Discovery pipeline, same agents and same checkpoints as `/solucao`.
+- `/solucao-new expresso "<your idea>"` — greenfield from the idea all the way to implemented code, chaining into the forward cycle after the specs.
+
+Both keep the non-destructive rule intact: writes stay inside `.solucao/` and the output folders, and no destructive or outward-facing command (delete, `git push`, publish, install) is ever run on its own. Doubts that come up along the way are recorded with the 🟡 seal instead of interrupting the flow.
 
 ---
 
@@ -138,17 +150,19 @@ For a **greenfield** project (no legacy to extract), start with `/solucao-new` i
 
 ## Agents
 
-Solucao organizes its agents in **eight specialized Teams**. The Discovery Team (Solucao Agents Core) and the Bug Agents are always installed; five Teams are pre-checked in the installer and Translators are opt-in.
+A Solução organiza seus agentes em **dez equipes especializadas**. A equipe Discovery (núcleo de agentes da Solução) e os agentes de bugs vêm sempre instalados; sete equipes já vêm selecionadas no instalador, enquanto a instalação das equipes de tradução é opcional.
 
 | Team | Purpose | Entry command |
 |------|---------|---------------|
-| **Solucao Agents Core** (Discovery) | Analyze the existing legacy and produce specs | `/solucao` |
+| **Solução Agents Core** (Discovery) | Analyze the existing legacy and produce specs | `/solucao` |
+| **Ideation Agents** | Clarify a raw idea before any development artifact exists, in greenfield or legacy | `/solucao-brainstorm` |
 | **Code New Project Agents** | Start a new project (greenfield) from a one-line idea and produce specs | `/solucao-new` |
 | **Code Forward Agents** | Evolve the system from specs to running code, one feature at a time | `/solucao-forward` |
 | **Migration Agents** | Turn legacy specs into a rebuild plan for a modern stack | `/solucao-migrate` |
 | **Pricing and Size Agents** | Estimate effort, size and pricing on top of the specs | `/solucao-pricing-*` |
 | **Documentation Team** | Render the extracted knowledge as a self-contained HTML mini-site | `/solucao-docs` |
 | **Bug Agents** | Track, debate and fix defects with causal traceability to the specs | `/solucao-debugger` |
+| **Code Quality Agents** | Improve existing code without changing behavior: refactor, optimize, standardize, prune dead code | `/solucao-refactor` |
 
 ### Discovery Team, required
 
@@ -172,16 +186,34 @@ These run the main `/solucao` pipeline.
 | **Data Master** | Complete database analysis: DDL, migrations, ORM, ERD, triggers, procedures |
 | **Design System** | Extracts design tokens: colors, typography, spacing, themes, and components |
 | **Soul Extractor** | Produces a single executive Spec (`soul.md`) with purpose, core entities and founding decisions, useful right after Scout |
-| **Agents Help** | Explains every Solucao agent with analogies, useful for newcomers |
+| **Agents Help** | Explica cada agente de Solucao usando analogias; útil para iniciantes. |
 | **Reconstructor** | Generates a bottom-up reconstruction plan from the specs and implements one task at a time, preserving tokens. Activation: `/solucao-reconstructor` |
+| **Autonomous** | Runs the same sequence as `/solucao` end to end, with a single interview at the start and no intermediate stops. Activation: `/solucao-autonomous` |
+
+### Ideation Agents (before anything is built)
+
+For the moment when the idea is still raw. Works in **both** scenarios: greenfield, and evolution of an existing legacy. Activate with `/solucao-brainstorm` and the orchestrator drives the pipeline `Framer → Explorer → Challenger → Arbiter → Pre-Spec`, with a `CONTINUAR` checkpoint between agents. Nothing here produces code.
+
+Artifacts live in one folder per session: `_solucao_sdd/brainstorms/<NNN>-<short-name>/`. The active session is tracked in `.solucao/active-ideation.json`. Final handoff goes to `/solucao-new` in greenfield, `/solucao-requirements` in legacy, or `/solucao-migrate` when the intent is a rebuild.
+
+| Agent | Role |
+|-------|------|
+| **Solução Brainstorm** | Orchestrator. Detects greenfield vs legacy, opens the session folder, routes by physical stage. Writes no pipeline artifact itself |
+| **Framer** | Separates problem from solution and refuses to let a solution pass as a problem. Produces `framing.md` with the job to be done and the cost of doing nothing |
+| **Explorer** | Opens 3 to 5 materially distinct paths, always including "do not build" and "use something off the shelf". Forbidden from recommending. Produces `options.md` |
+| **Challenger** | Premortem, the assumption that kills each option, the cheap test for it, and the hidden cost in the legacy. Adversarial by design. Produces `risks.md` |
+| **Arbiter** | Scores the options against the risks and recommends one with an explicit trade-off. The choice stays human, and a divergence from the recommendation is recorded as such. Produces `decision.md` |
+| **Pre-Spec** | Turns the decision into the minimum package the next pipeline needs: minimum scope, non-goals, done criterion, open `[DOUBT]` markers. Writes no requirements and no architecture. Produces `pre-spec.md` |
 
 ### Code New Project Agents (greenfield)
 
 For projects that do not exist yet. Activate with `/solucao-new` and the orchestrator drives the pipeline `Ideator → Researcher → Drafter → Spec SDD`, with a `CONTINUAR` checkpoint between agents. Final handoff suggests `/solucao-forward` to take the specs to code.
 
+The orchestrator has **two modes**. In *guided* mode (default) it stops at every agent and ends at the specs. In *express* mode (`/solucao-new expresso "<your idea>"`) every question is concentrated in one interview at the start and, after `INICIAR`, the pipeline runs straight through the specs and into the forward cycle (`requirements → plan → to-do → coding`) until the code is on disk.
+
 | Agent | Role |
 |-------|------|
-| **Solucao New** | Orchestrator. Reads the initial brief, walks the pipeline, saves `newproject_progress` in `state.json` |
+| **Solução New** | Orchestrator. Reads the initial brief, walks the pipeline, saves `newproject_progress` in `state.json` |
 | **Ideator** | Structured brainstorm with 6 divergent questions (root problem, value, alternatives, audience, success metrics, dangerous assumptions). Produces `_solucao_sdd/ideation.md` |
 | **Researcher** | Turns the raw audience into 1 to 3 structured personas with journeys. Produces `_solucao_sdd/personas.md` |
 | **Drafter** | Synthesizes ideation and personas into a complete PRD (problem, metrics, scope, non-goals, constraints, risks). Produces `_solucao_sdd/prd.md` |
@@ -189,11 +221,11 @@ For projects that do not exist yet. Activate with `/solucao-new` and the orchest
 
 ### Code Forward Agents (evolution)
 
-The bridge from specs to running code. Pipeline: `requirements → clarify → quality → plan → to-do → audit → coding`. Use `/solucao-forward` as the entry point: it detects the **physical stage** of the active feature (by inspecting the artifacts on disk, not metadata) and suggests the next agent.
+The bridge from specs to running code. Pipeline: `requirements → clarify → quality → plan → to-do → audit → coding → sync`. Use `/solucao-forward` as the entry point: it detects the **physical stage** of the active feature (by inspecting the artifacts on disk, not metadata) and suggests the next agent.
 
 | Agent | Role |
 |-------|------|
-| **Solucao Forward** | Orchestrator. Detects the physical stage and suggests the next skill. Never executes code itself |
+| **Solução Forward** | Orchestrator. Detects the physical stage and suggests the next skill. Never executes code itself |
 | **Requirements** | Turns a free-form idea into `requirements.md` anchored to the legacy, with `[DOUBT]` markers, gaps and glossary |
 | **Clarify** | Up to 5 targeted questions to resolve `[DOUBT]` markers in place |
 | **Quality** | Read-only auditor of writing clarity. Produces `requirements-audit.md` |
@@ -201,6 +233,8 @@ The bridge from specs to running code. Pipeline: `requirements → clarify → q
 | **To-Do** | Decomposes the roadmap into atomic actions across five phases with stable IDs, dependencies and parallelism markers. Produces `actions.md` |
 | **Audit** | Read-only cross-check between requirements, roadmap and actions. Produces `audit/cross-check.md` |
 | **Coding** | Executes `actions.md`, flips checkboxes, writes `progress.jsonl`, `legacy-impact.md` and `regression-watch.md` |
+| **Add** | Optional and repeatable after coding. Short amendment on the delivered feature: records it in `## Emendas` in `requirements.md`, then implements. Refuses anything needing a new dependency, a schema or contract change, a new public surface, an auth path, or anything outside the active feature's scope. Activation: `/solucao-add` |
+| **Sync** | Optional convergence step after coding. Distills the delivered feature into an addendum in `_solucao_sdd/addenda/`, so the extraction keeps describing the system as it is today until the next full re-extraction. Never edits the original artifacts. Activation: `/solucao-sync` |
 | **Principles** | Manages durable project rules (`principles.md`) and emits impact reports when they change |
 | **Resume** | Swaps the active feature with one from the `paused-features` queue |
 
@@ -235,7 +269,7 @@ After discovery completes, this team turns the extracted knowledge into a self-c
 
 | Agent | Role |
 |-------|------|
-| **Solucao Docs** | Orchestrates the team, runs the 3-question interview, computes deterministic seed. Activated via `/solucao-docs` |
+| **Solução Docs** | Orchestrates the team, runs the 3-question interview, computes deterministic seed. Activated via `/solucao-docs` |
 | **Mapper** | Spatial structure: `arquitetura.html` (Code City 3D, Three.js), `modulos.html` (force-directed D3), `topologia.html` (legacy vs modern side-by-side) |
 | **Analyst** | Quantitative data: `metricas.html` (Highcharts treemap, sankey, histogram, columns), `timeline.html` (events from `.solucao/chronicle.md`) |
 | **Storyteller** | Narrative: `glossario.html` (client-side search), `deck.html` (6 to 10 navigable slides), `features/<spec>.html` (one per SDD spec) |
@@ -254,6 +288,21 @@ A repository-native causal defect memory, organized by **context** (the feature/
 | **Bug Debate** | Fixed-epoch multi-agent debate with an isolated judge, in three modes (`diagnosis`, `repair`, `spec`). Always opt-in, with cost shown upfront; external harnesses (Codex, Gemini CLI, ...) may join only with explicit consent. Activated via `/solucao-debugger-debate` |
 | **Depth Inspection** | Deep sweep of a problematic feature through specialized lenses (spec conformance, data flow, contracts, error states, test coverage, concurrency). Diagnosis only; confirmed findings become registered bugs. Activated via `/solucao-depth-inspection` |
 | **Bug Graph** | Regenerates the derived views: index, compact catalog, sparse relation matrix, mermaid graph with clusters and impact score, and the BUG ↔ SPEC traceability matrix on both ends (`_solucao_bugs/generated/` and `_solucao_sdd/traceability/bugs.md`). Activated via `/solucao-debugger-graph` |
+
+### Code Quality Agents
+
+Perfective and preventive maintenance on code that already works: improve the internal structure **without changing observable behavior**, and prove that preservation before touching the code. Organized by **context** under `_solucao_refactor/<context>/`, with each transformation anchored to the soul (`soul.md`) and confirmed specs. The founding rule: proposing a transformation and applying it are separate acts, and nothing touches the legacy without proof of behavior preservation (a **safety net** of characterization tests, plus soul and regression checks). Project code changes only through an approved, reversible diff gate.
+
+| Agent | Role |
+|-------|------|
+| **Refactor** | Orchestrator: inventories improvement opportunities, prioritizes by real ROI (hotpath, not aesthetics), routes to the right specialist and runs the gates. Never applies a transformation. Activated via `/solucao-refactor` |
+| **Restructure** | Internal structure at method/class level via the Fowler catalog, in small reversible steps. Activated via `/solucao-restructure` |
+| **Modularize** | Splits a large piece into cohesive modules with well-defined responsibility, respecting the soul's boundaries. Activated via `/solucao-modularize` |
+| **Decouple** | Reduces direct dependencies (dependency inversion, Feathers seams, cycle breaking), coupling measured before and after. Activated via `/solucao-decouple` |
+| **Optimize** | Reduces time, memory and resource use, with a before/after measurement and preserved output. Activated via `/solucao-optimize` |
+| **Simplify** | Replaces complex logic with a simpler one, with a proof of output equivalence. Activated via `/solucao-simplify` |
+| **Standardize** | Applies naming, formatting and organization conventions from the project's dominant pattern, never changing semantics. Activated via `/solucao-standardize` |
+| **Prune** | Removes dead code, and only what it can prove is dead, telling dead code from a suspected orphan. Activated via `/solucao-prune` |
 
 ---
 
@@ -286,6 +335,7 @@ _solucao_sdd/
 ├── ui/                       # Interface specs (Visor)
 ├── database/                 # Database specs (Data Master)
 ├── design-system/            # Design tokens (Design System)
+├── addenda/                  # Post-delivery addenda, one per feature (Sync)
 └── traceability/
     ├── spec-impact-matrix.md # Which spec impacts which
     └── code-spec-matrix.md   # Code file to corresponding spec
@@ -323,9 +373,15 @@ _solucao_forward/
         └── cross-check.md
 ```
 
+After `/solucao-coding`, the optional `/solucao-sync` distills the delivered feature into `_solucao_sdd/addenda/<feature-id>-<short-name>.md`. The addendum is a bridge: it keeps the extraction representative of the system as it is today, points at the sections of `architecture.md` and `domain.md` that drifted, and is marked as superseded by the next full re-extraction. Original extraction artifacts are never edited.
+
+Ideation Agents write only inside `_solucao_sdd/brainstorms/` (one folder per session) and `.solucao/active-ideation.json`. They never touch project code and never produce code.
+
 The Documentation Team writes only inside `_solucao_docs/` (HTML mini-site, fully offline).
 
 Bug Agents write only inside `_solucao_bugs/` (one folder per bug, plus generated views), spec addenda in `_solucao_sdd/addenda/` and the generated mirror `_solucao_sdd/traceability/bugs.md`. Original specs are never edited; project code changes only through approval gates with explicit diffs.
+
+Code Quality Agents write only inside `_solucao_refactor/` (opportunities, plans and transformation records per context). Project code changes exclusively through an approved, reversible diff gate, and only after the safety net proves behavior is preserved.
 
 ### Confidence scale
 
@@ -362,16 +418,16 @@ Every statement in the specs is marked with:
 ## CLI commands
 
 ```bash
-npx github:cildefonso/solucao install      # Install Solucao in the project
+npx solucao install      # Install solucao in the project
 npx solucao status       # Show current analysis state
 npx solucao update       # Update agents to the latest version
 npx solucao add-agent    # Add an agent to the project
 npx solucao add-engine   # Add support for a new engine
-npx solucao uninstall    # Remove Solucao from the project
+npx solucao uninstall    # Remove Solução from the project
 ```
 
 The `update` command detects files you modified via SHA-256 and never overwrites customizations.
-The `uninstall` command removes only files created by Solucao — nothing from the legacy project is touched.
+O `uninstall` O comando remove apenas arquivos criados pela Solução — nada do projeto legado é afetado.
 
 ---
 
