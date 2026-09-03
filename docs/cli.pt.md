@@ -1,6 +1,6 @@
 # CLI
 
-O Solucao tem um CLI simples para gerenciar a instalação e o ciclo de vida dos agentes no seu projeto. Todos os comandos rodam com `npx solucao` na raiz do projeto.
+A Solucao tem um CLI simples para gerenciar a instalação e o ciclo de vida dos agentes no seu projeto. Todos os comandos rodam com `npx solucao` na raiz do projeto.
 
 ---
 
@@ -54,7 +54,7 @@ O menu de agentes lista times, não agentes individuais. O usuário escolhe na g
 4. `Pricing and Size Agents`
 5. `Translators N8N->Specs->Python` (desmarcado por padrão)
 
-O `Solucao Agents Core` é renderizado como um separator cinza não selecionável que visualmente mostra `(*)` como se fosse um item marcado e desabilitado: o usuário enxerga, sabe que está incluído, e o cursor pula por cima. Ele contém todos os agentes de descoberta (Solucao, Scout, Soul Extractor, Archaeologist, Detective, Architect, Writer, Reviewer, Visor, Data Master, Design System, Agents Help, Reconstructor), então o antigo grupo "Discovery Add-ons" deixou de existir como conceito separado. Mesmo o menu escondendo o detalhe por agente, o resumo final da instalação continua quebrando a contagem por time (Discovery, Migration, Code Forward, New Project, Documentation, Translators e Pricing).
+O `Solucao Agents Core` é renderizado como um separator cinza não selecionável que visualmente mostra `(*)` como se fosse um item marcado e desabilitado: o usuário enxerga, sabe que está incluído, e o cursor pula por cima. Ele contém todos os agentes de descoberta (Solucao, Scout, Soul Extractor, Arqueologo, Detective, Architect, Writer, Reviewer, Visor, Data Master, Design System, Ajuda Agentes, Reconstructor), então o antigo grupo "Discovery Add-ons" deixou de existir como conceito separado. Mesmo o menu escondendo o detalhe por agente, o resumo final da instalação continua quebrando a contagem por time (Discovery, Migration, Code Forward, New Project, Documentation, Translators e Pricing).
 
 ---
 

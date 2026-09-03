@@ -1,4 +1,4 @@
-# Plano de melhoramento — carga de contexto da Solução
+# Plano de melhoramento — carga de contexto da Solucao
 
 > **Estado:** ✅ **executado** em 31/07/2026 na branch `reducao-tokens` — Cenário B (ver §4). Etapas
 > 2, 4, 5, 6, 7, 8 commitadas (uma por commit); `npm run verify` → APROVADO; carga ~4.987 → ~668 tokens
@@ -25,7 +25,7 @@ de transporte. **Recomendo um teste funcional numa instalação limpa antes do m
 **Pendências menores (não bloqueiam, mérito de revisão humana):**
 - `short_description` dos `openai.yaml` são auto-derivadas da `description` — algumas truncam com `…`.
   Valem um passe manual (o Codex as mostra na UI). São puramente cosméticas.
-- `solucao-agents-help` é o membro debatível do conjunto model-invoked (§4) — decidir se fica ou vira
+- `solucao-ajuda-agentes` é o membro debatível do conjunto model-invoked (§4) — decidir se fica ou vira
   user-invoked.
 - Ligar `docs/invocation-policy.md` ao nav do `mkdocs.yml` (não feito para não arriscar o build do site).
 > **Substitui, para efeito de execução:** `HANDOFF-solucao-carga-de-contexto.md`
@@ -41,17 +41,17 @@ usuário estava certo em desconfiar.**
 
 Separando as duas coisas:
 
-- 🟢 **O diagnóstico continua válido e ficou maior.** A Solução injeta a `description` de **toda**
+- 🟢 **O diagnóstico continua válido e ficou maior.** A Solucao injeta a `description` de **toda**
   skill model-invoked no contexto de cada requisição. Isso é real, é medível, e cresceu: o relatório
   mediu 49 skills / ~3.677 tokens em 30/07; hoje são **65 skills / ~4.987 tokens** de carga permanente.
   Reduzir isso marcando os agentes de fase como `disable-model-invocation: true` é uma otimização
   legítima, e o mecanismo (manter `description`, só acrescentar a flag) está correto.
 
 - 🔴 **O plano de execução foi escrito contra outro repositório.** A sessão que produziu o HANDOFF
-  trabalhou numa **cópia instalada** da Solução em `/workspaces/CHUPA-CABRA/solucao-otimizacao`, ao
+  trabalhou numa **cópia instalada** da Solucao em `/workspaces/CHUPA-CABRA/solucao-otimizacao`, ao
   lado das skills do mattpocock (`pocoyo-skills`). Por isso o documento assume um mundo de **duas
   árvores sincronizadas** (`claude-skills` + `agents-skills`), aponta para scripts e paths que **não
-  existem aqui**, e conta 49 skills. **Este repositório é a FONTE da Solução** — árvore única
+  existem aqui**, e conta 49 skills. **Este repositório é a FONTE da Solucao** — árvore única
   `agents/` — e as duas árvores só passam a existir na **máquina do usuário final**, geradas pelo
   installer (`lib/installer/writer.js` → `cpSync(..., { recursive: true })` para `.claude/skills` ou
   `.agents/skills`, conforme `lib/installer/detector.js`).
@@ -70,7 +70,7 @@ divergência entre árvores** (a paridade passa a ser estrutural, não mantida �
 | Paths `/workspaces/CHUPA-CABRA/…`, `pocoyo-skills`, `solucao-otimizacao` | Não existem |
 | `verify-invocation.py` "já validado" em `/workspaces/CHUPA-CABRA/` | **Está na pasta `evolucao/reducao-de-tokens/`** — funciona, mas foi escrito para duas árvores; adaptar (ver Etapa 7) |
 | 49 skills · 14.708 chars · ~3.677 tokens | **65 skills · 19.948 chars · ~4.987 tokens** |
-| "Fonte da Solução na máquina: **não existe**" | **Falso** — este repo é a fonte (publicado no npm como `solucao`) |
+| "Fonte da Solucao na máquina: **não existe**" | **Falso** — este repo é a fonte (publicado no npm como `solucao`) |
 | Fluxo final: `rsync` de volta para `pocoyo-skills` | N/A — commit na fonte, distribuição via `npm` / `solucao update` |
 | Cenário B mantém estas **8** model-invoked | Lista feita para 49 skills; **precisa ser recalculada para 65** |
 | 4 sites de invocação skill→skill (+1 indireto) | Re-mapeado abaixo; a quebra real única é a mesma: `step-01-first-run.md:63` |
@@ -112,7 +112,7 @@ dispara descrevendo a intenção em linguagem natural, sem digitar a barra. Todo
 orquestrador lendo o `SKILL.md` e vira user-invoked.
 
 O `role` do frontmatter fecha a lista sem ambiguidade: os **8 `role: orchestrator`** mais o
-`solucao-agents-help` (`role: help`).
+`solucao-ajuda-agentes` (`role: help`).
 
 **As 9 que permanecem model-invoked:**
 
@@ -126,7 +126,7 @@ O `role` do frontmatter fecha a lista sem ambiguidade: os **8 `role: orchestrato
 | `solucao-refactor` | orchestrator | "refatorar", "otimizar o código" |
 | `solucao-debugger` | orchestrator | "tem um bug", "debugar" |
 | `solucao-docs` | orchestrator | "documentar esse sistema" |
-| `solucao-agents-help` | help | "quais agentes existem" (único membro discutível — ver nota) |
+| `solucao-ajuda-agentes` | help | "quais agentes existem" (único membro discutível — ver nota) |
 
 **As outras ~56 viram user-invoked** (`disable-model-invocation: true`): agentes de fase
 (`solucao-scout`, `solucao-architect`, `solucao-reviewer`), os `solucao-pricing-*`, os
@@ -135,8 +135,8 @@ O `role` do frontmatter fecha a lista sem ambiguidade: os **8 `role: orchestrato
 por `/nome` digitado e pelo orquestrador que lê o `SKILL.md`.
 
 - **Custo:** 9 model-invoked · ~668 tokens permanentes → economia de **~4.319 tokens (−86%)**.
-- **Nota sobre `solucao-agents-help`:** é o único membro debatível — se preferir que o catálogo só
-  apareça quando o usuário digitar `/solucao-agents-help`, mova-o para user-invoked e a economia sobe um
+- **Nota sobre `solucao-ajuda-agentes`:** é o único membro debatível — se preferir que o catálogo só
+  apareça quando o usuário digitar `/solucao-ajuda-agentes`, mova-o para user-invoked e a economia sobe um
   pouco. Mantido em B por permitir "me mostra os agentes" em linguagem natural.
 
 > ⚠️ **Por que não o Cenário A ("só `solucao`"):** o `CLAUDE.md` promete ativação pela palavra `solucao`
@@ -148,16 +148,16 @@ por `/nome` digitado e pelo orquestrador que lê o `SKILL.md`.
 
 ## 5 · Plano revisado — árvore única, 8 etapas, framework funcionando em cada uma
 
-> **A regra que governa tudo:** a Solução funcionando hoje vale mais que qualquer economia de tokens.
+> **A regra que governa tudo:** a Solucao funcionando hoje vale mais que qualquer economia de tokens.
 > Na dúvida entre "economiza mais" e "com certeza não quebra", escolha não quebrar. Um commit por etapa.
 
 **Etapa 0 — recomputar o eixo.** Rodar o script de medição, listar as 65 skills, classificar cada uma
 como entry-point (fica) ou agente de fase (marca). Fechar a lista da §4 com o usuário. *Commit vazio de
 marco.*
 
-**Etapa 1 — baseline funcional.** Como a fonte não tem `.solucao/`, instalar a Solução num diretório
+**Etapa 1 — baseline funcional.** Como a fonte não tem `.solucao/`, instalar a Solucao num diretório
 temporário (`npx solucao init` num sandbox, ou via `bin/solucao.js`) e registrar o comportamento de
-`/solucao`, `/solucao-agents-help`, `/solucao-forward` **antes** de qualquer mudança.
+`/solucao`, `/solucao-ajuda-agentes`, `/solucao-forward` **antes** de qualquer mudança.
 
 **Etapa 2 — corrigir os sites de invocação (antes das marcas).** Inverter a precedência para **ler o
 `SKILL.md` e executar no contexto atual** como caminho primário. O único site que hoje ativa por nome
@@ -181,7 +181,7 @@ mas **confirmar isso instalando** e conferindo que o `openai.yaml` aparece no de
 **sem gatilhos** (`Use quando…`, `digitar "/…"`). Nas entry-points model-invoked, **não mexer** — lá os
 gatilhos são o mecanismo de auto-invocação. *Commit.*
 
-**Etapa 7 — o verificador (é onde a Solução supera a referência).** **O script já existe na pasta:**
+**Etapa 7 — o verificador (é onde a Solucao supera a referência).** **O script já existe na pasta:**
 `evolucao/reducao-de-tokens/verify-invocation.py` (106 linhas, funcional). Ele já checa, por árvore:
 
 1. Toda skill tem `agents/openai.yaml` com `interface.display_name` + `short_description`.
@@ -218,7 +218,7 @@ o `openai.yaml` não atravessou na instalação.
 O HANDOFF gastava três etapas defendendo "as duas árvores têm que ficar idênticas". **Aqui esse
 problema não existe:** há uma fonte, e o installer é quem replica. O que passa a merecer guarda é o
 **installer preservar as marcas ao copiar** — e isso é um teste de 20 linhas (Etapa 7.4), mais forte que
-disciplina manual porque falha ruidosamente no CI. É literalmente o ponto em que a Solução supera a
+disciplina manual porque falha ruidosamente no CI. É literalmente o ponto em que a Solucao supera a
 referência que o relatório citava.
 
 ---

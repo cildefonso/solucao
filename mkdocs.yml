@@ -76,7 +76,7 @@ plugins:
           build: true
           nav_translations:
             Home: Início
-            Why Solucao: Por que o Solucao
+            Why Solucao: Por que a Solucao
             Installation: Instalação
             How to use: Como usar
             CLI: CLI
@@ -204,10 +204,10 @@ nav:
     - Overview: agentes/index.md
     - Solucao Agents Core:
       - Solucao (Orchestrator): agentes/solucao.md
-      - Guide with analogies: agentes/agents-help.md
+      - Guide with analogies: agentes/ajuda-agentes.md
       - Scout: agentes/scout.md
       - Soul Extractor: agentes/extract-soul.md
-      - Archaeologist: agentes/arqueologo.md
+      - Arqueologo: agentes/arqueologo.md
       - Detective: agentes/detetive.md
       - Architect: agentes/arquiteto.md
       - Writer: agentes/redator.md

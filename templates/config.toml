@@ -16,7 +16,7 @@ folder = "_solucao_sdd"
 [agents]
 installed = [
   "solucao-scout",
-  "solucao-archaeologist",
+  "solucao-arqueologo",
   "solucao-detective",
   "solucao-architect",
   "solucao-writer",
@@ -24,6 +24,7 @@ installed = [
   "solucao-visor",
   "solucao-data-master",
   "solucao-design-system",
+  'solucao-relatorio-seguranca',
   "solucao-extract-soul"
 ]
 

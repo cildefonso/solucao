@@ -15,7 +15,7 @@ El traductor jurado toma un documento oficial en un idioma y produce otra versi�
 
 El N8N Translator es el punto de entrada cuando el "código" heredado no es código fuente, sino un workflow visual de N8N exportado como JSON. Recorre el grafo de nodos, interpreta cada paso semánticamente (no solo por el tipo del nodo) y emite tres artefactos SDD que describen el sistema de forma independiente de N8N.
 
-Tras generar la spec, el agente prepara `.solucao/state.json` y `.solucao/plan.md` para que el pipeline estándar de Solucao (Scout, Archaeologist, Detective, Architect, Writer, Reviewer) pueda continuar y refinar el análisis, si es necesario.
+Tras generar la spec, el agente prepara `.solucao/state.json` y `.solucao/plan.md` para que el pipeline estándar de Solucao (Scout, Arqueologo, Detective, Architect, Writer, Reviewer) pueda continuar y refinar el análisis, si es necesario.
 
 ---
 

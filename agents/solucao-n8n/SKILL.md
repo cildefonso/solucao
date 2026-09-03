@@ -137,7 +137,7 @@ Gere três arquivos seguindo o padrão SDD:
 
 ### 7. Handoff para o pipeline Solucao
 
-Após gerar os três artefatos da spec, prepare o estado para que o `/solucao` possa orquestrar os agentes seguintes (Scout, Archaeologist, Detective, Architect, Writer, Reviewer) sobre o resultado.
+Após gerar os três artefatos da spec, prepare o estado para que o `/solucao` possa orquestrar os agentes seguintes (Scout, Arqueologo, Detective, Architect, Writer, Reviewer) sobre o resultado.
 
 #### 7.1 Criação de `.solucao/state.json`
 
@@ -184,7 +184,7 @@ Após criar os arquivos, mostre:
 ✅ Estado inicial criado em .solucao/state.json
 ✅ Plano criado em .solucao/plan.md
 
-Para continuar com o pipeline completo (Scout, Archaeologist, etc.), digite /solucao.
+Para continuar com o pipeline completo (Scout, Arqueologo, etc.), digite /solucao.
 ```
 
 ## Escala de confiança

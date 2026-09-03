@@ -54,7 +54,7 @@ The agents menu lists teams, not individual agents. The user picks at the team l
 4. `Pricing and Size Agents`
 5. `Translators N8N->Specs->Python` (unchecked by default)
 
-`Solucao Agents Core` is rendered as a gray, non-selectable separator that visually shows `(*)` as if it were a checked-and-disabled item: the user sees it, knows it is included, and the cursor skips over it. It contains all discovery agents (Solucao, Scout, Soul Extractor, Archaeologist, Detective, Architect, Writer, Reviewer, Visor, Data Master, Design System, Agents Help, Reconstructor), so the previous "Discovery Add-ons" group no longer exists as a separate concept. Even though the menu hides the agent-level detail, the final installation summary still breaks the count down by team (Discovery, Migration, Code Forward, New Project, Documentation, Translators and Pricing).
+`Solucao Agents Core` is rendered as a gray, non-selectable separator that visually shows `(*)` as if it were a checked-and-disabled item: the user sees it, knows it is included, and the cursor skips over it. It contains all discovery agents (Solucao, Scout, Soul Extractor, Arqueologo, Detective, Architect, Writer, Reviewer, Visor, Data Master, Design System, Ajuda Agentes, Reconstructor), so the previous "Discovery Add-ons" group no longer exists as a separate concept. Even though the menu hides the agent-level detail, the final installation summary still breaks the count down by team (Discovery, Migration, Code Forward, New Project, Documentation, Translators and Pricing).
 
 ---
 

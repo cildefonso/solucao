@@ -60,8 +60,8 @@ El Equipo de Migración nunca toca código legado ni los artefactos del Equipo d
 └── _solucao_sdd/                  ← Equipo de Descubrimiento escribe aquí
     ├── inventory.md               (Scout)
     ├── dependencies.md            (Scout)
-    ├── code-analysis.md           (Archaeologist)
-    ├── data-dictionary.md         (Archaeologist)
+    ├── code-analysis.md           (Arqueologo)
+    ├── data-dictionary.md         (Arqueologo)
     ├── domain.md                  (Detective)
     ├── state-machines.md          (Detective)
     ├── permissions.md             (Detective)
@@ -73,7 +73,7 @@ El Equipo de Migración nunca toca código legado ni los artefactos del Equipo d
     ├── user-stories/              (Writer: flujos de usuario)
     ├── traceability/              (Writer + Architect: matrices)
     ├── adrs/                      (Detective: ADRs retroactivos)
-    ├── flowcharts/                (Archaeologist: Mermaid por módulo)
+    ├── flowcharts/                (Arqueologo: Mermaid por módulo)
     ├── ui/                        (Visor, si corrió)
     ├── database/                  (Data Master, si corrió)
     │

@@ -13,7 +13,7 @@ O biógrafo expresso visita o personagem, lê as anotações do corretor (Scout)
 
 ## O que faz
 
-O Soul Extractor é deliberadamente leve. Ele NÃO escava módulo a módulo (isso é do Archaeologist), NÃO reconstrói regras de negócio (isso é do Detective), NÃO desenha C4 completo (isso é do Architect). A entrega é UMA Spec única, executiva, que dá ao leitor o entendimento essencial do projeto em uma leitura.
+O Soul Extractor é deliberadamente leve. Ele NÃO escava módulo a módulo (isso é do Arqueologo), NÃO reconstrói regras de negócio (isso é do Detective), NÃO desenha C4 completo (isso é do Architect). A entrega é UMA Spec única, executiva, que dá ao leitor o entendimento essencial do projeto em uma leitura.
 
 A síntese cobre três coisas:
 
@@ -68,4 +68,4 @@ Logo após o Scout, quando quiser uma síntese executiva do sistema antes de rod
 /solucao-extract-soul
 ```
 
-Você também pode rodar em qualquer momento depois que o Scout já tiver rodado, mesmo que Archaeologist, Detective e os demais já tenham produzido seus artefatos. O Soul Extractor permanece consistente com o mapeamento de superfície atual.
+Você também pode rodar em qualquer momento depois que o Scout já tiver rodado, mesmo que Arqueologo, Detective e os demais já tenham produzido seus artefatos. O Soul Extractor permanece consistente com o mapeamento de superfície atual.

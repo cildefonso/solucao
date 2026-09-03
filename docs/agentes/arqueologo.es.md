@@ -1,6 +1,6 @@
-# Archaeologist
+# Arqueologo
 
-**Comando:** `/solucao-archaeologist`
+**Comando:** `/solucao-arqueologo`
 **Fase:** 2 - Excavación
 
 ---
@@ -13,13 +13,13 @@ El arqueólogo excava el terreno con paciencia, capa a capa. Cataloga cada artef
 
 ## Qué hace
 
-El Archaeologist excava el código con paciencia, capa a capa. Cataloga cada artefacto encontrado: tamaño, forma, ubicación, estructura. No interpreta la civilización, no saca conclusiones sobre el negocio. Solo describe con precisión lo que hay.
+El Arqueologo excava el código con paciencia, capa a capa. Cataloga cada artefacto encontrado: tamaño, forma, ubicación, estructura. No interpreta la civilización, no saca conclusiones sobre el negocio. Solo describe con precisión lo que hay.
 
 ---
 
 ## Un módulo por sesión
 
-El Archaeologist analiza un módulo a la vez, a propósito. Para proyectos con muchos módulos, esto significa varias sesiones. Pero es el enfoque correcto: preserva calidad, conserva contexto y permite revisión incremental.
+El Arqueologo analiza un módulo a la vez, a propósito. Para proyectos con muchos módulos, esto significa varias sesiones. Pero es el enfoque correcto: preserva calidad, conserva contexto y permite revisión incremental.
 
 ---
 

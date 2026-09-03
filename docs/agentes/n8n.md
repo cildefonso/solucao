@@ -15,7 +15,7 @@ The certified translator takes an official document in one language and produces
 
 The N8N Translator is the entry point when the legacy "code" is not source code, but a visual N8N workflow exported as JSON. It walks the node graph, interprets each step semantically (not just by node type), and emits three SDD artifacts that describe the system independently of N8N.
 
-After the spec is generated, the agent prepares `.solucao/state.json` and `.solucao/plan.md` so the regular Solucao pipeline (Scout, Archaeologist, Detective, Architect, Writer, Reviewer) can take over and refine the analysis if needed.
+After the spec is generated, the agent prepares `.solucao/state.json` and `.solucao/plan.md` so the regular Solucao pipeline (Scout, Arqueologo, Detective, Architect, Writer, Reviewer) can take over and refine the analysis if needed.
 
 ---
 

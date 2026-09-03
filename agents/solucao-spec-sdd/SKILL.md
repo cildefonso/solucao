@@ -14,7 +14,7 @@ metadata:
   stage: spec-sdd
 ---
 
-# solucao-spec-sdd, Spec-Driven Development no Solucao
+# solucao-spec-sdd, Spec-Driven Development na Solucao
 
 Esta skill conduz o processo completo de SDD dentro do pipeline Code New Project Agents: **decompor → redigir → avaliar → iterar** até cada spec estar pronta para o ciclo forward.
 

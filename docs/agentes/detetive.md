@@ -7,13 +7,13 @@
 
 ## 🔍 Sherlock Holmes
 
-Sherlock Holmes arrives after the archaeologist. Looks at the cataloged artifacts and asks: *"But why is this here? Who put it here? What does this reveal about who lived here?"* Doesn't excavate. Interprets.
+Sherlock Holmes arrives after the arqueologo. Looks at the cataloged artifacts and asks: *"But why is this here? Who put it here? What does this reveal about who lived here?"* Doesn't excavate. Interprets.
 
 ---
 
 ## What it does
 
-The Detective arrives after the Archaeologist. Looks at everything that was cataloged and asks: *"But why is this here? Who put this here? What does this reveal about who built this system?"*
+The Detective arrives after the Arqueologo. Looks at everything that was cataloged and asks: *"But why is this here? Who put this here? What does this reveal about who built this system?"*
 
 It doesn't dig more code. It interprets what was excavated. It's the specialist in extracting tacit knowledge that was never documented: business rules living in conditionals, architectural decisions that only exist in git history, constraints that appear in validations with no comment at all.
 

@@ -74,7 +74,7 @@ _solucao_refactor/
     └── generated/                índice das oportunidades e seu estado (nunca editado à mão)
 ```
 
-Cada oportunidade herda a escala de confiança do Solução (🟢 coberta e entendida, 🟡 parcial, 🔴 sem prova de comportamento) e uma estimativa de ROI. O orquestrador prioriza um hotpath de alta frequência acima de um módulo grande porém raramente executado. Quando um alvo pede mais de um verbo, o orquestrador encadeia os especialistas um por vez, cada um com seu gate.
+Cada oportunidade herda a escala de confiança da Solucao (🟢 coberta e entendida, 🟡 parcial, 🔴 sem prova de comportamento) e uma estimativa de ROI. O orquestrador prioriza um hotpath de alta frequência acima de um módulo grande porém raramente executado. Quando um alvo pede mais de um verbo, o orquestrador encadeia os especialistas um por vez, cada um com seu gate.
 
 ---
 

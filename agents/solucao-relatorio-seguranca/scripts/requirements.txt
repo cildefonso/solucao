@@ -1,0 +1,6 @@
+# Dependências do gerador do relatório de auditoria de segurança.
+# Instalar SEMPRE em venv isolado (nunca global).
+reportlab>=4.1.0
+matplotlib>=3.8.0
+pypdf>=4.2.0
+pymupdf>=1.24.0   # rasterização das páginas para verificação visual

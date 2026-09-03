@@ -11,7 +11,7 @@ Use o fluxo adequado no chat:
 - `/solucao-forward` — implementar ou evoluir código a partir das specs
 - `/solucao-migrate` — planejar a migração de um sistema legado
 - `/solucao-docs` — gerar o mini-site visual da documentação
-- `/solucao-agents-help` — consultar o catálogo completo de agentes
+- `/solucao-ajuda-agentes` — consultar o catálogo completo de agentes
 
 ## Comportamento ao ativar
 

@@ -43,7 +43,7 @@ Scout mapea la superficie del proyecto
         ↓
 Solucao presenta el resumen del Scout y eliges el nivel de documentación
         ↓
-Archaeologist analiza módulo por módulo
+Arqueologo analiza módulo por módulo
         ↓
 Detective y Architect interpretan lo encontrado
         ↓
@@ -68,7 +68,7 @@ Depende del tamaño del proyecto, pero una regla general:
 | Mediano (10 a 30 módulos) | 5 a 10 sesiones |
 | Grande (30+ módulos) | 10+ sesiones |
 
-El Archaeologist analiza un módulo por sesión a propósito, para conservar contexto. Para proyectos grandes retomarás varias veces, pero cada retomada es automática y sin pérdida de progreso.
+El Arqueologo analiza un módulo por sesión a propósito, para conservar contexto. Para proyectos grandes retomarás varias veces, pero cada retomada es automática y sin pérdida de progreso.
 
 ---
 

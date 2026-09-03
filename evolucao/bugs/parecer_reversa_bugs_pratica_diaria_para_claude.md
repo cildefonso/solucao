@@ -1,16 +1,16 @@
-# Parecer de Arquitetura para Revisão do Solução Bugs
+# Parecer de Arquitetura para Revisão da Solucao Bugs
 
 **Destinatário:** Claude  
-**Projeto:** Solução Bugs  
+**Projeto:** Solucao Bugs  
 **Objetivo:** revisar o plano atual antes de qualquer implementação  
-**Base analisada:** `Solução Bugs, Documento de Entendimento`, 15/07/2026  
+**Base analisada:** `Solucao Bugs, Documento de Entendimento`, 15/07/2026  
 **Decisão:** não implementar a versão 1.2.52 antes de incorporar e avaliar os pontos abaixo
 
 ---
 
 ## 1. Contexto
 
-O desenho atual do Solução Bugs está conceitualmente forte em quatro aspectos:
+O desenho atual da Solucao Bugs está conceitualmente forte em quatro aspectos:
 
 1. separa registro, diagnóstico, decisão e correção;
 2. trata o bug como entidade de rastreabilidade entre `SPEC ↔ CODE ↔ TEST ↔ BUG`;
@@ -39,13 +39,13 @@ Esse fluxo representa bem **como um agente entende e corrige um defeito em códi
 
 Ele ainda não representa completamente **como uma equipe moderna leva um defeito desde a descoberta até a correção comprovada no sistema real**.
 
-O objetivo desta revisão é aproximar a Solução de Bugs na prática diária de manutenção de software sem destruir sua principal virtude: a rastreabilidade causal orientada a agentes.
+O objetivo desta revisão é aproximar a Solucao de Bugs na prática diária de manutenção de software sem destruir sua principal virtude: a rastreabilidade causal orientada a agentes.
 
 ---
 
 # 2. Nova premissa central
 
-A Solução de  Bugs não deve modelar apenas um processo de **program repair**.
+A Solucao de  Bugs não deve modelar apenas um processo de **program repair**.
 
 Deve modelar o **ciclo de vida completo de um defeito**.
 
@@ -89,7 +89,7 @@ POSTMORTEM?
 
 Nem todo projeto terá todas essas etapas.
 
-A Solução deve detectar o contexto do repositório e adaptar o ciclo.
+A Solucao deve detectar o contexto do repositório e adaptar o ciclo.
 
 Exemplos:
 
@@ -281,7 +281,7 @@ estado histórico:
 38.421 pedidos armazenados com valor incorreto
 ```
 
-A Solução precisa perguntar:
+A Solucao precisa perguntar:
 
 ```text
 O sistema está corrigido daqui para frente?
@@ -908,7 +908,7 @@ delivery:
     commit: null
 ```
 
-A Solução não deve depender de GitHub.
+A Solucao não deve depender de GitHub.
 
 Detectar:
 
@@ -989,7 +989,7 @@ até a política de fechamento ser satisfeita.
 
 # 17. Adicionar observação pós-correção
 
-A Solução registra evidências do defeito.
+A Solucao registra evidências do defeito.
 
 Também precisa registrar evidências de não recorrência.
 
@@ -1145,7 +1145,7 @@ um commit ruim conhecido
 um comando reproduzível
 ```
 
-A Solução deve sugerir ou executar `git bisect` dentro das restrições de segurança definidas.
+A Solucao deve sugerir ou executar `git bisect` dentro das restrições de segurança definidas.
 
 Isso combina diretamente com a proposta de memória causal:
 
@@ -1309,7 +1309,7 @@ inspection
 other
 ```
 
-O `BUG-XXX.md` continua sendo a source of truth da Solução.
+O `BUG-XXX.md` continua sendo a source of truth da Solucao.
 
 A origem externa apenas registra de onde o defeito entrou no lifecycle.
 
@@ -1317,7 +1317,7 @@ A origem externa apenas registra de onde o defeito entrou no lifecycle.
 
 # 23. Adicionar fluxo especial para bugs de segurança
 
-A Solução não pode registrar vulnerabilidades exploráveis em artefatos públicos sem considerar confidencialidade.
+A Solucao não pode registrar vulnerabilidades exploráveis em artefatos públicos sem considerar confidencialidade.
 
 Adicionar:
 
@@ -1558,7 +1558,7 @@ large financial impact
 SLA breach
 ```
 
-A Solução já terá os dados necessários:
+A Solucao já terá os dados necessários:
 
 ```text
 BUG RECORD
@@ -1775,7 +1775,7 @@ regression test passa
 sem CI
 ```
 
-A Solução deve conseguir fechar o bug sem burocracia excessiva.
+A Solucao deve conseguir fechar o bug sem burocracia excessiva.
 
 ## Cenário B: incidente de produção
 
@@ -1835,7 +1835,7 @@ código, teste e spec discordam
 não está claro quem representa a regra correta
 ```
 
-A Solução deve poder abrir debate de `spec` e exigir decisão humana.
+A Solucao deve poder abrir debate de `spec` e exigir decisão humana.
 
 ## Cenário H: vulnerabilidade
 
@@ -1844,7 +1844,7 @@ authentication bypass
 repositório público
 ```
 
-A Solução não pode publicar detalhes exploráveis em views ou debates externos.
+A Solucao não pode publicar detalhes exploráveis em views ou debates externos.
 
 ## Cenário I: dois harnesses em worktrees
 
@@ -1883,7 +1883,7 @@ Primeiro:
 
 Não adicionar complexidade apenas por adicionar.
 
-O objetivo não é transformar a Solução de Bugs em Jira, Sentry, GitHub Actions ou uma plataforma de observabilidade.
+O objetivo não é transformar a Solucao de Bugs em Jira, Sentry, GitHub Actions ou uma plataforma de observabilidade.
 
 O objetivo é:
 
@@ -1891,7 +1891,7 @@ O objetivo é:
 
 A formulação arquitetural recomendada é:
 
-> **Solução de Bugs is a repository-native causal defect memory and orchestration layer that continuously reconciles specifications, implementation, tests, runtime evidence, delivery state, and defect history for agentic software maintenance.**
+> **Solucao de Bugs is a repository-native causal defect memory and orchestration layer that continuously reconciles specifications, implementation, tests, runtime evidence, delivery state, and defect history for agentic software maintenance.**
 
 A principal tese do projeto não deve ser:
 

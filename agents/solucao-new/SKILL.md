@@ -315,7 +315,7 @@ A retomada respeita o `mode` salvo: guiado volta a pedir CONTINUAR, expresso seg
 
 ## Regra absoluta
 
-Nunca apague, modifique ou sobrescreva arquivos pré-existentes do projeto do usuário. O Solucao escreve APENAS em `.solucao/`, `_solucao_sdd/` e, no modo expresso (estágios forward), `_solucao_forward/`. O código de aplicação criado pelo `solucao-coding` no modo expresso é sempre arquivo NOVO ou arquivo criado pelo próprio pipeline nesta execução, nunca modificação de arquivo pré-existente. Em re-execução opção 2 ou 3, só sobrescreve dentro de `_solucao_sdd/` após confirmação explícita.
+Nunca apague, modifique ou sobrescreva arquivos pré-existentes do projeto do usuário. A Solucao escreve APENAS em `.solucao/`, `_solucao_sdd/` e, no modo expresso (estágios forward), `_solucao_forward/`. O código de aplicação criado pelo `solucao-coding` no modo expresso é sempre arquivo NOVO ou arquivo criado pelo próprio pipeline nesta execução, nunca modificação de arquivo pré-existente. Em re-execução opção 2 ou 3, só sobrescreve dentro de `_solucao_sdd/` após confirmação explícita.
 
 ## Saída final
 

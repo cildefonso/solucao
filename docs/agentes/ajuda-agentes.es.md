@@ -3,7 +3,7 @@
 ¿No sabes qué agente llamar? Activa la guía:
 
 ```
-/solucao-agents-help
+/solucao-ajuda-agentes
 ```
 
 ---
@@ -17,7 +17,7 @@
 | Implementar o evolucionar código desde las specs | `/solucao-forward` | Code Forward Agents |
 | Planificar la migración de un legado | `/solucao-migrate` | Migration Agents |
 | Generar un mini-sitio visual de documentación | `/solucao-docs` | Documentation Agents |
-| Elegir el agente adecuado | `/solucao-agents-help` | Guía de agentes |
+| Elegir el agente adecuado | `/solucao-ajuda-agentes` | Guía de agentes |
 
 Pricing y Translators usan comandos especializados: `/solucao-pricing-profile`, `/solucao-pricing-size`, `/solucao-pricing-estimate` y `/solucao-n8n`.
 
@@ -47,11 +47,11 @@ El agente hace el primer tour de la propiedad. No abre cajones, no lee documento
 
 ---
 
-### ⛏️ Archaeologist: el excavador
+### ⛏️ Arqueologo: el excavador
 
 El arqueólogo excava el terreno con paciencia, capa a capa. Cataloga cada artefacto encontrado: tamaño, material, ubicación, forma. No interpreta la civilización, solo describe con precisión lo que hay.
 
-> Usa el Archaeologist para analizar el código módulo a módulo. Corre un módulo por sesión para conservar tokens.
+> Usa el Arqueologo para analizar el código módulo a módulo. Corre un módulo por sesión para conservar tokens.
 
 ---
 
@@ -59,7 +59,7 @@ El arqueólogo excava el terreno con paciencia, capa a capa. Cataloga cada artef
 
 Sherlock Holmes llega después del arqueólogo. Mira los artefactos catalogados y pregunta: *"¿Por qué está esto aquí? ¿Quién lo puso? ¿Qué revela sobre quién vivió aquí?"* No excava, interpreta.
 
-> Usa el Detective después del Archaeologist. Extrae reglas de negocio implícitas, lee el historial de git como un diario y reconstruye decisiones que nadie documentó.
+> Usa el Detective después del Arqueologo. Extrae reglas de negocio implícitas, lee el historial de git como un diario y reconstruye decisiones que nadie documentó.
 
 ---
 
@@ -119,7 +119,7 @@ Proyecto nuevo:    /solucao-new → PRD y specs → /solucao-forward
 Migración:         /solucao → /solucao-migrate → /solucao-forward
 
 Pipeline heredado manual:
-Scout → Archaeologist (N sesiones) → Detective → Architect → Writer → Reviewer
+Scout → Arqueologo (N sesiones) → Detective → Architect → Writer → Reviewer
 
 Opcionales en cualquier fase:
 Visor · Data Master · Design System · Solucao Docs

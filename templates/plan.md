@@ -18,7 +18,7 @@
 
 ## Fase 2: Escavação 🏗️
 
-> O Solucao preenche esta seção com os módulos reais após o Scout concluir o reconhecimento.
+> A Solucao preenche esta seção com os módulos reais após o Scout concluir o reconhecimento.
 
 - [ ] **Arqueólogo** — Análise dos módulos identificados pelo Scout
 

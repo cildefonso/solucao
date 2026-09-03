@@ -1,6 +1,6 @@
 # Schema — .solucao/state.json
 
-Este arquivo persiste o estado completo da análise entre sessões. O Solucao lê e escreve neste arquivo.
+Este arquivo persiste o estado completo da análise entre sessões. A Solucao lê e escreve neste arquivo.
 
 ## Estrutura completa
 
@@ -18,7 +18,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Solucao l�
   "completed": ["reconhecimento"],
   "pending": ["escavacao", "interpretacao", "geracao", "revisao"],
   "engines": ["claude-code"],
-  "agents": ["solucao", "solucao-scout", "solucao-archaeologist"],
+  "agents": ["solucao", "solucao-scout", "solucao-arqueologo"],
   "checkpoints": {
     "scout": {
       "completed_at": "2026-04-26T10:00:00Z",
@@ -28,7 +28,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Solucao l�
         ".solucao/context/surface.json"
       ]
     },
-    "archaeologist": {
+    "arqueologo": {
       "completed_at": "2026-04-26T11:00:00Z",
       "modules_analyzed": ["auth", "orders", "payments"],
       "files": [
@@ -51,7 +51,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Solucao l�
 
 | Campo | Tipo | Descrição |
 |-------|------|-----------|
-| `version` | string | Versão do Solucao instalada |
+| `version` | string | Versão da Solucao instalada |
 | `project` | string | Nome do projeto legado |
 | `user_name` | string | Nome do usuário (para interações) |
 | `chat_language` | string | Idioma das interações (ex: pt-br, en-us) |
@@ -65,7 +65,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Solucao l�
 | `checkpoints` | object | Registro de conclusão de cada agente |
 | `engines` | string[] | Engines configuradas (ex: `["claude-code", "codex"]`) |
 | `agents` | string[] | Agentes instalados |
-| `created_files` | string[] | Todos os arquivos criados pelo Solucao (para uninstall seguro) |
+| `created_files` | string[] | Todos os arquivos criados pela Solucao (para uninstall seguro) |
 
 ## Fases válidas
 

@@ -29,7 +29,7 @@ Só mexe no que é da feature ativa. Fora disso, `/solucao-requirements`.
 
 O `/solucao-sync` aborta quando falta `legacy-impact.md`, e exibe menu quando acha ação `[ ]` aberta no `actions.md`. Sem esses três arquivos, o que o `/solucao-add` fizer nunca converge para `_solucao_sdd/addenda/` e a extração deriva em silêncio.
 
-## O que precisa mudar no Solução
+## O que precisa mudar na Solucao
 
 - `specs/solucao-forward/01-comandos-forward.md`: catálogo, regra do conjunto fixo de comandos, RFs
 - `specs/solucao-forward/03-estrutura-saidas.md`: tabela de dono e atualizador dos artefatos, `requirements.md` e `actions.md` ganham um segundo atualizador

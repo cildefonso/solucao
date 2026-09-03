@@ -27,7 +27,7 @@ Las tablas siguientes detallan los agentes que componen el Team **Solucao Agents
 |--------|------|----------|---------|
 | [Solucao](solucao.md) | Orquestación | El director de orquesta | Coordina todos los agentes, guarda checkpoints, guía al usuario |
 | [Scout](scout.md) | Reconocimiento | El agente inmobiliario | Mapea la superficie: carpetas, lenguajes, frameworks, dependencias |
-| [Archaeologist](arqueologo.md) | Excavación | El excavador | Análisis profundo módulo a módulo: algoritmos, flujos, estructuras de datos |
+| [Arqueologo](arqueologo.md) | Excavación | El excavador | Análisis profundo módulo a módulo: algoritmos, flujos, estructuras de datos |
 | [Detective](detetive.md) | Interpretación | Sherlock Holmes | Extrae reglas de negocio implícitas, ADRs, máquinas de estado, permisos |
 | [Architect](arquiteto.md) | Interpretación | El cartógrafo | Sintetiza todo en diagramas C4, ERD y mapa de integraciones |
 | [Writer](redator.md) | Generación | El notario | Genera specs SDD, OpenAPI y user stories con trazabilidad de código |
@@ -61,7 +61,7 @@ Use cuando el "código" heredado no sea código fuente, sino un artefacto estruc
 /solucao → orquesta todo automáticamente
 
 O manualmente:
-Scout → Archaeologist (N sesiones) → Detective → Architect → Writer → Reviewer
+Scout → Arqueologo (N sesiones) → Detective → Architect → Writer → Reviewer
 
 Opcionales en cualquier fase:
 Visor · Data Master · Design System

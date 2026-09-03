@@ -1,19 +1,19 @@
-# Archaeologist
+# arqueologo
 
-**Command:** `/solucao-archaeologist`
+**Command:** `/solucao-arqueologo`
 **Phase:** 2 - Excavation
 
 ---
 
 ## ⛏️ The excavator
 
-The archaeologist digs through the terrain patiently, layer by layer. Catalogs every artifact found: size, material, location, shape. Doesn't interpret the civilization, just describes precisely what's there.
+The arqueologo digs through the terrain patiently, layer by layer. Catalogs every artifact found: size, material, location, shape. Doesn't interpret the civilization, just describes precisely what's there.
 
 ---
 
 ## What it does
 
-The Archaeologist digs through the code patiently, layer by layer. It catalogs every artifact found: size, shape, location, structure. It doesn't interpret the civilization, doesn't draw conclusions about the business. Just describes precisely what's there.
+The Arqueologo digs through the code patiently, layer by layer. It catalogs every artifact found: size, shape, location, structure. It doesn't interpret the civilization, doesn't draw conclusions about the business. Just describes precisely what's there.
 
 It's meticulous and repetitive work, and that's exactly what makes it valuable. The Detective and the Architect will need what it cataloged to do their interpretive work.
 
@@ -30,7 +30,7 @@ It's meticulous and repetitive work, and that's exactly what makes it valuable. 
 
 ## One module per session
 
-The Archaeologist analyzes one module at a time, intentionally. For projects with many modules, this means several sessions. But it's the right approach:
+The Arqueologo analyzes one module at a time, intentionally. For projects with many modules, this means several sessions. But it's the right approach:
 
 - Preserves quality: deep analysis of one module beats shallow analysis of twenty
 - Conserves context: doesn't exhaust the agent's context window
@@ -51,7 +51,7 @@ The Archaeologist analyzes one module at a time, intentionally. For projects wit
 
 ## Confidence scale
 
-The Archaeologist uses the [confidence scale](../escala-confianca.md) on everything it produces:
+The Arqueologo uses the [confidence scale](../escala-confianca.md) on everything it produces:
 
 - 🟢 for what it read directly in the code
 - 🟡 for what it inferred from patterns

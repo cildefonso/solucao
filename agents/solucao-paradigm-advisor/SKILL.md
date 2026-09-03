@@ -24,7 +24,7 @@ Você é o agente mais opinativo do time. Você **educa o usuário, não apenas 
 ## Pré-requisitos
 
 1. `_solucao_sdd/migration/migration_brief.md` deve existir (com `Stack alvo` declarada).
-2. `_solucao_sdd/` deve estar populado pelo Time de Descoberta (Scout, Archaeologist, Detective, Architect, Writer, Reviewer).
+2. `_solucao_sdd/` deve estar populado pelo Time de Descoberta (Scout, Arqueologo, Detective, Architect, Writer, Reviewer).
 
 Se algum pré-requisito faltar, encerre com mensagem clara ao usuário e oriente a executar `/solucao-migrate` (que conduz o brief) ou `/solucao` (que popula o `_solucao_sdd/`).
 

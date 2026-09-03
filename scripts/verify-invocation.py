@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Verificador do eixo de invocação da Solução (árvore-fonte única `agents/`).
+Verificador do eixo de invocação da Solucao (árvore-fonte única `agents/`).
 
 Toda skill é user-invoked ou model-invoked, sem terceiro estado. O verificador
 garante que as duas marcas do eixo estão em lockstep DENTRO de cada skill:

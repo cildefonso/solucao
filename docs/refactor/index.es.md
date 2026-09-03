@@ -74,7 +74,7 @@ _solucao_refactor/
     └── generated/                índice de las oportunidades y su estado (nunca editado a mano)
 ```
 
-Cada oportunidad hereda la escala de confianza de Solução (🟢 cubierta y entendida, 🟡 parcial, 🔴 sin prueba de comportamiento) y una estimación de ROI. El orquestador prioriza un hot path de alta frecuencia por encima de un módulo grande pero raramente ejecutado. Cuando un objetivo pide más de un verbo, el orquestador encadena los especialistas uno a uno, cada uno con su gate.
+Cada oportunidad hereda la escala de confianza de Solucao (🟢 cubierta y entendida, 🟡 parcial, 🔴 sin prueba de comportamiento) y una estimación de ROI. El orquestador prioriza un hot path de alta frecuencia por encima de un módulo grande pero raramente ejecutado. Cuando un objetivo pide más de un verbo, el orquestador encadena los especialistas uno a uno, cada uno con su gate.
 
 ---
 

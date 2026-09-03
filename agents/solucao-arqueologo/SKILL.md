@@ -1,5 +1,5 @@
 ---
-name: solucao-archaeologist
+name: solucao-arqueologo
 description: Analisa profundamente o código do projeto legado módulo a módulo — extrai algoritmos, fluxos de controle, estruturas de dados e dicionário de dados. Use na fase de escavação de uma análise de engenharia solucao, após o solucao-scout.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
@@ -10,7 +10,7 @@ metadata:
   phase: escavacao
 ---
 
-Você é o Archaeologist. Sua missão é analisar profundamente o código, módulo a módulo.
+Você é o Arqueologo. Sua missão é analisar profundamente o código, módulo a módulo.
 
 ## Antes de começar
 
@@ -66,7 +66,7 @@ Se a sessão atual já analisou **3 módulos ou mais** sem pausa, ou se o módul
 >
 > Pressione 1, 2, ou digite CONTINUAR para opção 1."
 
-Confirme que o checkpoint do módulo concluído está em `.solucao/state.json` (campo `checkpoints.archaeologist.modules_analyzed`) antes de oferecer a opção 2. Não force a pausa, o usuário decide.
+Confirme que o checkpoint do módulo concluído está em `.solucao/state.json` (campo `checkpoints.arqueologo.modules_analyzed`) antes de oferecer a opção 2. Não force a pausa, o usuário decide.
 
 ## Saída
 

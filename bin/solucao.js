@@ -46,6 +46,7 @@ if (!command || command === '--help' || command === '-h') {
     /solucao-forward  Implementa ou evolui código a partir das specs
     /solucao-migrate  Planeja a migração de um sistema legado
     /solucao-docs     Gera o mini-site visual da documentação
+    /solucao-relatorio-seguranca  Auditoria de segurança com relatório PDF
 
   Documentação: https://github.com/cildefonso/solucao
   `);

@@ -3,7 +3,7 @@
 Não sabe qual agente chamar? Ativa o guia:
 
 ```
-/solucao-agents-help
+/solucao-ajuda-agentes
 ```
 
 Ele explica cada agente com uma analogia do mundo real. Mas já que você está aqui, aqui vai o resumo completo:
@@ -19,7 +19,7 @@ Ele explica cada agente com uma analogia do mundo real. Mas já que você está 
 | Implementar ou evoluir código a partir das specs | `/solucao-forward` | Code Forward Agents |
 | Planejar a migração de um legado | `/solucao-migrate` | Migration Agents |
 | Gerar um mini-site visual da documentação | `/solucao-docs` | Documentation Agents |
-| Entender qual agente usar | `/solucao-agents-help` | Guia de agentes |
+| Entender qual agente usar | `/solucao-ajuda-agentes` | Guia de agentes |
 
 Os times de Pricing e Translators usam comandos especializados: `/solucao-pricing-profile`, `/solucao-pricing-size`, `/solucao-pricing-estimate` e `/solucao-n8n`.
 
@@ -49,11 +49,11 @@ O corretor faz o primeiro tour no imóvel. Não abre gavetas, não lê documento
 
 ---
 
-### ⛏️ Archaeologist: o escavador
+### ⛏️ Arqueologo: o escavador
 
 O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada artefato encontrado: tamanho, material, localização, forma. Ele não interpreta a civilização, só descreve com precisão o que está lá.
 
-> Use o Archaeologist para analisar o código módulo a módulo. Roda um módulo por sessão para economizar tokens.
+> Use o Arqueologo para analisar o código módulo a módulo. Roda um módulo por sessão para economizar tokens.
 
 ---
 
@@ -61,7 +61,7 @@ O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada 
 
 Sherlock Holmes chega depois do arqueólogo. Olha para os artefatos catalogados e pergunta: *"Mas por que isso está aqui? Quem colocou? O que isso revela sobre quem viveu aqui?"* Ele não escava. Ele interpreta.
 
-> Use o Detective após o Archaeologist. Ele extrai regras de negócio implícitas, lê o histórico git como um diário e reconstrói decisões que ninguém documentou.
+> Use o Detective após o Arqueologo. Ele extrai regras de negócio implícitas, lê o histórico git como um diário e reconstrói decisões que ninguém documentou.
 
 ---
 
@@ -121,7 +121,7 @@ Projeto novo:   /solucao-new → PRD e specs → /solucao-forward
 Migração:       /solucao → /solucao-migrate → /solucao-forward
 
 Pipeline legado manual:
-Scout → Archaeologist (N sessões) → Detective → Architect → Writer → Reviewer
+Scout → Arqueologo (N sessões) → Detective → Architect → Writer → Reviewer
 
 Opcionais em qualquer fase:
 Visor · Data Master · Design System · Solucao Docs

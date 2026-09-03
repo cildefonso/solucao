@@ -15,7 +15,7 @@ Solucao guarda toda su configuración y estado del análisis dentro de la carpet
 ├── version             ← versión instalada de Solucao
 ├── context/
 │   ├── surface.json    ← datos generados por Scout
-│   └── modules.json    ← datos generados por Archaeologist
+│   └── modules.json    ← datos generados por Arqueologo
 └── _config/
     ├── manifest.yaml           ← metadatos de la instalación
     └── files-manifest.json     ← hashes SHA-256 para updates seguros
@@ -31,7 +31,7 @@ name = "mi-proyecto"
 language = "es"
 
 [agents]
-installed = ["solucao", "scout", "archaeologist", "detective", "architect", "writer", "reviewer"]
+installed = ["solucao", "scout", "arqueologo", "detective", "architect", "writer", "reviewer"]
 
 [output]
 folder = "_solucao_sdd"

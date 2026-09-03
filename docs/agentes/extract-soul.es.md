@@ -13,7 +13,7 @@ El biógrafo exprés visita al personaje, lee las anotaciones del agente inmobil
 
 ## Qué hace
 
-El Soul Extractor es deliberadamente liviano. NO excava módulo por módulo (eso lo hace el Archaeologist), NO reconstruye reglas de negocio (eso lo hace el Detective), NO dibuja C4 completo (eso lo hace el Architect). La entrega es UNA única Spec, ejecutiva, que da al lector la comprensión esencial del proyecto en una lectura.
+El Soul Extractor es deliberadamente liviano. NO excava módulo por módulo (eso lo hace el Arqueologo), NO reconstruye reglas de negocio (eso lo hace el Detective), NO dibuja C4 completo (eso lo hace el Architect). La entrega es UNA única Spec, ejecutiva, que da al lector la comprensión esencial del proyecto en una lectura.
 
 La síntesis cubre tres cosas:
 
@@ -68,4 +68,4 @@ Justo después del Scout, cuando quieras una síntesis ejecutiva del sistema ant
 /solucao-extract-soul
 ```
 
-También puedes ejecutarlo en cualquier momento después de que Scout haya corrido, incluso si Archaeologist, Detective y los demás ya produjeron sus artefactos. El Soul Extractor permanece consistente con el mapeo de superficie actual.
+También puedes ejecutarlo en cualquier momento después de que Scout haya corrido, incluso si Arqueologo, Detective y los demás ya produjeron sus artefactos. El Soul Extractor permanece consistente con el mapeo de superficie actual.

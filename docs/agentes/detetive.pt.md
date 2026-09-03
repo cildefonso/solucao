@@ -13,7 +13,7 @@ Sherlock Holmes chega depois do arqueólogo. Olha para os artefatos catalogados 
 
 ## O que faz
 
-O Detective chega depois do Archaeologist. Olha para tudo que foi catalogado e pergunta: *"Mas por que isso está aqui? Quem colocou isso? O que isso revela sobre quem construiu esse sistema?"*
+O Detective chega depois do Arqueologo. Olha para tudo que foi catalogado e pergunta: *"Mas por que isso está aqui? Quem colocou isso? O que isso revela sobre quem construiu esse sistema?"*
 
 Ele não escava mais código. Ele interpreta o que foi escavado. É o especialista em extrair o conhecimento tácito que nunca foi documentado: as regras de negócio que vivem em condicionais, as decisões arquiteturais que só existem no histórico git, as restrições que aparecem em validações sem comentário nenhum.
 

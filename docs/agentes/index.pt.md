@@ -1,6 +1,6 @@
 # Agentes
 
-O Solucao coordena **8 Teams especializados** de agentes. Cada agente faz uma coisa só e faz bem; cada Team agrupa os agentes em torno de uma fase do trabalho.
+A Solucao coordena **8 Teams especializados** de agentes. Cada agente faz uma coisa só e faz bem; cada Team agrupa os agentes em torno de uma fase do trabalho.
 
 O orquestrador central (o próprio Solucao) coordena quem entra quando, em que ordem e em que ritmo. Mas você também pode acionar qualquer agente diretamente quando precisar.
 
@@ -31,7 +31,7 @@ Esses fazem parte do pipeline principal. O orquestrador os executa na sequência
 |--------|------|----------|--------|
 | [Solucao](solucao.md) | Orquestração | O regente de orquestra | Coordena todos os agentes, salva checkpoints e guia o usuário |
 | [Scout](scout.md) | Reconhecimento | O corretor de imóveis | Mapeia a superfície: pastas, linguagens, frameworks, dependências, entry points |
-| [Archaeologist](arqueologo.md) | Escavação | O escavador | Análise profunda módulo a módulo: algoritmos, fluxos, estruturas de dados |
+| [Arqueologo](arqueologo.md) | Escavação | O escavador | Análise profunda módulo a módulo: algoritmos, fluxos, estruturas de dados |
 | [Detective](detetive.md) | Interpretação | Sherlock Holmes | Extrai regras de negócio implícitas, ADRs, máquinas de estado, permissões |
 | [Architect](arquiteto.md) | Interpretação | O cartógrafo | Sintetiza tudo em diagramas C4, ERD e mapa de integrações |
 | [Writer](redator.md) | Geração | O tabelião | Gera specs SDD, OpenAPI e user stories com rastreabilidade de código |
@@ -68,7 +68,7 @@ Use quando o "código" legado não for código-fonte, e sim um artefato estrutur
 
 Ou manualmente, se preferir controlar cada passo:
 
-Scout → Archaeologist (N sessões) → Detective → Architect → Writer → Reviewer
+Scout → Arqueologo (N sessões) → Detective → Architect → Writer → Reviewer
 
 Opcionais em qualquer fase:
 Visor · Data Master · Design System

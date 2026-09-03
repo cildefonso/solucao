@@ -66,7 +66,7 @@ Para cada módulo `M` em `surface.json.modules`, crie a pasta `<output_folder>/<
 | `flows.md` | A unit tem 2+ fluxos distintos não cobertos no `design.md` |
 | `edge-cases.md` | `doc_level` = `detalhado`, com pelo menos 2 casos extremos por unit |
 | `decisions.md` | A unit tem decisões arquiteturais explícitas (ADR-style) que mereçam registro |
-| `legacy-mapping.md` | Útil para `module`, mas o Archaeologist é quem normalmente preenche |
+| `legacy-mapping.md` | Útil para `module`, mas o Arqueologo é quem normalmente preenche |
 | `questions.md` | A unit tem 🔴 lacunas que dependem de validação humana |
 
 `tests.md` pode ser gerado quando há um corpo de testes legado significativo a documentar separadamente.

@@ -1,6 +1,6 @@
 # Configuração
 
-O Solucao guarda toda a sua configuração e estado da análise dentro da pasta `.solucao/` na raiz do projeto. Você pode abrir e editar os arquivos quando quiser.
+A Solucao guarda toda a sua configuração e estado da análise dentro da pasta `.solucao/` na raiz do projeto. Você pode abrir e editar os arquivos quando quiser.
 
 ---
 
@@ -15,7 +15,7 @@ O Solucao guarda toda a sua configuração e estado da análise dentro da pasta 
 ├── version             ← versão instalada do Solucao
 ├── context/
 │   ├── surface.json    ← dados gerados pelo Scout
-│   └── modules.json    ← dados gerados pelo Archaeologist
+│   └── modules.json    ← dados gerados pelo Arqueologo
 └── _config/
     ├── manifest.yaml           ← metadados da instalação
     └── files-manifest.json     ← hashes SHA-256 para updates seguros
@@ -33,7 +33,7 @@ name = "meu-projeto"
 language = "pt-br"
 
 [agents]
-installed = ["solucao", "scout", "archaeologist", "detective", "architect", "writer", "reviewer"]
+installed = ["solucao", "scout", "arqueologo", "detective", "architect", "writer", "reviewer"]
 
 [output]
 folder = "_solucao_sdd"
@@ -63,9 +63,9 @@ answer_mode = "chat"  # "chat" ou "file"
 
 ## `plan.md`: plano de exploração
 
-O Solucao gera esse arquivo na primeira sessão, depois de conversar com você sobre o projeto. Ele lista as tarefas da análise em ordem.
+A Solucao gera esse arquivo na primeira sessão, depois de conversar com você sobre o projeto. Ele lista as tarefas da análise em ordem.
 
-Você pode editá-lo diretamente: reordenar tarefas, remover módulos que não quer analisar, adicionar notas. O Solucao vai respeitar o que estiver aqui quando retomar a análise.
+Você pode editá-lo diretamente: reordenar tarefas, remover módulos que não quer analisar, adicionar notas. A Solucao vai respeitar o que estiver aqui quando retomar a análise.
 
 ---
 

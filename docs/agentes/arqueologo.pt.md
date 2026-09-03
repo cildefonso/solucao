@@ -1,6 +1,6 @@
-# Archaeologist
+# Arqueologo
 
-**Comando:** `/solucao-archaeologist`
+**Comando:** `/solucao-arqueologo`
 **Fase:** 2 - Escavação
 
 ---
@@ -13,7 +13,7 @@ O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada 
 
 ## O que faz
 
-O Archaeologist escava o código com paciência, camada por camada. Cataloga cada artefato encontrado: tamanho, forma, localização, estrutura. Ele não interpreta a civilização, não tira conclusões sobre o negócio. Só descreve com precisão o que está lá.
+O Arqueologo escava o código com paciência, camada por camada. Cataloga cada artefato encontrado: tamanho, forma, localização, estrutura. Ele não interpreta a civilização, não tira conclusões sobre o negócio. Só descreve com precisão o que está lá.
 
 É um trabalho meticuloso e repetitivo, e isso é exatamente o que o torna valioso. O Detective e o Architect vão precisar do que ele catalogou para fazer o trabalho interpretativo.
 
@@ -30,7 +30,7 @@ O Archaeologist escava o código com paciência, camada por camada. Cataloga cad
 
 ## Um módulo por sessão
 
-O Archaeologist analisa um módulo por vez, de propósito. Para projetos com muitos módulos, isso significa várias sessões. Mas é a abordagem certa:
+O Arqueologo analisa um módulo por vez, de propósito. Para projetos com muitos módulos, isso significa várias sessões. Mas é a abordagem certa:
 
 - Preserva qualidade: análise profunda de um módulo é melhor que análise rasa de vinte
 - Conserva contexto: não esgota a janela de contexto do agente
@@ -51,7 +51,7 @@ O Archaeologist analisa um módulo por vez, de propósito. Para projetos com mui
 
 ## Escala de confiança
 
-O Archaeologist usa a [escala de confiança](../escala-confianca.md) em tudo que produz:
+O Arqueologo usa a [escala de confiança](../escala-confianca.md) em tudo que produz:
 
 - 🟢 para o que ele leu diretamente no código
 - 🟡 para o que ele inferiu de padrões

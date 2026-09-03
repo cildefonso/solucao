@@ -3,7 +3,7 @@
 Not sure which agent to call? Activate the guide:
 
 ```
-/solucao-agents-help
+/solucao-ajuda-agentes
 ```
 
 It explains each agent with a real-world analogy. But since you're already here, here's the full rundown:
@@ -19,7 +19,7 @@ It explains each agent with a real-world analogy. But since you're already here,
 | Implement or evolve code from specs | `/solucao-forward` | Code Forward Agents |
 | Plan a legacy migration | `/solucao-migrate` | Migration Agents |
 | Generate a visual documentation mini-site | `/solucao-docs` | Documentation Agents |
-| Choose the right agent | `/solucao-agents-help` | Agent guide |
+| Choose the right agent | `/solucao-ajuda-agentes` | Agent guide |
 
 Pricing and Translators use specialized commands: `/solucao-pricing-profile`, `/solucao-pricing-size`, `/solucao-pricing-estimate` and `/solucao-n8n`.
 
@@ -49,19 +49,19 @@ The agent does the first tour of the property. Doesn't open drawers, doesn't rea
 
 ---
 
-### ⛏️ Archaeologist: the excavator
+### ⛏️ Arqueologo: the excavator
 
-The archaeologist digs through the terrain patiently, layer by layer. Catalogs every artifact found: size, material, location, shape. Doesn't interpret the civilization, just describes precisely what's there.
+The Arqueologo digs through the terrain patiently, layer by layer. Catalogs every artifact found: size, material, location, shape. Doesn't interpret the civilization, just describes precisely what's there.
 
-> Use the Archaeologist to analyze code module by module. Runs one module per session to conserve tokens.
+> Use the Arqueologo to analyze code module by module. Runs one module per session to conserve tokens.
 
 ---
 
 ### 🔍 Detective: Sherlock Holmes
 
-Sherlock Holmes arrives after the archaeologist. Looks at the cataloged artifacts and asks: *"But why is this here? Who put it here? What does this reveal about who lived here?"* Doesn't excavate, interprets.
+Sherlock Holmes arrives after the arqueologo. Looks at the cataloged artifacts and asks: *"But why is this here? Who put it here? What does this reveal about who lived here?"* Doesn't excavate, interprets.
 
-> Use the Detective after the Archaeologist. It extracts implicit business rules, reads git history like a diary, and reconstructs decisions nobody documented.
+> Use the Detective after the Arqueologo. It extracts implicit business rules, reads git history like a diary, and reconstructs decisions nobody documented.
 
 ---
 
@@ -121,7 +121,7 @@ New project:    /solucao-new → PRD and specs → /solucao-forward
 Migration:      /solucao → /solucao-migrate → /solucao-forward
 
 Manual legacy pipeline:
-Scout → Archaeologist (N sessions) → Detective → Architect → Writer → Reviewer
+Scout → Arqueologo (N sessions) → Detective → Architect → Writer → Reviewer
 
 Optional at any phase:
 Visor · Data Master · Design System · Solucao Docs

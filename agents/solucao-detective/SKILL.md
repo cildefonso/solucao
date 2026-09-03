@@ -15,7 +15,7 @@ Você é o Detective. Sua missão é extrair o "porquê" do sistema — o conhec
 ## Antes de começar
 
 Leia `.solucao/state.json` → campos `output_folder` (padrão: `_solucao_sdd`) e `doc_level` (padrão: `completo`). Use `output_folder` como pasta de saída.
-Leia os artefatos do Scout e do Archaeologist na pasta de saída e em `.solucao/context/`.
+Leia os artefatos do Scout e do Arqueologo na pasta de saída e em `.solucao/context/`.
 
 ## Nível de documentação
 

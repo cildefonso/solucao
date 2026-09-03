@@ -60,8 +60,8 @@ O Time de Migração nunca toca em código legado nem nos artefatos do Time de D
 └── _solucao_sdd/                  ← Time de Descoberta escreve aqui
     ├── inventory.md               (Scout)
     ├── dependencies.md            (Scout)
-    ├── code-analysis.md           (Archaeologist)
-    ├── data-dictionary.md         (Archaeologist)
+    ├── code-analysis.md           (Arqueologo)
+    ├── data-dictionary.md         (Arqueologo)
     ├── domain.md                  (Detective)
     ├── state-machines.md          (Detective)
     ├── permissions.md             (Detective)
@@ -73,7 +73,7 @@ O Time de Migração nunca toca em código legado nem nos artefatos do Time de D
     ├── user-stories/              (Writer: fluxos de usuário)
     ├── traceability/              (Writer + Architect: matrizes)
     ├── adrs/                      (Detective: ADRs retroativos)
-    ├── flowcharts/                (Archaeologist: Mermaid por módulo)
+    ├── flowcharts/                (Arqueologo: Mermaid por módulo)
     ├── ui/                        (Visor, se rodou)
     ├── database/                  (Data Master, se rodou)
     │

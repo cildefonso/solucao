@@ -60,8 +60,8 @@ The Migration Team never touches legacy code or Discovery Team artifacts. Every 
 └── _solucao_sdd/                  ← Discovery Team writes here
     ├── inventory.md               (Scout)
     ├── dependencies.md            (Scout)
-    ├── code-analysis.md           (Archaeologist)
-    ├── data-dictionary.md         (Archaeologist)
+    ├── code-analysis.md           (Arqueologo)
+    ├── data-dictionary.md         (Arqueologo)
     ├── domain.md                  (Detective)
     ├── state-machines.md          (Detective)
     ├── permissions.md             (Detective)
@@ -73,7 +73,7 @@ The Migration Team never touches legacy code or Discovery Team artifacts. Every 
     ├── user-stories/              (Writer: user flows)
     ├── traceability/              (Writer + Architect: matrices)
     ├── adrs/                      (Detective: retroactive ADRs)
-    ├── flowcharts/                (Archaeologist: Mermaid per module)
+    ├── flowcharts/                (Arqueologo: Mermaid per module)
     ├── ui/                        (Visor, if it ran)
     ├── database/                  (Data Master, if it ran)
     │

@@ -16,13 +16,13 @@ Após instalar, abra o projeto no seu agente de IA e ative o Solucao:
     solucao
     ```
 
-É só isso. O Solucao assume o controle e coordena toda a análise a partir daí.
+É só isso. A Solucao assume o controle e coordena toda a análise a partir daí.
 
 ---
 
 ## O que acontece quando você ativa
 
-O Solucao verifica se existe uma análise em andamento:
+A Solucao verifica se existe uma análise em andamento:
 
 **Primeira vez:** ele cria um plano de exploração personalizado para o seu projeto, apresenta ao usuário para aprovação e começa a análise pela fase 1.
 
@@ -43,7 +43,7 @@ Scout mapeia a superfície do projeto
         ↓
 Solucao apresenta o resumo do Scout e você escolhe o nível de documentação
         ↓
-Archaeologist analisa módulo por módulo
+Arqueologo analisa módulo por módulo
         ↓
 Detective e Architect interpretam o que foi encontrado
         ↓
@@ -68,7 +68,7 @@ Depende do tamanho do projeto, mas uma regra geral:
 | Médio (10 a 30 módulos) | 5 a 10 sessões |
 | Grande (30+ módulos) | 10+ sessões |
 
-O Archaeologist analisa um módulo por sessão para economizar contexto. Para projetos grandes, você vai retomar várias vezes, mas cada retomada é automática e sem perda de progresso.
+O Arqueologo analisa um módulo por sessão para economizar contexto. Para projetos grandes, você vai retomar várias vezes, mas cada retomada é automática e sem perda de progresso.
 
 ---
 

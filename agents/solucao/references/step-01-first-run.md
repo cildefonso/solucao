@@ -27,7 +27,7 @@ Consulte `references/state-schema.md` para o schema completo.
 
 Com `user_name` e `project` em mãos (seja do state.json ou coletados agora), diga:
 
-> "Olá, [Nome]! Sou o Solucao
+> "Olá, [Nome]! Sou a Solucao
 >
 > Vou coordenar a análise completa do **[nome do projeto]** e gerar especificações executáveis — prontas para uso por agentes de IA.
 >

@@ -9,7 +9,7 @@ Solucao transforms a legacy system into executable specifications in 5 phases. E
 ```
 Phase 1         Phase 2       Phase 3              Phase 4       Phase 5
 Reconnaissance  Excavation    Interpretation       Generation    Review
-   Scout        Archaeologist  Detective            Writer        Reviewer
+   Scout        Arqueologo  Detective            Writer        Reviewer
                                Architect
 ```
 
@@ -37,11 +37,11 @@ This is also when Solucao presents the Scout summary and asks for the **document
 
 ## Phase 2: Excavation
 
-**Agent:** Archaeologist
+**Agent:** Arqueologo
 
-The Archaeologist digs through the code module by module. With patience and precision, it catalogs every artifact: functions, algorithms, data structures, control flows. No interpretation or judgment. Just a precise description of what's there.
+The Arqueologo digs through the code module by module. With patience and precision, it catalogs every artifact: functions, algorithms, data structures, control flows. No interpretation or judgment. Just a precise description of what's there.
 
-**Important:** the Archaeologist runs one module per session, intentionally. Large projects have many modules, and trying to analyze everything at once burns context and reduces analysis quality.
+**Important:** the Arqueologo runs one module per session, intentionally. Large projects have many modules, and trying to analyze everything at once burns context and reduces analysis quality.
 
 What it produces:
 
@@ -58,7 +58,7 @@ What it produces:
 
 Here the analysis stops being descriptive and becomes interpretive. Two agents work in this phase.
 
-**The Detective** is the team's Sherlock Holmes. Looks at what the Archaeologist cataloged and asks: *"But why is this here? Who made this decision? What does the git history reveal?"* Extracts implicit business rules, retroactive ADRs, state machines, and permission matrices.
+**The Detective** is the team's Sherlock Holmes. Looks at what the Arqueologo cataloged and asks: *"But why is this here? Who made this decision? What does the git history reveal?"* Extracts implicit business rules, retroactive ADRs, state machines, and permission matrices.
 
 **The Architect** is the cartographer. Synthesizes everything into formal architectural documentation: C4 diagrams at all three levels (Context, Containers, Components), full ERD, integration map, and technical debt.
 

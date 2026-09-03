@@ -1,6 +1,6 @@
 # Engines suportadas
 
-O Solucao funciona com as principais engines de IA do mercado. O instalador detecta automaticamente quais estão presentes no ambiente, mas você pode adicionar mais a qualquer momento com `npx solucao add-engine`.
+A Solucao funciona com as principais engines de IA do mercado. O instalador detecta automaticamente quais estão presentes no ambiente, mas você pode adicionar mais a qualquer momento com `npx solucao add-engine`.
 
 ---
 
@@ -26,7 +26,7 @@ O Solucao funciona com as principais engines de IA do mercado. O instalador dete
 
 ## Claude Code
 
-A engine mais testada e com melhor suporte. Usa slash commands nativos, o que torna a ativação intuitiva. O Solucao cria os arquivos em `.claude/skills/` e em `.agents/skills/` (para compatibilidade com outras engines que possam ser adicionadas depois).
+A engine mais testada e com melhor suporte. Usa slash commands nativos, o que torna a ativação intuitiva. A Solucao cria os arquivos em `.claude/skills/` e em `.agents/skills/` (para compatibilidade com outras engines que possam ser adicionadas depois).
 
 ---
 

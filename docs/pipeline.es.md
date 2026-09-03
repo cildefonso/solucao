@@ -9,7 +9,7 @@ Solucao transforma un sistema heredado en especificaciones ejecutables en 5 fase
 ```
 Fase 1          Fase 2        Fase 3              Fase 4        Fase 5
 Reconocimiento  Excavación    Interpretación      Generación    Revisión
-   Scout        Archaeologist    Detective           Writer      Reviewer
+   Scout        Arqueologo    Detective           Writer      Reviewer
                                Architect
 ```
 
@@ -31,11 +31,11 @@ Cuando el Scout termina, Solucao presenta su resumen y pregunta el **nivel de do
 
 ## Fase 2: Excavación
 
-**Agente:** Archaeologist
+**Agente:** Arqueologo
 
-El Archaeologist excava el código módulo por módulo. Con paciencia y precisión, cataloga cada artefacto: funciones, algoritmos, estructuras de datos, flujos de control. Sin interpretaciones. Solo describe con precisión lo que hay.
+El Arqueologo excava el código módulo por módulo. Con paciencia y precisión, cataloga cada artefacto: funciones, algoritmos, estructuras de datos, flujos de control. Sin interpretaciones. Solo describe con precisión lo que hay.
 
-**Importante:** el Archaeologist analiza un módulo por sesión, a propósito. Intentar analizarlo todo de una vez consume contexto y reduce la calidad del análisis.
+**Importante:** el Arqueologo analiza un módulo por sesión, a propósito. Intentar analizarlo todo de una vez consume contexto y reduce la calidad del análisis.
 
 ---
 
@@ -43,7 +43,7 @@ El Archaeologist excava el código módulo por módulo. Con paciencia y precisi�
 
 **Agentes:** Detective + Architect
 
-**El Detective** es el Sherlock Holmes del equipo. Mira lo que el Archaeologist catalogó y pregunta: *"¿Por qué está esto aquí? ¿Quién tomó esta decisión? ¿Qué revela el historial de git?"* Extrae reglas de negocio implícitas, ADRs retroactivos, máquinas de estado y matrices de permisos.
+**El Detective** es el Sherlock Holmes del equipo. Mira lo que el Arqueologo catalogó y pregunta: *"¿Por qué está esto aquí? ¿Quién tomó esta decisión? ¿Qué revela el historial de git?"* Extrae reglas de negocio implícitas, ADRs retroactivos, máquinas de estado y matrices de permisos.
 
 **El Architect** es el cartógrafo. Sintetiza todo en documentación arquitectónica formal: diagramas C4, ERD completo, mapa de integraciones y deuda técnica.
 

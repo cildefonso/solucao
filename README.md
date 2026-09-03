@@ -1,4 +1,4 @@
-# Solução 
+# Solucao 
 <small>by solucao</small>
 
 **Turn legacy systems into executable specifications for AI agents.**
@@ -11,7 +11,7 @@
 [![Português Docs](https://img.shields.io/badge/DOCS-Portugu%C3%AAs-ffcc00?style=for-the-badge&logo=material-for-mkdocs&logoColor=black&labelColor=2d2d2d)](https://cildefonso.github.io/solucao/pt/)<br>
 [![Español Docs](https://img.shields.io/badge/DOCS-Espa%C3%B1ol-c60b1e?style=for-the-badge&logo=material-for-mkdocs&logoColor=white&labelColor=2d2d2d)](https://sandeco.github.io/solucao/es/)
 
-A Solução é um framework de engenharia solucao de especificações. Ao instalá-lo em um projeto legado, ele coordena uma equipe de agentes de IA especializados para analisar o código existente e gerar especificações completas e rastreáveis, prontas para uso por qualquer agente de programação.
+A Solucao é um framework de engenharia solucao de especificações. Ao instalá-lo em um projeto legado, ele coordena uma equipe de agentes de IA especializados para analisar o código existente e gerar especificações completas e rastreáveis, prontas para uso por qualquer agente de programação.
 
 ---
 
@@ -19,13 +19,13 @@ A Solução é um framework de engenharia solucao de especificações. Ao instal
 
 ---
 
-## Porque a Solução existe?
+## Porque a Solucao existe?
 
 Most production systems carry years of accumulated knowledge: implicit business rules, undocumented architectural decisions, critical logic buried in code nobody wants to touch. That knowledge exists, but it's trapped.
 
 AI agents are transformative for creating and evolving software, but they depend on specifications to operate safely. For new systems, you write the spec and the agent executes. For legacy systems — or those built with pure vibe coding — there is no spec: the agent has no way of knowing what it cannot break.
 
-**A Solução é a ponte entre o sistema legado e os agentes de IA.**
+**A Solucao é a ponte entre o sistema legado e os agentes de IA.**
 
 It analyzes the existing code, extracts accumulated knowledge (business rules, flows, module contracts, retroactive architectural decisions) and transforms everything into executable, traceable specifications ready for any coding agent.
 
@@ -50,7 +50,7 @@ The installer will:
 6. Create the `.solucao/` structure with state, configuration, and plan
 7. Generate SHA-256 manifest for safe updates
 
-> Solução **never deletes or modifies** existing files in your project.
+> Solucao **never deletes or modifies** existing files in your project.
 > Agents write only to `.solucao/` and the output folder (`_solucao_sdd/` by default).
 
 **Requirements:** Node.js 18+
@@ -65,7 +65,7 @@ The installer will:
 > [!CAUTION]
 > ### 💾 Back up your project before starting
 >
-> Although Solução never modifies your files, AI agents can make mistakes. **We strongly recommend:**
+> Although Solucao never modifies your files, AI agents can make mistakes. **We strongly recommend:**
 >
 > 1. **Version the project in Git** — make sure all files are committed before starting the analysis
 > 2. **Have the repository on GitHub** (or GitLab, Bitbucket) — so you have a safe remote copy
@@ -80,7 +80,7 @@ The installer will:
 
 ## How to use
 
-Após a instalação, abra o projeto no agente AI e ative a Solução:
+Após a instalação, abra o projeto no agente AI e ative a Solucao:
 
 ```
 /solucao
@@ -128,7 +128,7 @@ The Discovery pipeline (`/solucao`) is the heart of the framework: a 5-phase seq
 
 ```
 Reconnaissance  Excavation  Interpretation  Generation  Review
-    Scout       Archaeologist  Detective      Writer    Reviewer
+    Scout       Arqueologo  Detective      Writer    Reviewer
                                 Architect
 ```
 
@@ -150,11 +150,11 @@ For a **greenfield** project (no legacy to extract), start with `/solucao-new` i
 
 ## Agents
 
-A Solução organiza seus agentes em **dez equipes especializadas**. A equipe Discovery (núcleo de agentes da Solução) e os agentes de bugs vêm sempre instalados; sete equipes já vêm selecionadas no instalador, enquanto a instalação das equipes de tradução é opcional.
+A Solucao organiza seus agentes em **dez equipes especializadas**. A equipe Discovery (núcleo de agentes da Solucao) e os agentes de bugs vêm sempre instalados; sete equipes já vêm selecionadas no instalador, enquanto a instalação das equipes de tradução é opcional.
 
 | Team | Purpose | Entry command |
 |------|---------|---------------|
-| **Solução Agents Core** (Discovery) | Analyze the existing legacy and produce specs | `/solucao` |
+| **Solucao Agents Core** (Discovery) | Analyze the existing legacy and produce specs | `/solucao` |
 | **Ideation Agents** | Clarify a raw idea before any development artifact exists, in greenfield or legacy | `/solucao-brainstorm` |
 | **Code New Project Agents** | Start a new project (greenfield) from a one-line idea and produce specs | `/solucao-new` |
 | **Code Forward Agents** | Evolve the system from specs to running code, one feature at a time | `/solucao-forward` |
@@ -172,7 +172,7 @@ These run the main `/solucao` pipeline.
 |-------|------|
 | **Solucao** | Central orchestrator. Coordinates all agents, saves checkpoints, guides the user |
 | **Scout** | Maps the surface: folder structure, languages, frameworks, dependencies, entry points |
-| **Archaeologist** | Deep module-by-module analysis: algorithms, control flows, data structures |
+| **Arqueologo** | Deep module-by-module analysis: algorithms, control flows, data structures |
 | **Detective** | Extracts implicit business knowledge: rules, retroactive ADRs, state machines, permissions |
 | **Architect** | Synthesizes everything into C4 diagrams, full ERD, integration map, and technical debt |
 | **Writer** | Generates specifications as operational contracts with code traceability |
@@ -186,7 +186,7 @@ These run the main `/solucao` pipeline.
 | **Data Master** | Complete database analysis: DDL, migrations, ORM, ERD, triggers, procedures |
 | **Design System** | Extracts design tokens: colors, typography, spacing, themes, and components |
 | **Soul Extractor** | Produces a single executive Spec (`soul.md`) with purpose, core entities and founding decisions, useful right after Scout |
-| **Agents Help** | Explica cada agente de Solucao usando analogias; útil para iniciantes. |
+| **Ajuda Agentes** | Explica cada agente de Solucao usando analogias; útil para iniciantes. |
 | **Reconstructor** | Generates a bottom-up reconstruction plan from the specs and implements one task at a time, preserving tokens. Activation: `/solucao-reconstructor` |
 | **Autonomous** | Runs the same sequence as `/solucao` end to end, with a single interview at the start and no intermediate stops. Activation: `/solucao-autonomous` |
 
@@ -198,7 +198,7 @@ Artifacts live in one folder per session: `_solucao_sdd/brainstorms/<NNN>-<short
 
 | Agent | Role |
 |-------|------|
-| **Solução Brainstorm** | Orchestrator. Detects greenfield vs legacy, opens the session folder, routes by physical stage. Writes no pipeline artifact itself |
+| **Solucao Brainstorm** | Orchestrator. Detects greenfield vs legacy, opens the session folder, routes by physical stage. Writes no pipeline artifact itself |
 | **Framer** | Separates problem from solution and refuses to let a solution pass as a problem. Produces `framing.md` with the job to be done and the cost of doing nothing |
 | **Explorer** | Opens 3 to 5 materially distinct paths, always including "do not build" and "use something off the shelf". Forbidden from recommending. Produces `options.md` |
 | **Challenger** | Premortem, the assumption that kills each option, the cheap test for it, and the hidden cost in the legacy. Adversarial by design. Produces `risks.md` |
@@ -213,7 +213,7 @@ The orchestrator has **two modes**. In *guided* mode (default) it stops at every
 
 | Agent | Role |
 |-------|------|
-| **Solução New** | Orchestrator. Reads the initial brief, walks the pipeline, saves `newproject_progress` in `state.json` |
+| **Solucao New** | Orchestrator. Reads the initial brief, walks the pipeline, saves `newproject_progress` in `state.json` |
 | **Ideator** | Structured brainstorm with 6 divergent questions (root problem, value, alternatives, audience, success metrics, dangerous assumptions). Produces `_solucao_sdd/ideation.md` |
 | **Researcher** | Turns the raw audience into 1 to 3 structured personas with journeys. Produces `_solucao_sdd/personas.md` |
 | **Drafter** | Synthesizes ideation and personas into a complete PRD (problem, metrics, scope, non-goals, constraints, risks). Produces `_solucao_sdd/prd.md` |
@@ -225,7 +225,7 @@ The bridge from specs to running code. Pipeline: `requirements → clarify → q
 
 | Agent | Role |
 |-------|------|
-| **Solução Forward** | Orchestrator. Detects the physical stage and suggests the next skill. Never executes code itself |
+| **Solucao Forward** | Orchestrator. Detects the physical stage and suggests the next skill. Never executes code itself |
 | **Requirements** | Turns a free-form idea into `requirements.md` anchored to the legacy, with `[DOUBT]` markers, gaps and glossary |
 | **Clarify** | Up to 5 targeted questions to resolve `[DOUBT]` markers in place |
 | **Quality** | Read-only auditor of writing clarity. Produces `requirements-audit.md` |
@@ -269,7 +269,7 @@ After discovery completes, this team turns the extracted knowledge into a self-c
 
 | Agent | Role |
 |-------|------|
-| **Solução Docs** | Orchestrates the team, runs the 3-question interview, computes deterministic seed. Activated via `/solucao-docs` |
+| **Solucao Docs** | Orchestrates the team, runs the 3-question interview, computes deterministic seed. Activated via `/solucao-docs` |
 | **Mapper** | Spatial structure: `arquitetura.html` (Code City 3D, Three.js), `modulos.html` (force-directed D3), `topologia.html` (legacy vs modern side-by-side) |
 | **Analyst** | Quantitative data: `metricas.html` (Highcharts treemap, sankey, histogram, columns), `timeline.html` (events from `.solucao/chronicle.md`) |
 | **Storyteller** | Narrative: `glossario.html` (client-side search), `deck.html` (6 to 10 navigable slides), `features/<spec>.html` (one per SDD spec) |
@@ -423,11 +423,11 @@ npx solucao status       # Show current analysis state
 npx solucao update       # Update agents to the latest version
 npx solucao add-agent    # Add an agent to the project
 npx solucao add-engine   # Add support for a new engine
-npx solucao uninstall    # Remove Solução from the project
+npx solucao uninstall    # Remove Solucao from the project
 ```
 
 The `update` command detects files you modified via SHA-256 and never overwrites customizations.
-O `uninstall` O comando remove apenas arquivos criados pela Solução — nada do projeto legado é afetado.
+O `uninstall` O comando remove apenas arquivos criados pela Solucao — nada do projeto legado é afetado.
 
 ---
 
@@ -442,7 +442,7 @@ O `uninstall` O comando remove apenas arquivos criados pela Solução — nada d
 ├── version             # Installed version
 ├── context/
 │   ├── surface.json    # Generated by Scout
-│   └── modules.json    # Generated by Archaeologist
+│   └── modules.json    # Generated by Arqueologo
 └── _config/
     ├── manifest.yaml       # Installation metadata
     └── files-manifest.json # SHA-256 hashes for safe updates

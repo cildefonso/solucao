@@ -43,7 +43,7 @@ Scout maps the project surface
         ↓
 Solucao presents the Scout summary and you choose the documentation level
         ↓
-Archaeologist analyzes module by module
+Arqueologo analyzes module by module
         ↓
 Detective and Architect interpret what was found
         ↓
@@ -68,7 +68,7 @@ Depends on project size, but a general rule:
 | Medium (10 to 30 modules) | 5 to 10 sessions |
 | Large (30+ modules) | 10+ sessions |
 
-The Archaeologist analyzes one module per session on purpose, to conserve context. For large projects, you'll resume several times, but each resume is automatic and lossless.
+The Arqueologo analyzes one module per session on purpose, to conserve context. For large projects, you'll resume several times, but each resume is automatic and lossless.
 
 ---
 

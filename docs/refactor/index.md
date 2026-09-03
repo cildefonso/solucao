@@ -74,7 +74,7 @@ _solucao_refactor/
     └── generated/                índice de oportunidades e seu estado (nunca editado manualmente)
 ```
 
-Each opportunity carries the Solução confidence scale (🟢 covered and understood, 🟡 partial, 🔴 no behavior proof) and a ROI estimate. The orchestrator prioritizes a hot path of high frequency over a large but rarely executed module. When a target needs more than one verb, the orchestrator chains the specialists one at a time, each with its own gate.
+Each opportunity carries the Solucao confidence scale (🟢 covered and understood, 🟡 partial, 🔴 no behavior proof) and a ROI estimate. The orchestrator prioritizes a hot path of high frequency over a large but rarely executed module. When a target needs more than one verb, the orchestrator chains the specialists one at a time, each with its own gate.
 
 ---
 

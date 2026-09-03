@@ -1,22 +1,22 @@
 ---
-name: solucao-agents-help
-description: Explica com analogias o que cada agente do Solucao faz e quando usá-lo. Ative com /solucao-agents-help.
+name: solucao-ajuda-agentes
+description: Explica com analogias o que cada agente da Solucao faz e quando usá-lo. Ative com /solucao-ajuda-agentes.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
   author: cildefonso
   version: "1.0.0"
   framework: solucao
-  role: help
+  role: ajuda
 ---
 
 Apresente exatamente o texto abaixo, sem alterações, sem resumir.
 
 ---
 
-# Agentes do Solucao — guia com analogias
+# Agentes da Solucao — guia com analogias
 
-O Solucao é um time de especialistas. Cada agente faz uma coisa só — e faz bem.
+A Solucao é um time de especialistas. Cada agente faz uma coisa só — e faz bem.
 
 ---
 
@@ -29,7 +29,7 @@ O Solucao é um time de especialistas. Cada agente faz uma coisa só — e faz b
 | Implementar ou evoluir código a partir das specs | `/solucao-forward` | Code Forward Agents |
 | Planejar a migração de um legado | `/solucao-migrate` | Migration Agents |
 | Gerar um mini-site visual da documentação | `/solucao-docs` | Documentation Agents |
-| Entender qual agente usar | `/solucao-agents-help` | Guia de agentes |
+| Entender qual agente usar | `/solucao-ajuda-agentes` | Guia de agentes |
 
 Os times de Pricing e Translators têm comandos especializados. Use `/solucao-pricing-profile`, `/solucao-pricing-size`, `/solucao-pricing-estimate` ou `/solucao-n8n` conforme a necessidade.
 
@@ -40,7 +40,7 @@ Os times de Pricing e Translators têm comandos especializados. Use `/solucao-pr
 
 O fundador começa com uma ideia ainda bruta, investiga o problema, entende para quem o produto existe, consolida um PRD e transforma tudo em especificações prontas para implementação.
 
-> Use o Solucao New para projetos greenfield. Ele conduz `Ideator → Researcher → Drafter → Spec SDD` e entrega o resultado ao `/solucao-forward`.
+> Use a Solucao New para projetos greenfield. Ela conduz `Ideator → Researcher → Drafter → Spec SDD` e entrega o resultado ao `/solucao-forward`.
 
 ---
 
@@ -49,7 +49,7 @@ O fundador começa com uma ideia ainda bruta, investiga o problema, entende para
 
 Um regente de orquestra não toca nenhum instrumento. Ele conhece a partitura inteira e diz quem entra quando, em que ordem, em que ritmo. Sem ele, cada músico tocaria sua parte sem se conectar com os outros.
 
-> Use o Solucao para iniciar ou retomar a análise completa. Ele cuida da sequência por você.
+> Use a Solucao para iniciar ou retomar a análise completa. Ela cuida da sequência por você.
 
 ---
 
@@ -67,16 +67,16 @@ O corretor faz o primeiro tour no imóvel. Não abre gavetas, não lê documento
 
 O biógrafo expresso visita o personagem, lê as anotações do corretor (Scout), folheia rapidamente alguns álbuns de família e o histórico de cartas (git log), e produz uma biografia de uma página: quem é, o que faz, e as decisões fundadoras que moldaram a vida toda. Não é a história completa, é a alma destilada.
 
-> Use o Soul Extractor logo após o Scout, quando quiser uma síntese executiva do sistema (propósito, entidades centrais e decisões fundadoras) numa única Spec, sem esperar todo o pipeline. Não substitui Archaeologist nem Detective.
+> Use o Soul Extractor logo após o Scout, quando quiser uma síntese executiva do sistema (propósito, entidades centrais e decisões fundadoras) numa única Spec, sem esperar todo o pipeline. Não substitui Arqueologo nem Detective.
 
 ---
 
-## ⛏️ Archaeologist — o escavador
-**Comando:** `/solucao-archaeologist`
+## ⛏️ Arqueologo — o escavador
+**Comando:** `/solucao-arqueologo`
 
 O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada artefato encontrado: tamanho, material, localização, forma. Ele não interpreta a civilização, só descreve com precisão o que está lá.
 
-> Use o Archaeologist para analisar o código módulo a módulo. Ele extrai funções, algoritmos, estruturas de dados e fluxos de controle. **Roda um módulo por sessão** para economizar tokens.
+> Use o Arqueologo para analisar o código módulo a módulo. Ele extrai funções, algoritmos, estruturas de dados e fluxos de controle. **Roda um módulo por sessão** para economizar tokens.
 
 ---
 
@@ -85,7 +85,7 @@ O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada 
 
 Sherlock Holmes chega depois do arqueólogo. Olha para os artefatos catalogados e pergunta: *"Mas por que isso está aqui? Quem colocou? O que isso revela sobre quem viveu aqui?"* Ele não escava. Ele interpreta.
 
-> Use o Detective após o Archaeologist. Ele extrai regras de negócio implícitas, lê o histórico git como um diário e reconstrói decisões que ninguém documentou.
+> Use o Detective após o Arqueologo. Ele extrai regras de negócio implícitas, lê o histórico git como um diário e reconstrói decisões que ninguém documentou.
 
 ---
 
@@ -151,7 +151,7 @@ Projeto novo:   /solucao-new → PRD e specs → /solucao-forward
 Migração:       /solucao → /solucao-migrate → /solucao-forward
 
 Pipeline legado manual:
-Scout → Archaeologist (N sessões) → Detective → Architect → Writer → Reviewer
+Scout → Arqueologo (N sessões) → Detective → Architect → Writer → Reviewer
 
 Opcionais em qualquer fase:
 Soul Extractor · Visor · Data Master · Design System · Solucao Docs

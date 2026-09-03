@@ -1,0 +1,236 @@
+{
+  "projeto": "acme-plataforma",
+  "data": "2026-08-29",
+  "escopo": [
+    "backend/ (API REST, 41 handlers)",
+    "web/ (SPA React)",
+    "infra/ (docker-compose, Helm, GitHub Actions)",
+    "histórico git (todos os refs)"
+  ],
+  "stack": {
+    "linguagem": "Java 21",
+    "framework": "Quarkus 3.15 (JAX-RS)",
+    "orm": "Hibernate ORM com Panache",
+    "auth": "JWT (SmallRye JWT) + @RolesAllowed",
+    "frontend": "React 19 + Vite",
+    "deploy": "Dockerfile multi-stage, docker-compose.yml, Helm chart, GitHub Actions"
+  },
+  "nota_metodologica": "Auditoria estática, orientada a evidência: todo achado tem arquivo, linha e trecho verificados no código real; nada foi inferido por semelhança de nome. As cinco categorias foram mapeadas para os equivalentes desta stack antes da varredura (ver tabela abaixo). Como o projeto não usa Supabase, a categoria de isolamento foi verificada como filtro manual por organização nas consultas Panache, e não como RLS. Todos os 41 handlers JAX-RS foram percorridos individualmente — não houve amostragem. Valores de segredos reais aparecem mascarados neste documento.",
+  "mapeamento_categorias": [
+    {
+      "categoria": "banco-sem-tranca",
+      "equivalente_stack": "Filtro manual por organizacao_id nas queries Panache (não há RLS no PostgreSQL nem filtro Hibernate global)",
+      "como_verificado": "Leitura de todos os repositórios e services que executam list/find/count/stream, conferindo presença de organizacao_id no predicado"
+    },
+    {
+      "categoria": "permissao-no-navegador",
+      "equivalente_stack": "@RolesAllowed / SecurityIdentity no backend versus gates isAdmin no React",
+      "como_verificado": "Cruzamento de cada gate de papel do frontend com o endpoint que ele aciona"
+    },
+    {
+      "categoria": "idor",
+      "equivalente_stack": "Handlers que recebem @PathParam(\"id\") e chamam findById sem checar dono/organização",
+      "como_verificado": "Percorridos os 41 handlers; para cada um, rastreado o caminho até o acesso ao banco"
+    },
+    {
+      "categoria": "chaves-expostas",
+      "equivalente_stack": "application.properties, docker-compose.yml, Helm values, workflows do GitHub Actions e histórico git",
+      "como_verificado": "Varredura por padrões de segredo + git log -p -S por chave; conferida a existência de validação de startup"
+    },
+    {
+      "categoria": "xss",
+      "equivalente_stack": "dangerouslySetInnerHTML no React e templates Qute de e-mail no backend",
+      "como_verificado": "Busca por sinks de HTML e rastreio da origem do dado até a entrada do usuário"
+    }
+  ],
+  "cobertura": {
+    "arquivos_analisados": "312 arquivos de código, 9 de infraestrutura",
+    "handlers_percorridos": "41 de 41",
+    "componentes_frontend": "87 componentes .tsx",
+    "comandos_executados": [
+      "rg -n \"@Path|@GET|@POST|@PUT|@DELETE\" backend/src",
+      "rg -n \"findById|list\\\\(\" backend/src",
+      "git log -p --all -S \"PRIVATE KEY\""
+    ]
+  },
+  "resumo_executivo": "A auditoria percorreu 41 handlers, 87 componentes de frontend e 9 arquivos de infraestrutura. O controle de autenticação é consistente, mas o controle de autorização por objeto não existe: qualquer usuário autenticado alcança dados de outra organização trocando o identificador na URL. Três achados exigem correção antes de qualquer exposição externa.",
+  "achados": [
+    {
+      "id": "F-01",
+      "categoria": "banco-sem-tranca",
+      "titulo": "Listagem de contratos ignora a organização do usuário autenticado",
+      "severidade": "critica",
+      "arquivo": "backend/src/main/java/com/acme/contrato/ContratoResource.java",
+      "linhas": "48-53",
+      "trecho": "@GET\n@Path(\"/contratos\")\n@Authenticated\npublic List<ContratoDTO> listar(@QueryParam(\"pagina\") int pagina) {\n    return repositorio.listAll(Page.of(pagina, 50)).stream().map(ContratoDTO::de).toList();\n}",
+      "por_que_exploravel": "O handler exige apenas autenticação e chama listAll() sem qualquer predicado de organização. Qualquer usuário com um token válido — inclusive o de um cliente concorrente — recebe os contratos de todos os inquilinos ao paginar.",
+      "impacto": "Vazamento horizontal completo da base de contratos entre inquilinos: valores, partes e datas de todos os clientes da plataforma.",
+      "condicoes_exploracao": "Nenhuma. Explorável com uma conta comum recém-criada, sem privilégio algum.",
+      "correcao": "Injetar a organização do SecurityIdentity e filtrar na query: repositorio.find(\"organizacao.id\", orgId). Melhor ainda, ativar um filtro Hibernate global de tenant para que esquecer o predicado deixe de ser possível.",
+      "criterios_aceite": [
+        "Toda consulta de contratos aplica predicado de organização derivado do token, nunca de parâmetro do cliente.",
+        "Teste de integração com dois inquilinos comprova que A não enxerga registros de B.",
+        "O teste falha se o predicado for removido."
+      ]
+    },
+    {
+      "id": "F-02",
+      "categoria": "idor",
+      "titulo": "Exclusão de anexo por ID sem verificação de posse",
+      "severidade": "critica",
+      "arquivo": "backend/src/main/java/com/acme/anexo/AnexoResource.java",
+      "linhas": "77-84",
+      "trecho": "@DELETE\n@Path(\"/anexos/{id}\")\n@Authenticated\npublic Response remover(@PathParam(\"id\") Long id) {\n    Anexo anexo = Anexo.findById(id);\n    anexo.delete();\n    return Response.noContent().build();\n}",
+      "por_que_exploravel": "O identificador vem da URL e é usado direto no findById. Não há comparação entre o dono do anexo e o usuário do token, nem entre organizações. IDs são sequenciais, então a enumeração é trivial.",
+      "impacto": "Destruição de anexos de qualquer inquilino. Perda de dados irreversível se não houver backup, e negação de serviço sobre documentos contratuais.",
+      "condicoes_exploracao": "Nenhuma. Basta um token válido e um laço sobre ids de 1 a N.",
+      "correcao": "Buscar com o predicado de posse na própria consulta e retornar 404 quando não houver correspondência, nunca 403 (evita confirmar existência do recurso).",
+      "criterios_aceite": [
+        "A exclusão só ocorre quando o anexo pertence à organização do chamador.",
+        "Tentativa cruzada retorna 404.",
+        "Teste automatizado cobre o caso cruzado."
+      ]
+    },
+    {
+      "id": "F-03",
+      "categoria": "permissao-no-navegador",
+      "titulo": "Endpoint de gestão de usuários confia no gate isAdmin do frontend",
+      "severidade": "alta",
+      "arquivo": "backend/src/main/java/com/acme/admin/UsuarioAdminResource.java",
+      "linhas": "31-38",
+      "trecho": "@POST\n@Path(\"/admin/usuarios/{id}/promover\")\n@Authenticated   // <- sem @RolesAllowed\npublic Response promover(@PathParam(\"id\") Long id) {\n    usuarioService.promoverParaAdmin(id);\n    return Response.ok().build();\n}",
+      "por_que_exploravel": "O React esconde o botão com {isAdmin && <BotaoPromover/>} em web/src/pages/Admin.tsx:64, mas o servidor exige apenas autenticação. Um POST direto ao endpoint promove qualquer conta a administrador.",
+      "impacto": "Escalonamento de privilégio de usuário comum para administrador da plataforma, com acesso a toda a área administrativa.",
+      "condicoes_exploracao": "Nenhuma. Requer apenas conhecer a rota, visível no bundle do frontend.",
+      "correcao": "Anotar com @RolesAllowed(\"admin\") e cobrir com teste que exercita o endpoint usando um token sem o papel.",
+      "criterios_aceite": [
+        "Toda rota sob /admin exige papel no servidor.",
+        "Teste com token sem papel recebe 403.",
+        "Auditoria de rotas administrativas documentada no repositório."
+      ]
+    },
+    {
+      "id": "F-04",
+      "categoria": "chaves-expostas",
+      "titulo": "Segredo de assinatura do JWT com default público no compose e no Helm",
+      "severidade": "alta",
+      "arquivo": "infra/docker-compose.yml",
+      "linhas": "22",
+      "trecho": "environment:\n  - JWT_SIGN_SECRET=${JWT_SIGN_SECRET:-acme-dev-secret-2024}",
+      "por_que_exploravel": "O default é aplicado silenciosamente quando a variável não é definida no ambiente. O mesmo default aparece em infra/helm/values.yaml:41. Não existe validação de startup que rejeite o valor conhecido, então um deploy sem a variável sobe assinando tokens com um segredo que está no repositório.",
+      "impacto": "Falsificação de qualquer token, incluindo tokens de administrador. Comprometimento total da autenticação.",
+      "condicoes_exploracao": "Explorável quando a variável não é injetada no ambiente de destino — condição já observada no pipeline de homologação.",
+      "correcao": "Remover o default, falhar o boot se a variável estiver ausente ou pertencer a uma lista de valores proibidos, e rotacionar o segredo atual.",
+      "criterios_aceite": [
+        "Nenhum default de segredo em compose, Helm ou CI.",
+        "A aplicação recusa iniciar sem JWT_SIGN_SECRET.",
+        "Segredo rotacionado e sessões antigas invalidadas."
+      ]
+    },
+    {
+      "id": "F-05",
+      "categoria": "xss",
+      "titulo": "Comentário do usuário renderizado com dangerouslySetInnerHTML sem sanitização",
+      "severidade": "media",
+      "arquivo": "web/src/components/Comentario.tsx",
+      "linhas": "18",
+      "trecho": "<div dangerouslySetInnerHTML={{ __html: comentario.corpoHtml }} />",
+      "por_que_exploravel": "corpoHtml vem da API sem passar por sanitizador. O backend armazena o markdown convertido em HTML sem lista de permissões (backend/src/main/java/com/acme/comentario/Markdown.java:27). O projeto tem DOMPurify em package.json, mas ele não é usado neste caminho.",
+      "impacto": "XSS armazenado: script de um usuário executa na sessão de qualquer outro que abra o contrato, permitindo roubo de token e ações em nome da vítima.",
+      "condicoes_exploracao": "Requer que a vítima abra um contrato com comentário do atacante. Sem exigência de privilégio.",
+      "correcao": "Sanitizar com DOMPurify na renderização e aplicar lista de permissões na conversão de markdown no servidor.",
+      "criterios_aceite": [
+        "Nenhum dangerouslySetInnerHTML recebe HTML não sanitizado.",
+        "Teste com payload de script comprova neutralização.",
+        "Política de sanitização documentada."
+      ]
+    },
+    {
+      "id": "F-06",
+      "categoria": "chaves-expostas",
+      "titulo": "Credencial de banco de exemplo commitada no README",
+      "severidade": "baixa",
+      "arquivo": "README.md",
+      "linhas": "112",
+      "trecho": "DATABASE_URL=postgresql://acme:***@localhost:5432/acme_dev",
+      "por_que_exploravel": "Credencial de ambiente local, sem alcance externo. Vira risco real se o mesmo par for reaproveitado em outro ambiente — prática já observada no compose de homologação.",
+      "impacto": "Baixo isoladamente. Reforça o hábito de reutilizar credenciais entre ambientes.",
+      "condicoes_exploracao": "Só explorável se a credencial for reaproveitada fora do ambiente local.",
+      "correcao": "Substituir por placeholder e apontar para o .env.example.",
+      "criterios_aceite": [
+        "Documentação sem credenciais literais.",
+        "Verificação de segredos no CI cobre arquivos markdown."
+      ]
+    }
+  ],
+  "pontos_fortes": [
+    {
+      "titulo": "Autenticação consistente em todas as rotas",
+      "evidencia": "Os 41 handlers têm @Authenticated ou @PermitAll explícito; nenhuma rota ficou sem decisão de acesso (verificado handler a handler em backend/src/main/java/com/acme).",
+      "arquivos": ["backend/src/main/java/com/acme"]
+    },
+    {
+      "titulo": "Zero SQL concatenado",
+      "evidencia": "Todo acesso a dados passa por Panache com parâmetros nomeados; nenhuma ocorrência de createNativeQuery com concatenação de string em 312 arquivos.",
+      "arquivos": ["backend/src/main/java/com/acme"]
+    },
+    {
+      "titulo": "Módulo financeiro valida posse em todos os handlers",
+      "evidencia": "FaturaResource.java:44, 61, 79 e 96 aplicam find(\"id = ?1 and organizacao.id = ?2\", ...) antes de qualquer leitura ou escrita — é o padrão correto que os demais módulos deveriam seguir.",
+      "arquivos": ["backend/src/main/java/com/acme/fatura/FaturaResource.java"]
+    },
+    {
+      "titulo": "Imagem Docker sem privilégio e com .dockerignore correto",
+      "evidencia": "Dockerfile:31 define USER 1001; .dockerignore exclui .env, .git e target/.",
+      "arquivos": ["Dockerfile", ".dockerignore"]
+    }
+  ],
+  "pontos_fracos": [
+    {
+      "titulo": "Ausência de barreira estrutural de inquilino",
+      "descricao": "O isolamento depende de o desenvolvedor lembrar de escrever o predicado em cada consulta. Não há filtro global, não há teste que reprove o esquecimento. Dois módulos já esqueceram."
+    },
+    {
+      "titulo": "Autorização assimétrica entre frontend e backend",
+      "descricao": "O papel decide o que é exibido, mas nem sempre o que é executado. O bundle publica as rotas administrativas."
+    },
+    {
+      "titulo": "Defaults de segredo que sobrevivem ao deploy",
+      "descricao": "Sem validação de inicialização, um ambiente mal configurado sobe com segredo público e ninguém percebe."
+    }
+  ],
+  "categorias_nao_aplicaveis": [],
+  "recomendacoes": [
+    {
+      "prioridade": "P1",
+      "acao": "Introduzir filtro de inquilino no nível do ORM e corrigir as consultas sem predicado de organização.",
+      "achados": ["F-01"],
+      "esforco": "2 dias"
+    },
+    {
+      "prioridade": "P1",
+      "acao": "Verificar posse em todo handler que recebe identificador do cliente; padronizar 404 para acesso cruzado.",
+      "achados": ["F-02"],
+      "esforco": "3 dias"
+    },
+    {
+      "prioridade": "P1",
+      "acao": "Remover defaults de segredo e falhar o boot quando a variável estiver ausente ou for um valor proibido; rotacionar o segredo do JWT.",
+      "achados": ["F-04", "F-06"],
+      "esforco": "1 dia"
+    },
+    {
+      "prioridade": "P2",
+      "acao": "Exigir papel no servidor em toda rota administrativa e cobrir com teste de token sem privilégio.",
+      "achados": ["F-03"],
+      "esforco": "1 dia"
+    },
+    {
+      "prioridade": "P3",
+      "acao": "Sanitizar HTML gerado por usuário no cliente e no servidor.",
+      "achados": ["F-05"],
+      "esforco": "meio dia"
+    }
+  ],
+  "issues": []
+}

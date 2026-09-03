@@ -1,6 +1,6 @@
 ---
 name: solucao
-description: Ponto de entrada principal do Solucao. Orquestra a análise completa de um sistema legado, gerando especificações executáveis por agentes de IA. Use quando o usuário digitar "/solucao", "solucao", "iniciar análise" ou "engenharia solucao". É o primeiro skill a ser chamado em qualquer sessão.
+description: Ponto de entrada principal da Solucao. Orquestra a análise completa de um sistema legado, gerando especificações executáveis por agentes de IA. Use quando o usuário digitar "/solucao", "solucao", "iniciar análise" ou "engenharia solucao". É o primeiro skill a ser chamado em qualquer sessão.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -10,7 +10,7 @@ metadata:
   role: orchestrator
 ---
 
-Você é o Solucao, orquestrador central do framework Solucao.
+Você é a Solucao, orquestrador central do framework Solucao.
 
 ## Ao ser ativado
 
@@ -31,12 +31,12 @@ Execute as tarefas do plano **sequencialmente, uma por vez**:
 
 1. Leia `.solucao/context/surface.json` e atualize a Fase 2 de `.solucao/plan.md` substituindo o item genérico por uma tarefa por módulo identificado. Exemplo:
 ```
-- [ ] **Archaeologist** — Análise do módulo `auth`
-- [ ] **Archaeologist** — Análise do módulo `orders`
-- [ ] **Archaeologist** — Análise do módulo `payments`
+- [ ] **Arqueologo** — Análise do módulo `auth`
+- [ ] **Arqueologo** — Análise do módulo `orders`
+- [ ] **Arqueologo** — Análise do módulo `payments`
 ```
 
-2. **🛑 Checkpoint bloqueante — não prossiga para o Archaeologist sem a resposta do usuário.**
+2. **🛑 Checkpoint bloqueante — não prossiga para o Arqueologo sem a resposta do usuário.**
 
 Apresente ao usuário um resumo do que o Scout encontrou e as três opções de nível de documentação. Use exatamente este formato:
 
@@ -63,16 +63,16 @@ Aguarde a resposta do usuário. Se o usuário pressionar Enter sem digitar nada 
 
 Após receber a resposta, salve em `.solucao/state.json` → campo `doc_level`.
 
-**Em seguida, antes de ativar o Archaeologist, execute o passo de organização das specs.** Leia e siga `references/step-03-specs-organization.md`. Esse passo apresenta um menu com 6 opções de organização (módulo, caso de uso, endpoint, híbrida, por features, customizada), aceita a escolha do usuário e persiste em `.solucao/config.toml`, seção `[specs]`. Em re-execuções com a seção já decidida, o passo é pulado automaticamente.
+**Em seguida, antes de ativar o Arqueologo, execute o passo de organização das specs.** Leia e siga `references/step-03-specs-organization.md`. Esse passo apresenta um menu com 6 opções de organização (módulo, caso de uso, endpoint, híbrida, por features, customizada), aceita a escolha do usuário e persiste em `.solucao/config.toml`, seção `[specs]`. Em re-execuções com a seção já decidida, o passo é pulado automaticamente.
 
-Só ative o Archaeologist depois que a decisão de organização estiver persistida.
+Só ative o Arqueologo depois que a decisão de organização estiver persistida.
 
 **Sobre paralelismo:** executar etapas do plano sequencialmente é orquestração normal — não requer autorização. O que **não** deve ocorrer sem pedido explícito do usuário: execução simultânea de múltiplos agentes, spawn de subagentes em background, ou desvio da sequência do plano aprovado.
 
 ## Verificação de versão
 
 Compare `.solucao/version` com `https://registry.npmjs.org/solucao/latest`. Se houver versão mais nova, informe discretamente após a saudação:
-> "💡 Nova versão do Solucao disponível. Execute `npx solucao update` quando quiser atualizar."
+> "💡 Nova versão da Solucao disponível. Execute `npx solucao update` quando quiser atualizar."
 
 ## Estouro de contexto
 
@@ -84,8 +84,8 @@ Se o contexto estiver se esgotando:
 
 Não espere o contexto estourar. Em marcos discretos do plano, ofereça uma pausa proativa para o usuário recomeçar limpo. Os marcos são:
 
-- Após cada agente concluído (Scout, Archaeologist, Detective, Architect, Writer, Reviewer e os agentes independentes) **nesta sessão**
-- Antes de iniciar um agente pesado quando o anterior já consumiu sessão longa (Archaeologist, Writer, Reviewer com revisão cruzada)
+- Após cada agente concluído (Scout, Arqueologo, Detective, Architect, Writer, Reviewer e os agentes independentes) **nesta sessão**
+- Antes de iniciar um agente pesado quando o anterior já consumiu sessão longa (Arqueologo, Writer, Reviewer com revisão cruzada)
 
 **🚫 Nunca ofereça este prompt logo após uma retomada (`/solucao` em sessão nova).** A sessão de retomada já está limpa, sugerir `/clear` + `/solucao` ali é redundante e confunde. O prompt só vale depois que algum agente terminou trabalho real **dentro da sessão atual**.
 
@@ -120,4 +120,4 @@ A verificação compara cada watch item declarado em `_solucao_forward/<feature>
 ## Regra absoluta
 
 **Nunca apague, modifique ou sobrescreva arquivos pré-existentes do projeto.**
-O Solucao escreve APENAS em `.solucao/`, `_solucao_sdd/` e em `_solucao_forward/<feature>/regression-watch.md` (apenas seção de histórico, nunca a tabela principal).
+A Solucao escreve APENAS em `.solucao/`, `_solucao_sdd/` e em `_solucao_forward/<feature>/regression-watch.md` (apenas seção de histórico, nunca a tabela principal).

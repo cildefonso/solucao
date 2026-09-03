@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title>Solução Bugs, Documento de Entendimento</title>
+<title>Solucao Bugs, Documento de Entendimento</title>
 <style>
   :root {
     --laranja: #ffa203;
@@ -69,9 +69,9 @@
 <body>
 
 <header>
-  <h1>Solução <span class="sub">Bugs</span>, Documento de Entendimento</h1>
+  <h1>Solucao <span class="sub">Bugs</span>, Documento de Entendimento</h1>
   <div class="meta">
-    Proposta para aprovação de Solução. Nenhuma implementação foi feita: este documento registra o que foi entendido.<br>
+    Proposta para aprovação de Solucao. Nenhuma implementação foi feita: este documento registra o que foi entendido.<br>
     Data: 2026-07-15 &nbsp;|&nbsp; Redação: Claude (Fable 5) &nbsp;|&nbsp; Segunda opinião: Codex (seção 12) &nbsp;|&nbsp; Parecer de prática diária incorporado (seção 13)<br>
     Origens: <code>evolucao/bugs/conversa_solucao_bugs_rastreabilidade.md</code> e <code>evolucao/bugs/parecer_solucao_bugs_pratica_diaria_para_claude.md</code>
   </div>
@@ -79,7 +79,7 @@
 
 <h2><span class="num">1.</span>Resumo executivo</h2>
 <p>
-O Time Solução Bugs adiciona ao Solução uma <b>memória causal de defeitos</b>: um registro de bugs em Markdown, dentro do projeto do usuário, projetado para ser lido e mantido por agentes LLM em qualquer engine (Claude Code, Codex, Cursor, Gemini CLI). Cada bug é um arquivo com front matter YAML, rastreável às specs extraídas pelo Solução (<code>_solucao_sdd/</code>), ao código e aos testes. O time tem 5 comandos e uma regra central herdada da conversa original: <b>documentar bug e corrigir bug são atos brutalmente separados</b>.
+O Time Solucao de Bugs adiciona à Solucao uma <b>memória causal de defeitos</b>: um registro de bugs em Markdown, dentro do projeto do usuário, projetado para ser lido e mantido por agentes LLM em qualquer engine (Claude Code, Codex, Cursor, Gemini CLI). Cada bug é um arquivo com front matter YAML, rastreável às specs extraídas pela Solucao (<code>_solucao_sdd/</code>), ao código e aos testes. O time tem 5 comandos e uma regra central herdada da conversa original: <b>documentar bug e corrigir bug são atos brutalmente separados</b>.
 </p>
 <table>
   <tr><th>Comando</th><th>Papel</th><th>Escreve onde</th></tr>
@@ -91,15 +91,15 @@ O Time Solução Bugs adiciona ao Solução uma <b>memória causal de defeitos</
 </table>
 
 <h2><span class="num">2.</span>Origem e decisões já tomadas</h2>
-<p>O design nasce da conversa Solução x ChatGPT (bugs como nós de rastreabilidade SPEC ↔ CODE ↔ TEST ↔ BUG) e foi refinado nesta sessão com as seguintes decisões de Solução:</p>
+<p>O design nasce da conversa Solucao x ChatGPT (bugs como nós de rastreabilidade SPEC ↔ CODE ↔ TEST ↔ BUG) e foi refinado nesta sessão com as seguintes decisões de Solucao:</p>
 <div class="caixa decisao">
   <b>Decisões travadas</b>
   <ul>
     <li><b>5 comandos</b>: <code>/solucao-bug</code>, <code>/solucao-bug-fix</code>, <code>/solucao-depth-inspection</code>, <code>/solucao-bug-graph</code>, <code>/solucao-bug-debate</code>.</li>
-    <li><b>Registro canônico em <code>_solucao_bugs/</code></b> na raiz, seguindo o padrão das pastas do Solução e a diretiva non-destructive.</li>
+    <li><b>Registro canônico em <code>_solucao_bugs/</code></b> na raiz, seguindo o padrão das pastas da Solucao e a diretiva non-destructive.</li>
     <li><b>Pente-fino só diagnostica</b>: cada achado vira um <code>BUG-XXX.md</code>; a correção é sempre um ato posterior e separado.</li>
-    <li><b>Debate é opt-in explícito</b>: o Solução avisa que a opção existe, explica que demora (N agentes x R rodadas + 1 juiz) e só roda se o usuário aceitar.</li>
-    <li><b>Debatedores multi-harness</b> (Codex, OpenCode, Gemini CLI): o Solução <b>avisa</b> quando detecta outros harness instalados, mas só os inclui no debate se o usuário <b>aceitar ou pedir explicitamente</b>.</li>
+    <li><b>Debate é opt-in explícito</b>: a Solucao avisa que a opção existe, explica que demora (N agentes x R rodadas + 1 juiz) e só roda se o usuário aceitar.</li>
+    <li><b>Debatedores multi-harness</b> (Codex, OpenCode, Gemini CLI): o Solucao <b>avisa</b> quando detecta outros harness instalados, mas só os inclui no debate se o usuário <b>aceitar ou pedir explicitamente</b>.</li>
     <li><b>Diff e handoff</b>: toda correção mostra o diff antes de aplicar; toda etapa termina com handoff manual ("Digite CONTINUAR"). Nada avança sozinho.</li>
     <li><b>Veredito de spec</b>: toda correção verifica se a spec original do código com bug deve ser versionada e alterada, e os diffs (código e spec) ficam registrados juntos no bug.</li>
     <li><b>Pasta única por bug</b>: todos os documentos de um bug (registro, evidências, debate, diffs da correção) vivem numa única pasta <code>BUG-XXX-slug/</code>. Nada daquele bug fica espalhado em pastas globais. (O layout físico do status tem duas variantes, ver seção 4; a recomendação do Codex é pasta plana.)</li>
@@ -109,13 +109,13 @@ O Time Solução Bugs adiciona ao Solução uma <b>memória causal de defeitos</
   </ul>
 </div>
 
-<h2><span class="num">3.</span>Princípios do Solução que o time herda</h2>
+<h2><span class="num">3.</span>Princípios da Solucao que o time herda</h2>
 <ul>
   <li><b>Non-destructive:</b> nenhum artefato pré-existente do projeto é apagado ou sobrescrito. O time só cria arquivos em <code>_solucao_bugs/</code> e adendos em <code>_solucao_sdd/addenda/</code>. A exceção controlada é o próprio ato de corrigir código no <code>/solucao-bug-fix</code>, que segue o precedente do <code>/solucao-coding</code>: só com diff exibido e aprovação explícita.</li>
   <li><b>Multi-engine:</b> nada depende de recurso exclusivo de um harness. Onde houver subagentes (debate, pente-fino), existe fallback sequencial documentado.</li>
   <li><b>Handoff manual:</b> cada agente termina sugerindo o próximo passo e aguardando "CONTINUAR".</li>
-  <li><b>Menus padrão Solução:</b> opções com label + descrição + opção final "Outro" aberta.</li>
-  <li><b>Vendor-in:</b> o loop de debate multiagente é copiado e adaptado para dentro do Solução, sem depender de skills globais da máquina de Solução.</li>
+  <li><b>Menus padrão Solucao:</b> opções com label + descrição + opção final "Outro" aberta.</li>
+  <li><b>Vendor-in:</b> o loop de debate multiagente é copiado e adaptado para dentro da Solucao, sem depender de skills globais da máquina de Solucao.</li>
   <li><b>Source of truth:</b> o arquivo <code>BUG-XXX.md</code> é a verdade. Índice, matriz e grafo são views regeneráveis.</li>
 </ul>
 
@@ -158,7 +158,7 @@ _solucao_bugs/
 <p>Impede que agentes inventem nomes inconsistentes. Os campos <code>area</code>, <code>module</code> e <code>feature</code> de todo bug DEVEM usar valores deste catálogo. Se nada servir, o agente usa <code>unclassified</code> e propõe o novo termo em Agent Notes. Na primeira execução, o catálogo é semeado a partir dos módulos da extração (<code>_solucao_sdd/architecture.md</code>).</p>
 
 <h2><span class="num">5.</span>Anatomia de um bug (exemplo completo)</h2>
-<p>Exemplo em um sistema legado de vendas cuja extração do Solução registrou a regra "desconto máximo de 10% por pedido" em <code>_solucao_sdd/domain.md</code>:</p>
+<p>Exemplo em um sistema legado de vendas cuja extração da Solucao registrou a regra "desconto máximo de 10% por pedido" em <code>_solucao_sdd/domain.md</code>:</p>
 <pre>
 Arquivo: _solucao_bugs/bugs/BUG-20260715-A7K3-desconto-duplicado/bug.md
 ---
@@ -257,7 +257,7 @@ Não alterar o cálculo de frete durante a correção.
 
 <h3>6.1 <code>/solucao-bug</code>, o registrador</h3>
 <ol>
-  <li>Entrevista o usuário sobre o erro (o que esperava, o que aconteceu, como reproduzir), no padrão de menus do Solução.</li>
+  <li>Entrevista o usuário sobre o erro (o que esperava, o que aconteceu, como reproduzir), no padrão de menus da Solucao.</li>
   <li>Procura <b>duplicata</b> nos bugs existentes; se achar, oferece atualizar o bug antigo em vez de criar outro.</li>
   <li>Classifica com o <code>taxonomy.yaml</code> (area, module, feature) e define severity/priority com o usuário.</li>
   <li><b>Rastreia</b> (papel Tracer, interno): localiza a seção de spec em <code>_solucao_sdd/</code> que define o comportamento esperado, o código suspeito e os testes existentes. Sem spec correspondente, marca <code>spec-gap</code>.</li>
@@ -294,7 +294,7 @@ Exemplo de fim de execução:
   <li>Fecha conforme a <b>closure policy</b>: preenche a Resolution com o change set e os diffs juntos em <code>fix/</code>, marca o <code>resolution_kind</code> e atualiza as views (incluindo a matriz BUG ↔ SPEC das duas pontas). Biblioteca local fecha aqui; serviço em produção fica em <code>phase: observing</code> até a janela de observação confirmar a não recorrência. <code>resolved: fixed</code> exige causa confirmada, testes de regressão e veredito de spec.</li>
 </ol>
 <pre class="dialogo">
-Menu do passo 4 (padrão Solução):
+Menu do passo 4 (padrão Solucao):
 
   Encontrei a causa raiz provável em src/checkout/fechamento.py:42.
   Como você quer decidir a estratégia de correção?
@@ -423,10 +423,10 @@ SPEC define. Código implementa. Bug denuncia a divergência.
 Teste prova que a divergência foi eliminada.
 </pre>
 <p>A dimensão vertical é materializada na matriz BUG ↔ SPEC da seção 6.6, mantida nas duas pontas (<code>_solucao_bugs/spec-matrix.md</code> e <code>_solucao_sdd/bugs.md</code>). Regra dura no <code>README.md</code> do registro: um bug NÃO pode ser marcado <code>resolved</code> com <code>traceability.specs</code>, <code>root_cause_code</code> ou <code>regression_tests</code> vazios. Se não existe spec para o comportamento, o bug carrega <code>spec-gap</code> e a lacuna precisa ser tratada antes da resolução.</p>
-<p>A dimensão temporal conversa com o que o Solução já tem: os testes de regressão de bugs podem ser vigiados pelo mesmo espírito do <code>regression-watch.md</code> do ciclo forward, e a re-extração futura (<code>/solucao</code>) enxerga os adendos de spec gerados pelas correções.</p>
+<p>A dimensão temporal conversa com o que a Solucao já tem: os testes de regressão de bugs podem ser vigiados pelo mesmo espírito do <code>regression-watch.md</code> do ciclo forward, e a re-extração futura (<code>/solucao</code>) enxerga os adendos de spec gerados pelas correções.</p>
 
 <h2 class="quebra"><span class="num">8.</span>Veredito de spec: correções mapeadas e versionadas, com os diffs juntos</h2>
-<p>Pedido específico de Solução: <b>toda correção precisa verificar se a spec original do código com bug deve ser versionada e alterada, e os diffs andam juntos</b>. Ao final de cada correção o agente responde: "o que estava errado, o código ou a spec?"</p>
+<p>Pedido específico de Solucao: <b>toda correção precisa verificar se a spec original do código com bug deve ser versionada e alterada, e os diffs andam juntos</b>. Ao final de cada correção o agente responde: "o que estava errado, o código ou a spec?"</p>
 <table>
   <tr><th>Veredito</th><th>Significado</th><th>Ação sobre a spec</th></tr>
   <tr><td><code>spec-correta</code></td><td>A spec descrevia o comportamento certo; o código divergiu.</td><td>Nenhuma. O fix realinha o código à spec.</td></tr>
@@ -439,7 +439,7 @@ Teste prova que a divergência foi eliminada.
 
 Root cause (confirmed): reaplicação do cupom em aplicar_ajustes(),
 introduzida no commit a1b2c3 (localizado via git bisect).
-Spec verdict: spec-correta, aprovado por Solução
+Spec verdict: spec-correta, aprovado pela Solucao
 (domain.md#regras-de-desconto já definia o teto de 10%).
 Resolution kind: fixed. Closure policy local-software satisfeita.
 
@@ -480,7 +480,7 @@ _solucao_bugs/bugs/BUG-20260710-C4T1-teto-black-friday/fix/CHG-002.diff
 (os dois diffs são registrados juntos, no adendo e na pasta do bug)
 </pre>
 <div class="caixa">
-  <b>Efeito no ciclo do Solução</b><br>
+  <b>Efeito no ciclo da Solucao</b><br>
   A próxima re-extração (<code>/solucao</code>) encontra os adendos e os marca como superados ao regenerar as specs, exatamente como já acontece com os adendos do <code>/solucao-sync</code>. A extração permanece intocada entre re-extrações, mas quem a lê enxerga o sistema como ele é hoje.
 </div>
 
@@ -513,13 +513,13 @@ _solucao_bugs/bugs/BUG-20260710-C4T1-teto-black-friday/fix/CHG-002.diff
   <li><b>Numeração:</b> ID canônico merge-safe <code>BUG-&lt;data&gt;-&lt;sufixo&gt;</code> + <code>display_number</code> humano; colisão entre worktrees eliminada por construção.</li>
   <li><b>Bloqueio:</b> campo estruturado <code>blocking:</code>, nunca um quarto status (12.2).</li>
   <li><b>Registro do lado da spec:</b> espelho gerado em <code>_solucao_sdd/traceability/bugs.md</code> (12.7).</li>
-  <li><b>Nome do pente-fino:</b> mantido <code>/solucao-depth-inspection</code>, conforme pedido original de Solução.</li>
+  <li><b>Nome do pente-fino:</b> mantido <code>/solucao-depth-inspection</code>, conforme pedido original de Solucao.</li>
   <li><b>Modo de controle:</b> <code>gated</code> como padrão (seção 13): leitura, reprodução isolada e diagnóstico fluem sem CONTINUAR; gate obrigatório em tudo que toca o projeto (testes, change set, spec efetiva, harness externo, operação destrutiva).</li>
 </ul>
 
 <h2><span class="num">12.</span>Parecer do Codex (segunda opinião)</h2>
 <!-- CODEX_SECTION -->
-<p>O design acima foi submetido ao Codex (GPT-5, sessão <code>019f66ee</code>), que leu a conversa original, o padrão de skills do Solução e o installer. Veredito geral: <b>"a arquitetura conceitual é forte, sobretudo na separação entre registrar, diagnosticar, decidir e corrigir"</b>, porém "um pouco superdimensionada nas capacidades avançadas e subdimensionada nas invariantes básicas do registro". O parecer completo está no log da sessão; abaixo, o essencial por pergunta.</p>
+<p>O design acima foi submetido ao Codex (GPT-5, sessão <code>019f66ee</code>), que leu a conversa original, o padrão de skills da Solucao e o installer. Veredito geral: <b>"a arquitetura conceitual é forte, sobretudo na separação entre registrar, diagnosticar, decidir e corrigir"</b>, porém "um pouco superdimensionada nas capacidades avançadas e subdimensionada nas invariantes básicas do registro". O parecer completo está no log da sessão; abaixo, o essencial por pergunta.</p>
 
 <h3>12.1 Riscos e lacunas apontados</h3>
 <ul>
@@ -553,7 +553,7 @@ blocking:
   <li><b>Distinguir alteração de criação:</b> <code>spec-desatualizada</code> gera adendo com delta de seção existente; <code>spec-gap</code> gera overlay aditivo com requisito novo, sem fingir que altera seção inexistente.</li>
   <li><b>Versionar o evento:</b> um arquivo imutável por decisão aprovada (ex.: <code>bug-BUG-042-v001.md</code>) com alvo, vigência, evidências e aprovação, em vez de reescrever adendo anterior.</li>
 </ul>
-<p>Alerta importante: a re-extração do Solução hoje marca todos os adendos como superados. Para adendos de bug (sobretudo <code>spec-gap</code>), isso só deve acontecer após verificar que a nova extração <b>absorveu</b> o comportamento. Na Resolution, manter código e spec unidos transacionalmente, mas com resumo + hash + link para o diff completo em <code>evidence/</code>, sem colar diffs gigantes no Markdown.</p>
+<p>Alerta importante: a re-extração da Solucao hoje marca todos os adendos como superados. Para adendos de bug (sobretudo <code>spec-gap</code>), isso só deve acontecer após verificar que a nova extração <b>absorveu</b> o comportamento. Na Resolution, manter código e spec unidos transacionalmente, mas com resumo + hash + link para o diff completo em <code>evidence/</code>, sem colar diffs gigantes no Markdown.</p>
 
 <h3>12.4 Debatedores externos: protocolo endurecido</h3>
 <ul>
@@ -581,9 +581,9 @@ blocking:
 </ul>
 
 <h3>12.7 Segunda rodada: parecer sobre a pasta única por bug e a matriz BUG ↔ SPEC</h3>
-<p>Após a decisão de Solução de concentrar tudo de um bug numa pasta só, o Codex foi consultado de novo (sessão <code>019f6716</code>). Resumo:</p>
+<p>Após a decisão de Solucao de concentrar tudo de um bug numa pasta só, o Codex foi consultado de novo (sessão <code>019f6716</code>). Resumo:</p>
 <ul>
-  <li><b>Pasta plana, recomendação firme:</b> <code>_solucao_bugs/BUG-007/</code> com endereço físico imutável e <code>status</code> só no front matter. Mover a pasta entre <code>open/active/resolved</code> quebra links externos a cada transição, gera conflito rename/rename entre branches no git e obriga ferramentas a procurar o ID em três lugares. "A organização por estado é uma projeção, não parte da identidade do bug." Se Solução preferir manter a movimentação, mitigações obrigatórias: referências só por ID, links internos relativos, o registrador resolve ID → caminho atual, validação rejeita ID duplicado e divergência pasta vs <code>status</code>, e o nome da pasta carrega só o ID (slug fica no YAML).</li>
+  <li><b>Pasta plana, recomendação firme:</b> <code>_solucao_bugs/BUG-007/</code> com endereço físico imutável e <code>status</code> só no front matter. Mover a pasta entre <code>open/active/resolved</code> quebra links externos a cada transição, gera conflito rename/rename entre branches no git e obriga ferramentas a procurar o ID em três lugares. "A organização por estado é uma projeção, não parte da identidade do bug." Se a Solucao preferir manter a movimentação, mitigações obrigatórias: referências só por ID, links internos relativos, o registrador resolve ID → caminho atual, validação rejeita ID duplicado e divergência pasta vs <code>status</code>, e o nome da pasta carrega só o ID (slug fica no YAML).</li>
   <li><b>Espelho do lado da spec: ideia correta</b>, desde que explicitamente uma view gerada, nunca outra fonte de verdade. Endereço recomendado: <code>_solucao_sdd/traceability/bugs.md</code>, ao lado do <code>traceability/code-spec-matrix.md</code> que a extração já produz. Cabeçalho "GENERATED, DO NOT EDIT", uma seção por spec, links resolvidos por ID. Não criar um arquivo por spec (multiplicaria derivados e pareceria alteração da spec original) e não deixar o vínculo só do lado dos bugs (o espelho melhora a descoberta por quem navega pelas specs). Os adendos seguem sendo os únicos documentos autorais que complementam o contrato original.</li>
   <li><b>Recomendações anteriores permanecem</b> e uma fica mais importante: com bugs autocontidos, o registrador central de IDs deve ser append-only e a validação precisa pegar duplicata no merge (contador sequencial sozinho não impede colisão entre branches). <code>catalog.jsonl</code> passa a incluir o caminho calculado de cada bug; <code>resolution_kind</code> deve indicar quando houve adendo de spec; os dois gates de aprovação seguem inalterados.</li>
 </ul>
@@ -592,20 +592,20 @@ blocking:
 <h3>12.8 Posição da redação sobre os pareceres</h3>
 <div class="caixa decisao">
   <b>Recomendação</b><br>
-  Acatar integralmente as duas rodadas. Nenhuma recomendação do Codex contradiz as decisões travadas por Solução; todas endurecem o design (schema versionado, <code>resolution_kind</code>, bloqueio estruturado, dois gates no fix, aprovação humana do veredito de spec, registrador central de IDs, protocolo de debatedor externo com quórum, lente de concorrência, views esparsas com catálogo, espelho em <code>_solucao_sdd/traceability/bugs.md</code>). Se aprovado, tudo isso entra na spec <code>specs/solucao-bugs/</code> antes da implementação. Restam a Solução as duas decisões da seção 11: o layout do status (pasta plana, recomendada, ou pastas de status) e o nome do comando de pente-fino.
+  Acatar integralmente as duas rodadas. Nenhuma recomendação do Codex contradiz as decisões travadas pela Solucao; todas endurecem o design (schema versionado, <code>resolution_kind</code>, bloqueio estruturado, dois gates no fix, aprovação humana do veredito de spec, registrador central de IDs, protocolo de debatedor externo com quórum, lente de concorrência, views esparsas com catálogo, espelho em <code>_solucao_sdd/traceability/bugs.md</code>). Se aprovado, tudo isso entra na spec <code>specs/solucao-bugs/</code> antes da implementação. Restam a Solucao as duas decisões da seção 11: o layout do status (pasta plana, recomendada, ou pastas de status) e o nome do comando de pente-fino.
 </div>
 <!-- /CODEX_SECTION -->
 
 <h2 class="quebra"><span class="num">13.</span>Parecer da prática diária: triagem e o que muda</h2>
 <p>O terceiro parecer (<code>parecer_solucao_bugs_pratica_diaria_para_claude.md</code>) trouxe a crítica mais estrutural: o desenho modelava bem "agente conserta código", mas não <b>o ciclo de vida completo de um defeito</b> (intake → triage → mitigate → reproduce → diagnose → fix → deliver → observe → close). A tese central foi adotada como norte do projeto:</p>
 <div class="caixa">
-  <b>Tese da Solução de Bugs</b><br>
+  <b>Tese da Solucao de Bugs</b><br>
   O sistema mantém uma memória causal verificável do defeito, repository-native, e usa agentes especializados como workers efêmeros para investigar, decidir, corrigir e comprovar a recuperação do software. Os agentes não são a arquitetura; a arquitetura é estado, evidência, políticas e rastreabilidade.
 </div>
 
 <h3>13.1 Acatado integral</h3>
 <ul>
-  <li><b>Pasta não é fonte de estado + <code>phase</code> separada de <code>status</code></b> (§14), convergindo com o Codex. Estrutura final na seção 4, com pasta única por bug preservada (a proposta do parecer de voltar a evidence/ e debates/ globais foi rejeitada por contrariar decisão de Solução).</li>
+  <li><b>Pasta não é fonte de estado + <code>phase</code> separada de <code>status</code></b> (§14), convergindo com o Codex. Estrutura final na seção 4, com pasta única por bug preservada (a proposta do parecer de voltar a evidence/ e debates/ globais foi rejeitada por contrariar decisão de Solucao).</li>
   <li><b>Teste de reprodução ≠ teste de regressão</b> (§7).</li>
   <li><b>Estado epistemológico</b> em causa raiz e relações BUG↔BUG (§8, §9): <code>hypothesized/supported/confirmed/rejected</code>, com evidências; relação <code>proposed</code> não altera priorização automática.</li>
   <li><b>IDs merge-safe</b> (§13): <code>BUG-&lt;data&gt;-&lt;sufixo&gt;</code> + <code>display_number</code>.</li>
@@ -639,7 +639,7 @@ blocking:
 <p>Os 10 cenários do parecer (§30) viram critérios de aceitação da spec: bug simples local fecha sem burocracia; incidente de produção não fecha com teste local; corrupção de dados distingue código curado de sistema curado; intermitente permite instrumentação sem inventar causa; regressão liga bug ao commit culpado via bisect; múltiplas versões respeitam backport pendente; divergência de spec exige decisão humana; vulnerabilidade não vaza em views; dois harness em worktrees não colidem IDs; correção de alto risco considera <code>change_risk</code>.</p>
 
 <footer>
-  Solução Bugs, documento de entendimento. Gerado em 2026-07-15 na sessão de design com Solução, consolidando a conversa original, dois pareceres do Codex e o parecer de prática diária. Implementação autorizada por Solução em 2026-07-15.
+  Solucao Bugs, documento de entendimento. Gerado em 2026-07-15 na sessão de design com a Solucao, consolidando a conversa original, dois pareceres do Codex e o parecer de prática diária. Implementação autorizada pela Solucao em 2026-07-15.
 </footer>
 
 </body>

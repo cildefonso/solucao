@@ -13,7 +13,7 @@ The express biographer visits the subject, reads the real estate agent's notes (
 
 ## What it does
 
-The Soul Extractor is deliberately light. It does NOT excavate module by module (that's the Archaeologist), it does NOT reconstruct business rules (that's the Detective), it does NOT draw a full C4 (that's the Architect). It produces ONE single executive Spec that gives the reader the essential understanding of the project in one read.
+The Soul Extractor is deliberately light. It does NOT excavate module by module (that's the Arqueologo), it does NOT reconstruct business rules (that's the Detective), it does NOT draw a full C4 (that's the Architect). It produces ONE single executive Spec that gives the reader the essential understanding of the project in one read.
 
 The synthesis covers three things:
 
@@ -68,4 +68,4 @@ Right after Scout, when you want an executive synthesis of the system before com
 /solucao-extract-soul
 ```
 
-You can also run it any time after Scout has run, even if Archaeologist, Detective and the others already produced their artifacts. The Soul Extractor stays consistent with whatever surface map is current.
+You can also run it any time after Scout has run, even if Arqueologo, Detective and the others already produced their artifacts. The Soul Extractor stays consistent with whatever surface map is current.

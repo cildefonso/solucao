@@ -1,6 +1,6 @@
 # Pipeline de análise
 
-O Solucao transforma um sistema legado em especificações executáveis em 5 fases. Cada fase tem agentes específicos, e o orquestrador central coordena tudo para que aconteça na ordem certa.
+A Solucao transforma um sistema legado em especificações executáveis em 5 fases. Cada fase tem agentes específicos, e o orquestrador central coordena tudo para que aconteça na ordem certa.
 
 ---
 
@@ -9,7 +9,7 @@ O Solucao transforma um sistema legado em especificações executáveis em 5 fas
 ```
 Fase 1          Fase 2        Fase 3              Fase 4        Fase 5
 Reconhecimento  Escavação     Interpretação       Geração       Revisão
-   Scout        Archaeologist    Detective            Writer       Reviewer
+   Scout        Arqueologo    Detective            Writer       Reviewer
                                Architect
 ```
 
@@ -37,11 +37,11 @@ Também é nesse momento que o Solucao apresenta o resumo do Scout e pergunta o 
 
 ## Fase 2: Escavação
 
-**Agente:** Archaeologist
+**Agente:** Arqueologo
 
-O Archaeologist escava o terreno módulo a módulo. Com paciência e precisão, cataloga cada artefato: funções, algoritmos, estruturas de dados, fluxos de controle. Ele não interpreta nem julga. Só descreve com precisão o que está lá.
+O Arqueologo escava o terreno módulo a módulo. Com paciência e precisão, cataloga cada artefato: funções, algoritmos, estruturas de dados, fluxos de controle. Ele não interpreta nem julga. Só descreve com precisão o que está lá.
 
-**Importante:** o Archaeologist roda um módulo por sessão, de propósito. Projetos grandes têm muitos módulos, e tentar analisar tudo de uma vez consome contexto e reduz a qualidade da análise.
+**Importante:** o Arqueologo roda um módulo por sessão, de propósito. Projetos grandes têm muitos módulos, e tentar analisar tudo de uma vez consome contexto e reduz a qualidade da análise.
 
 O que ele produz:
 
@@ -58,7 +58,7 @@ O que ele produz:
 
 Aqui a análise deixa de ser descritiva e vira interpretativa. Dois agentes trabalham em paralelo nessa fase.
 
-**O Detective** é o Sherlock Holmes do time. Olha para o que o Archaeologist catalogou e pergunta: *"Mas por que isso está aqui? Quem tomou essa decisão? O que o histórico git revela?"*. Extrai regras de negócio implícitas, ADRs retroativos, máquinas de estado e matrizes de permissão.
+**O Detective** é o Sherlock Holmes do time. Olha para o que o Arqueologo catalogou e pergunta: *"Mas por que isso está aqui? Quem tomou essa decisão? O que o histórico git revela?"*. Extrai regras de negócio implícitas, ADRs retroativos, máquinas de estado e matrizes de permissão.
 
 **O Architect** é o cartógrafo. Sintetiza tudo em documentação arquitetural formal: diagramas C4 nos três níveis (Contexto, Containers, Componentes), ERD completo, mapa de integrações, dívidas técnicas.
 

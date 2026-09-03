@@ -1,6 +1,6 @@
 ---
 name: solucao-pricing-profile
-description: Conduz uma entrevista guiada de ate dez perguntas e gera o perfil de cobranca do usuario, com pais, moeda, senioridade normalizada, taxa hora, markup de projeto, regime tributario, modelo de cobranca e perfil de cliente. Use quando o usuario digitar "/solucao-pricing-profile", "solucao-pricing-profile", "configurar perfil de cobranca", "definir taxa hora" ou pedir para configurar precificacao no Solucao.
+description: Conduz uma entrevista guiada de ate dez perguntas e gera o perfil de cobranca do usuario, com pais, moeda, senioridade normalizada, taxa hora, markup de projeto, regime tributario, modelo de cobranca e perfil de cliente. Use quando o usuario digitar "/solucao-pricing-profile", "solucao-pricing-profile", "configurar perfil de cobranca", "definir taxa hora" ou pedir para configurar precificacao na Solucao.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compativeis com Agent Skills.
 metadata:

@@ -1,4 +1,4 @@
-# Melhorias no Solução para tornar o /solucao-debugger mais efetivo
+# Melhorias na Solucao para tornar o /solucao-debugger mais efetivo
 
 > Post-mortem acionável escrito a partir do caso `mira-studio-full`, onde o
 > `/solucao-debugger` fechou 8 bugs como "fixed" e ainda assim entregou uma

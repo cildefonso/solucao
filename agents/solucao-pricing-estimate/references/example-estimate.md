@@ -40,7 +40,7 @@ Aviso: parte do fator tributario pode ser imposto destacado e repassado ao clien
 
 ## Cenario Valor
 
-**O que e:** preco baseado em parte do valor economico anual que a feature gera ou protege para o cliente. O Solucao usa captura de 10% a 30% do valor anual declarado.
+**O que e:** preco baseado em parte do valor economico anual que a feature gera ou protege para o cliente. A Solucao usa captura de 10% a 30% do valor anual declarado.
 
 **Quando usar:** quando o cliente consegue declarar retorno, economia ou custo de nao fazer.
 

@@ -1,19 +1,19 @@
 # Passo 3, Organização das specs
 
-Este passo acontece imediatamente após o usuário escolher o `doc_level` (Essencial / Completo / Detalhado) e antes da invocação do Archaeologist. É o momento em que o Solucao decide e persiste em qual estrutura as specs serão geradas.
+Este passo acontece imediatamente após o usuário escolher o `doc_level` (Essencial / Completo / Detalhado) e antes da invocação do Arqueologo. É o momento em que a Solucao decide e persiste em qual estrutura as specs serão geradas.
 
 ## 1. Decidir se o menu deve ser exibido
 
 Leia, nesta ordem, e mescle chave a chave (precedência total para `config.user.toml`):
 
-1. `.solucao/config.toml`, seção `[specs]` (config gerenciado pelo Solucao)
+1. `.solucao/config.toml`, seção `[specs]` (config gerenciado pela Solucao)
 2. `.solucao/config.user.toml`, seção `[specs]` (override manual do usuário)
 
 A mescla é avaliada por chave: cada chave presente em `config.user.toml` substitui a correspondente em `config.toml`. Chaves ausentes continuam vindas de `config.toml`.
 
 A seção é considerada **decidida** quando, após a mescla, `granularity` está preenchida com um dos valores válidos: `module`, `use-case`, `endpoint`, `hybrid`, `feature`, `custom`.
 
-- **Se decidida:** pule este passo inteiro. Vá direto para a invocação do Archaeologist.
+- **Se decidida:** pule este passo inteiro. Vá direto para a invocação do Arqueologo.
 - **Se não decidida** (seção ausente, ou `granularity` vazia): apresente o menu (passo 2 abaixo).
 
 ### Caso especial, RF-18
@@ -120,7 +120,7 @@ Regras:
 
 ## 5. Continuação do fluxo
 
-Após a persistência bem-sucedida, prossiga com a invocação do Archaeologist conforme o `plan.md`. A decisão fica disponível para todos os agentes que escrevem specs.
+Após a persistência bem-sucedida, prossiga com a invocação do Arqueologo conforme o `plan.md`. A decisão fica disponível para todos os agentes que escrevem specs.
 
 ## 6. Reapresentação manual (RF-17)
 
@@ -128,7 +128,7 @@ Não existe flag de CLI dedicada para reconfigurar. O usuário reapresenta o men
 
 ## Idioma das pastas (RF-10)
 
-Os nomes que o Solucao usa para as pastas de feature seguem `doc_language` do `state.json`. Não pergunte idioma neste passo. Em uma instalação `pt-br`, as pastas saem em pt-br; em `en`, em inglês.
+Os nomes que a Solucao usa para as pastas de feature seguem `doc_language` do `state.json`. Não pergunte idioma neste passo. Em uma instalação `pt-br`, as pastas saem em pt-br; em `en`, em inglês.
 
 ## Lista de checagens antes de avançar
 
@@ -142,4 +142,4 @@ Os nomes que o Solucao usa para as pastas de feature seguem `doc_language` do `s
 - [ ] Detectar conflito com estrutura em disco e pedir confirmação
 - [ ] Atomic write em `config.toml`
 - [ ] Preservar `scout_suggestion` em re-execuções com seção parcial
-- [ ] Prosseguir para o Archaeologist
+- [ ] Prosseguir para o Arqueologo

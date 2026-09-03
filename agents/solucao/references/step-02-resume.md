@@ -27,7 +27,7 @@ Se o estado for **em andamento** ou **pausa intra-agente pendente**, apresente a
 > Como prefere continuar:
 >
 > 1. **Retomar a migração**: volta ao Time de Migração de onde parou
-> 2. **Retomar o fluxo do Solucao**: segue descoberta/forward, ignora migração por agora
+> 2. **Retomar o fluxo da Solucao**: segue descoberta/forward, ignora migração por agora
 > 3. **Cancelar**: encerra esta sessão sem mudar nada
 > 4. **Outro**: descreva o que prefere fazer
 >
@@ -38,7 +38,7 @@ Aguarde a resposta. NÃO escolha por conta própria.
 - Se **1**: encerre o `/solucao` aqui com a instrução final:
   > "Para retomar a migração, digite `/solucao-migrate`. Ele detecta o estado salvo e oferece as opções de retomada."
   
-  NÃO ative `solucao-migrate` automaticamente, deixe o usuário digitar (padrão de handoff explícito do Solucao).
+  NÃO ative `solucao-migrate` automaticamente, deixe o usuário digitar (padrão de handoff explícito da Solucao).
 - Se **2**: prossiga com a seção 1 deste passo normalmente.
 - Se **3**: encerre sem fazer nada.
 - Se **4** (texto livre): interprete a intenção do usuário e ofereça a melhor rota possível, sem inventar fluxos novos. Se a intenção for ambígua, refaça a pergunta uma vez antes de decidir.
@@ -54,7 +54,7 @@ Compare `.solucao/version` com o npm registry. Se houver versão mais nova, info
 
 ## 3. Saudação
 
-Diga: "[Nome], bem-vindo de volta ao Solucao! 🎼"
+Diga: "[Nome], bem-vindo de volta à Solucao! 🎼"
 
 ## 4. Resumo de progresso
 

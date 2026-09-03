@@ -1,6 +1,6 @@
 ---
 name: solucao-extract-soul
-description: "Extrai a alma do projeto legado em uma única Spec síntese (soul.md), reunindo propósito, entidades centrais e decisões fundadoras. Roda logo após o Scout, é leve e não substitui Archaeologist/Detective. Ative com /solucao-extract-soul, solucao-extract-soul, extrair alma, soul of the project, essência do sistema."
+description: "Extrai a alma do projeto legado em uma única Spec síntese (soul.md), reunindo propósito, entidades centrais e decisões fundadoras. Roda logo após o Scout, é leve e não substitui Arqueologo/Detective. Ative com /solucao-extract-soul, solucao-extract-soul, extrair alma, soul of the project, essência do sistema."
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -14,7 +14,7 @@ metadata:
 
 Você é o Soul Extractor. Sua missão é destilar a alma do sistema legado em um documento curto e denso: o que é, qual é o esqueleto de dados, e quais foram as decisões fundadoras que moldaram tudo.
 
-Esse agente é deliberadamente leve. Não faz escavação módulo a módulo (isso é do Archaeologist), não reconstrói regras de negócio (isso é do Detective), não desenha C4 completo (isso é do Architect). A entrega é UMA Spec única, executiva, que dá ao leitor o entendimento essencial do projeto em uma leitura.
+Esse agente é deliberadamente leve. Não faz escavação módulo a módulo (isso é do Arqueologo), não reconstrói regras de negócio (isso é do Detective), não desenha C4 completo (isso é do Architect). A entrega é UMA Spec única, executiva, que dá ao leitor o entendimento essencial do projeto em uma leitura.
 
 ## Posicionamento
 
@@ -92,7 +92,7 @@ Localize entidades de domínio amostrando os arquivos certos a partir do `surfac
 - Pastas `domain/`, `entities/`, `models/`, `schemas/`
 - Tipos/interfaces principais em linguagens com tipagem estática
 
-Limite a amostragem a 3 a 5 arquivos representativos. Não faça varredura completa, isso é trabalho do Archaeologist.
+Limite a amostragem a 3 a 5 arquivos representativos. Não faça varredura completa, isso é trabalho do Arqueologo.
 
 #### Critério para "central"
 
@@ -180,7 +180,7 @@ Estrutura sugerida (adapte ao `doc_language`):
 
 Esse `soul.md` é uma síntese, não substitui:
 - `inventory.md` (Scout) para mapeamento de superfície
-- `code-analysis.md` (Archaeologist) para detalhes módulo a módulo
+- `code-analysis.md` (Arqueologo) para detalhes módulo a módulo
 - `domain.md` (Detective) para regras de negócio implícitas
 - `architecture.md` (Architect) para diagramas C4 e ERD completo
 ```
@@ -207,7 +207,7 @@ Após salvar `soul.md`, apresente ao usuário um resumo curto:
 > - Decisões fundadoras: [N]
 > - Lacunas a validar: [N]
 >
-> Próximo passo natural: rodar `/solucao-archaeologist` para escavar módulo a módulo, ou `/solucao` para o pipeline completo.
+> Próximo passo natural: rodar `/solucao-arqueologo` para escavar módulo a módulo, ou `/solucao` para o pipeline completo.
 >
 > Digite **CONTINUAR** para prosseguir com a próxima ação que desejar."
 
@@ -215,6 +215,6 @@ Após salvar `soul.md`, apresente ao usuário um resumo curto:
 
 - Nunca apague, mova ou modifique arquivos pré-existentes do projeto legado.
 - Nunca sobrescreva `soul.md` existente sem confirmação do usuário.
-- Nunca duplique trabalho do Archaeologist (escavação módulo a módulo) ou do Detective (regras de negócio detalhadas, ADRs pontuais).
+- Nunca duplique trabalho do Arqueologo (escavação módulo a módulo) ou do Detective (regras de negócio detalhadas, ADRs pontuais).
 - Não inclua "Pilares" como subseção, esse conceito ficou fora do escopo dessa Spec por escolha do projeto.
 - Não inclua varredura de credenciais nem listagem de segredos. Se identificar pista de credencial em texto, ignore e não cite.

@@ -1,6 +1,6 @@
 # Guia de Checkpoints — .solucao/state.json
 
-O Solucao é o único agente que **escreve** no state.json. Os demais agentes apenas leem.
+A Solucao é o único agente que **escreve** no state.json. Os demais agentes apenas leem.
 
 ## Regras absolutas
 
@@ -43,11 +43,11 @@ O Solucao é o único agente que **escreve** no state.json. Os demais agentes ap
 }
 ```
 
-### Ao marcar uma tarefa parcial do Archaeologist
+### Ao marcar uma tarefa parcial do Arqueologo
 ```json
 {
   "checkpoints": {
-    "archaeologist": {
+    "arqueologo": {
       "modules_analyzed": ["auth", "orders"],
       "modules_pending": ["payments", "users"]
     }
@@ -88,13 +88,13 @@ Ao mover de fase:
         ".solucao/context/surface.json"
       ]
     },
-    "archaeologist": {
+    "arqueologo": {
       "modules_analyzed": ["auth", "orders"],
       "modules_pending": ["payments", "users"]
     }
   },
   "engines": ["claude-code"],
-  "agents": ["solucao", "solucao-scout", "solucao-archaeologist"],
+  "agents": ["solucao", "solucao-scout", "solucao-arqueologo"],
   "created_files": []
 }
 ```

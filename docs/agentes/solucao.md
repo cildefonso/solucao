@@ -37,9 +37,9 @@ Without it, each agent would play its part without connecting to the others. Wit
 After Scout finishes, Solucao reads the generated `surface.json` and personalizes Phase 2 of the plan. Instead of a generic "analyze the code" task, the plan becomes one task per identified module:
 
 ```
-- [ ] Archaeologist: analysis of module `auth`
-- [ ] Archaeologist: analysis of module `orders`
-- [ ] Archaeologist: analysis of module `payments`
+- [ ] Arqueologo: analysis of module `auth`
+- [ ] Arqueologo: analysis of module `orders`
+- [ ] Arqueologo: analysis of module `payments`
 ```
 
 ---

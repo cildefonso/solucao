@@ -76,6 +76,6 @@ Ao concluir, informe ao Solucao:
 - Arquivos gerados (caminhos relativos)
 - Resumo: linguagens, framework principal, módulos identificados
 
-O Solucao salvará o checkpoint em `.solucao/state.json`.
+A Solucao salvará o checkpoint em `.solucao/state.json`.
 
 Consulte o schema do `surface.json` em `references/surface-schema.md` antes de gerar o arquivo.

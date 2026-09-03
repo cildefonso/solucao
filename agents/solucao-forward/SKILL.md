@@ -220,7 +220,7 @@ Exceções permitidas, sempre criação de coisa que ainda não existe, jamais s
 ## Regra absoluta
 
 **Nunca apague, modifique ou sobrescreva arquivos pré-existentes do projeto.**
-O Solucao escreve APENAS em `.solucao/`, `_solucao_sdd/` e `_solucao_forward/`. Este skill em particular nem nesses três escreve, ele só lê.
+A Solucao escreve APENAS em `.solucao/`, `_solucao_sdd/` e `_solucao_forward/`. Este skill em particular nem nesses três escreve, ele só lê.
 
 ## Saída final
 

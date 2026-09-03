@@ -4,7 +4,7 @@
 
 ## Por que existe
 
-O Solucao não é só extração one-shot. Cada `/solucao-coding` deixa em `_solucao_forward/<feature>/regression-watch.md` uma lista de regras que precisam continuar verdadeiras na próxima extração. A pipeline solucao, ao re-rodar, tem o dever de checar essas regras contra o código atual e reportar regressões. Esse é o diferencial competitivo do Solucao frente a frameworks forward puros.
+A Solucao não é só extração one-shot. Cada `/solucao-coding` deixa em `_solucao_forward/<feature>/regression-watch.md` uma lista de regras que precisam continuar verdadeiras na próxima extração. A pipeline solucao, ao re-rodar, tem o dever de checar essas regras contra o código atual e reportar regressões. Esse é o diferencial competitivo da Solucao frente a frameworks forward puros.
 
 ## Quando rodar
 
@@ -67,7 +67,7 @@ Se houver pelo menos um vermelho, apresente um aviso destacado:
 
 > 🔴 **Atenção**, foram detectadas **N regressões semânticas** em features previamente codadas. Revise antes de seguir.
 
-Se a `setup.json#watch.block-on-red` for `true`, sugira ao usuário **não** prosseguir com novos `/solucao-requirements` até que cada vermelho seja triado. O Solucao apenas alerta, jamais bloqueia automaticamente o fluxo do usuário.
+Se a `setup.json#watch.block-on-red` for `true`, sugira ao usuário **não** prosseguir com novos `/solucao-requirements` até que cada vermelho seja triado. A Solucao apenas alerta, jamais bloqueia automaticamente o fluxo do usuário.
 
 ## Reconciliação de adendos
 

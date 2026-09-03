@@ -31,7 +31,7 @@ These are part of the main pipeline. The orchestrator runs them in the right seq
 |-------|-------|---------|------|
 | [Solucao](solucao.md) | Orchestration | The orchestra conductor | Coordinates all agents, saves checkpoints, guides the user |
 | [Scout](scout.md) | Reconnaissance | The real estate agent | Maps the surface: folders, languages, frameworks, dependencies, entry points |
-| [Archaeologist](arqueologo.md) | Excavation | The excavator | Deep module-by-module analysis: algorithms, flows, data structures |
+| [Arqueologo](arqueologo.md) | Excavation | The excavator | Deep module-by-module analysis: algorithms, flows, data structures |
 | [Detective](detetive.md) | Interpretation | Sherlock Holmes | Extracts implicit business rules, ADRs, state machines, permissions |
 | [Architect](arquiteto.md) | Interpretation | The cartographer | Synthesizes everything into C4 diagrams, ERD, and integration map |
 | [Writer](redator.md) | Generation | The notary | Generates SDD specs, OpenAPI, and user stories with code traceability |
@@ -68,7 +68,7 @@ Use when the legacy "code" is not source code, but a structured artifact like a 
 
 Or manually, if you prefer to control each step:
 
-Scout → Archaeologist (N sessions) → Detective → Architect → Writer → Reviewer
+Scout → Arqueologo (N sessions) → Detective → Architect → Writer → Reviewer
 
 Optional at any phase:
 Visor · Data Master · Design System

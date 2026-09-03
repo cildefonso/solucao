@@ -1,12 +1,12 @@
 # Conversa: Documentação e Rastreabilidade de Bugs para Agentes LLM
 
 **Contexto:** Discussão entre Solucao e ChatGPT sobre uma arquitetura de
-documentação de bugs orientada a Codex, Claude Code, SDD e agentes do
-Solução.
+documentação de bugs orientada a Codex, Claude Code, SDD e agentes da
+Solucao.
 
 ------------------------------------------------------------------------
 
-## Solução
+## Solucao
 
 Qual a melhor forma de documentar bugs para que as LLMs no Codex e
 Claude Code possam documentar e/ou depois corrigir? Quero estrutura de
@@ -16,7 +16,7 @@ pastas, nome de arquivos e etc.
 
 ## ChatGPT
 
-Solução, para **Codex + Claude Code**, eu faria um sistema de bugs
+Solucao, para **Codex + Claude Code**, eu faria um sistema de bugs
 **dentro do próprio repositório, orientado a arquivos Markdown e
 explicitamente projetado para agentes**.
 
@@ -389,7 +389,7 @@ move para resolved
 
 ------------------------------------------------------------------------
 
-## Solução
+## Solucao
 
 E como organizar por feature, ou subsistema ou módulo etc? Qual a melhor
 forma?
@@ -496,7 +496,7 @@ the proposed taxonomy change in Agent Notes.
 
 ------------------------------------------------------------------------
 
-## Solução
+## Solucao
 
 Mas a gente tem que ter cuidado para nao ficar uma árvore muito grande
 de pastas.
@@ -601,7 +601,7 @@ feature:
 
 ------------------------------------------------------------------------
 
-## Solução
+## Solucao
 
 Ah, e todo bug deve ser rastreavel ligando o codigo ou códigos
 (arquivos) as specs
@@ -791,7 +791,7 @@ prova que a divergência foi eliminada.**
 
 ------------------------------------------------------------------------
 
-## Solução
+## Solucao
 
 Eu acho importante uma matriz de rastrabilidade entre bugs, uma matriz
 que mostraria a relação entre os bugs. Faz sentido?
@@ -1015,18 +1015,18 @@ falhas para agentes de software**.
 
 ------------------------------------------------------------------------
 
-## Solução
+## Solucao
 
-Poderia ser agentes do Solução não é?
+Poderia ser agentes da Solucao não é?
 
 ------------------------------------------------------------------------
 
 ## ChatGPT
 
-**Exatamente. E isso encaixa melhor no Solução do que como um sistema
+**Exatamente. E isso encaixa melhor na Solucao do que como um sistema
 isolado.**
 
-O Solução já faz:
+A Solucao já faz:
 
 ``` text
 CODE → SPEC
@@ -1073,7 +1073,7 @@ E concluir:
 
 Isso é **engenharia solucao da falha**.
 
-No Solução, poderia existir conceitualmente:
+No Solucao, poderia existir conceitualmente:
 
 ``` text
 /solucao-bug
@@ -1092,7 +1092,7 @@ com um **loop multiagente interno**.
 
 A feature central identificada foi:
 
-> **O Solução não apenas reconstrói a intenção do software pelo código.
+> **A Solucao não apenas reconstrói a intenção do software pelo código.
 > Ele pode reconstruir a topologia causal das falhas.**
 
 ------------------------------------------------------------------------
@@ -1133,7 +1133,7 @@ HORIZONTAL: BUG ↔ BUG
 TEMPORAL:   BUG → FIX → REGRESSION
 ```
 
-## Papel do Solução
+## Papel da Solucao
 
 ``` text
 CODE → SPEC
@@ -1146,4 +1146,4 @@ CODE ↔ SPEC ↔ BUG ↔ TEST ↔ ROOT CAUSE
 ```
 
 O resultado conceitual é uma **topologia causal das falhas do
-software**, mantida e explorada por agentes especializados do Solução.
+software**, mantida e explorada por agentes especializados da Solucao.

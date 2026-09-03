@@ -2,13 +2,13 @@
 
 **Transforme sistemas legados em especificações executáveis por agentes de IA.**
 
-Sabe aquele sistema que ninguém quer tocar? O que tem 10 anos, roda em produção, gera dinheiro todos os dias, mas ninguém sabe ao certo *o que ele faz* por dentro? O Solucao foi feito para ele.
+Sabe aquele sistema que ninguém quer tocar? O que tem 10 anos, roda em produção, gera dinheiro todos os dias, mas ninguém sabe ao certo *o que ele faz* por dentro? A Solucao foi feito para ele.
 
 ---
 
 ## O que é o Solucao?
 
-O Solucao é um framework de engenharia solucao de especificações. Você o instala dentro do projeto legado, ativa um agente de IA que já usa no dia a dia, e ele coordena um time de especialistas para analisar o código e gerar especificações completas, rastreáveis e prontas para uso por qualquer agente codificador.
+A Solucao é um framework de engenharia solucao de especificações. Você o instala dentro do projeto legado, ativa um agente de IA que já usa no dia a dia, e ele coordena um time de especialistas para analisar o código e gerar especificações completas, rastreáveis e prontas para uso por qualquer agente codificador.
 
 **Em outras palavras:** o Solucao transforma código sem documentação em contratos operacionais que um agente de IA consegue entender e usar para evoluir o sistema com segurança.
 
@@ -29,7 +29,7 @@ Depois, abra o projeto no seu agente de IA favorito e escolha o fluxo:
 /solucao-new   # transformar uma ideia nova em PRD e specs SDD
 ```
 
-Pronto. O Solucao assume o volante e guia você até o fim.
+Pronto. A Solucao assume o volante e guia você até o fim.
 
 ---
 
@@ -82,8 +82,8 @@ Pronto. O Solucao assume o volante e guia você até o fim.
 
     Se algo inesperado acontecer durante a análise, você pode restaurar o estado original com `git restore .` ou a partir da cópia de backup.
 
-!!! warning "O Solucao nunca toca nos seus arquivos"
+!!! warning "A Solucao nunca toca nos seus arquivos"
     Os agentes escrevem **apenas** em `.solucao/` e `_solucao_sdd/`. Nenhum arquivo do seu projeto é modificado, apagado ou sobrescrito. Nunca.
 
 !!! info "Sem chaves de API"
-    O Solucao não solicita, não armazena e não transmite chaves de API de nenhum serviço. A inteligência vem do agente que você já usa no ambiente como Claude Code, Codex, Gemini Cli e etc.
+    A Solucao não solicita, não armazena e não transmite chaves de API de nenhum serviço. A inteligência vem do agente que você já usa no ambiente como Claude Code, Codex, Gemini Cli e etc.

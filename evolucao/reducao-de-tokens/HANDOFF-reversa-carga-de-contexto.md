@@ -1,11 +1,11 @@
-# HANDOFF — Otimização de contexto da Solução
+# HANDOFF — Otimização de contexto da Solucao
 
 > **Para:** outra sessão do Claude Code
-> **Natureza:** **otimização**, não refatoração. O comportamento da Solução deve ficar **idêntico**.
+> **Natureza:** **otimização**, não refatoração. O comportamento da Solucao deve ficar **idêntico**.
 > **Objetivo:** economizar tokens do usuário reduzindo a carga permanente de contexto das 49 skills
-> **Origem:** relatório `mattpocock-skills × Solução`, 30/07/2026
+> **Origem:** relatório `mattpocock-skills × Solucao`, 30/07/2026
 > **Esforço:** 1–2 h, quase todo scriptável
-> **Autor da Solução:** `solucao` — é o próprio usuário desta sessão
+> **Autor da Solucao:** `solucao` — é o próprio usuário desta sessão
 
 ---
 
@@ -20,17 +20,17 @@ Duas **características** do `mattpocock-skills`, nomeadas por ele:
 
 ⚠️ **Repare no que faz delas características, e não conquistas pontuais:** *"decisão de engenharia com
 custo medido"* e *"0 descasamentos"* são propriedades que se **mantêm** — não estados que se alcança uma
-vez. Marcar as 49 skills hoje entrega o estado; sem política escrita e sem verificador, a Solução volta a
+vez. Marcar as 49 skills hoje entrega o estado; sem política escrita e sem verificador, a Solucao volta a
 derivar na próxima skill adicionada.
 
 Por isso a execução tem 8 etapas, não 5: as **etapas 1–5** produzem o estado, as **6–8** o tornam
-permanente. E há um ponto em que a Solução pode **superar** a referência — ver Etapa 7.
+permanente. E há um ponto em que a Solucao pode **superar** a referência — ver Etapa 7.
 
 ---
 
 ## ⚠️ Regra que governa esta tarefa
 
-**A Solução funcionando hoje vale mais do que qualquer economia de tokens.**
+**A Solucao funcionando hoje vale mais do que qualquer economia de tokens.**
 
 Isto é uma otimização de custo, não uma melhoria de funcionalidade. Se em qualquer ponto houver dúvida
 entre "economiza mais" e "com certeza não quebra", **escolha não quebrar**. Uma economia de 85% que
@@ -43,7 +43,7 @@ Não pule etapas nem agrupe commits.
 
 ## TL;DR — o que se ganha
 
-A Solução injeta **~3.677 tokens no contexto de toda requisição**, antes de qualquer trabalho começar,
+A Solucao injeta **~3.677 tokens no contexto de toda requisição**, antes de qualquer trabalho começar,
 porque as 49 skills são model-invoked e cada uma mantém sua `description` permanentemente carregada.
 
 | | Hoje | Depois (Cenário B) |
@@ -85,7 +85,7 @@ alterações continuam lá, e você fica sem rollback justamente na tarefa em qu
 mecanismo de segurança.
 
 Pior: o `origin` deste repositório é **`https://github.com/mattpocock/skills.git`** — repositório de
-outra pessoa. Ele não é o lugar do código da Solução.
+outra pessoa. Ele não é o lugar do código da Solucao.
 
 👉 **A solução está na §1.** Não improvise um branch aqui.
 
@@ -98,27 +98,27 @@ pocoyo-skills/.agents/skills/   ← 49 skills, 108 arquivos
 
 Cópias **independentes** (inodes diferentes), hoje byte a byte idênticas (verificado com `diff -rq`).
 
-**Toda alteração vai nas duas.** Se você mudar só uma, a Solução passa a se comportar diferente conforme
+**Toda alteração vai nas duas.** Se você mudar só uma, a Solucao passa a se comportar diferente conforme
 a engine que o carregou — um bug quase irrastreável depois. Confira ao final:
 
 ```bash
 diff -rq pocoyo-skills/.claude/skills pocoyo-skills/.agents/skills   # precisa sair VAZIO
 ```
 
-### ⛔ Armadilha 3 — Não confunda o que é da Solução com o que é do legado
+### ⛔ Armadilha 3 — Não confunda o que é da Solucao com o que é do legado
 
 `pocoyo-skills/` é um **repositório alheio** (`mattpocock/skills`) que foi alvo de engenharia solução. A
-Solução está apenas instalado dentro dele.
+Solucao está apenas instalado dentro dele.
 
 | Caminho | De quem é | Pode mexer? |
 |---|---|---|
-| `.claude/skills/solucao*` | Instalação da Solução, untracked | ✅ é o alvo |
-| `.agents/skills/solucao*` | Instalação da Solução, untracked | ✅ é o alvo |
+| `.claude/skills/solucao*` | Instalação da Solucao, untracked | ✅ é o alvo |
+| `.agents/skills/solucao*` | Instalação da Solucao, untracked | ✅ é o alvo |
 | `.agents/adr/`, `.agents/invocation.md`, `.agents/writing-docs.md` | **Do legado**, rastreados | ⛔ **NÃO** |
 | `skills/`, `docs/`, `CLAUDE.md`, `README.md`, `package.json` | **Do legado**, rastreados | ⛔ **NÃO** |
 | `_solucao_sdd/`, `.solucao/` | Artefatos da extração, concluída | ⛔ fora do escopo |
 
-⚠️ `.agents/` tem conteúdo dos **dois**: `.agents/skills/` é da Solução; `.agents/adr/` e
+⚠️ `.agents/` tem conteúdo dos **dois**: `.agents/skills/` é da Solucao; `.agents/adr/` e
 `.agents/invocation.md` são do legado e estão versionados.
 
 ### ⛔ Armadilha 4 — `git status` mente neste repositório
@@ -133,13 +133,13 @@ Windows. Um `git diff` mostra `-node_modules` / `+node_modules` — texto idênt
 
 ### ⛔ Armadilha 5 — `npx solucao update` desfaz tudo
 
-Versão instalada: `1.2.56`, do pacote npm `solucao`. **Não existe repositório-fonte da Solução nesta
+Versão instalada: `1.2.56`, do pacote npm `solucao`. **Não existe repositório-fonte da Solucao nesta
 máquina** — procurei.
 
-Como o usuário é o autor da Solução, a correção provavelmente precisa subir para o fonte. O repositório
+Como o usuário é o autor da Solucao, a correção provavelmente precisa subir para o fonte. O repositório
 da §1 serve exatamente como o patch a ser aplicado lá.
 
-👉 **Pergunte a ele:** essa otimização deve ir para o repositório-fonte da Solução? Se sim, peça o
+👉 **Pergunte a ele:** essa otimização deve ir para o repositório-fonte da Solucao? Se sim, peça o
 caminho. Não rode `npx solucao update` durante a tarefa.
 
 ---
@@ -159,7 +159,7 @@ cp -r ../pocoyo-skills/.agents/skills agents-skills
 
 git init
 git add -A
-git commit -m "baseline: Solução 1.2.56 como instalado, sem alterações"
+git commit -m "baseline: Solucao 1.2.56 como instalado, sem alterações"
 git tag baseline
 
 git switch -c otimizacao/carga-de-contexto
@@ -195,7 +195,7 @@ rsync -a --delete agents-skills/ ../pocoyo-skills/.agents/skills/
 `/nome` não precisa ser descoberta — já foi escolhida. É para isso que existe
 `disable-model-invocation: true`: a skill continua alcançável pelo humano e some do contexto do modelo.
 
-O mattpocock aplica em **24 das 41** skills. A Solução, em **0 de 49**.
+O mattpocock aplica em **24 das 41** skills. A Solucao, em **0 de 49**.
 
 ### ⚠️ Correção a um erro do relatório de origem
 
@@ -225,9 +225,9 @@ Use os números deste documento, não os do PDF.
 | **Cenário B** — 8 orquestradores ✅ | 8 | 2.336 | ~584 | **−85%** |
 
 **Cenário B mantém model-invoked:** `solucao`, `solucao-new`, `solucao-forward`, `solucao-migrate`,
-`solucao-autonomous`, `solucao-agents-help`, `solucao-debugger`, `solucao-refactor`.
+`solucao-autonomous`, `solucao-ajuda-agentes`, `solucao-debugger`, `solucao-refactor`.
 
-**Recomendo B, e a razão é a regra do topo deste documento.** O `CLAUDE.md` declara que a Solução ativa
+**Recomendo B, e a razão é a regra do topo deste documento.** O `CLAUDE.md` declara que a Solucao ativa
 *"quando o usuário digitar `/solucao` **ou a palavra `solucao` sozinha em uma mensagem**"*. Reconhecer
 linguagem natural exige que o modelo veja a skill. O Cenário A economiza mais 512 tokens e **muda o
 comportamento do produto** — o usuário perde o roteamento por linguagem natural para os fluxos. Isso
@@ -240,7 +240,7 @@ comportamento do produto** — o usuário perde o roteamento por linguagem natur
 ## §4 · Execução — 8 etapas, framework funcionando em cada uma
 
 > **Etapas 1–5** produzem o *estado* certo. **Etapas 6–8** transformam esse estado em **característica
-> permanente** — sem elas a Solução volta a derivar na próxima skill que alguém adicionar.
+> permanente** — sem elas a Solucao volta a derivar na próxima skill que alguém adicionar.
 
 ### 4.1 · Etapa 1 — baseline e teste funcional ANTES
 
@@ -248,13 +248,13 @@ Faça o repositório da §1. Depois, **antes de mudar qualquer coisa**, estabele
 hoje e registre como:
 
 - Numa sessão limpa, digite `/solucao` → precisa carregar e ler `.solucao/state.json`
-- Digite `/solucao-agents-help` → o catálogo precisa aparecer
+- Digite `/solucao-ajuda-agentes` → o catálogo precisa aparecer
 - Anote o que aconteceu
 
 Sem esse "antes", você não tem como saber se um problema no "depois" foi você quem causou.
 
 ⚠️ `.solucao/state.json` está com `phase: concluido` — a extração foi encerrada. Para testar o caminho do
-Scout sem sujar esse estado, faça backup de `.solucao/` ou aponte a Solução para outro diretório.
+Scout sem sujar esse estado, faça backup de `.solucao/` ou aponte a Solucao para outro diretório.
 
 ```bash
 git commit --allow-empty -m "etapa 1: baseline validado, framework funcionando"
@@ -348,7 +348,7 @@ ARVORES = [BASE/"claude-skills", BASE/"agents-skills"]
 # Cenário B — permanecem model-invoked
 MANTER = {
     "solucao", "solucao-new", "solucao-forward", "solucao-migrate",
-    "solucao-autonomous", "solucao-agents-help", "solucao-debugger", "solucao-refactor",
+    "solucao-autonomous", "solucao-ajuda-agentes", "solucao-debugger", "solucao-refactor",
 }
 
 alterados = 0
@@ -390,7 +390,7 @@ git commit -am "etapa 4: 41 skills como user-invoked (cenário B)"
 
 ### 4.5 · Etapa 5 — a marca do Codex
 
-Toda skill da Solução declara `compatibility: Claude Code, Codex, Cursor, Gemini CLI...`, mas existem
+Toda skill da Solucao declara `compatibility: Claude Code, Codex, Cursor, Gemini CLI...`, mas existem
 **0 arquivos `agents/openai.yaml` em 49 skills**. A política de invocação não atravessa para o Codex.
 
 Isso **ganha urgência com a Etapa 4**: sem o `openai.yaml`, a economia de contexto vale só no Claude
@@ -409,7 +409,7 @@ Crie `<skill>/agents/openai.yaml` nas **duas** árvores.
 **Para as 41 user-invoked:**
 ```yaml
 interface:
-  display_name: "Solução Scout"
+  display_name: "Solucao Scout"
   short_description: "Mapeia estrutura, stack e entry points do projeto"
 policy:
   allow_implicit_invocation: false
@@ -418,12 +418,12 @@ policy:
 **Para as 8 model-invoked:**
 ```yaml
 interface:
-  display_name: "Solução"
+  display_name: "Solucao"
   short_description: "Orquestra a análise de um sistema legado"
 ```
 
 `display_name` em Title Case. `short_description` curta — nos exemplos do mattpocock, 25 a 45 caracteres.
-Pode derivar da primeira oração da `description`, mas **revise à mão**: as da Solução começam com frases
+Pode derivar da primeira oração da `description`, mas **revise à mão**: as da Solucao começam com frases
 longas que não cabem bem aqui.
 
 ```bash
@@ -444,7 +444,7 @@ conforme o lado do eixo:
 > - **Model-invoked** — a `description` é **model-facing** e mantém o fraseado rico de gatilhos
 >   (*"Use when the user wants…, mentions…, asks for…"*) para que a auto-invocação dispare.
 
-As `description` da Solução têm média de **300 chars** porque estão cheias de gatilhos de modelo:
+As `description` da Solucao têm média de **300 chars** porque estão cheias de gatilhos de modelo:
 *"Use quando o usuário digitar /X, 'fazer Y' ou 'iniciar Z'"*. Numa skill user-invoked esses gatilhos
 não servem para nada — ninguém os lê, o modelo não vê mais a skill, e o humano lê ruído.
 
@@ -461,11 +461,11 @@ O verificador da Etapa 7 reprova `description` de user-invoked que ainda contenh
 git commit -am "etapa 6: description das user-invoked reescrita como resumo humano"
 ```
 
-### 4.7 · Etapa 7 — o verificador (é aqui que o Solução supera o mattpocock)
+### 4.7 · Etapa 7 — o verificador (é aqui que o Solucao supera o mattpocock)
 
 **Esta etapa é o que transforma as duas mudanças em características permanentes.**
 
-Sem ela, a Solução fica com o *estado* certo hoje e volta a derivar na próxima skill que alguém
+Sem ela, a Solucao fica com o *estado* certo hoje e volta a derivar na próxima skill que alguém
 adicionar. Com ela, o eixo de invocação vira invariante executável.
 
 🔴 **O mattpocock não tem isso, e paga o preço.** Ele declara 12 invariantes estruturais e **não
@@ -499,7 +499,7 @@ python3 /workspaces/CHUPA-CABRA/verify-invocation.py claude-skills agents-skills
 # alvo ao final: RESULTADO ✓ APROVADO
 ```
 
-**Copie o verificador para dentro da Solução** — ele precisa viajar junto com o framework, não ficar
+**Copie o verificador para dentro da Solucao** — ele precisa viajar junto com o framework, não ficar
 solto nesta máquina. Sugestão: `scripts/verify-invocation.py` no repositório-fonte, citado no
 documento da Etapa 8.
 
@@ -513,13 +513,13 @@ A última peça da característica: um documento que declara a regra, para que a
 certa em vez de ser corrigida depois.
 
 O modelo a seguir é `pocoyo-skills/.agents/invocation.md` — **leia-o antes de escrever**. Ele é curto e
-resolve exatamente este problema. Adapte para a Solução cobrindo:
+resolve exatamente este problema. Adapte para a Solucao cobrindo:
 
 - **O eixo** — toda skill é user-invoked ou model-invoked, sem terceiro estado.
 - **As duas marcas** — `disable-model-invocation: true` (Claude Code) **e**
   `policy.allow_implicit_invocation: false` (Codex). *"Uma skill é user-invoked nos dois harnesses ou
   em nenhum."*
-- **O teste de decisão** — *o modelo teria motivo para alcançar esta skill sozinho?* Na Solução a
+- **O teste de decisão** — *o modelo teria motivo para alcançar esta skill sozinho?* Na Solucao a
   resposta é sim só para os 8 orquestradores de fluxo; os agentes de fase são alcançados pelo
   orquestrador lendo o `SKILL.md`.
 - **A regra da `description`** — human-facing e curta nas user-invoked; model-facing e com gatilhos nas
@@ -589,7 +589,7 @@ print(f"{n} skills · {tot:,} chars · ~{tot//4:,} tokens")
 
 ### 6.3 · Teste funcional — obrigatório, não pule
 
-Nenhuma checagem acima prova que a Solução funciona. Numa sessão nova, depois do `rsync` da §1:
+Nenhuma checagem acima prova que a Solucao funciona. Numa sessão nova, depois do `rsync` da §1:
 
 | # | Teste | Esperado |
 |---|---|---|
@@ -597,7 +597,7 @@ Nenhuma checagem acima prova que a Solução funciona. Numa sessão nova, depois
 | 2 | Escrever só a palavra `solucao` numa mensagem | Ativa (só no Cenário B — é o que A sacrifica) |
 | 3 | `/solucao` chegando ao Scout | Executa via leitura direta (exercita o site 4) |
 | 4 | `/solucao-scout` digitado direto | Funciona |
-| 5 | `/solucao-agents-help` | Catálogo aparece |
+| 5 | `/solucao-ajuda-agentes` | Catálogo aparece |
 | 6 | `/solucao-forward` | Fluxo carrega |
 
 ### 6.4 · Definição de "quebrado" — qualquer um destes aborta a entrega
@@ -627,7 +627,7 @@ Nenhuma checagem acima prova que a Solução funciona. Numa sessão nova, depois
 - ⛔ **Não mude comportamento "de brinde".** Se notar outra coisa a melhorar, anote e reporte — não
   inclua nesta tarefa.
 - 🟡 **Não copie invariante sem executor.** Se for tentador declarar essas regras num documento de
-  governança da Solução: o mattpocock declara 12 invariantes, não verifica nenhuma, e **duas estão
+  governança da Solucao: o mattpocock declara 12 invariantes, não verifica nenhuma, e **duas estão
   quebradas agora**. Se declarar, declare com um verificador.
 
 ---
@@ -638,7 +638,7 @@ Medidos em 30/07/2026, reproduzíveis.
 
 | Fato | Valor |
 |---|---|
-| Skills da Solução | 49 |
+| Skills da Solucao | 49 |
 | Arquivos por árvore | 108 |
 | Árvores independentes | 2 (`.claude/skills`, `.agents/skills`) |
 | Skills com `disable-model-invocation` | **0** |
@@ -651,7 +651,7 @@ Medidos em 30/07/2026, reproduzíveis.
 | Média de linhas por `SKILL.md` | 133 (vs 69 do mattpocock) |
 | Maior `SKILL.md` | `solucao-new`, 328 linhas |
 | Versão instalada | 1.2.56 |
-| Fonte da Solução na máquina | **não existe** |
+| Fonte da Solucao na máquina | **não existe** |
 | Identidade git | `solucao` / `cildefonso@gmail.com` (configurada) |
 
 **Padrão a copiar:** `pocoyo-skills/skills/` (as 41 skills do mattpocock). Bons exemplos de user-invoked:
@@ -668,7 +668,7 @@ O racional do eixo está em `skills/productivity/writing-great-skills/GLOSSARY.m
 
 1. Ler §0 inteira.
 2. **Confirmar com o usuário:** Cenário **A ou B**? (recomendado B) · a otimização sobe para o fonte do
-   Solução? (Armadilha 5)
+   Solucao? (Armadilha 5)
 3. Montar o repositório dedicado e o branch (§1).
 4. **Etapa 1** — teste funcional ANTES, registrado (§4.1).
 5. **Etapa 2** — corrigir os 4 sites de invocação. Testar. Commit. (§4.2)
@@ -699,7 +699,7 @@ O racional do eixo está em `skills/productivity/writing-great-skills/GLOSSARY.m
 
 ## M1 · Podar as skills grandes
 
-`SKILL.md` da Solução tem **133 linhas em média**, contra 69 do mattpocock. Texto longo demais o modelo
+`SKILL.md` da Solucao tem **133 linhas em média**, contra 69 do mattpocock. Texto longo demais o modelo
 lê pior — a parte do meio é a que ele mais ignora.
 
 As 8 maiores:
@@ -716,7 +716,7 @@ As 8 maiores:
 | `solucao-designer` | 216 |
 
 **O que fazer:** mover blocos de referência (formatos, exemplos, tabelas longas) para
-`<skill>/references/`, deixando no `SKILL.md` só o fluxo e um ponteiro em prosa. A Solução **já faz
+`<skill>/references/`, deixando no `SKILL.md` só o fluxo e um ponteiro em prosa. A Solucao **já faz
 isso** em 17 skills — é aplicar o padrão da casa nas que ficaram para trás.
 
 ⚠️ Só o `SKILL.md` de skill **model-invoked** custa contexto permanente. Nas user-invoked a poda é por
@@ -742,7 +742,7 @@ O mattpocock tem 3 documentos em `.out-of-scope/`.
 Evita rediscutir o mesmo pedido a cada trimestre, e permite responder com uma página em vez de uma
 conversa. O valor não está na recusa, está no argumento preservado.
 
-## M4 · Glossário do vocabulário da Solução
+## M4 · Glossário do vocabulário da Solucao
 
 Termos próprios — **unit, spec, lacuna, fase, checkpoint, doc_level, granularity, agente independente,
 escala de confiança** — hoje vivem espalhados entre o `SKILL.md` do orquestrador, os `references/` e o
@@ -756,7 +756,7 @@ uma linha `_Avoid_:` com os termos rejeitados.
 
 ## M5 · Invariantes declaradas — com verificador
 
-Invariante é uma regra de "essas coisas têm que estar sempre de acordo". A Solução já tem várias,
+Invariante é uma regra de "essas coisas têm que estar sempre de acordo". A Solucao já tem várias,
 implícitas. As conhecidas:
 
 | # | Invariante | Estado em 30/07/2026 |
