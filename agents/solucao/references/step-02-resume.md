@@ -36,16 +36,16 @@ Se o estado for **em andamento** ou **pausa intra-agente pendente**, apresente a
 Aguarde a resposta. NÃO escolha por conta própria.
 
 - Se **1**: encerre o `/solucao` aqui com a instrução final:
-  > "Para retomar a migração, digite `/solucao-migrate`. Ele detecta o estado salvo e oferece as opções de retomada."
+  > "Para retomar a migração, digite `/solucao-migrar`. Ele detecta o estado salvo e oferece as opções de retomada."
   
-  NÃO ative `solucao-migrate` automaticamente, deixe o usuário digitar (padrão de handoff explícito do Solucao).
+  NÃO ative `solucao-migrar` automaticamente, deixe o usuário digitar (padrão de handoff explícito do Solucao).
 - Se **2**: prossiga com a seção 1 deste passo normalmente.
 - Se **3**: encerre sem fazer nada.
 - Se **4** (texto livre): interprete a intenção do usuário e ofereça a melhor rota possível, sem inventar fluxos novos. Se a intenção for ambígua, refaça a pergunta uma vez antes de decidir.
 
 ## 1. Leitura do estado
 
-Leia `.solucao/state.json` e `.solucao/plan.md`.
+Leia `.solucao/state.json` e `.solucao/plano.md`.
 
 ## 2. Verificação de versão
 
@@ -81,7 +81,7 @@ Se `answer_mode` for `"chat"` (padrão):
 
 Pergunte apenas: "Continuamos de onde paramos? (CONTINUAR para seguir)"
 
-Após confirmação, retome a próxima tarefa pendente no plano (`.solucao/plan.md`).
+Após confirmação, retome a próxima tarefa pendente no plano (`.solucao/plano.md`).
 
 **🚫 Não ofereça `/clear` + `/solucao` neste momento.** O usuário acabou de retomar a sessão; pedir para limpar e reabrir agora é redundante. O prompt de pausa entre etapas (descrito em `SKILL.md`, seção "Checkpoint preventivo entre etapas") só vale **depois** que um agente concluir trabalho dentro desta sessão, nunca na própria saudação de retomada.
 

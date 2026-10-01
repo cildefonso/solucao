@@ -12,7 +12,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 const ROOT = new URL('..', import.meta.url).pathname;
-const SKILL = 'solucao-scout'; // user-invoked representativo
+const SKILL = 'solucao-explorador'; // user-invoked representativo
 const src = join(ROOT, 'agents', SKILL);
 
 const tmp = mkdtempSync(join(tmpdir(), 'solucao-transport-'));

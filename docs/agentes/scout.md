@@ -1,6 +1,6 @@
 # Scout
 
-**Command:** `/solucao-scout`
+**Command:** `/solucao-explorador`
 **Phase:** 1 - Reconnaissance
 
 ---
@@ -22,7 +22,7 @@ How many modules are there? What language? What framework? What are the critical
 ## What it analyzes
 
 - **Folder structure:** complete project tree (excluding `node_modules`, `.git`, `dist`, `build`, and similar)
-- **Technologies and frameworks:** languages identified by file extension, frameworks and libraries via config files (`package.json`, `requirements.txt`, `go.mod`, etc.)
+- **Technologies and frameworks:** languages identified by file extension, frameworks and libraries via config files (`package.json`, `requisitos.txt`, `go.mod`, etc.)
 - **Entry points:** `main`, `index`, `app`, `server`, `bootstrap`; config files; CI/CD; Docker
 - **Database schema (surface):** only lists DDL files, migrations, and ORM models. Data Master does the detailed analysis.
 - **Test coverage:** identified test frameworks and coverage estimate by file count
@@ -46,5 +46,5 @@ The `surface.json` is especially important: Solucao uses it to customize Phase 2
 You'll rarely need to call Scout directly. The orchestrator does this automatically in Phase 1. But if you want to refresh the project inventory after a major refactoring:
 
 ```
-/solucao-scout
+/solucao-explorador
 ```

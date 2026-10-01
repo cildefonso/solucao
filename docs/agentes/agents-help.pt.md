@@ -15,13 +15,13 @@ Ele explica cada agente com uma analogia do mundo real. Mas já que você está 
 | O que você quer fazer? | Comando | Time |
 |---|---|---|
 | Descobrir e documentar um sistema legado | `/solucao` | Solucao Agents Core |
-| Criar um projeto novo a partir de uma ideia | `/solucao-new` | Code New Project Agents |
-| Implementar ou evoluir código a partir das specs | `/solucao-forward` | Code Forward Agents |
-| Planejar a migração de um legado | `/solucao-migrate` | Migration Agents |
-| Gerar um mini-site visual da documentação | `/solucao-docs` | Documentation Agents |
+| Criar um projeto novo a partir de uma ideia | `/solucao-novo` | Code New Project Agents |
+| Implementar ou evoluir código a partir das specs | `/solucao-enviar` | Code Forward Agents |
+| Planejar a migração de um legado | `/solucao-migrar` | Migration Agents |
+| Gerar um mini-site visual da documentação | `/solucao-documentos` | Documentation Agents |
 | Entender qual agente usar | `/solucao-agents-help` | Guia de agentes |
 
-Os times de Pricing e Translators usam comandos especializados: `/solucao-pricing-profile`, `/solucao-pricing-size`, `/solucao-pricing-estimate` e `/solucao-n8n`.
+Os times de Pricing e Translators usam comandos especializados: `/solucao-perfil-precificacao`, `/solucao-fins-precificacao`, `/solucao-estimativa-preco` e `/solucao-n8n`.
 
 ---
 
@@ -31,7 +31,7 @@ Os times de Pricing e Translators usam comandos especializados: `/solucao-pricin
 
 O fundador começa com uma ideia ainda bruta, investiga o problema, entende para quem o produto existe, consolida um PRD e transforma tudo em especificações prontas para implementação.
 
-> Use `/solucao-new` para projetos greenfield. Ele conduz `Ideator → Researcher → Drafter → Spec SDD` e entrega o resultado ao `/solucao-forward`.
+> Use `/solucao-novo` para projetos greenfield. Ele conduz `Ideator → Researcher → Drafter → Spec SDD` e entrega o resultado ao `/solucao-enviar`.
 
 ### 🎼 Solucao: o regente de orquestra
 
@@ -117,8 +117,8 @@ O estilista cataloga o guarda-roupa: paleta de cores, tipografia, espaçamentos,
 
 ```
 Projeto legado: /solucao → descoberta e especificações
-Projeto novo:   /solucao-new → PRD e specs → /solucao-forward
-Migração:       /solucao → /solucao-migrate → /solucao-forward
+Projeto novo:   /solucao-novo → PRD e specs → /solucao-enviar
+Migração:       /solucao → /solucao-migrar → /solucao-enviar
 
 Pipeline legado manual:
 Scout → Archaeologist (N sessões) → Detective → Architect → Writer → Reviewer

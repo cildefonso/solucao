@@ -15,7 +15,7 @@ The certified translator takes an official document in one language and produces
 
 The N8N Translator is the entry point when the legacy "code" is not source code, but a visual N8N workflow exported as JSON. It walks the node graph, interprets each step semantically (not just by node type), and emits three SDD artifacts that describe the system independently of N8N.
 
-After the spec is generated, the agent prepares `.solucao/state.json` and `.solucao/plan.md` so the regular Solucao pipeline (Scout, Archaeologist, Detective, Architect, Writer, Reviewer) can take over and refine the analysis if needed.
+After the spec is generated, the agent prepares `.solucao/state.json` and `.solucao/plano.md` so the regular Solucao pipeline (Scout, Archaeologist, Detective, Architect, Writer, Reviewer) can take over and refine the analysis if needed.
 
 ---
 
@@ -41,10 +41,10 @@ The agent uses a dedicated input folder: `n8n_json_workflows/`. The folder is cr
 | File | Content |
 |------|---------|
 | `_solucao_n8n/<slug>/workflow-overview.md` | Source analysis: metadata, Mermaid flowchart, node table, credentials, ambiguities |
-| `_solucao_n8n/<slug>/requirements.md` | SDD requirements: functional (`RF-NN`), non-functional (`RNF-NN`), acceptance criteria |
+| `_solucao_n8n/<slug>/requisitos.md` | SDD requisitos: functional (`RF-NN`), non-functional (`RNF-NN`), acceptance criteria |
 | `_solucao_n8n/<slug>/design.md` | Python implementation guide: architecture, components, libraries, folder structure, error handling, configuration, tests |
 | `.solucao/state.json` | Initial state for the main Solucao pipeline (with `source: "n8n"` and `source_artifacts`) |
-| `.solucao/plan.md` | Plan with a `Phase 0: N8N origin` section marking the translation step |
+| `.solucao/plano.md` | Plan with a `Phase 0: N8N origin` section marking the translation step |
 
 ---
 

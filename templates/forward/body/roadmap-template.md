@@ -1,6 +1,6 @@
 <!--
 Template de corpo do roadmap.md
-Carregado por /solucao-plan.
+Carregado por /solucao-plano.
 
 REGRAS DE PREENCHIMENTO:
 - Escreva como DELTA sobre o legado, jamais redescreva a arquitetura inteira.
@@ -15,7 +15,7 @@ REGRAS DE PREENCHIMENTO:
 
 > Identificador: `<NNN>-<short-name>`
 > Data: `YYYY-MM-DD`
-> Requirements: `<feature-dir>/requirements.md`
+> Requirements: `<feature-dir>/requisitos.md`
 > Confidência: 🟢 CONFIRMADO, 🟡 INFERIDO, 🔴 LACUNA
 
 ## 1. Resumo da abordagem
@@ -25,8 +25,8 @@ REGRAS DE PREENCHIMENTO:
 ## 2. Princípios aplicados
 
 <!--
-Liste os princípios de `.solucao/principles.md` que essa feature respeita ou conflita.
-Para conflitos, descreva o conflito sem propor mudança no princípio (isso é trabalho de /solucao-principles).
+Liste os princípios de `.solucao/principios.md` que essa feature respeita ou conflita.
+Para conflitos, descreva o conflito sem propor mudança no princípio (isso é trabalho de /solucao-principios).
 -->
 
 | Princípio | Como a feature se relaciona | Status |
@@ -44,10 +44,10 @@ Para conflitos, descreva o conflito sem propor mudança no princípio (isso é t
 
 <!--
 Premissas adotadas a partir de [DÚVIDA] não resolvidas.
-Cada premissa precisa virar item resolvível em /solucao-clarify no futuro.
+Cada premissa precisa virar item resolvível em /solucao-clarificar no futuro.
 -->
 
-| Premissa | Origem (`requirements.md` seção) | Risco se errada |
+| Premissa | Origem (`requisitos.md` seção) | Risco se errada |
 |----------|----------------------------------|-----------------|
 | <texto>  | <seção> | <impacto> |
 
@@ -104,4 +104,4 @@ Para cada um, descreva o tipo de mudança em uma linha.
 
 | Data | Alteração | Autor |
 |------|-----------|-------|
-| YYYY-MM-DD | Versão inicial gerada por `/solucao-plan` | solucao |
+| YYYY-MM-DD | Versão inicial gerada por `/solucao-plano` | solucao |

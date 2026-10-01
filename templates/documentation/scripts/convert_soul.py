@@ -6,7 +6,7 @@ Esqueleto da Onda 1. Extração rica (entidades, decisões, sinônimos) na TASK-
 
 Uso:
     python convert_soul.py --src .solucao/soul.md \
-                           --out _solucao_docs/assets/data/soul.json
+                           --out _solucao_documentos/assets/data/soul.json
 """
 
 import argparse

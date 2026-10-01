@@ -1,6 +1,6 @@
 # Os 4 agentes visuais
 
-Quatro agentes formam o Time de Documentação, mais o orquestrador. Cada um roda em ordem fixa, pode ser invocado avulso com `/solucao-docs-<papel>` e escreve apenas dentro de `_solucao_docs/`.
+Quatro agentes formam o Time de Documentação, mais o orquestrador. Cada um roda em ordem fixa, pode ser invocado avulso com `/solucao-documentos-<papel>` e escreve apenas dentro de `_solucao_documentos/`.
 
 ---
 
@@ -21,7 +21,7 @@ Há pausa de revisão humana entre agentes. Modo padrão é interativo. Use `--a
 
 ## 1. Solucao Docs (orquestrador)
 
-**Comando:** `/solucao-docs`
+**Comando:** `/solucao-documentos`
 
 Detecta quais fontes estão disponíveis, conduz a entrevista de três perguntas (perfil de leitor, profundidade, estilo visual), calcula um seed determinístico a partir de `soul.md` (ou do nome do projeto), persiste tudo em `.config.json` e conduz os quatro especialistas. Salva telemetria em `.state.json` e oferece seis opções de regeneração nas execuções seguintes.
 
@@ -31,7 +31,7 @@ Detecta quais fontes estão disponíveis, conduz a entrevista de três perguntas
 
 ## 2. Mapper
 
-**Comando:** `/solucao-docs-mapper`
+**Comando:** `/solucao-documentos-mapeador`
 
 Estrutura espacial do projeto. Renderiza Code City em 3D (Three.js, via skill `solucao-arquitetura-3d`) onde cada prédio é um módulo, altura codifica LOC e cor codifica complexidade. Também gera um mapa de módulos 2D force-directed (D3) e, quando a topologia é detectada, uma visão side-by-side legado versus moderno.
 
@@ -41,7 +41,7 @@ Estrutura espacial do projeto. Renderiza Code City em 3D (Three.js, via skill `s
 
 ## 3. Analyst
 
-**Comando:** `/solucao-docs-analyst`
+**Comando:** `/solucao-documentos-analista`
 
 Dashboard quantitativo. Highcharts treemap (LOC por módulo), colunas (complexidade por módulo), sankey (dependências entre módulos), histograma (distribuição de LOC). Quando `.solucao/chronicle.md` existe, também renderiza uma timeline interativa de eventos do projeto.
 
@@ -53,7 +53,7 @@ Reusa os JSONs do Mapper. Em invocação avulsa, roda extração mínima quando 
 
 ## 4. Storyteller
 
-**Comando:** `/solucao-docs-storyteller`
+**Comando:** `/solucao-documentos-contador-historias`
 
 Narrativa e onboarding. Três artefatos: glossário interativo (Concept Explainer com busca cliente-side), slide deck navegável (6 a 10 slides) e uma página detalhada por feature em layout *How a Feature Works*.
 
@@ -65,7 +65,7 @@ Não exige Analyst ou Mapper como pré-requisito hard: o deck adapta-se às pág
 
 ## 5. Publisher
 
-**Comando:** `/solucao-docs-publisher`
+**Comando:** `/solucao-documentos-editor`
 
 Última peça do pipeline. Integra o trabalho dos três especialistas em um mini-site coerente com selo generativo único (via skill `solucao-selo-generativo`), injeta mini-selo retroativamente em cada página, faz auto-discovery de HTMLs auxiliares deixados por outros agentes do core Solucao (via meta tag `solucao-category`), valida links e roda um smoke test real (sobe `http.server`, busca cada página, procura padrões de erro) antes de declarar sucesso.
 
@@ -84,22 +84,22 @@ O time traz cinco skills compartilhadas que viajam junto. Não são agentes inde
 | `solucao-arquitetura-3d` | Mapper | Renderização Code City 3D sobre Three.js |
 | `solucao-especialista-d3` | Mapper | Mapa de módulos force-directed em D3 |
 | `solucao-highcharts-visualizer` | Analyst | Treemap, sankey, histograma e colunas Highcharts |
-| `solucao-image-prompt-json` | Storyteller | Capas premium opcionais para os slides do deck |
+| `solucao-prompt-de-imagem-json` | Storyteller | Capas premium opcionais para os slides do deck |
 | `solucao-selo-generativo` | Publisher | Selo generativo único por projeto, derivado do seed determinístico |
 
 ---
 
 ## Execução manual
 
-Você quase nunca precisa chamar um agente isolado. `/solucao-docs` orquestra tudo. Mas se uma página específica quebrou ou você quer regenerar uma seção:
+Você quase nunca precisa chamar um agente isolado. `/solucao-documentos` orquestra tudo. Mas se uma página específica quebrou ou você quer regenerar uma seção:
 
 ```
-/solucao-docs                    # pipeline completo (com entrevista e CONTINUAR)
-/solucao-docs --auto             # pipeline completo, sem pausas, perfil padrão
-/solucao-docs-mapper             # regenera arquitetura / modulos / topologia
-/solucao-docs-analyst            # regenera metricas / timeline
-/solucao-docs-storyteller        # regenera glossario / deck / features
-/solucao-docs-publisher          # regenera index mais selo mais nav, re-roda smoke test
+/solucao-documentos                    # pipeline completo (com entrevista e CONTINUAR)
+/solucao-documentos --auto             # pipeline completo, sem pausas, perfil padrão
+/solucao-documentos-mapeador             # regenera arquitetura / modulos / topologia
+/solucao-documentos-analista            # regenera metricas / timeline
+/solucao-documentos-contador-historias        # regenera glossario / deck / features
+/solucao-documentos-editor          # regenera index mais selo mais nav, re-roda smoke test
 ```
 
 Cada agente avulso roda a Fase 0 do Publisher (vendor bundle) como preâmbulo quando `assets/vendor/` está vazio, então uma chamada single-agent ainda produz página funcional.

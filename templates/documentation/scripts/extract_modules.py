@@ -4,11 +4,11 @@ extract_modules.py — Produz modules.json para o Time Solucao Docs.
 
 Esqueleto da Onda 1. Implementação completa na TASK-07.
 
-Schema de saída: ver specs/solucao-docs/design.md, seção
+Schema de saída: ver specs/solucao-documentos/design.md, seção
 "JSONs intermediários em assets/data/" → "Schema de modules.json".
 
 Uso:
-    python extract_modules.py --root . --out _solucao_docs/assets/data/modules.json
+    python extract_modules.py --root . --out _solucao_documentos/assets/data/modules.json
 """
 
 import argparse

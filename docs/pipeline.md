@@ -86,7 +86,7 @@ The Writer doesn't generate everything at once. It builds a plan covering all un
 
 What it produces:
 
-- One folder per unit with `<unit>/requirements.md`, `<unit>/design.md`, `<unit>/tasks.md` (plus optionals when the doc level calls for them)
+- One folder per unit with `<unit>/requisitos.md`, `<unit>/design.md`, `<unit>/tasks.md` (plus optionals when the doc level calls for them)
 - API specs (`openapi/[api].yaml`)
 - User stories (`user-stories/[flow].md`)
 - Legacy-to-unit traceability matrix (`traceability/code-spec-matrix.md`)

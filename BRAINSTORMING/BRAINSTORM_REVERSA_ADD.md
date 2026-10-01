@@ -14,25 +14,25 @@ Nome fica `/solucao-add`, não `/add`: a regra de namespace da spec exige `soluc
 
 ## Como funciona
 
-1. Lê `.solucao/active-requirements.json`. Sem feature ativa, aborta e aponta `/solucao-requirements`.
-2. Recusa e manda para `/solucao-requirements` se o pedido exigir dependência nova, mudança de schema ou contrato, API nova, ou mexer em auth e pagamento.
-3. Escreve a emenda em `## Emendas` no `requirements.md` da feature.
+1. Lê `.solucao/active-requisitos.json`. Sem feature ativa, aborta e aponta `/solucao-requisitos`.
+2. Recusa e manda para `/solucao-requisitos` se o pedido exigir dependência nova, mudança de schema ou contrato, API nova, ou mexer em auth e pagamento.
+3. Escreve a emenda em `## Emendas` no `requisitos.md` da feature.
 4. Implementa.
 5. Acrescenta a ação já fechada `[X]` no `actions.md`, atualiza `legacy-impact.md`, apenda no `progress.jsonl`.
 6. Sugere o próximo passo e espera CONTINUAR.
 
 Ordem importa: spec antes do código. O inverso recria o problema que o comando resolve.
 
-Só mexe no que é da feature ativa. Fora disso, `/solucao-requirements`.
+Só mexe no que é da feature ativa. Fora disso, `/solucao-requisitos`.
 
 ## Por que os passos 5 são obrigatórios
 
-O `/solucao-sync` aborta quando falta `legacy-impact.md`, e exibe menu quando acha ação `[ ]` aberta no `actions.md`. Sem esses três arquivos, o que o `/solucao-add` fizer nunca converge para `_solucao_sdd/addenda/` e a extração deriva em silêncio.
+O `/solucao-sincronizar` aborta quando falta `legacy-impact.md`, e exibe menu quando acha ação `[ ]` aberta no `actions.md`. Sem esses três arquivos, o que o `/solucao-add` fizer nunca converge para `_solucao_sdd/addenda/` e a extração deriva em silêncio.
 
 ## O que precisa mudar no Solução
 
-- `specs/solucao-forward/01-comandos-forward.md`: catálogo, regra do conjunto fixo de comandos, RFs
-- `specs/solucao-forward/03-estrutura-saidas.md`: tabela de dono e atualizador dos artefatos, `requirements.md` e `actions.md` ganham um segundo atualizador
+- `specs/solucao-enviar/01-comandos-forward.md`: catálogo, regra do conjunto fixo de comandos, RFs
+- `specs/solucao-enviar/03-estrutura-saidas.md`: tabela de dono e atualizador dos artefatos, `requisitos.md` e `actions.md` ganham um segundo atualizador
 - `agents/solucao-add/SKILL.md`
 - `FORWARD_TEAM` em `lib/installer/prompts.js`
 - `before-add` e `after-add` em `templates/forward/hooks.yml`
@@ -41,11 +41,11 @@ O `/solucao-sync` aborta quando falta `legacy-impact.md`, e exibe menu quando ac
 
 ## A verificar antes de implementar
 
-De onde o installer lê os comandos forward. A spec cita `templates/commands-forward/`, o repositório tem `templates/forward/` sem diretório de comandos. Usar o `/solucao-sync` como referência, é o membro mais recente do time.
+De onde o installer lê os comandos forward. A spec cita `templates/commands-forward/`, o repositório tem `templates/forward/` sem diretório de comandos. Usar o `/solucao-sincronizar` como referência, é o membro mais recente do time.
 
 ## Dívida de passagem
 
-A spec chama de `/solucao-doubt` o que o installer instala como `solucao-clarify`. Corrigir quando essa spec for aberta.
+A spec chama de `/solucao-doubt` o que o installer instala como `solucao-clarificar`. Corrigir quando essa spec for aberta.
 
 ## Status
 

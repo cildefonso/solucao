@@ -35,7 +35,7 @@ Com `user_name` e `project` em mãos (seja do state.json ou coletados agora), di
 
 ## 5. Plano de exploração
 
-Verifique se `.solucao/plan.md` já existe:
+Verifique se `.solucao/plano.md` já existe:
 
 **Se o arquivo já existe** (criado pelo instalador):
 - Leia o arquivo
@@ -45,7 +45,7 @@ Verifique se `.solucao/plan.md` já existe:
 **Se o arquivo não existe** (instalação manual):
 1. Analise rapidamente a estrutura de pastas raiz (exclua: `node_modules`, `.git`, `.solucao`, `_solucao_sdd`, `dist`, `build`, `coverage`, `__pycache__`)
 2. Identifique os módulos e componentes principais
-3. Crie `.solucao/plan.md` com as tarefas estruturadas por fase (use o template do plano padrão, adaptando a fase 2 com os módulos reais identificados)
+3. Crie `.solucao/plano.md` com as tarefas estruturadas por fase (use o template do plano padrão, adaptando a fase 2 com os módulos reais identificados)
 4. Apresente o plano e pergunte: "O plano está aprovado ou quer ajustar algo?"
 
 ## 6. Atualização do estado
@@ -60,4 +60,4 @@ Consulte `references/checkpoint-guide.md` para as regras de escrita no state.jso
 
 Pergunte: "[Nome], podemos começar com o **Scout** — mapeamento do projeto?"
 
-Após confirmação, ative o skill `solucao-scout`.
+Após confirmação, ative o skill `solucao-explorador`.

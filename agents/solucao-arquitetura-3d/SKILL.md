@@ -44,7 +44,7 @@ Padrões compartilhados de Three.js, lighting, controles e performance vivem em 
 Os dados podem vir de:
 
 - **JSON inline**: usuário fornece `modules.json` (lista de módulos) e/ou `deps.json` (grafo de dependências).
-- **Caminho de arquivo**: usuário aponta para JSONs em `_solucao_docs/assets/data/` (gerados pelo agente `/solucao-documentation`).
+- **Caminho de arquivo**: usuário aponta para JSONs em `_solucao_documentos/assets/data/` (gerados pelo agente `/solucao-documentation`).
 - **Solicitado ao usuário**: se a skill é invocada sem dados, perguntar caminho ou pedir colagem inline.
 
 **Schema esperado de `modules.json`**:
@@ -90,7 +90,7 @@ Consultar `references/THREE_PATTERNS.md` para setup base (renderer, cena, câmer
 **Regras fundamentais**:
 
 1. **HTML standalone**: arquivo único `.html` com tudo embutido (CSS, JS, dados inline em `<script id="data">`). Quando rodada pelo Time Solucao Docs, os dados vêm de `window.RV_DATA.modules` e `window.RV_DATA.deps` (carregados pelo `assets/js/data.js` que o Publisher gera) e o `<script id="data">` fica vazio ou ausente. Páginas finais **nunca** fazem `fetch()` para arquivos locais (quebra via `file://`).
-2. **Three.js local**: usar `<script src="assets/vendor/three.min.js"></script>` apontando para o arquivo baixado pelo Publisher (versão pinada em `agents/solucao-docs-publisher/references/vendor-pins.yaml`, hoje `three@0.147.0` IIFE). Em modo invocação isolada fora do time Docs, aceite CDN como fallback (`https://unpkg.com/three@0.147.0/build/three.min.js`), mas **nunca** misture versões.
+2. **Three.js local**: usar `<script src="assets/vendor/three.min.js"></script>` apontando para o arquivo baixado pelo Publisher (versão pinada em `agents/solucao-documentos-editor/references/vendor-pins.yaml`, hoje `three@0.147.0` IIFE). Em modo invocação isolada fora do time Docs, aceite CDN como fallback (`https://unpkg.com/three@0.147.0/build/three.min.js`), mas **nunca** misture versões.
 3. **OrbitControls local**: usar `<script src="assets/vendor/OrbitControls.js"></script>` (também IIFE, compatível com `three@0.147`). Não use `examples/jsm/...` enquanto a skill não migrar para importmap + ESM.
 4. **Renderer**: WebGLRenderer com antialiasing, pixelRatio do device.
 5. **Iluminação**: HemisphereLight + DirectionalLight com sombras suaves. Para Code City, AmbientLight extra para preencher.
@@ -145,7 +145,7 @@ Consultar `references/THREE_PATTERNS.md` para setup base (renderer, cena, câmer
 
 ### 5. Salvar e entregar
 
-O output é sempre HTML standalone. Salvar no caminho indicado pelo agente orquestrador (geralmente `_solucao_docs/arquitetura.html`).
+O output é sempre HTML standalone. Salvar no caminho indicado pelo agente orquestrador (geralmente `_solucao_documentos/arquitetura.html`).
 
 Quando invocada fora do contexto do `/solucao-documentation`, perguntar caminho de destino ou usar `<modo>-<timestamp>.html` no diretório atual.
 

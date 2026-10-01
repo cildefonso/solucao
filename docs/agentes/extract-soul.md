@@ -1,6 +1,6 @@
 # Soul Extractor
 
-**Command:** `/solucao-extract-soul`
+**Command:** `/solucao-extracao-parte-principal`
 **Phase:** 1 (Reconnaissance), runs after Scout
 
 ---
@@ -25,7 +25,7 @@ The synthesis covers three things:
 
 ## Prerequisite
 
-`.solucao/context/surface.json` must exist. The agent depends on the Scout's surface map. If it doesn't exist, the agent stops and tells you to run `/solucao-scout` first (or `/solucao` for the full pipeline).
+`.solucao/context/surface.json` must exist. The agent depends on the Scout's surface map. If it doesn't exist, the agent stops and tells you to run `/solucao-explorador` first (or `/solucao` for the full pipeline).
 
 ---
 
@@ -65,7 +65,7 @@ If `_solucao_sdd/soul.md` already exists, the agent does NOT overwrite. It offer
 Right after Scout, when you want an executive synthesis of the system before committing to the full extraction pipeline:
 
 ```
-/solucao-extract-soul
+/solucao-extracao-parte-principal
 ```
 
 You can also run it any time after Scout has run, even if Archaeologist, Detective and the others already produced their artifacts. The Soul Extractor stays consistent with whatever surface map is current.

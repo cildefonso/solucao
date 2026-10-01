@@ -1,0 +1,20 @@
+> faz um sistema de login pra mim 
+// o agente agora precisa adivinhar: 
+// · e-mail e senha? OAuth? magic link? 
+// · onde persiste? já existe banco? 
+// · sessão por cookie ou JWT? 
+// · precisa de "esqueci minha senha"? 
+// · qual o critério para dizer que está pronto? 
+✗ 400 linhas depois: "não era bem isso"
+
+
+Modelo SDD
+spec → plano → código
+
+A spec é a única verdade
+O código é um artefato derivado dela
+Divergiu? Ou o código está errado, ou a spec mudou — e isso é decidido, não descoberto
+A intenção fica registrada e revisável
+Se o código é o "como", a spec é o "o quê" e o "por quê". 
+Trocar de linguagem muda o "como" inteiro — e não deveria mudar 
+uma linha do "o quê".

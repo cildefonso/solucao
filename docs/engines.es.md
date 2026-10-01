@@ -32,7 +32,7 @@ El motor más probado y con mejor soporte. Usa slash commands nativos, lo que ha
 
 ## Codex
 
-Totalmente compatible. Como Codex no usa slash commands, la activación es por el nombre del agente directamente: `solucao`, `solucao-scout`, etc. El archivo `AGENTS.md` en la raíz del proyecto sirve como punto de entrada.
+Totalmente compatible. Como Codex no usa slash commands, la activación es por el nombre del agente directamente: `solucao`, `solucao-explorador`, etc. El archivo `AGENTS.md` en la raíz del proyecto sirve como punto de entrada.
 
 ---
 

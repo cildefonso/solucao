@@ -86,7 +86,7 @@ O Time Solução Bugs adiciona ao Solução uma <b>memória causal de defeitos</
   <tr><td><code>/solucao-bug</code></td><td>Registra e rastreia um bug reportado. Nunca corrige.</td><td><code>_solucao_bugs/BUG-XXX-slug/</code> (a pasta única do bug)</td></tr>
   <tr><td><code>/solucao-bug-fix</code></td><td>Reproduz, acha a causa raiz, cria teste de regressão, corrige com diff aprovado e dá o veredito de spec.</td><td>código (com aprovação), a pasta do bug (<code>fix/</code>), <code>_solucao_sdd/addenda/</code></td></tr>
   <tr><td><code>/solucao-bug-debate</code></td><td>Debate multiagente (épocas fixas + juiz isolado) sobre a estratégia de correção. Sempre opt-in.</td><td><code>debate/</code> dentro da pasta do bug</td></tr>
-  <tr><td><code>/solucao-depth-inspection</code></td><td>Pente-fino de uma feature problemática com lentes especializadas. Só diagnostica.</td><td><code>_solucao_bugs/inspections/</code> + pastas de bugs novos</td></tr>
+  <tr><td><code>/solucao-inspecao-detalhada</code></td><td>Pente-fino de uma feature problemática com lentes especializadas. Só diagnostica.</td><td><code>_solucao_bugs/inspections/</code> + pastas de bugs novos</td></tr>
   <tr><td><code>/solucao-bug-graph</code></td><td>Regenera as views: índice, matriz BUG x BUG, grafo, impact score e a matriz de rastreabilidade BUG ↔ SPEC (nas duas pontas).</td><td><code>_solucao_bugs/*.md</code> + espelho <code>_solucao_sdd/traceability/bugs.md</code></td></tr>
 </table>
 
@@ -95,7 +95,7 @@ O Time Solução Bugs adiciona ao Solução uma <b>memória causal de defeitos</
 <div class="caixa decisao">
   <b>Decisões travadas</b>
   <ul>
-    <li><b>5 comandos</b>: <code>/solucao-bug</code>, <code>/solucao-bug-fix</code>, <code>/solucao-depth-inspection</code>, <code>/solucao-bug-graph</code>, <code>/solucao-bug-debate</code>.</li>
+    <li><b>5 comandos</b>: <code>/solucao-bug</code>, <code>/solucao-bug-fix</code>, <code>/solucao-inspecao-detalhada</code>, <code>/solucao-bug-graph</code>, <code>/solucao-bug-debate</code>.</li>
     <li><b>Registro canônico em <code>_solucao_bugs/</code></b> na raiz, seguindo o padrão das pastas do Solução e a diretiva non-destructive.</li>
     <li><b>Pente-fino só diagnostica</b>: cada achado vira um <code>BUG-XXX.md</code>; a correção é sempre um ato posterior e separado.</li>
     <li><b>Debate é opt-in explícito</b>: o Solução avisa que a opção existe, explica que demora (N agentes x R rodadas + 1 juiz) e só roda se o usuário aceitar.</li>
@@ -111,7 +111,7 @@ O Time Solução Bugs adiciona ao Solução uma <b>memória causal de defeitos</
 
 <h2><span class="num">3.</span>Princípios do Solução que o time herda</h2>
 <ul>
-  <li><b>Non-destructive:</b> nenhum artefato pré-existente do projeto é apagado ou sobrescrito. O time só cria arquivos em <code>_solucao_bugs/</code> e adendos em <code>_solucao_sdd/addenda/</code>. A exceção controlada é o próprio ato de corrigir código no <code>/solucao-bug-fix</code>, que segue o precedente do <code>/solucao-coding</code>: só com diff exibido e aprovação explícita.</li>
+  <li><b>Non-destructive:</b> nenhum artefato pré-existente do projeto é apagado ou sobrescrito. O time só cria arquivos em <code>_solucao_bugs/</code> e adendos em <code>_solucao_sdd/addenda/</code>. A exceção controlada é o próprio ato de corrigir código no <code>/solucao-bug-fix</code>, que segue o precedente do <code>/solucao-codificacao</code>: só com diff exibido e aprovação explícita.</li>
   <li><b>Multi-engine:</b> nada depende de recurso exclusivo de um harness. Onde houver subagentes (debate, pente-fino), existe fallback sequencial documentado.</li>
   <li><b>Handoff manual:</b> cada agente termina sugerindo o próximo passo e aguardando "CONTINUAR".</li>
   <li><b>Menus padrão Solução:</b> opções com label + descrição + opção final "Outro" aberta.</li>
@@ -341,7 +341,7 @@ _solucao_bugs/bugs/BUG-20260715-A7K3-desconto-duplicado/debate/
 └── resposta-final.md    síntese do juiz, consumida pelo /solucao-bug-fix
 </pre>
 
-<h3 class="quebra">6.4 <code>/solucao-depth-inspection</code>, o pente-fino</h3>
+<h3 class="quebra">6.4 <code>/solucao-inspecao-detalhada</code>, o pente-fino</h3>
 <p>Para quando uma feature "vive dando problema" e o usuário quer uma varredura profunda, não um bug pontual.</p>
 <ol>
   <li>Usuário indica a feature (ex.: "checkout"). O agente monta o <b>mapa da feature</b>: seções de spec, arquivos de código, testes e dados envolvidos.</li>
@@ -430,7 +430,7 @@ Teste prova que a divergência foi eliminada.
 <table>
   <tr><th>Veredito</th><th>Significado</th><th>Ação sobre a spec</th></tr>
   <tr><td><code>spec-correta</code></td><td>A spec descrevia o comportamento certo; o código divergiu.</td><td>Nenhuma. O fix realinha o código à spec.</td></tr>
-  <tr><td><code>spec-desatualizada</code></td><td>O comportamento correto mudou ou a spec descrevia errado.</td><td>Gera <b>adendo versionado</b> em <code>_solucao_sdd/addenda/</code> com o diff da spec (trecho antes / trecho como deve ser lido agora). A spec original <b>nunca</b> é editada (non-destructive, mesmo padrão do <code>/solucao-sync</code>).</td></tr>
+  <tr><td><code>spec-desatualizada</code></td><td>O comportamento correto mudou ou a spec descrevia errado.</td><td>Gera <b>adendo versionado</b> em <code>_solucao_sdd/addenda/</code> com o diff da spec (trecho antes / trecho como deve ser lido agora). A spec original <b>nunca</b> é editada (non-destructive, mesmo padrão do <code>/solucao-sincronizar</code>).</td></tr>
   <tr><td><code>spec-gap</code></td><td>Não existia spec para o comportamento.</td><td>Gera adendo que especifica o comportamento pela primeira vez, ligado ao bug.</td></tr>
 </table>
 <p>E a seção Resolution do bug guarda <b>os dois diffs lado a lado</b>:</p>
@@ -481,7 +481,7 @@ _solucao_bugs/bugs/BUG-20260710-C4T1-teto-black-friday/fix/CHG-002.diff
 </pre>
 <div class="caixa">
   <b>Efeito no ciclo do Solução</b><br>
-  A próxima re-extração (<code>/solucao</code>) encontra os adendos e os marca como superados ao regenerar as specs, exatamente como já acontece com os adendos do <code>/solucao-sync</code>. A extração permanece intocada entre re-extrações, mas quem a lê enxerga o sistema como ele é hoje.
+  A próxima re-extração (<code>/solucao</code>) encontra os adendos e os marca como superados ao regenerar as specs, exatamente como já acontece com os adendos do <code>/solucao-sincronizar</code>. A extração permanece intocada entre re-extrações, mas quem a lê enxerga o sistema como ele é hoje.
 </div>
 
 <h2><span class="num">9.</span>O que acontece em cada engine</h2>
@@ -496,7 +496,7 @@ _solucao_bugs/bugs/BUG-20260710-C4T1-teto-black-friday/fix/CHG-002.diff
 <h2><span class="num">10.</span>Escopo da implementação (autorizada em 2026-07-15)</h2>
 <p>A entrega é:</p>
 <ol>
-  <li><code>specs/solucao-bugs/</code>: requirements.md, design.md e tasks.md consolidando este documento.</li>
+  <li><code>specs/solucao-bugs/</code>: requisitos.md, design.md e tasks.md consolidando este documento.</li>
   <li>5 novos agentes em <code>agents/</code> (SKILL.md + references com o template de bug, o template do README do registro e o protocolo do debate).</li>
   <li>Registro do time no installer (<code>lib/installer/prompts.js</code> + <code>lib/commands/install.js</code>) como time próprio, instalável e adicionável via <code>add-agent</code>.</li>
   <li><code>package.json</code>: 1.2.51 → 1.2.52 (só patch).</li>
@@ -504,7 +504,7 @@ _solucao_bugs/bugs/BUG-20260710-C4T1-teto-black-friday/fix/CHG-002.diff
 </ol>
 <div class="caixa pendente">
   <b>Fora do escopo desta entrega</b><br>
-  Alterações em agentes existentes; hooks novos em <code>templates/</code>; integrações ativas com GitHub/Sentry; postmortems. O trabalho não commitado da v1.2.51 (solucao-sync) que já estava no working tree é preservado em commit separado, sem mistura.
+  Alterações em agentes existentes; hooks novos em <code>templates/</code>; integrações ativas com GitHub/Sentry; postmortems. O trabalho não commitado da v1.2.51 (solucao-sincronizar) que já estava no working tree é preservado em commit separado, sem mistura.
 </div>
 
 <h2><span class="num">11.</span>Pontos decididos ao longo das revisões</h2>
@@ -513,7 +513,7 @@ _solucao_bugs/bugs/BUG-20260710-C4T1-teto-black-friday/fix/CHG-002.diff
   <li><b>Numeração:</b> ID canônico merge-safe <code>BUG-&lt;data&gt;-&lt;sufixo&gt;</code> + <code>display_number</code> humano; colisão entre worktrees eliminada por construção.</li>
   <li><b>Bloqueio:</b> campo estruturado <code>blocking:</code>, nunca um quarto status (12.2).</li>
   <li><b>Registro do lado da spec:</b> espelho gerado em <code>_solucao_sdd/traceability/bugs.md</code> (12.7).</li>
-  <li><b>Nome do pente-fino:</b> mantido <code>/solucao-depth-inspection</code>, conforme pedido original de Solução.</li>
+  <li><b>Nome do pente-fino:</b> mantido <code>/solucao-inspecao-detalhada</code>, conforme pedido original de Solução.</li>
   <li><b>Modo de controle:</b> <code>gated</code> como padrão (seção 13): leitura, reprodução isolada e diagnóstico fluem sem CONTINUAR; gate obrigatório em tudo que toca o projeto (testes, change set, spec efetiva, harness externo, operação destrutiva).</li>
 </ul>
 

@@ -13,13 +13,13 @@
 | ¿Qué quieres hacer? | Comando | Equipo |
 |---|---|---|
 | Descubrir y documentar un sistema heredado | `/solucao` | Solucao Agents Core |
-| Crear un proyecto nuevo desde una idea | `/solucao-new` | Code New Project Agents |
-| Implementar o evolucionar código desde las specs | `/solucao-forward` | Code Forward Agents |
-| Planificar la migración de un legado | `/solucao-migrate` | Migration Agents |
-| Generar un mini-sitio visual de documentación | `/solucao-docs` | Documentation Agents |
+| Crear un proyecto nuevo desde una idea | `/solucao-novo` | Code New Project Agents |
+| Implementar o evolucionar código desde las specs | `/solucao-enviar` | Code Forward Agents |
+| Planificar la migración de un legado | `/solucao-migrar` | Migration Agents |
+| Generar un mini-sitio visual de documentación | `/solucao-documentos` | Documentation Agents |
 | Elegir el agente adecuado | `/solucao-agents-help` | Guía de agentes |
 
-Pricing y Translators usan comandos especializados: `/solucao-pricing-profile`, `/solucao-pricing-size`, `/solucao-pricing-estimate` y `/solucao-n8n`.
+Pricing y Translators usan comandos especializados: `/solucao-perfil-precificacao`, `/solucao-fins-precificacao`, `/solucao-estimativa-preco` y `/solucao-n8n`.
 
 ---
 
@@ -29,7 +29,7 @@ Pricing y Translators usan comandos especializados: `/solucao-pricing-profile`, 
 
 El fundador empieza con una idea todavía preliminar, investiga el problema, entiende para quién existe el producto, consolida un PRD y lo transforma en especificaciones listas para implementar.
 
-> Usa `/solucao-new` para proyectos greenfield. Conduce `Ideator → Researcher → Drafter → Spec SDD` y entrega el resultado a `/solucao-forward`.
+> Usa `/solucao-novo` para proyectos greenfield. Conduce `Ideator → Researcher → Drafter → Spec SDD` y entrega el resultado a `/solucao-enviar`.
 
 ### 🎼 Solucao: el director de orquesta
 
@@ -115,8 +115,8 @@ El estilista cataloga el guardarropa: paleta de colores, tipografía, espaciados
 
 ```
 Proyecto heredado: /solucao → descubrimiento y especificaciones
-Proyecto nuevo:    /solucao-new → PRD y specs → /solucao-forward
-Migración:         /solucao → /solucao-migrate → /solucao-forward
+Proyecto nuevo:    /solucao-novo → PRD y specs → /solucao-enviar
+Migración:         /solucao → /solucao-migrar → /solucao-enviar
 
 Pipeline heredado manual:
 Scout → Archaeologist (N sesiones) → Detective → Architect → Writer → Reviewer

@@ -1,6 +1,6 @@
 # Reviewer
 
-**Comando:** `/solucao-reviewer`
+**Comando:** `/solucao-avaliador`
 **Fase:** 5 - Revisão
 
 ---
@@ -35,9 +35,9 @@ Se o Codex não estiver disponível, o Reviewer segue normalmente sem mencionar 
 
 Para cada pasta de unit em `<output_folder>/`:
 
-- Os 3 arquivos canônicos estão presentes (`requirements.md`, `design.md`, `tasks.md`)? Se faltar algum, é uma lacuna.
-- As regras em `requirements.md` fazem sentido em conjunto? Há contradições internas?
-- O `design.md` cobre o que `requirements.md` promete? E o `tasks.md` cobre os dois?
+- Os 3 arquivos canônicos estão presentes (`requisitos.md`, `design.md`, `tasks.md`)? Se faltar algum, é uma lacuna.
+- As regras em `requisitos.md` fazem sentido em conjunto? Há contradições internas?
+- O `design.md` cobre o que `requisitos.md` promete? E o `tasks.md` cobre os dois?
 - Há comportamentos óbvios não especificados?
 - Afirmações marcadas como 🟢: o Reviewer volta ao código original para checar. Reclassifica se necessário.
 

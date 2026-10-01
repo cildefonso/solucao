@@ -37,17 +37,17 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 |---|---|---|
 | migration_brief.md | orchestrator | criado |
 | paradigm_decision.md | paradigm_advisor | criado |
-| target_business_rules.md | curator | criado |
-| discard_log.md | curator | criado |
-| migration_strategy.md | strategist | criado |
-| risk_register.md | strategist | criado |
-| cutover_plan.md | strategist | criado |
+| target_business_rules.md | curador | criado |
+| discard_log.md | curador | criado |
+| migration_strategy.md | estrategista | criado |
+| risk_register.md | estrategista | criado |
+| cutover_plan.md | estrategista | criado |
 | target_architecture.md | designer | criado |
 | target_domain_model.md | designer | criado |
 | target_data_model.md | designer | criado |
 | data_migration_plan.md | designer | criado |
-| parity_specs.md | inspector | criado |
-| parity_tests/*.feature | inspector | <N> arquivos |
+| parity_specs.md | inspetor | criado |
+| parity_tests/*.feature | inspetor | <N> arquivos |
 | ambiguity_log.md | orchestrator | consolidado |
 
 ## Bloqueadores para começar a implementação

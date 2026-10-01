@@ -101,8 +101,8 @@ The choice is saved in `.solucao/state.json` and all subsequent agents respect i
 If you want to run an agent standalone, without going through the orchestrator:
 
 ```
-/solucao-scout
-/solucao-detective
+/solucao-explorador
+/solucao-detetive
 /solucao-data-master
 ```
 

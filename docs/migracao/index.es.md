@@ -6,14 +6,14 @@ El Equipo de Migración es el paso siguiente al Equipo de Descubrimiento. Mientr
 
 ## Prerrequisito
 
-Necesitas haber ejecutado `/solucao` antes y tener `_solucao_sdd/` poblado con las specs del sistema legado. Sin eso, `/solucao-migrate` aborta con un mensaje claro.
+Necesitas haber ejecutado `/solucao` antes y tener `_solucao_sdd/` poblado con las specs del sistema legado. Sin eso, `/solucao-migrar` aborta con un mensaje claro.
 
 ---
 
 ## Cómo ejecutar
 
 ```
-/solucao-migrate
+/solucao-migrar
 ```
 
 La primera ejecución conduce una entrevista (objetivo, métricas de éxito, restricciones, stack objetivo) y genera `_solucao_sdd/migration/migration_brief.md`. En ejecuciones posteriores el brief se reutiliza.
@@ -35,7 +35,7 @@ Brief (entrevista)
 [3] Strategist          → propone estrategias (Strangler, Big Bang, Parallel Run, Branch by Abstraction)
    │
    ▼
-[4] Designer            → diseña arquitectura, domain model y plan de datos
+[4] Designer            → diseña arquitectura, domain model y plano de datos
    │
    ▼
 [5] Screen Translator   → traduce las pantallas legadas a specs (modos + golden files)
@@ -53,7 +53,7 @@ Entre cada agente hay una **pausa para decisión humana**. El modo predeterminad
 
 ## Dónde aparecen los artefactos
 
-El Equipo de Migración nunca toca código legado ni los artefactos del Equipo de Descubrimiento. Todo output del `/solucao-migrate` va a `_solucao_sdd/migration/`, una subcarpeta dentro de las specs originales.
+El Equipo de Migración nunca toca código legado ni los artefactos del Equipo de Descubrimiento. Todo output del `/solucao-migrar` va a `_solucao_sdd/migration/`, una subcarpeta dentro de las specs originales.
 
 ```
 <tu-proyecto-legado>/
@@ -68,7 +68,7 @@ El Equipo de Migración nunca toca código legado ni los artefactos del Equipo d
     ├── architecture.md            (Architect)
     ├── erd-complete.md            (Architect)
     │
-    ├── <unit>/                    (Writer: feature folder con requirements.md, design.md, tasks.md por unit)
+    ├── <unit>/                    (Writer: feature folder con requisitos.md, design.md, tasks.md por unit)
     ├── openapi/                   (Writer: specs de API)
     ├── user-stories/              (Writer: flujos de usuario)
     ├── traceability/              (Writer + Architect: matrices)

@@ -1,14 +1,14 @@
 # Passo 4, verificação de regressão semântica
 
-> Este passo só roda em **re-extrações**, ou seja, quando uma pipeline solucao é executada num projeto que já passou por pelo menos um ciclo `/solucao-coding`. Em projetos sem `_solucao_forward/` ou sem `regression-watch.md`, a verificação de regressão é silenciosamente pulada (a "Reconciliação de adendos" ao final ainda é verificada).
+> Este passo só roda em **re-extrações**, ou seja, quando uma pipeline solucao é executada num projeto que já passou por pelo menos um ciclo `/solucao-codificacao`. Em projetos sem `_solucao_forward/` ou sem `regression-watch.md`, a verificação de regressão é silenciosamente pulada (a "Reconciliação de adendos" ao final ainda é verificada).
 
 ## Por que existe
 
-O Solucao não é só extração one-shot. Cada `/solucao-coding` deixa em `_solucao_forward/<feature>/regression-watch.md` uma lista de regras que precisam continuar verdadeiras na próxima extração. A pipeline solucao, ao re-rodar, tem o dever de checar essas regras contra o código atual e reportar regressões. Esse é o diferencial competitivo do Solucao frente a frameworks forward puros.
+O Solucao não é só extração one-shot. Cada `/solucao-codificacao` deixa em `_solucao_forward/<feature>/regression-watch.md` uma lista de regras que precisam continuar verdadeiras na próxima extração. A pipeline solucao, ao re-rodar, tem o dever de checar essas regras contra o código atual e reportar regressões. Esse é o diferencial competitivo do Solucao frente a frameworks forward puros.
 
 ## Quando rodar
 
-Após o **último agente do plano** concluir, antes da mensagem final de "extração concluída". O gatilho é posição (último item de `.solucao/plan.md`), não nome de agente, porque o último agente varia conforme os opcionais selecionados no install (Reviewer pode estar ausente, por exemplo). Faça os checks na ordem:
+Após o **último agente do plano** concluir, antes da mensagem final de "extração concluída". O gatilho é posição (último item de `.solucao/plano.md`), não nome de agente, porque o último agente varia conforme os opcionais selecionados no install (Reviewer pode estar ausente, por exemplo). Faça os checks na ordem:
 
 1. Verifique se `_solucao_forward/` existe na raiz do projeto. Se não existir, pule direto para a seção "Reconciliação de adendos".
 2. Liste todas as subpastas de `_solucao_forward/` que contêm `regression-watch.md`.
@@ -67,11 +67,11 @@ Se houver pelo menos um vermelho, apresente um aviso destacado:
 
 > 🔴 **Atenção**, foram detectadas **N regressões semânticas** em features previamente codadas. Revise antes de seguir.
 
-Se a `setup.json#watch.block-on-red` for `true`, sugira ao usuário **não** prosseguir com novos `/solucao-requirements` até que cada vermelho seja triado. O Solucao apenas alerta, jamais bloqueia automaticamente o fluxo do usuário.
+Se a `setup.json#watch.block-on-red` for `true`, sugira ao usuário **não** prosseguir com novos `/solucao-requisitos` até que cada vermelho seja triado. O Solucao apenas alerta, jamais bloqueia automaticamente o fluxo do usuário.
 
 ## Reconciliação de adendos
 
-Depois de percorrer as features (ou mesmo se nenhuma tiver `regression-watch.md`), verifique se existe `_solucao_sdd/addenda/` com arquivos `.md` criados pelo `/solucao-sync`. Se existir:
+Depois de percorrer as features (ou mesmo se nenhuma tiver `regression-watch.md`), verifique se existe `_solucao_sdd/addenda/` com arquivos `.md` criados pelo `/solucao-sincronizar`. Se existir:
 
 1. Para cada adendo cuja seção `## Vigência` NÃO contém linha `Superado pela re-extração de ...`, acrescente ao final dessa seção a linha:
 
@@ -83,7 +83,7 @@ Depois de percorrer as features (ou mesmo se nenhuma tiver `regression-watch.md`
 3. Adendos já superados em re-extrações anteriores ficam como estão (são histórico).
 4. Inclua no relatório ao usuário quantos adendos foram marcados como superados nesta re-extração.
 
-A razão: os adendos são pontes entre uma entrega forward e a re-extração. Com a extração regenerada a partir do código atual, os deltas descritos nos adendos já estão absorvidos nos artefatos principais, e os consumidores (por exemplo `/solucao-requirements` e `/solucao-plan`) só devem considerar adendos vigentes.
+A razão: os adendos são pontes entre uma entrega forward e a re-extração. Com a extração regenerada a partir do código atual, os deltas descritos nos adendos já estão absorvidos nos artefatos principais, e os consumidores (por exemplo `/solucao-requisitos` e `/solucao-plano`) só devem considerar adendos vigentes.
 
 ## Caso especial, sem `_solucao_sdd/`
 

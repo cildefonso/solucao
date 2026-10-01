@@ -1,6 +1,6 @@
 <!--
   Template: deck.html
-  Produtor: solucao-docs-storyteller
+  Produtor: solucao-documentos-contador-historias
   Page ID: deck
   Categoria solucao: diagram
   Dados consumidos: assets/data/soul.json + features-index.json + (opcional) metrics.json

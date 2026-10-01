@@ -20,7 +20,7 @@ Comienza leyendo estos tres archivos:
 
 ```
 1. database/  +  erd-complete.md                  (estructuras de datos, migraciones)
-2. domain.md  +  <unit>/ de las entidades core    (reglas de negocio centrales: lee requirements.md, design.md, tasks.md de cada unit)
+2. domain.md  +  <unit>/ de las entidades core    (reglas de negocio centrales: lee requisitos.md, design.md, tasks.md de cada unit)
 3. <unit>/ de los servicios ordenados por dependencia (usa dependencies.md como guía)
 4. openapi/   +  contratos de API                 (si existen)
 5. ui/                                            (capa de presentación al final)

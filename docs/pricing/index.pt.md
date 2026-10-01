@@ -9,16 +9,16 @@ Marcado por padrão no instalador.
 ## Pipeline
 
 ```
-/solucao-pricing-profile        (uma vez: perfil de cobrança)
+/solucao-perfil-precificacao        (uma vez: perfil de cobrança)
         │
         ▼
-/solucao-pricing-size           (por feature: T-shirt sizing estrutural)
+/solucao-fins-precificacao           (por feature: T-shirt sizing estrutural)
         │
         ▼
-/solucao-pricing-estimate       (por feature: 3 cenários lado a lado)
+/solucao-estimativa-preco       (por feature: 3 cenários lado a lado)
 ```
 
-O `profile` roda uma única vez e é reutilizado. Já o `size` e o `estimate` rodam por feature, depois de `/solucao-to-do`.
+O `profile` roda uma única vez e é reutilizado. Já o `size` e o `estimate` rodam por feature, depois de `/solucao-pendencia`.
 
 ---
 
@@ -26,9 +26,9 @@ O `profile` roda uma única vez e é reutilizado. Já o `size` e o `estimate` ro
 
 | Agente | Stage | Função |
 |--------|-------|--------|
-| `solucao-pricing-profile` | profile | Entrevista guiada (até dez perguntas) que produz o perfil de cobrança do usuário: país, moeda, senioridade normalizada, taxa hora, markup de projeto, regime tributário, modelo de cobrança, perfil de cliente. |
-| `solucao-pricing-size` | size | Lê requirements, dúvidas, plan e tasks da feature ativa e produz métricas estruturais determinísticas em `size.json` e `size.md` (T-shirt sizing baseado em tasks com ajuste de risco). |
-| `solucao-pricing-estimate` | estimate | Cruza `profile.json` e `size.json` da feature ativa e produz três cenários educativos lado a lado: Esforço, Valor, Faixa de Mercado. Jamais entrega número único como resposta final. |
+| `solucao-perfil-precificacao` | profile | Entrevista guiada (até dez perguntas) que produz o perfil de cobrança do usuário: país, moeda, senioridade normalizada, taxa hora, markup de projeto, regime tributário, modelo de cobrança, perfil de cliente. |
+| `solucao-fins-precificacao` | size | Lê requisitos, dúvidas, plano e tasks da feature ativa e produz métricas estruturais determinísticas em `size.json` e `size.md` (T-shirt sizing baseado em tasks com ajuste de risco). |
+| `solucao-estimativa-preco` | estimate | Cruza `profile.json` e `size.json` da feature ativa e produz três cenários educativos lado a lado: Esforço, Valor, Faixa de Mercado. Jamais entrega número único como resposta final. |
 
 ---
 
@@ -36,12 +36,12 @@ O `profile` roda uma única vez e é reutilizado. Já o `size` e o `estimate` ro
 
 ```
 _solucao_sdd/_pricing/
-├── profile.json               (uma vez, vindo de /solucao-pricing-profile)
+├── profile.json               (uma vez, vindo de /solucao-perfil-precificacao)
 ├── profile.md
 └── <feature>/
-    ├── size.json              (por feature, de /solucao-pricing-size)
+    ├── size.json              (por feature, de /solucao-fins-precificacao)
     ├── size.md
-    ├── estimate.json          (por feature, de /solucao-pricing-estimate)
+    ├── estimate.json          (por feature, de /solucao-estimativa-preco)
     └── estimate.md
 ```
 

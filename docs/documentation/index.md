@@ -5,7 +5,7 @@ The Documentation Team turns the knowledge extracted by the rest of Solucao into
 Activate with:
 
 ```
-/solucao-docs
+/solucao-documentos
 ```
 
 The orchestrator detects which sources are available (`_solucao_sdd/`, `.solucao/soul.md`, `.solucao/chronicle.md`, source code), runs a short three-question interview to choose reader profile, depth and visual style, then drives four specialist agents in fixed order.
@@ -23,7 +23,7 @@ In a pure greenfield project (no sources detected), the orchestrator asks whethe
 ## Pipeline
 
 ```
-/solucao-docs                   (orchestrator)
+/solucao-documentos                   (orchestrator)
        │
        ▼ Phase 0: vendor bundle
        │   downloads Three.js, D3, Highcharts, OrbitControls
@@ -55,10 +55,10 @@ There is a `CONTINUAR` checkpoint between agents. Add `--auto` to skip the inter
 
 ## Where artifacts land
 
-Everything lands under `_solucao_docs/`. The Team **never** modifies core artifacts (`_solucao_sdd/`, `.solucao/soul.md`, `.solucao/chronicle.md`), it only reads them.
+Everything lands under `_solucao_documentos/`. The Team **never** modifies core artifacts (`_solucao_sdd/`, `.solucao/soul.md`, `.solucao/chronicle.md`), it only reads them.
 
 ```
-_solucao_docs/
+_solucao_documentos/
 ├── index.html              (Publisher: hero, seal, nav)
 ├── arquitetura.html        (Mapper)
 ├── modulos.html            (Mapper)
@@ -78,7 +78,7 @@ _solucao_docs/
 └── .state.json             (pipeline telemetry, hashes per page)
 ```
 
-If `_solucao_docs/` already exists, the orchestrator offers six regeneration options (keep, regenerate all, regenerate a single agent or page, redo the interview, ...) and always creates a `.backup-<timestamp>/` before overwriting.
+If `_solucao_documentos/` already exists, the orchestrator offers six regeneration options (keep, regenerate all, regenerate a single agent or page, redo the interview, ...) and always creates a `.backup-<timestamp>/` before overwriting.
 
 ---
 

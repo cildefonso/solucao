@@ -101,8 +101,8 @@ A escolha fica salva em `.solucao/state.json` e todos os agentes seguintes a res
 Se quiser rodar um agente avulso, sem passar pelo orquestrador:
 
 ```
-/solucao-scout
-/solucao-detective
+/solucao-explorador
+/solucao-detetive
 /solucao-data-master
 ```
 

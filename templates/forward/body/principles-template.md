@@ -1,6 +1,6 @@
 <!--
-Template de corpo do principles.md
-Carregado por /solucao-principles.
+Template de corpo do principios.md
+Carregado por /solucao-principios.
 
 REGRAS DE PREENCHIMENTO:
 - Princípios numerados em romano (I, II, III, ...). Numeração é estável, jamais reciclada.
@@ -14,7 +14,7 @@ REGRAS DE PREENCHIMENTO:
 
 > Projeto: `<nome do projeto>`
 > Data da última alteração: `YYYY-MM-DD`
-> Mantido por: `/solucao-principles`
+> Mantido por: `/solucao-principios`
 
 ## Princípios ativos
 
@@ -25,7 +25,7 @@ REGRAS DE PREENCHIMENTO:
 **Exemplo de aplicação.** <Cenário concreto onde o princípio se aplica e como ele influencia a decisão.>
 
 **Impacto em templates.**
-- `requirements-template.md`: <como esse princípio molda o conteúdo do requirements>
+- `requisitos-template.md`: <como esse princípio molda o conteúdo do requisitos>
 - `roadmap-template.md`: <como esse princípio molda decisões técnicas>
 - `actions-template.md`: <quando aplicável>
 
@@ -41,7 +41,7 @@ REGRAS DE PREENCHIMENTO:
 **Exemplo de aplicação.** <...>
 
 **Impacto em templates.**
-- `requirements-template.md`: <...>
+- `requisitos-template.md`: <...>
 - `roadmap-template.md`: <...>
 
 **Criado em.** `YYYY-MM-DD`

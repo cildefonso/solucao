@@ -19,22 +19,22 @@ El Equipo funciona mejor sobre una extracción (`_solucao_sdd/`), pero degrada b
 ## Los 5 comandos
 
 ```
-/solucao-debugger ──registra──► _solucao_bugs/bugs/BUG-.../   ◄──registra hallazgos── /solucao-depth-inspection
+/solucao-depuracao ──registra──► _solucao_bugs/bugs/BUG-.../   ◄──registra hallazgos── /solucao-inspecao-detalhada
       │
       ▼
-/solucao-debugger-fix ──opt-in──► /solucao-debugger-debate (diagnosis | repair | spec)
+/solucao-depuracao-resolver ──opt-in──► /solucao-depuracao-considerar (diagnosis | repair | spec)
       │
       ▼ cierra según la closure policy
-/solucao-debugger-graph ──regenera──► generated/* + _solucao_sdd/traceability/bugs.md
+/solucao-depuracao-grafico ──regenera──► generated/* + _solucao_sdd/traceability/bugs.md
 ```
 
 | Agente | Rol |
 |--------|-----|
 | **Bug** | Intake, triaje, dedupe, clasificación (`taxonomy.yaml`), trazabilidad inicial y sospecha de seguridad. Nunca corrige. `/solucao-debugger` |
-| **Bug Fix** | Orquestador del ciclo de vida: mitigación opcional, cápsula de reproducción, causa raíz con evidencias (con `git bisect` para regresiones), dos puertas de aprobación (tests que fallan primero, luego el change set de corrección), veredicto de spec, closure policy. `/solucao-debugger-fix` |
-| **Bug Debate** | Debate multiagente en épocas fijas con juez aislado, en tres modos: `diagnosis` (hipótesis causales en competencia), `repair` (estrategias en competencia), `spec` (divergencia código vs spec; termina en recomendación, la decisión es humana). Siempre opt-in, con costo mostrado antes. Harness externos (Codex, Gemini CLI, OpenCode) solo entran como debatientes con consentimiento explícito. `/solucao-debugger-debate` |
-| **Depth Inspection** | Barrido profundo de una feature problemática con lentes especializadas: conformidad con la spec, flujo de datos, contratos, estados de error, cobertura de tests, concurrencia. Solo diagnóstico; los hallazgos confirmados se convierten en bugs registrados. `/solucao-depth-inspection` |
-| **Bug Graph** | Regenera todas las vistas derivadas: índice, catálogo compacto (`catalog.jsonl`), matriz dispersa de relaciones, grafo mermaid con clusters e impact score, y la matriz de trazabilidad BUG ↔ SPEC en ambos extremos. Valida invariantes y se detiene con error explícito ante inconsistencias. `/solucao-debugger-graph` |
+| **Bug Fix** | Orquestador del ciclo de vida: mitigación opcional, cápsula de reproducción, causa raíz con evidencias (con `git bisect` para regresiones), dos puertas de aprobación (tests que fallan primero, luego el change set de corrección), veredicto de spec, closure policy. `/solucao-depuracao-resolver` |
+| **Bug Debate** | Debate multiagente en épocas fijas con juez aislado, en tres modos: `diagnosis` (hipótesis causales en competencia), `repair` (estrategias en competencia), `spec` (divergencia código vs spec; termina en recomendación, la decisión es humana). Siempre opt-in, con costo mostrado antes. Harness externos (Codex, Gemini CLI, OpenCode) solo entran como debatientes con consentimiento explícito. `/solucao-depuracao-considerar` |
+| **Depth Inspection** | Barrido profundo de una feature problemática con lentes especializadas: conformidad con la spec, flujo de datos, contratos, estados de error, cobertura de tests, concurrencia. Solo diagnóstico; los hallazgos confirmados se convierten en bugs registrados. `/solucao-inspecao-detalhada` |
+| **Bug Graph** | Regenera todas las vistas derivadas: índice, catálogo compacto (`catalog.jsonl`), matriz dispersa de relaciones, grafo mermaid con clusters e impact score, y la matriz de trazabilidad BUG ↔ SPEC en ambos extremos. Valida invariantes y se detiene con error explícito ante inconsistencias. `/solucao-depuracao-grafico` |
 
 ---
 
@@ -56,7 +56,7 @@ _solucao_bugs/
     │       ├── DONE.md       candado de cierre: presente, la carpeta es de solo lectura para agentes
     │       ├── evidence/     logs, capturas, cápsula de reproducción
     │       ├── debate/       si se abrió: rondas, convergencia, respuesta final
-    │       └── fix/          plan.html (plan visual, aprobado ANTES de tocar nada) + diffs del change set
+    │       └── fix/          plano.html (plan visual, aprobado ANTES de tocar nada) + diffs del change set
     ├── inspections/<barrido>/  informes del barrido profundo del contexto
     └── generated/            vistas del contexto, incluido graph.html (nunca editadas a mano)
 ```
@@ -68,7 +68,7 @@ Conceptos centrales del schema:
 - **Estados epistemológicos**: la causa raíz y las relaciones entre bugs llevan `hypothesized / supported / confirmed / rejected` con evidencias. Una hipótesis nunca entra al grafo como hecho.
 - **Correction Change Set**: una corrección es un conjunto tipado de cambios (código, test, configuración, migration, reparación de datos, especificación...), porque código sanado no es sistema sanado.
 - **Closure policy**: lo que `resolved` exige depende del perfil del proyecto: software local cierra con tests de regresión pasando; un servicio en producción solo tras la entrega y una ventana de observación sin recurrencia.
-- **Anotar primero, salida visual siempre**: `/solucao-debugger` empieza como escribano (reportes y capturas caen en `intake/` antes de cualquier registro), y las vistas, incluido el `graph.html` autocontenido (nodos clicables, estadísticas, aristas de relación), se generan automáticamente como parte de la documentación. `/solucao-debugger-fix` produce un plan visual de corrección (`fix/plan.html`, con matriz de relaciones con enlaces y el change set propuesto) que el usuario aprueba antes de tocar cualquier archivo, y graba el candado `DONE.md` cuando la closure policy se satisface.
+- **Anotar primero, salida visual siempre**: `/solucao-depuracao` empieza como escribano (reportes y capturas caen en `intake/` antes de cualquier registro), y las vistas, incluido el `graph.html` autocontenido (nodos clicables, estadísticas, aristas de relación), se generan automáticamente como parte de la documentación. `/solucao-depuracao-resolver` produce un plan visual de corrección (`fix/plano.html`, con matriz de relaciones con enlaces y el change set propuesto) que el usuario aprueba antes de tocar cualquier archivo, y graba el candado `DONE.md` cuando la closure policy se satisface.
 
 ---
 

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "startedAt": null,
+  "lastCheckpoint": null,
+  "completedAgents": [],
+  "pendingAgents": [
+    "paradigm_advisor",
+    "curador",
+    "estrategista",
+    "designer",
+    "screen_translator",
+    "inspetor"
+  ],
+  "currentAgent": {
+    "agent": null,
+    "phase": null,
+    "status": null,
+    "topologyApproved": false,
+    "screenModeApproved": false
+  },
+  "pendingDecisions": [],
+  "artifacts": {},
+  "auto": false,
+  "engine": null,
+  "solucaoVersion": "{{VERSION}}",
+  "briefPath": "_solucao_sdd/migration/migration_brief.md",
+  "expectedLegacyArtifacts": "references/expected_legacy_artifacts.yaml"
+}

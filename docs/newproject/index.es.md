@@ -15,39 +15,39 @@ Tienes una idea, pero todavía no hay código. Puede ser una frase ("quiero que 
 Activa con:
 
 ```
-/solucao-new
+/solucao-novo
 ```
 
-`/solucao-new` tiene dos modos de ejecución:
+`/solucao-novo` tiene dos modos de ejecución:
 
-- **Guiado** (predeterminado): el orquestador recoge el brief, conduce los cuatro agentes funcionales en orden fijo, guarda checkpoint entre cada uno y pide `CONTINUAR` antes de avanzar. Termina en las specs SDD, con handoff a `/solucao-forward`.
-- **Expreso**: actívalo con `/solucao-new expresso "<tu idea>"` o elígelo en el menú inicial. Todas las preguntas se concentran en una entrevista única al inicio; tras el `INICIAR`, el pipeline corre sin pausas y, al concluir las specs, encadena automáticamente con el ciclo forward (`requirements → plan → to-do → coding`) hasta el código implementado. Las dudas que surjan en el camino se registran con el sello 🟡 para revisión posterior, sin interrumpir el flujo.
+- **Guiado** (predeterminado): el orquestador recoge el brief, conduce los cuatro agentes funcionales en orden fijo, guarda checkpoint entre cada uno y pide `CONTINUAR` antes de avanzar. Termina en las specs SDD, con handoff a `/solucao-enviar`.
+- **Expreso**: actívalo con `/solucao-novo expresso "<tu idea>"` o elígelo en el menú inicial. Todas las preguntas se concentran en una entrevista única al inicio; tras el `INICIAR`, el pipeline corre sin pausas y, al concluir las specs, encadena automáticamente con el ciclo forward (`requisitos → plano → pendencia → codificacao`) hasta el código implementado. Las dudas que surjan en el camino se registran con el sello 🟡 para revisión posterior, sin interrumpir el flujo.
 
-Si la sesión se interrumpe, en cualquier modo, basta con escribir `/solucao-new` de nuevo: lee `state.json#newproject_progress` y retoma exactamente donde se detuvo, respetando el modo guardado.
+Si la sesión se interrumpe, en cualquier modo, basta con escribir `/solucao-novo` de nuevo: lee `state.json#newproject_progress` y retoma exactamente donde se detuvo, respetando el modo guardado.
 
 ---
 
 ## Pipeline
 
 ```
-/solucao-new              (orquestador)
+/solucao-novo              (orquestador)
        │
        ▼
-/solucao-ideator          → _solucao_sdd/ideation.md
+/solucao-idealizador          → _solucao_sdd/ideation.md
        │
        ▼ CONTINUAR
-/solucao-researcher       → _solucao_sdd/personas.md
+/solucao-pesquisador       → _solucao_sdd/personas.md
        │
        ▼ CONTINUAR
-/solucao-drafter          → _solucao_sdd/prd.md
+/solucao-desenhista-tecnico          → _solucao_sdd/prd.md
        │
        ▼ CONTINUAR
 /solucao-spec-sdd         → _solucao_sdd/sdd/<componente>.md
        │
-       ├── guiado: handoff, sugiere /solucao-forward
+       ├── guiado: handoff, sugiere /solucao-enviar
        │
        ▼ expreso: continúa sin parar
-/solucao-requirements → /solucao-plan → /solucao-to-do → /solucao-coding
+/solucao-requisitos → /solucao-plano → /solucao-pendencia → /solucao-codificacao
        │
        ▼
 código implementado en _solucao_forward/<NNN>-<feature>/
@@ -74,13 +74,13 @@ El equipo escribe solo dentro de `_solucao_sdd/` (la misma carpeta usada por Dis
         └── <componente>.md      (Spec SDD)
 ```
 
-El estado del orquestador vive en `.solucao/state.json` bajo la clave `newproject_progress`, con `mode` (guiado o expreso), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` y el `brief` truncado. En modo expreso, `stage` también recorre `forward-requirements`, `forward-plan`, `forward-todo` y `forward-coding`, y la feature generada vive en `_solucao_forward/`.
+El estado del orquestador vive en `.solucao/state.json` bajo la clave `newproject_progress`, con `mode` (guiado o expreso), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` y el `brief` truncado. En modo expreso, `stage` también recorre `enviar-requisitos`, `enviar-plano`, `enviar-pendencia` y `avancar-codificacao`, y la feature generada vive en `_solucao_enviar/`.
 
 ---
 
 ## Re-ejecución
 
-Cuando el pipeline ya está en curso y escribes `/solucao-new` de nuevo, el orquestador detecta el `stage` guardado y ofrece cuatro opciones:
+Cuando el pipeline ya está en curso y escribes `/solucao-novo` de nuevo, el orquestador detecta el `stage` guardado y ofrece cuatro opciones:
 
 1. **Continuar desde donde paraste** (recomendado)
 2. **Recrear todo desde cero** (sobrescribe artefactos, requiere confirmación explícita)

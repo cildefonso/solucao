@@ -12,7 +12,7 @@ The central orchestrator (Solucao itself) coordinates who enters when, in what o
 |------|------|------------------|
 | **Solucao Agents Core** | Discovery and orchestration of the legacy: maps, excavates, interprets and documents. Detailed in the tables below. | Always installed |
 | **Code New Project Agents** | Greenfield pipeline from a one-line idea to SDD specs. See [Code New Project Agents](../newproject/index.md). | Pre-checked |
-| **Code Forward Agents** | Drive forward delivery from the specs: requirements, plan, to-do, audit, quality, coding. See [Code Forward Agents](../forward/index.md). | Pre-checked |
+| **Code Forward Agents** | Drive forward delivery from the specs: requisitos, plano, pendencia, auditoria, quality, codificacao. See [Code Forward Agents](../forward/index.md). | Pre-checked |
 | **Migration Agents** | Turn legacy specs into a rebuild plan for a modern stack. See [Migration](../migracao/index.md). | Pre-checked |
 | **Pricing and Size Agents** | Estimate effort, size and pricing on top of the specs. See [Pricing](../pricing/index.md). | Pre-checked |
 | **Documentation Team** | Render the extracted knowledge as a self-contained HTML mini-site. See [Documentation Team](../documentation/index.md). | Pre-checked |
@@ -30,7 +30,7 @@ These are part of the main pipeline. The orchestrator runs them in the right seq
 | Agent | Phase | Analogy | Role |
 |-------|-------|---------|------|
 | [Solucao](solucao.md) | Orchestration | The orchestra conductor | Coordinates all agents, saves checkpoints, guides the user |
-| [Scout](scout.md) | Reconnaissance | The real estate agent | Maps the surface: folders, languages, frameworks, dependencies, entry points |
+| [Scout](explorador.md) | Reconnaissance | The real estate agent | Maps the surface: folders, languages, frameworks, dependencies, entry points |
 | [Archaeologist](arqueologo.md) | Excavation | The excavator | Deep module-by-module analysis: algorithms, flows, data structures |
 | [Detective](detetive.md) | Interpretation | Sherlock Holmes | Extracts implicit business rules, ADRs, state machines, permissions |
 | [Architect](arquiteto.md) | Interpretation | The cartographer | Synthesizes everything into C4 diagrams, ERD, and integration map |
@@ -47,7 +47,7 @@ Installed by default, but can be triggered independently at any time.
 | [Reviewer](revisor.md) | The spec reviewer | After the Writer: critically reviews specs and validates gaps |
 | [Visor](visor.md) | The forensic illustrator | When screenshots of the system are available |
 | [Data Master](data-master.md) | The geologist | When DDL, migrations, or ORM models are available |
-| [Design System](design-system.md) | The stylist | When CSS files, themes, or interface screenshots are available |
+| [Design System](sistema-design.md) | The stylist | When CSS files, themes, or interface screenshots are available |
 
 ---
 

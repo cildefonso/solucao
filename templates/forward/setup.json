@@ -14,7 +14,7 @@
     "forward-dir": "_solucao_forward",
     "config-dir": ".solucao"
   },
-  "principles": {
+  "principios": {
     "enabled": true,
     "auto-load-into-plan": true
   },

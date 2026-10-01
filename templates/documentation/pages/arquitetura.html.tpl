@@ -1,6 +1,6 @@
 <!--
   Template: arquitetura.html
-  Produtor: solucao-docs-mapper
+  Produtor: solucao-documentos-mapeador
   Skill invocada: solucao-arquitetura-3d (modo code-city)
   Page ID: arquitetura
   Categoria solucao: diagram

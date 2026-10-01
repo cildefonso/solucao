@@ -4,11 +4,11 @@
 # Uso:
 #   bind-to-extraction.ps1 [-Json] [-For <comando>]
 #
-# -For requirements   architecture, domain, inventory
-# -For plan           architecture, c4-context, state-machines, dependencies, code-analysis
-# -For to-do          architecture, code-analysis
-# -For audit          architecture, domain
-# -For coding         architecture, domain, code-analysis
+# -For requisitos   architecture, domain, inventory
+# -For plano           architecture, c4-context, state-machines, dependencies, code-analysis
+# -For pendencia          architecture, code-analysis
+# -For auditoria          architecture, domain
+# -For codificacao         architecture, domain, code-analysis
 # sem -For            todos os arquivos do _solucao_sdd
 #
 # Códigos de saída: 0 ok, 1 _solucao_sdd ausente, 2 uso inválido.
@@ -31,12 +31,12 @@ if (-not (Test-Path -LiteralPath $sddDir -PathType Container)) {
 }
 
 $wanted = switch ($For) {
-  'requirements' { @('architecture.md','domain.md','inventory.md') }
-  'plan'         { @('architecture.md','c4-context.md','state-machines.md','dependencies.md','code-analysis.md') }
-  'to-do'        { @('architecture.md','code-analysis.md') }
+  'requisitos' { @('architecture.md','domain.md','inventory.md') }
+  'plano'         { @('architecture.md','c4-context.md','state-machines.md','dependencies.md','code-analysis.md') }
+  'pendencia'        { @('architecture.md','code-analysis.md') }
   'todo'         { @('architecture.md','code-analysis.md') }
-  'audit'        { @('architecture.md','domain.md') }
-  'coding'       { @('architecture.md','domain.md','code-analysis.md') }
+  'auditoria'        { @('architecture.md','domain.md') }
+  'codificacao'       { @('architecture.md','domain.md','code-analysis.md') }
   default        { @('architecture.md','c4-context.md','code-analysis.md','confidence-report.md','dependencies.md','domain.md','inventory.md','questions.md','state-machines.md') }
 }
 

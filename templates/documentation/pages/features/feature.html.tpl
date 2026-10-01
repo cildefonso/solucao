@@ -1,9 +1,9 @@
 <!--
   Template: features/<spec-id>.html
-  Produtor: solucao-docs-storyteller
+  Produtor: solucao-documentos-contador-historias
   Page ID: feature-<id>
   Categoria solucao: diagram
-  Dados consumidos: _solucao_sdd/<spec>/requirements.md + design.md + tasks.md
+  Dados consumidos: _solucao_sdd/<spec>/requisitos.md + design.md + tasks.md
 
   Padrão: "How a Feature Works" (TL;DR + accordion + snippets em abas).
 
@@ -24,7 +24,7 @@
         <!-- FEATURE_ACCORDION -->
         <details open>
             <summary>Requisitos</summary>
-            <div data-section="requirements"><!-- FEATURE_REQUIREMENTS --></div>
+            <div data-section="requisitos"><!-- FEATURE_REQUIREMENTS --></div>
         </details>
         <details>
             <summary>Design</summary>

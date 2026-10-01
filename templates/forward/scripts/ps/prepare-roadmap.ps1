@@ -1,11 +1,11 @@
 # prepare-roadmap.ps1
-# Helper específico do skill /solucao-plan.
+# Helper específico do skill /solucao-plano.
 # Garante que a pasta da feature ativa exista e devolve caminhos absolutos prontos.
 #
 # Uso:
 #   prepare-roadmap.ps1 [-Json]
 #
-# Códigos de saída: 0 ok, 1 active-requirements ausente/invalido, 2 nao foi possivel criar feature-dir, 3 uso invalido.
+# Códigos de saída: 0 ok, 1 active-requisitos ausente/invalido, 2 nao foi possivel criar feature-dir, 3 uso invalido.
 
 [CmdletBinding()]
 param(
@@ -18,17 +18,17 @@ $scriptDir   = Split-Path -Parent $PSCommandPath
 $projectRoot = (Resolve-Path (Join-Path $scriptDir '..\..')).Path
 $solucaoDir  = Join-Path $projectRoot '.solucao'
 $sddDir      = Join-Path $projectRoot '_solucao_sdd'
-$active      = Join-Path $solucaoDir 'active-requirements.json'
+$active      = Join-Path $solucaoDir 'active-requisitos.json'
 
 if (-not (Test-Path -LiteralPath $active)) {
-  Write-Error "$active nao existe. rode solucao-requirements antes."
+  Write-Error "$active nao existe. rode solucao-requisitos antes."
   exit 1
 }
 
 try {
   $payload = Get-Content -LiteralPath $active -Raw -Encoding utf8 | ConvertFrom-Json
 } catch {
-  Write-Error "active-requirements.json esta invalido: $($_.Exception.Message)"
+  Write-Error "active-requisitos.json esta invalido: $($_.Exception.Message)"
   exit 1
 }
 
@@ -48,7 +48,7 @@ try {
   exit 2
 }
 
-$requirementsPath  = Join-Path $featureDir 'requirements.md'
+$requirementsPath  = Join-Path $featureDir 'requisitos.md'
 $roadmapPath       = Join-Path $featureDir 'roadmap.md'
 $investigationPath = Join-Path $featureDir 'investigation.md'
 $dataDeltaPath     = Join-Path $featureDir 'data-delta.md'
@@ -58,7 +58,7 @@ $result = [ordered]@{
   'project-root' = $projectRoot
   'sdd-dir'      = $sddDir
   'feature-dir'  = $featureDir
-  'requirements' = [ordered]@{
+  'requisitos' = [ordered]@{
     path    = $requirementsPath
     present = (Test-Path -LiteralPath $requirementsPath)
   }
@@ -77,7 +77,7 @@ if ($Json) {
   $result | ConvertTo-Json -Compress -Depth 4 | Write-Output
 } else {
   Write-Output "feature-dir: $featureDir"
-  Write-Output "requirements presente: $($result.requirements.present)"
+  Write-Output "requisitos presente: $($result.requisitos.present)"
   Write-Output "roadmap ja existe: $($result.roadmap.'already-exists')"
 }
 

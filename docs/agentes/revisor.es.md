@@ -1,6 +1,6 @@
 # Reviewer
 
-**Comando:** `/solucao-reviewer`
+**Comando:** `/solucao-avaliador`
 **Fase:** 5 - Revisión
 
 ---
@@ -34,4 +34,4 @@ Si el plugin de Codex está activo en la sesión, el Reviewer ofrece solicitar u
 | `_solucao_sdd/gaps.md` | Brechas que quedaron sin respuesta |
 | `_solucao_sdd/cross-review-result.md` | Hallazgos de Codex (si se solicitó revisión cruzada) |
 
-El Reviewer revisa carpeta por carpeta de unit dentro de `<output_folder>/`, leyendo los 3 archivos canónicos (`requirements.md`, `design.md`, `tasks.md`) de cada una. Las reclasificaciones se aplican in-place en cada unit; los artefactos propios del Reviewer quedan en la raíz, fuera de las carpetas de unit.
+El Reviewer revisa carpeta por carpeta de unit dentro de `<output_folder>/`, leyendo los 3 archivos canónicos (`requisitos.md`, `design.md`, `tasks.md`) de cada una. Las reclasificaciones se aplican in-place en cada unit; los artefactos propios del Reviewer quedan en la raíz, fuera de las carpetas de unit.

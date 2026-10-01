@@ -7,10 +7,10 @@
 Use o fluxo adequado no chat:
 
 - `solucao` — descobrir e documentar um sistema existente
-- `solucao-new` — criar PRD e specs para um projeto novo
-- `solucao-forward` — implementar ou evoluir código a partir das specs
-- `solucao-migrate` — planejar a migração de um sistema legado
-- `solucao-docs` — gerar o mini-site visual da documentação
+- `solucao-novo` — criar PRD e specs para um projeto novo
+- `solucao-enviar` — implementar ou evoluir código a partir das specs
+- `solucao-migrar` — planejar a migração de um sistema legado
+- `solucao-documentos` — gerar o mini-site visual da documentação
 - `solucao-agents-help` — consultar o catálogo completo de agentes
 
 ## Comportamento ao ativar

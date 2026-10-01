@@ -101,8 +101,8 @@ La elección se guarda en `.solucao/state.json` y todos los agentes siguientes l
 Si quieres ejecutar un agente suelto, sin pasar por el orquestador:
 
 ```
-/solucao-scout
-/solucao-detective
+/solucao-explorador
+/solucao-detetive
 /solucao-data-master
 ```
 

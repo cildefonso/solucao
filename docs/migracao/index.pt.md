@@ -6,14 +6,14 @@ O Time de Migração é o passo seguinte ao Time de Descoberta. Enquanto a Desco
 
 ## Pré-requisito
 
-Você precisa ter rodado `/solucao` antes e ter o `_solucao_sdd/` populado com as specs do legado. Sem isso, o `/solucao-migrate` aborta com mensagem clara.
+Você precisa ter rodado `/solucao` antes e ter o `_solucao_sdd/` populado com as specs do legado. Sem isso, o `/solucao-migrar` aborta com mensagem clara.
 
 ---
 
 ## Como rodar
 
 ```
-/solucao-migrate
+/solucao-migrar
 ```
 
 A primeira execução conduz uma entrevista (objetivo, métricas, restrições, stack alvo) e gera `_solucao_sdd/migration/migration_brief.md`. Em execuções seguintes o brief é reusado.
@@ -53,7 +53,7 @@ Entre cada agente há uma **pausa para decisão humana**. O modo padrão é inte
 
 ## Onde os artefatos aparecem
 
-O Time de Migração nunca toca em código legado nem nos artefatos do Time de Descoberta. Todo output do `/solucao-migrate` vai para `_solucao_sdd/migration/`, uma subpasta dentro das specs originais.
+O Time de Migração nunca toca em código legado nem nos artefatos do Time de Descoberta. Todo output do `/solucao-migrar` vai para `_solucao_sdd/migration/`, uma subpasta dentro das specs originais.
 
 ```
 <seu-projeto-legado>/
@@ -68,7 +68,7 @@ O Time de Migração nunca toca em código legado nem nos artefatos do Time de D
     ├── architecture.md            (Architect)
     ├── erd-complete.md            (Architect)
     │
-    ├── <unit>/                    (Writer: feature folder com requirements.md, design.md, tasks.md por unit)
+    ├── <unit>/                    (Writer: feature folder com requisitos.md, design.md, tasks.md por unit)
     ├── openapi/                   (Writer: specs de API)
     ├── user-stories/              (Writer: fluxos de usuário)
     ├── traceability/              (Writer + Architect: matrizes)

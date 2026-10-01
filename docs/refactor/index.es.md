@@ -29,7 +29,7 @@ El Team funciona mejor sobre una extracción (`_solucao_sdd/`): el alma y las sp
   higiene      /solucao-standardize   /solucao-prune
       │ cada uno: red de seguridad ──► gate (diff aprobado) ──► prueba de preservación
       ▼
-transformations/OPP-.../  (plan.html, diffs, evidencia)  ── siempre reversible
+transformations/OPP-.../  (plano.html, diffs, evidencia)  ── siempre reversible
 ```
 
 | Agente | Función |
@@ -66,7 +66,7 @@ _solucao_refactor/
     ├── opportunities/            oportunidades detectadas, una por archivo (verbo, objetivo, ROI, confianza)
     ├── transformations/
     │   └── OPP-20260723-K4T9-extraer-reglas-de-envio/
-    │       ├── plan.html         plan visual, aprobado ANTES de tocar cualquier archivo
+    │       ├── plano.html         plano visual, aprobado ANTES de tocar cualquier archivo
     │       ├── safety-net/       pruebas de caracterización + resultado verde/rojo
     │       ├── before-after/     medición, prueba de equivalencia o prueba de muerte
     │       ├── CHG-NNN.diff       diffs aplicados, la fuente de reversión

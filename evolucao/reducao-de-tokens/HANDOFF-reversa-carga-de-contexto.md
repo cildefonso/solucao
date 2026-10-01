@@ -224,8 +224,8 @@ Use os números deste documento, não os do PDF.
 | **Cenário A** — só `solucao` | 1 | 291 | ~72 | −99% |
 | **Cenário B** — 8 orquestradores ✅ | 8 | 2.336 | ~584 | **−85%** |
 
-**Cenário B mantém model-invoked:** `solucao`, `solucao-new`, `solucao-forward`, `solucao-migrate`,
-`solucao-autonomous`, `solucao-agents-help`, `solucao-debugger`, `solucao-refactor`.
+**Cenário B mantém model-invoked:** `solucao`, `solucao-novo`, `solucao-enviar`, `solucao-migrar`,
+`solucao-autonoma`, `solucao-agents-help`, `solucao-depuracao`, `solucao-refactor`.
 
 **Recomendo B, e a razão é a regra do topo deste documento.** O `CLAUDE.md` declara que a Solução ativa
 *"quando o usuário digitar `/solucao` **ou a palavra `solucao` sozinha em uma mensagem**"*. Reconhecer
@@ -276,13 +276,13 @@ precedência**: o que hoje é fallback vira o caminho primário.
 | # | Arquivo | Linha | Fallback de leitura? |
 |---|---|---|---|
 | 1 | `solucao/SKILL.md` | 26 | ✅ sim |
-| 2 | `solucao-migrate/SKILL.md` | 102 | ✅ sim |
-| 3 | `solucao-new/SKILL.md` | 195 | ✅ sim |
+| 2 | `solucao-migrar/SKILL.md` | 102 | ✅ sim |
+| 3 | `solucao-novo/SKILL.md` | 195 | ✅ sim |
 | 4 | `solucao/references/step-01-first-run.md` | 63 | 🔴 **NÃO** |
-| 5 | `solucao-autonomous/SKILL.md` | 98 | 🟡 indireto — *"exatamente como o `solucao` faz"* |
+| 5 | `solucao-autonoma/SKILL.md` | 98 | 🟡 indireto — *"exatamente como o `solucao` faz"* |
 
-🔴 **O site 4 é o que quebra.** Texto atual: *"Após confirmação, ative o skill `solucao-scout`."* — manda
-ativar por nome, sem alternativa, e o `solucao-scout` é justamente uma das que ficarão user-invoked.
+🔴 **O site 4 é o que quebra.** Texto atual: *"Após confirmação, ative o skill `solucao-explorador`."* — manda
+ativar por nome, sem alternativa, e o `solucao-explorador` é justamente uma das que ficarão user-invoked.
 
 Redação sugerida para o site 1 (aplique o mesmo padrão nos outros):
 
@@ -290,7 +290,7 @@ Redação sugerida para o site 1 (aplique o mesmo padrão nos outros):
 
 Para o site 4:
 
-> `Após confirmação, leia `.agents/skills/solucao-scout/SKILL.md` na íntegra e execute no contexto atual.`
+> `Após confirmação, leia `.agents/skills/solucao-explorador/SKILL.md` na íntegra e execute no contexto atual.`
 
 **Ao final desta etapa, o framework precisa estar funcionando exatamente como antes** — nenhuma marca foi
 adicionada ainda, só a ordem de precedência mudou. Repita o teste da Etapa 1.
@@ -303,14 +303,14 @@ git commit -am "etapa 2: leitura direta do SKILL.md como caminho primário nos 4
 
 **Não marque as 41 de uma vez.** Marque **uma** e prove que a abordagem funciona.
 
-Escolha `solucao-scout`: é a mais crítica das user-invoked (é a primeira que o orquestrador chama, e é
+Escolha `solucao-explorador`: é a mais crítica das user-invoked (é a primeira que o orquestrador chama, e é
 o alvo do site 4). Se funcionar com ela, funciona com todas.
 
 Adicione **uma linha** ao frontmatter, nas duas árvores:
 
 ```yaml
 ---
-name: solucao-scout
+name: solucao-explorador
 description: Mapeia a superfície do projeto legado — ...
 disable-model-invocation: true          # ← só isto
 license: MIT
@@ -324,13 +324,13 @@ comandos que o humano vê; é a **flag** que tira a skill do contexto do modelo.
 
 **Teste agora, numa sessão nova:**
 - `/solucao` consegue chegar ao Scout e executá-lo? (é o site 4 sendo exercitado)
-- `/solucao-scout` digitado direto ainda funciona?
+- `/solucao-explorador` digitado direto ainda funciona?
 
 **Se qualquer um falhar, PARE.** Volte com `git checkout baseline -- .` e reporte ao usuário. Não siga
 para a Etapa 4 com dúvida.
 
 ```bash
-git commit -am "etapa 3: solucao-scout como user-invoked, validado ponta a ponta"
+git commit -am "etapa 3: solucao-explorador como user-invoked, validado ponta a ponta"
 ```
 
 ### 4.4 · Etapa 4 — marcar as 40 restantes
@@ -347,8 +347,8 @@ ARVORES = [BASE/"claude-skills", BASE/"agents-skills"]
 
 # Cenário B — permanecem model-invoked
 MANTER = {
-    "solucao", "solucao-new", "solucao-forward", "solucao-migrate",
-    "solucao-autonomous", "solucao-agents-help", "solucao-debugger", "solucao-refactor",
+    "solucao", "solucao-novo", "solucao-enviar", "solucao-migrar",
+    "solucao-autonoma", "solucao-agents-help", "solucao-depuracao", "solucao-refactor",
 }
 
 alterados = 0
@@ -596,9 +596,9 @@ Nenhuma checagem acima prova que a Solução funciona. Numa sessão nova, depois
 | 1 | Digitar `/solucao` | Orquestrador carrega e lê `.solucao/state.json` |
 | 2 | Escrever só a palavra `solucao` numa mensagem | Ativa (só no Cenário B — é o que A sacrifica) |
 | 3 | `/solucao` chegando ao Scout | Executa via leitura direta (exercita o site 4) |
-| 4 | `/solucao-scout` digitado direto | Funciona |
+| 4 | `/solucao-explorador` digitado direto | Funciona |
 | 5 | `/solucao-agents-help` | Catálogo aparece |
-| 6 | `/solucao-forward` | Fluxo carrega |
+| 6 | `/solucao-enviar` | Fluxo carrega |
 
 ### 6.4 · Definição de "quebrado" — qualquer um destes aborta a entrega
 
@@ -649,7 +649,7 @@ Medidos em 30/07/2026, reproduzíveis.
 | `description` somadas | 14.708 chars · ~3.677 tokens |
 | Média por `description` | 300 chars |
 | Média de linhas por `SKILL.md` | 133 (vs 69 do mattpocock) |
-| Maior `SKILL.md` | `solucao-new`, 328 linhas |
+| Maior `SKILL.md` | `solucao-novo`, 328 linhas |
 | Versão instalada | 1.2.56 |
 | Fonte da Solução na máquina | **não existe** |
 | Identidade git | `solucao` / `cildefonso@gmail.com` (configurada) |
@@ -672,7 +672,7 @@ O racional do eixo está em `skills/productivity/writing-great-skills/GLOSSARY.m
 3. Montar o repositório dedicado e o branch (§1).
 4. **Etapa 1** — teste funcional ANTES, registrado (§4.1).
 5. **Etapa 2** — corrigir os 4 sites de invocação. Testar. Commit. (§4.2)
-6. **Etapa 3** — marcar só `solucao-scout`. Testar ponta a ponta. Commit. (§4.3)
+6. **Etapa 3** — marcar só `solucao-explorador`. Testar ponta a ponta. Commit. (§4.3)
 7. **Etapa 4** — marcar as 40 restantes. Conferir 82 (ou 80). Commit. (§4.4)
 8. **Etapa 5** — criar os 98 `openai.yaml`. Commit. (§4.5)
 
@@ -706,13 +706,13 @@ As 8 maiores:
 
 | Skill | Linhas |
 |---|---:|
-| `solucao-new` | 328 |
-| `solucao-screen-translator` | 278 |
+| `solucao-novo` | 328 |
+| `solucao-tradutor-tela` | 278 |
 | `solucao-spec-sdd` | 277 |
-| `solucao-migrate` | 272 |
-| `solucao-reconstructor` | 242 |
-| `solucao-forward` | 231 |
-| `solucao-requirements` | 216 |
+| `solucao-migrar` | 272 |
+| `solucao-reconstrutor` | 242 |
+| `solucao-enviar` | 231 |
+| `solucao-requisitos` | 216 |
 | `solucao-designer` | 216 |
 
 **O que fazer:** mover blocos de referência (formatos, exemplos, tabelas longas) para

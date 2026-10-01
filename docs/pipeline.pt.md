@@ -86,7 +86,7 @@ O Writer não gera tudo de uma vez. Ele monta um plano cobrindo todas as units, 
 
 O que ele produz:
 
-- Uma pasta por unit com `<unit>/requirements.md`, `<unit>/design.md`, `<unit>/tasks.md` (mais opcionais quando o nível de documentação pede)
+- Uma pasta por unit com `<unit>/requisitos.md`, `<unit>/design.md`, `<unit>/tasks.md` (mais opcionais quando o nível de documentação pede)
 - Specs de API (`openapi/[api].yaml`)
 - User stories (`user-stories/[fluxo].md`)
 - Matriz de rastreabilidade legado-unit (`traceability/code-spec-matrix.md`)

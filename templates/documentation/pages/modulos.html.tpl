@@ -1,6 +1,6 @@
 <!--
   Template: modulos.html
-  Produtor: solucao-docs-mapper
+  Produtor: solucao-documentos-mapeador
   Skill invocada: especialista-d3 (modo force-directed)
   Page ID: modulos
   Categoria solucao: diagram

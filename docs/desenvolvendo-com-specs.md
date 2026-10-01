@@ -20,7 +20,7 @@ Start by reading these three files:
 
 ```
 1. database/  +  erd-complete.md             (data structures, migrations)
-2. domain.md  +  <unit>/ for core entities   (core business rules: read requirements.md, design.md, tasks.md of each)
+2. domain.md  +  <unit>/ for core entities   (core business rules: read requisitos.md, design.md, tasks.md of each)
 3. <unit>/ for services sorted by dependency (use dependencies.md as a guide)
 4. openapi/   +  API contracts               (if present)
 5. ui/                                       (presentation layer last)

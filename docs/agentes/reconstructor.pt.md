@@ -1,6 +1,6 @@
 # Reconstructor
 
-**Comando:** `/solucao-reconstructor`
+**Comando:** `/solucao-reconstrutor`
 **Papel:** agente independente (fora do pipeline de Descoberta)
 
 ---
@@ -17,7 +17,7 @@ O Reconstructor transforma as specs do Solucao em um **plano de reconstrução e
 
 Roda em dois modos:
 
-1. **Modo de planejamento** (primeira vez que é invocado): lê um conjunto pequeno de arquivos, infere a árvore de dependências e produz o `reconstruction-plan.md` com a lista completa de tarefas. A ordem é escolhida por profundidade de dependência: schema e entidades-núcleo primeiro, folhas da árvore antes de seus dependentes, camada de API e fluxos de usuário por último.
+1. **Modo de planejamento** (primeira vez que é invocado): lê um conjunto pequeno de arquivos, infere a árvore de dependências e produz o `reconstruction-plano.md` com a lista completa de tarefas. A ordem é escolhida por profundidade de dependência: schema e entidades-núcleo primeiro, folhas da árvore antes de seus dependentes, camada de API e fluxos de usuário por último.
 2. **Modo de execução** (toda invocação seguinte): pega a próxima tarefa não marcada no plano, lê apenas os arquivos que a tarefa declara que precisa, implementa, marca como concluída e para.
 
 Se existir uma pasta `migration/` finalizada, o Reconstructor pergunta se deve reconstruir a partir das **specs originais** (fiel ao legado) ou das **specs da migração** (sistema novo na stack alvo), e marca o plano de acordo.
@@ -44,7 +44,7 @@ Preservação de tokens. Cada tarefa carrega apenas o contexto que precisa. Voc�
 - `_solucao_sdd/traceability/code-spec-matrix.md` (quando disponível)
 - `_solucao_sdd/migration/handoff.md` (quando existe migração concluída)
 
-Arquivos de nível de unit (`<unit>/requirements.md`, `design.md`, `tasks.md`) não são lidos no planejamento, só na execução da tarefa correspondente.
+Arquivos de nível de unit (`<unit>/requisitos.md`, `design.md`, `tasks.md`) não são lidos no planejamento, só na execução da tarefa correspondente.
 
 ---
 
@@ -52,16 +52,16 @@ Arquivos de nível de unit (`<unit>/requirements.md`, `design.md`, `tasks.md`) n
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| `_solucao_sdd/reconstruction-plan.md` | Lista completa de tarefas bottom-up com `Lê:` e `Pronto quando:` por tarefa, mais alertas pré-voo mapeados de `gaps.md` |
+| `_solucao_sdd/reconstruction-plano.md` | Lista completa de tarefas bottom-up com `Lê:` e `Pronto quando:` por tarefa, mais alertas pré-voo mapeados de `gaps.md` |
 
-Durante a execução, o Reconstructor escreve o código de fato no projeto alvo (de acordo com `paradigm_decision.md`/`target_architecture.md` quando a fonte é a migração). Cada tarefa concluída é marcada no `reconstruction-plan.md`.
+Durante a execução, o Reconstructor escreve o código de fato no projeto alvo (de acordo com `paradigm_decision.md`/`target_architecture.md` quando a fonte é a migração). Cada tarefa concluída é marcada no `reconstruction-plano.md`.
 
 ---
 
 ## Quando usar
 
 - Depois que o `/solucao` terminou e você quer reimplementar o legado do zero sob as specs originais.
-- Depois que o `/solucao-migrate` terminou e você quer materializar o sistema novo a partir das specs da migração.
+- Depois que o `/solucao-migrar` terminou e você quer materializar o sistema novo a partir das specs da migração.
 - Como caminho de recuperação: pausa quando quiser e retoma depois sem reiniciar o contexto.
 
 ---
@@ -72,7 +72,7 @@ Durante a execução, o Reconstructor escreve o código de fato no projeto alvo 
 /solucao  →  specs (_solucao_sdd/)
                   │
                   ▼
-/solucao-reconstructor  →  reconstruction-plan.md (uma vez)  →  código, uma tarefa por vez
+/solucao-reconstrutor  →  reconstruction-plano.md (uma vez)  →  código, uma tarefa por vez
 ```
 
-Ele é **independente do pipeline principal**: nunca bloqueia `/solucao`, `/solucao-forward` ou `/solucao-migrate`. É invocado separadamente quando você escolhe reconstruir.
+Ele é **independente do pipeline principal**: nunca bloqueia `/solucao`, `/solucao-enviar` ou `/solucao-migrar`. É invocado separadamente quando você escolhe reconstruir.

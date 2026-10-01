@@ -1,7 +1,7 @@
 ---
 name: solucao-spec-sdd
 description: >
-  Agente final do time Code New Project Agents do Solucao. Decompõe um PRD em componentes lógicos e gera specs SDD (Spec-Driven Development) por componente, com score automático de qualidade. Use quando o usuário digitar "/solucao-spec-sdd", "solucao-spec-sdd" ou quando invocado pelo orquestrador `/solucao-new`. Lê `_solucao_sdd/prd.md` e produz `_solucao_sdd/sdd/<componente>.md`. Ao concluir, faz handoff para `/solucao-forward`.
+  Agente final do time Code New Project Agents do Solucao. Decompõe um PRD em componentes lógicos e gera specs SDD (Spec-Driven Development) por componente, com score automático de qualidade. Use quando o usuário digitar "/solucao-spec-sdd", "solucao-spec-sdd" ou quando invocado pelo orquestrador `/solucao-novo`. Lê `_solucao_sdd/prd.md` e produz `_solucao_sdd/sdd/<componente>.md`. Ao concluir, faz handoff para `/solucao-enviar`.
   Também pode ser usado avulso para avaliar uma spec existente (modo de avaliação) ou para gerar spec única a partir de qualquer entrada que o usuário forneça.
   Entrega: arquivos `.md` no formato SDD com score de qualidade (0 a 100) e análise de gaps.
 license: MIT
@@ -18,7 +18,7 @@ metadata:
 
 Esta skill conduz o processo completo de SDD dentro do pipeline Code New Project Agents: **decompor → redigir → avaliar → iterar** até cada spec estar pronta para o ciclo forward.
 
-A skill é uma versão vendored da `sdd-spec` global, adaptada para o contexto Solucao: lê `prd.md` como fonte primária, escreve em `_solucao_sdd/sdd/`, marca tudo com selo 🟡 e termina com handoff para `/solucao-forward`.
+A skill é uma versão vendored da `sdd-spec` global, adaptada para o contexto Solucao: lê `prd.md` como fonte primária, escreve em `_solucao_sdd/sdd/`, marca tudo com selo 🟡 e termina com handoff para `/solucao-enviar`.
 
 ## Por que SDD?
 
@@ -35,7 +35,7 @@ A metodologia aqui é **RFC Pragmático mais LLM-First**: estruturada como um RF
 
 1. Leia `.solucao/state.json` para `user_name`, `chat_language`, `doc_language`, `output_folder` (padrão `_solucao_sdd`).
 2. Verifique pré-condição: **`<output_folder>/prd.md` deve existir**. Se ausente, encerre com mensagem clara:
-   > "Não encontrei `<output_folder>/prd.md`. Rode `/solucao-drafter` primeiro, ou invoque `/solucao-new` para conduzir o pipeline completo."
+   > "Não encontrei `<output_folder>/prd.md`. Rode `/solucao-desenhista-tecnico` primeiro, ou invoque `/solucao-novo` para conduzir o pipeline completo."
 3. Garanta que a pasta `<output_folder>/sdd/` existe. Crie se ausente.
 
 ## Output path padrão
@@ -165,9 +165,9 @@ Após gerar **todas** as specs, exiba relatório consolidado:
 >
 > Todos os itens marcados com selo 🟡 (planejado).
 >
-> Próximo passo: rodar `/solucao-forward`, que vai consumir essas specs e iniciar o ciclo de evolução até o código.
+> Próximo passo: rodar `/solucao-enviar`, que vai consumir essas specs e iniciar o ciclo de evolução até o código.
 >
-> Digite **CONTINUAR** para iniciar `/solucao-forward`, ou pause aqui."
+> Digite **CONTINUAR** para iniciar `/solucao-enviar`, ou pause aqui."
 
 Nunca prossiga automaticamente.
 
@@ -224,7 +224,7 @@ O resultado em modo manual deve ser equivalente ao do script para uma mesma spec
 
 ## Modo: avaliação de spec existente
 
-Se o usuário invocar `/solucao-spec-sdd` fora do pipeline `/solucao-new`, com uma spec já escrita para avaliação:
+Se o usuário invocar `/solucao-spec-sdd` fora do pipeline `/solucao-novo`, com uma spec já escrita para avaliação:
 
 1. Pergunte o caminho do arquivo.
 2. Execute scoring (script ou manual).
@@ -275,6 +275,6 @@ Escreva apenas em `<output_folder>/sdd/`. Nunca toque em arquivos do projeto for
 
 Após gerar todas as specs do PRD, termine sempre com:
 
-> Digite **CONTINUAR** para prosseguir com `/solucao-forward`, ou pause aqui.
+> Digite **CONTINUAR** para prosseguir com `/solucao-enviar`, ou pause aqui.
 
 Nunca prossiga automaticamente.

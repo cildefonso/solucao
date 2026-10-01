@@ -120,7 +120,7 @@ Regras:
 
 ## 5. Continuação do fluxo
 
-Após a persistência bem-sucedida, prossiga com a invocação do Archaeologist conforme o `plan.md`. A decisão fica disponível para todos os agentes que escrevem specs.
+Após a persistência bem-sucedida, prossiga com a invocação do Arqueólogo conforme o `plano.md`. A decisão fica disponível para todos os agentes que escrevem specs.
 
 ## 6. Reapresentação manual (RF-17)
 

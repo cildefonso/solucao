@@ -1,6 +1,6 @@
 # Writer
 
-**Comando:** `/solucao-writer`
+**Comando:** `/solucao-escritor`
 **Fase:** 4 - Generación
 
 ---
@@ -21,7 +21,7 @@ Las specs no son documentación para que los humanos lean en una tarde tranquila
 
 ## El flujo de trabajo
 
-El Writer nunca genera todo de una vez. Lee la decisión de organización guardada en `[specs]` del `config.toml`, monta un plan con todas las units, lo presenta para tu aprobación, y luego genera un archivo a la vez esperando tu confirmación antes de continuar. Esto permite revisión incremental.
+El Writer nunca genera todo de una vez. Lee la decisión de organización guardada en `[specs]` del `config.toml`, monta un plano con todas las units, lo presenta para tu aprobación, y luego genera un archivo a la vez esperando tu confirmación antes de continuar. Esto permite revisión incremental.
 
 ---
 
@@ -38,7 +38,7 @@ Cada unit es una carpeta dentro de `<output_folder>/`. La "unit" depende del `gr
 | `feature` | Una feature listada por el Scout |
 | `custom` | Carpeta definida por el usuario |
 
-Toda carpeta de unit tiene los 3 archivos canónicos SDD: `requirements.md`, `design.md`, `tasks.md`. Archivos opcionales (`contracts.md`, `flows.md`, `edge-cases.md`, etc.) se agregan según el nivel de documentación y el contexto.
+Toda carpeta de unit tiene los 3 archivos canónicos SDD: `requisitos.md`, `design.md`, `tasks.md`. Archivos opcionales (`contracts.md`, `flows.md`, `edge-cases.md`, etc.) se agregan según el nivel de documentación y el contexto.
 
 Cada afirmación se marca con 🟢, 🟡 o 🔴. Sin excepciones.
 
@@ -48,7 +48,7 @@ Cada afirmación se marca con 🟢, 🟡 o 🔴. Sin excepciones.
 
 | Archivo | Contenido |
 |---------|-----------|
-| `<unit>/requirements.md` | Qué hace la unit: reglas de negocio, RNFs, criterios de aceptación, MoSCoW |
+| `<unit>/requisitos.md` | Qué hace la unit: reglas de negocio, RNFs, criterios de aceptación, MoSCoW |
 | `<unit>/design.md` | Cómo se construye la unit: interfaz, flujos, dependencias, decisiones |
 | `<unit>/tasks.md` | Tareas de implementación trazables al código legado |
 

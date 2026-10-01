@@ -1,6 +1,6 @@
 # The greenfield agents
 
-Five agents make up the Code New Project Agents Team. The orchestrator (`/solucao-new`) drives the other four in a fixed sequence. Each agent reads what the previous one produced and adds its own artifact.
+Five agents make up the Code New Project Agents Team. The orchestrator (`/solucao-novo`) drives the other four in a fixed sequence. Each agent reads what the previous one produced and adds its own artifact.
 
 ---
 
@@ -19,7 +19,7 @@ There is a `CONTINUAR` checkpoint between agents. The orchestrator never advance
 
 ## 1. Solucao New (orchestrator)
 
-**Command:** `/solucao-new`
+**Command:** `/solucao-novo`
 
 Reads the initial brief (passed inline or asked interactively), saves `_solucao_sdd/newproject-brief.md`, walks the four functional agents in fixed order, and writes a checkpoint in `state.json#newproject_progress` after each stage.
 
@@ -31,7 +31,7 @@ Detects re-execution: if a pipeline is already in progress, asks whether to cont
 
 ## 2. Ideator
 
-**Command:** `/solucao-ideator`
+**Command:** `/solucao-idealizador`
 
 Structured brainstorm with six divergent questions: root problem, value delivered, alternatives, raw audience, success metrics, dangerous assumptions. Asks one question at a time (when the engine does not support batching), waits for the answer before moving on, and never collapses the questions into a single multi-shot prompt.
 
@@ -41,7 +41,7 @@ Structured brainstorm with six divergent questions: root problem, value delivere
 
 ## 3. Researcher
 
-**Command:** `/solucao-researcher`
+**Command:** `/solucao-pesquisador`
 
 Turns the raw audience from `ideation.md` into one to three structured personas with journeys (entry, friction, outcome). The user chooses the number of personas; the agent only suggests based on the breadth of the audience description.
 
@@ -51,7 +51,7 @@ Turns the raw audience from `ideation.md` into one to three structured personas 
 
 ## 4. Drafter
 
-**Command:** `/solucao-drafter`
+**Command:** `/solucao-desenhista-tecnico`
 
 Synthesizes ideation and personas into a complete PRD: problem, success metrics, scope, non-goals, constraints, risks, open questions. Works as a synthesizer, not an interviewer: extracts everything it can from the two sources and asks at most two coverage questions to fill the most critical gaps. Anything that remains undefined is marked `🟡 [INDEFINIDO, validar com usuário]`.
 
@@ -65,7 +65,7 @@ Synthesizes ideation and personas into a complete PRD: problem, success metrics,
 
 Decomposes the PRD into logical components and writes one SDD spec per component, with an automatic quality score (0 to 100) and gap analysis. The methodology is **Pragmatic RFC plus LLM-First**: structured like an RFC (Problem / Goals / Design / Edge Cases) but optimized to be consumed by humans and AI agents alike.
 
-This agent is a **vendored** version of the global `sdd-spec` skill: it lives natively inside Solucao, reads `prd.md` as the primary source, writes into `_solucao_sdd/sdd/`, marks every spec with the 🟡 (planned) seal, and on completion hands off to `/solucao-forward`.
+This agent is a **vendored** version of the global `sdd-spec` skill: it lives natively inside Solucao, reads `prd.md` as the primary source, writes into `_solucao_sdd/sdd/`, marks every spec with the 🟡 (planned) seal, and on completion hands off to `/solucao-enviar`.
 
 Can also be used standalone: evaluating an existing spec, or generating a single spec from any input the user provides.
 
@@ -75,13 +75,13 @@ Can also be used standalone: evaluating an existing spec, or generating a single
 
 ## Running manually
 
-You rarely need to call an isolated agent. `/solucao-new` orchestrates everything. But if an agent failed or you want to redo a stage:
+You rarely need to call an isolated agent. `/solucao-novo` orchestrates everything. But if an agent failed or you want to redo a stage:
 
 ```
-/solucao-new                    # detects in-progress pipeline, offers Continue / Recreate / Re-run from
-/solucao-ideator                # standalone, reads newproject-brief.md
-/solucao-researcher             # standalone, reads ideation.md
-/solucao-drafter                # standalone, reads ideation.md + personas.md
+/solucao-novo                    # detects in-progress pipeline, offers Continue / Recreate / Re-run from
+/solucao-idealizador                # standalone, reads newproject-brief.md
+/solucao-pesquisador             # standalone, reads ideation.md
+/solucao-desenhista-tecnico                # standalone, reads ideation.md + personas.md
 /solucao-spec-sdd               # standalone, reads prd.md or any source the user passes
 ```
 

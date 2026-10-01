@@ -42,10 +42,10 @@ if (!command || command === '--help' || command === '-h') {
 
   Fluxos principais no chat (após a instalação):
     /solucao          Descobre e documenta um sistema existente
-    /solucao-new      Cria PRD e specs para um projeto novo
-    /solucao-forward  Implementa ou evolui código a partir das specs
-    /solucao-migrate  Planeja a migração de um sistema legado
-    /solucao-docs     Gera o mini-site visual da documentação
+    /solucao-novo      Cria PRD e specs para um projeto novo
+    /solucao-enviar  Implementa ou evolui código a partir das specs
+    /solucao-migrar  Planeja a migração de um sistema legado
+    /solucao-documentos     Gera o mini-site visual da documentação
 
   Documentação: https://github.com/cildefonso/solucao
   `);

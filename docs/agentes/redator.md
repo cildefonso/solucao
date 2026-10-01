@@ -1,6 +1,6 @@
 # Writer
 
-**Command:** `/solucao-writer`
+**Command:** `/solucao-escritor`
 **Phase:** 4 - Generation
 
 ---
@@ -31,13 +31,13 @@ Before generating any file, the Writer reads all artifacts from previous phases 
 📋 Generation plan: 3 units, 11 files total
 
 Units:
-  [ ] 1. auth/requirements.md
+  [ ] 1. auth/requisitos.md
   [ ] 2. auth/design.md
   [ ] 3. auth/tasks.md
-  [ ] 4. orders/requirements.md
+  [ ] 4. orders/requisitos.md
   [ ] 5. orders/design.md
   [ ] 6. orders/tasks.md
-  [ ] 7. payments/requirements.md
+  [ ] 7. payments/requisitos.md
   [ ] 8. payments/design.md
   [ ] 9. payments/tasks.md
 
@@ -73,7 +73,7 @@ Each unit becomes a folder under `<output_folder>/`. The "unit" depends on the `
 | `feature` | A feature listed by Scout |
 | `custom` | A folder defined by the user |
 
-Every unit folder has the three canonical SDD files: `requirements.md`, `design.md`, `tasks.md`. Optional files (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `questions.md`) are added when the doc level and context call for them.
+Every unit folder has the three canonical SDD files: `requisitos.md`, `design.md`, `tasks.md`. Optional files (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `questions.md`) are added when the doc level and context call for them.
 
 ---
 
@@ -81,7 +81,7 @@ Every unit folder has the three canonical SDD files: `requirements.md`, `design.
 
 | File | Content |
 |------|---------|
-| `<unit>/requirements.md` | What the unit does: business rules, NFRs, acceptance criteria, MoSCoW |
+| `<unit>/requisitos.md` | What the unit does: business rules, NFRs, acceptance criteria, MoSCoW |
 | `<unit>/design.md` | How the unit is built: interface, flows, dependencies, design decisions |
 | `<unit>/tasks.md` | Implementation tasks traceable to the legacy code, with done criteria and confidence |
 

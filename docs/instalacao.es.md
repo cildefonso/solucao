@@ -23,7 +23,7 @@ El instalador hace todo esto por ti:
 3. Recopila el nombre del proyecto, idioma y preferencias
 4. Copia los agentes a `.agents/skills/` y `.claude/skills/` (para Claude Code)
 5. Crea el archivo de entrada del motor (`CLAUDE.md`, `AGENTS.md`, etc.)
-6. Crea la estructura `.solucao/` con estado, configuración y plan
+6. Crea la estructura `.solucao/` con estado, configuración y plano
 7. Genera el manifiesto SHA-256 para actualizaciones seguras en el futuro
 
 Es como `npm install`, pero para tu equipo de agentes de ingeniería inversa.

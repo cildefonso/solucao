@@ -1,6 +1,6 @@
 # Writer
 
-**Comando:** `/solucao-writer`
+**Comando:** `/solucao-escritor`
 **Fase:** 4 - Geração
 
 ---
@@ -31,13 +31,13 @@ Antes de gerar qualquer arquivo, o Writer lê todos os artefatos das fases anter
 📋 Plano de geração: 3 units, 11 arquivos no total
 
 Units:
-  [ ] 1. auth/requirements.md
+  [ ] 1. auth/requisitos.md
   [ ] 2. auth/design.md
   [ ] 3. auth/tasks.md
-  [ ] 4. orders/requirements.md
+  [ ] 4. orders/requisitos.md
   [ ] 5. orders/design.md
   [ ] 6. orders/tasks.md
-  [ ] 7. payments/requirements.md
+  [ ] 7. payments/requisitos.md
   [ ] 8. payments/design.md
   [ ] 9. payments/tasks.md
 
@@ -73,7 +73,7 @@ Cada unit vira uma pasta dentro de `<output_folder>/`. O que é uma "unit" depen
 | `feature` | Uma feature listada pelo Scout |
 | `custom` | Pasta definida pelo usuário |
 
-Toda pasta de unit tem os 3 arquivos canônicos SDD: `requirements.md`, `design.md`, `tasks.md`. Arquivos opcionais (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `questions.md`) são adicionados conforme o nível de documentação e o contexto.
+Toda pasta de unit tem os 3 arquivos canônicos SDD: `requisitos.md`, `design.md`, `tasks.md`. Arquivos opcionais (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `questions.md`) são adicionados conforme o nível de documentação e o contexto.
 
 ---
 
@@ -81,7 +81,7 @@ Toda pasta de unit tem os 3 arquivos canônicos SDD: `requirements.md`, `design.
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| `<unit>/requirements.md` | O que a unit faz: regras de negócio, RNFs, critérios de aceitação, MoSCoW |
+| `<unit>/requisitos.md` | O que a unit faz: regras de negócio, RNFs, critérios de aceitação, MoSCoW |
 | `<unit>/design.md` | Como a unit é construída: interface, fluxos, dependências, decisões de design |
 | `<unit>/tasks.md` | Tarefas de implementação rastreáveis ao código legado, com critério de pronto e confiança |
 

@@ -1,6 +1,6 @@
 # Soul Extractor
 
-**Comando:** `/solucao-extract-soul`
+**Comando:** `/solucao-extracao-parte-principal`
 **Fase:** 1 (Reconhecimento), roda após o Scout
 
 ---
@@ -25,7 +25,7 @@ A síntese cobre três coisas:
 
 ## Pré-requisito
 
-`.solucao/context/surface.json` precisa existir. O agente depende do mapeamento de superfície do Scout. Se o arquivo não existir, o agente para e instrui você a rodar `/solucao-scout` antes (ou `/solucao` para o pipeline completo).
+`.solucao/context/surface.json` precisa existir. O agente depende do mapeamento de superfície do Scout. Se o arquivo não existir, o agente para e instrui você a rodar `/solucao-explorador` antes (ou `/solucao` para o pipeline completo).
 
 ---
 
@@ -65,7 +65,7 @@ Se `_solucao_sdd/soul.md` já existir, o agente NÃO sobrescreve. Ele oferece du
 Logo após o Scout, quando quiser uma síntese executiva do sistema antes de rodar o pipeline de extração completo:
 
 ```
-/solucao-extract-soul
+/solucao-extracao-parte-principal
 ```
 
 Você também pode rodar em qualquer momento depois que o Scout já tiver rodado, mesmo que Archaeologist, Detective e os demais já tenham produzido seus artefatos. O Soul Extractor permanece consistente com o mapeamento de superfície atual.

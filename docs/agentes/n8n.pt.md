@@ -15,7 +15,7 @@ O tradutor juramentado pega um documento oficial em uma língua e produz outra v
 
 O N8N Translator é o ponto de entrada quando o "código" legado não é código-fonte, e sim um workflow visual do N8N exportado como JSON. Ele percorre o grafo de nós, interpreta cada passo semanticamente (não só pelo tipo do nó) e emite três artefatos SDD que descrevem o sistema de forma independente do N8N.
 
-Após gerar a spec, o agente prepara `.solucao/state.json` e `.solucao/plan.md` para que o pipeline padrão do Solucao (Scout, Archaeologist, Detective, Architect, Writer, Reviewer) possa assumir e refinar a análise, se necessário.
+Após gerar a spec, o agente prepara `.solucao/state.json` e `.solucao/plano.md` para que o pipeline padrão do Solucao (Scout, Archaeologist, Detective, Architect, Writer, Reviewer) possa assumir e refinar a análise, se necessário.
 
 ---
 
@@ -41,10 +41,10 @@ O agente usa uma pasta dedicada: `n8n_json_workflows/`. A pasta é criada automa
 | Arquivo | Conteúdo |
 |---------|----------|
 | `_solucao_n8n/<slug>/workflow-overview.md` | Análise da fonte: metadados, fluxograma Mermaid, tabela de nós, credenciais, ambiguidades |
-| `_solucao_n8n/<slug>/requirements.md` | Requisitos SDD: funcionais (`RF-NN`), não-funcionais (`RNF-NN`), critérios de aceitação |
+| `_solucao_n8n/<slug>/requisitos.md` | Requisitos SDD: funcionais (`RF-NN`), não-funcionais (`RNF-NN`), critérios de aceitação |
 | `_solucao_n8n/<slug>/design.md` | Guia de implementação Python: arquitetura, componentes, bibliotecas, estrutura de pastas, tratamento de erros, configuração, testes |
 | `.solucao/state.json` | Estado inicial do pipeline principal (com `source: "n8n"` e `source_artifacts`) |
-| `.solucao/plan.md` | Plano com seção `Fase 0: Origem N8N` marcando a etapa de tradução |
+| `.solucao/plano.md` | Plano com seção `Fase 0: Origem N8N` marcando a etapa de tradução |
 
 ---
 

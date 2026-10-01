@@ -8,11 +8,11 @@
 #   bind-to-extraction.sh [--json] [--for <comando>]
 #
 # Argumentos:
-#   --for requirements   Lista architecture, domain, inventory, principles
-#   --for plan           Lista architecture, c4-context, state-machines, dependencies, code-analysis, principles
-#   --for to-do          Lista architecture, code-analysis
-#   --for audit          Lista architecture, domain
-#   --for coding         Lista architecture, domain, code-analysis (para gerar legacy-impact)
+#   --for requisitos   Lista architecture, domain, inventory, principios
+#   --for plano           Lista architecture, c4-context, state-machines, dependencies, code-analysis, principios
+#   --for pendencia          Lista architecture, code-analysis
+#   --for auditoria          Lista architecture, domain
+#   --for codificacao         Lista architecture, domain, code-analysis (para gerar legacy-impact)
 #   sem --for            Lista todos os arquivos presentes em _solucao_sdd/
 #
 # Códigos de saída:
@@ -45,11 +45,11 @@ fi
 declare -a wanted
 
 case "$TARGET" in
-  requirements) wanted=("architecture.md" "domain.md" "inventory.md") ;;
-  plan)         wanted=("architecture.md" "c4-context.md" "state-machines.md" "dependencies.md" "code-analysis.md") ;;
-  to-do|todo)   wanted=("architecture.md" "code-analysis.md") ;;
-  audit)        wanted=("architecture.md" "domain.md") ;;
-  coding)       wanted=("architecture.md" "domain.md" "code-analysis.md") ;;
+  requisitos) wanted=("architecture.md" "domain.md" "inventory.md") ;;
+  plano)         wanted=("architecture.md" "c4-context.md" "state-machines.md" "dependencies.md" "code-analysis.md") ;;
+  pendencia|todo)   wanted=("architecture.md" "code-analysis.md") ;;
+  auditoria)    wanted=("architecture.md" "domain.md") ;;
+  codificacao)       wanted=("architecture.md" "domain.md" "code-analysis.md") ;;
   *)            wanted=("architecture.md" "c4-context.md" "code-analysis.md" "confidence-report.md" "dependencies.md" "domain.md" "inventory.md" "questions.md" "state-machines.md") ;;
 esac
 

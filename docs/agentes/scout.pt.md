@@ -1,6 +1,6 @@
 # Scout
 
-**Comando:** `/solucao-scout`
+**Comando:** `/solucao-explorador`
 **Fase:** 1 - Reconhecimento
 
 ---
@@ -22,7 +22,7 @@ Quantos módulos existem? Qual linguagem? Qual framework? Quais as dependências
 ## O que ele analisa
 
 - **Estrutura de pastas:** árvore completa do projeto (excluindo `node_modules`, `.git`, `dist`, `build` e similares)
-- **Tecnologias e frameworks:** linguagens identificadas por extensão de arquivo, frameworks e bibliotecas via arquivos de configuração (`package.json`, `requirements.txt`, `go.mod`, etc.)
+- **Tecnologias e frameworks:** linguagens identificadas por extensão de arquivo, frameworks e bibliotecas via arquivos de configuração (`package.json`, `requisitos.txt`, `go.mod`, etc.)
 - **Pontos de entrada:** `main`, `index`, `app`, `server`, `bootstrap`; arquivos de configuração; CI/CD; Docker
 - **Schema de banco (superficial):** apenas lista arquivos DDL, migrations e ORM. O Data Master faz a análise detalhada.
 - **Cobertura de testes:** frameworks de teste identificados e estimativa de cobertura por contagem de arquivos
@@ -46,5 +46,5 @@ O `surface.json` é especialmente importante: o Solucao o usa para personalizar 
 Você raramente vai precisar chamar o Scout diretamente. O orquestrador faz isso automaticamente na Fase 1. Mas se você quiser atualizar o inventário do projeto depois de uma refatoração grande, pode chamar diretamente:
 
 ```
-/solucao-scout
+/solucao-explorador
 ```
