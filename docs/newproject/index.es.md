@@ -74,7 +74,7 @@ El equipo escribe solo dentro de `_solucao_sdd/` (la misma carpeta usada por Dis
         └── <componente>.md      (Spec SDD)
 ```
 
-El estado del orquestador vive en `.solucao/state.json` bajo la clave `newproject_progress`, con `mode` (guiado o expreso), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` y el `brief` truncado. En modo expreso, `stage` también recorre `enviar-requisitos`, `enviar-plano`, `forward-todo` y `avancar-codificacao`, y la feature generada vive en `_solucao_enviar/`.
+El estado del orquestador vive en `.solucao/state.json` bajo la clave `newproject_progress`, con `mode` (guiado o expreso), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` y el `brief` truncado. En modo expreso, `stage` también recorre `enviar-requisitos`, `enviar-plano`, `enviar-pendencia` y `avancar-codificacao`, y la feature generada vive en `_solucao_enviar/`.
 
 ---
 

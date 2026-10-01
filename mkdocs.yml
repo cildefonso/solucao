@@ -215,7 +215,7 @@ nav:
       - Visor: agentes/visor.md
       - Data Master: agentes/data-master.md
       - Design System: agentes/sistema-design.md
-      - Reconstructor: agentes/reconstructor.md
+      - Reconstructor: agentes/reconstrutor.md
     - Code New Project Agents:
       - Overview: newproject/index.md
       - The greenfield agents: newproject/agentes.md

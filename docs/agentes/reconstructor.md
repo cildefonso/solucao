@@ -1,6 +1,6 @@
 # Reconstructor
 
-**Command:** `/solucao-reconstructor`
+**Command:** `/solucao-reconstrutor`
 **Role:** independent agent (outside the Discovery pipeline)
 
 ---
@@ -72,7 +72,7 @@ During execution, the Reconstructor writes the actual code in the target project
 /solucao  →  specs (_solucao_sdd/)
                   │
                   ▼
-/solucao-reconstructor  →  reconstruction-plano.md (one-time)  →  code, one task at a time
+/solucao-reconstrutor  →  reconstruction-plano.md (one-time)  →  code, one task at a time
 ```
 
 It is **independent of the main pipeline**: never blocks `/solucao`, `/solucao-enviar` or `/solucao-migrar`. It is invoked separately when you choose to rebuild.

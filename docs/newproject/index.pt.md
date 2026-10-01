@@ -74,7 +74,7 @@ O time escreve apenas dentro de `_solucao_sdd/` (a mesma pasta usada pelo Discov
         └── <componente>.md      (Spec SDD)
 ```
 
-O estado do orquestrador fica em `.solucao/state.json` sob a chave `newproject_progress`, com `mode` (guiado ou expresso), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` e o `brief` truncado. No modo expresso, `stage` também percorre os estágios `enviar-requisitos`, `enviar-plano`, `forward-todo` e `avancar-codificacao`, e a feature gerada vive em `_solucao_forward/`.
+O estado do orquestrador fica em `.solucao/state.json` sob a chave `newproject_progress`, com `mode` (guiado ou expresso), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` e o `brief` truncado. No modo expresso, `stage` também percorre os estágios `enviar-requisitos`, `enviar-plano`, `enviar-pendencia` e `avancar-codificacao`, e a feature gerada vive em `_solucao_forward/`.
 
 ---
 

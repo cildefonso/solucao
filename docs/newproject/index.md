@@ -74,7 +74,7 @@ The Team writes only inside `_solucao_sdd/` (same folder used by Discovery). Gre
         └── <component>.md       (Spec SDD)
 ```
 
-The orchestrator state lives in `.solucao/state.json` under the `newproject_progress` key, with `mode` (guided or express), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` and the truncated `brief`. In express mode, `stage` also walks through `enviar-requisitos`, `enviar-plano`, `forward-todo` and `avancar-codificacao`, and the generated feature lives in `_solucao_forward/`.
+The orchestrator state lives in `.solucao/state.json` under the `newproject_progress` key, with `mode` (guided or express), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` and the truncated `brief`. In express mode, `stage` also walks through `enviar-requisitos`, `enviar-plano`, `enviar-pendencia` and `avancar-codificacao`, and the generated feature lives in `_solucao_forward/`.
 
 ---
 

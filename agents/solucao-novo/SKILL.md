@@ -68,7 +68,7 @@ No modo guiado você nunca executa um agente automaticamente sem CONTINUAR do us
 Antes de pedir brief novo, verifique se há pipeline em andamento. Leia `state.json#newproject_progress`:
 
 1. Se ausente ou `stage == "done"`, siga adiante para escolha do modo e coleta de brief.
-2. Se `stage` for um valor do pipeline (`idealizador`, `pesquisador`, `drafter`, `spec-sdd`, `forward-requisitos`, `enviar-plano`, `forward-todo`, `forward-coding`), apresente menu:
+2. Se `stage` for um valor do pipeline (`idealizador`, `pesquisador`, `desenhista-tecnico`, `spec-sdd`, `forward-requisitos`, `enviar-plano`, `enviar-pendencia`, `enviar-codificacao`), apresente menu:
 
    ```
    Já existe um pipeline /solucao-novo em andamento:
@@ -91,12 +91,12 @@ Antes de pedir brief novo, verifique se há pipeline em andamento. Leia `state.j
 Identifique o próximo agente a executar pelo `stage`:
 - `idealizador` → próximo é `solucao-pesquisador`
 - `pesquisador` → próximo é `solucao-desenhista-tecnico`
-- `drafter` → próximo é `solucao-spec-sdd`
+- `desenhista-tecnico` → próximo é `solucao-spec-sdd`
 - `spec-sdd` → modo guiado: handoff final (pipeline completo); modo expresso: próximo é `solucao-requisitos`
 - `forward-requisitos` → próximo é `solucao-plano` (só existe em modo expresso)
 - `enviar-plano` → próximo é `solucao-pendencia`
-- `forward-todo` → próximo é `solucao-codificacao`
-- `forward-coding` → retome as ações `[ ]` pendentes de `actions.md` via `solucao-codificacao`; se todas `[X]`, exiba o relatório final expresso
+- `enviar-pendencia` → próximo é `solucao-codificacao`
+- `enviar-codificacao` → retome as ações `[ ]` pendentes de `actions.md` via `solucao-codificacao`; se todas `[X]`, exiba o relatório final expresso
 
 Respeite o `mode` salvo em `newproject_progress`. Em modo guiado, informe ao usuário e peça CONTINUAR antes de invocar. Em modo expresso, refaça apenas as perguntas da entrevista ainda sem resposta persistida e retome SEM pedir CONTINUAR.
 
@@ -185,7 +185,7 @@ Atualize `state.json#newproject_progress`:
 }
 ```
 
-Estágios possíveis de `stage`: `idealizador`, `pesquisador`, `drafter`, `spec-sdd` e, apenas em modo expresso, `enviar-requisitos`, `enviar-plano`, `forward-todo`, `enviar-coding`. Ambos os modos terminam em `done`.
+Estágios possíveis de `stage`: `idealizador`, `pesquisador`, `desenhista-tecnico`, `spec-sdd` e, apenas em modo expresso, `enviar-requisitos`, `enviar-plano`, `enviar-pendencia`, `enviar-coding`. Ambos os modos terminam em `done`.
 
 ## Executando o pipeline (modo guiado)
 
@@ -204,7 +204,7 @@ A sequência é fixa:
 | Ordem | Agente | Output | Próximo stage no state |
 |---|---|---|---|
 | 1 | solucao-idealizador | `_solucao_sdd/ideation.md` | `pesquisador` |
-| 2 | solucao-pesquisador | `_solucao_sdd/personas.md` | `drafter` |
+| 2 | solucao-pesquisador | `_solucao_sdd/personas.md` | `desenhista-tecnico` |
 | 3 | solucao-desenhista-tecnico | `_solucao_sdd/prd.md` | `spec-sdd` |
 | 4 | solucao-spec-sdd | `_solucao_sdd/sdd/<componente>.md` | `done` |
 
@@ -248,7 +248,7 @@ Monte a entrevista com apenas as perguntas ainda não respondidas (o que já est
    > 3. **Outro**: descreva.
 
    Salve em `state.json` → `answer_mode` (`file` para a opção 1, `chat` para a 2).
-7. **Confirmação única:** apresente o plano completo (idealizador → pesquisador → drafter → spec-sdd → requisitos → plan → pendencia → codificacao) e encerre:
+7. **Confirmação única:** apresente o plano completo (idealizador → pesquisador → desenhista-tecnico → spec-sdd → requisitos → plan → pendencia → codificacao) e encerre:
 
    > "[Nome], respostas registradas. Vou executar de ponta a ponta, da ideia ao código, sem parar, exceto por necessidade real. Digite **INICIAR** para começar (ou ajuste as respostas antes)."
 

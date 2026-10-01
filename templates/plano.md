@@ -62,4 +62,4 @@
 Após o Time de Descoberta concluir e o `_solucao_sdd/` estar populado, você pode disparar um dos fluxos seguintes:
 
 - `/solucao-migrar`: orquestrador do **Time de Migração** (Paradigm Advisor → Curator → Strategist → Designer → Screen Translator → Inspector). Gera as specs do sistema novo. Saída em `_solucao_sdd/migration/` e `_solucao_sdd/screens/`.
-- `/solucao-reconstructor`: gera plano bottom-up para reimplementar o software a partir das specs do legado (uma tarefa por sessão).
+- `/solucao-reconstrutor`: gera plano bottom-up para reimplementar o software a partir das specs do legado (uma tarefa por sessão).

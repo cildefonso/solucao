@@ -187,7 +187,7 @@ These run the main `/solucao` pipeline.
 | **Design System** | Extracts design tokens: colors, typography, spacing, themes, and components |
 | **Soul Extractor** | Produces a single executive Spec (`soul.md`) with purpose, core entities and founding decisions, useful right after Scout |
 | **Agents Help** | Explica cada agente de Solucao usando analogias; útil para iniciantes. |
-| **Reconstructor** | Generates a bottom-up reconstruction plan from the specs and implements one task at a time, preserving tokens. Activation: `/solucao-reconstructor` |
+| **Reconstructor** | Generates a bottom-up reconstruction plan from the specs and implements one task at a time, preserving tokens. Activation: `/solucao-reconstrutor` |
 | **Autonomous** | Runs the same sequence as `/solucao` end to end, with a single interview at the start and no intermediate stops. Activation: `/solucao-autonoma` |
 
 ### Ideation Agents (before anything is built)

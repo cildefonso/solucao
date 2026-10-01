@@ -1,6 +1,6 @@
 ---
-name: solucao-reconstructor
-description: "Gera um plano de reconstrução bottom-up a partir das specs do Solucao e executa cada tarefa sob demanda, uma por vez, preservando tokens. Use quando quiser reimplementar o software do zero a partir das especificações geradas. Ativação: /solucao-reconstructor"
+name: solucao-reconstrutor
+description: "Gera um plano de reconstrução bottom-up a partir das specs do Solucao e executa cada tarefa sob demanda, uma por vez, preservando tokens. Use quando quiser reimplementar o software do zero a partir das especificações geradas. Ativação: /solucao-reconstrutor"
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:

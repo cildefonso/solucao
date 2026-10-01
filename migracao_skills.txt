@@ -29,17 +29,17 @@ PARA
 solucao-docs
 _solucao_docs
 
-enviar-plano`, `forward-todo`, `forward-coding
+enviar-plano`, `enviar-pendencia`, `forward-coding
 requisitos-template.md
 reconstruction
 
 drafter
 
-`enviar-plano`, `forward-todo` y `avancar-codificacao`, y la
+`enviar-plano`, `enviar-pendencia` y `avancar-codificacao`, y la
  feature generada vive en `_solucao_forward/`.
 
 `drafter`, `spec-sdd` e, apenas em modo expresso, 
-`forward-requirements`, `enviar-plano`, `forward-todo`,
+`forward-requirements`, `enviar-plano`, `enviar-pendencia`,
  `forward-coding`. Ambos os modos terminam em `done`.
 
   Leia `.solucao/active-requirements.json`

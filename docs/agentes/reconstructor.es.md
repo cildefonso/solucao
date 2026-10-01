@@ -1,6 +1,6 @@
 # Reconstructor
 
-**Comando:** `/solucao-reconstructor`
+**Comando:** `/solucao-reconstrutor`
 **Rol:** agente independiente (fuera del pipeline de Descubrimiento)
 
 ---
@@ -72,7 +72,7 @@ Durante la ejecución, el Reconstructor escribe el código real en el proyecto o
 /solucao  →  specs (_solucao_sdd/)
                   │
                   ▼
-/solucao-reconstructor  →  reconstruction-plano.md (una vez)  →  código, una tarea a la vez
+/solucao-reconstrutor  →  reconstruction-plano.md (una vez)  →  código, una tarea a la vez
 ```
 
 Es **independiente del pipeline principal**: nunca bloquea `/solucao`, `/solucao-enviar` ni `/solucao-migrar`. Se invoca por separado cuando eliges reconstruir.

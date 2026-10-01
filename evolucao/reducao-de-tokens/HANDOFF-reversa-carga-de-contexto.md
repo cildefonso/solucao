@@ -710,7 +710,7 @@ As 8 maiores:
 | `solucao-tradutor-tela` | 278 |
 | `solucao-spec-sdd` | 277 |
 | `solucao-migrar` | 272 |
-| `solucao-reconstructor` | 242 |
+| `solucao-reconstrutor` | 242 |
 | `solucao-enviar` | 231 |
 | `solucao-requisitos` | 216 |
 | `solucao-designer` | 216 |
