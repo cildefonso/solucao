@@ -15,16 +15,16 @@ folder = "_solucao_sdd"
 
 [agents]
 installed = [
-  "solucao-scout",
-  "solucao-archaeologist",
-  "solucao-detective",
-  "solucao-architect",
-  "solucao-writer",
-  "solucao-reviewer",
+  "solucao-explorador",
+  "solucao-arqueologo",
+  "solucao-detetive",
+  "solucao-arquiteto",
+  "solucao-escritor",
+  "solucao-avaliador",
   "solucao-visor",
   "solucao-data-master",
-  "solucao-design-system",
-  "solucao-extract-soul"
+  "solucao-sistema-design",
+  "solucao-extracao-parte-principal"
 ]
 
 [engines]

@@ -1,6 +1,6 @@
 <!--
   Template: timeline.html
-  Produtor: solucao-docs-analyst
+  Produtor: solucao-documentos-analista
   Skill invocada: highcharts-visualizer (Highcharts Timeline)
   Page ID: timeline
   Categoria solucao: diagram

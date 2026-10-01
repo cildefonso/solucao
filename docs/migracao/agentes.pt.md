@@ -1,6 +1,6 @@
 # Os 6 agentes do Time de Migração
 
-Os agentes rodam em sequência fixa. Cada um lê o que os anteriores produziram e adiciona um artefato. O `/solucao-migrate` orquestra tudo.
+Os agentes rodam em sequência fixa. Cada um lê o que os anteriores produziram e adiciona um artefato. O `/solucao-migrar` orquestra tudo.
 
 ---
 
@@ -16,7 +16,7 @@ Entre cada agente há uma pausa para revisão humana. O modo padrão é interati
 
 ## 1. Paradigm Advisor
 
-**Comando:** `/solucao-paradigm-advisor` (geralmente invocado pelo `/solucao-migrate`)
+**Comando:** `/solucao-consultor-paradigma` (geralmente invocado pelo `/solucao-migrar`)
 
 Detecta o paradigma do sistema legado, infere o paradigma natural da stack alvo declarada no brief e alerta sobre gaps. Força uma decisão consciente do usuário, porque trocar de linguagem não é só mudança sintática, é frequentemente mudança fundamental de modelo mental.
 
@@ -26,7 +26,7 @@ Detecta o paradigma do sistema legado, infere o paradigma natural da stack alvo 
 
 ## 2. Curator
 
-**Comando:** `/solucao-curator`
+**Comando:** `/solucao-curador`
 
 Lê as regras de negócio do legado e decide, regra por regra: **MIGRAR**, **DESCARTAR** ou **DECISÃO HUMANA**. Considera o paradigma escolhido: regras que são artefatos do paradigma legado (ex: lock manual em sistema procedural síncrono) podem ser descartadas em alvo event-driven.
 
@@ -36,7 +36,7 @@ Lê as regras de negócio do legado e decide, regra por regra: **MIGRAR**, **DES
 
 ## 3. Strategist
 
-**Comando:** `/solucao-strategist`
+**Comando:** `/solucao-estrategista`
 
 Avalia estratégias possíveis (Strangler Fig, Big Bang, Parallel Run, Branch by Abstraction), apresenta trade-offs explícitos e recomenda uma. A decisão final é humana.
 
@@ -60,7 +60,7 @@ Não decompõe ingenuamente 1-para-1: identifica bounded contexts reais e justif
 
 ## 5. Screen Translator
 
-**Comando:** `/solucao-screen-translator` (geralmente invocado pelo `/solucao-migrate`, entre Designer e Inspector)
+**Comando:** `/solucao-tradutor-tela` (geralmente invocado pelo `/solucao-migrar`, entre Designer e Inspector)
 
 Traduz as telas do legado em specs que o codificador executa, sem precisar inventar layout, cores, textos ou hierarquia. Opera em **duas fases**:
 
@@ -75,7 +75,7 @@ Em projetos sem UI (batch, API puro, daemons) emite `mode: skipped` e o Inspecto
 
 ## 6. Inspector
 
-**Comando:** `/solucao-inspector`
+**Comando:** `/solucao-inspetor`
 
 Define como provar que o sistema novo é comportamentalmente equivalente ao legado nos pontos críticos. Adapta os critérios ao paradigma: mudança síncrono → event-driven exige cobertura de ordem de mensagens, idempotência e consistência eventual. Lê os golden files emitidos pelo Screen Translator (quando existirem) para construir testes de paridade visual.
 
@@ -85,9 +85,9 @@ Define como provar que o sistema novo é comportamentalmente equivalente ao lega
 
 ## Quando rodar manualmente
 
-Você quase nunca precisa chamar um agente isolado. O `/solucao-migrate` orquestra todos. Mas se um agente falhou ou você quer rerodar a partir de um ponto específico:
+Você quase nunca precisa chamar um agente isolado. O `/solucao-migrar` orquestra todos. Mas se um agente falhou ou você quer rerodar a partir de um ponto específico:
 
 ```
-/solucao-migrate --resume                    # retoma do último agente que concluiu
-/solucao-migrate --regenerate=designer       # apaga Designer + Inspector e refaz
+/solucao-migrar --resumo                    # retoma do último agente que concluiu
+/solucao-migrar --regenerate=designer       # apaga Designer + Inspector e refaz
 ```

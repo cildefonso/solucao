@@ -15,39 +15,39 @@ Você tem uma ideia, mas ainda não tem código. Pode ser uma frase ("quero que 
 Ative com:
 
 ```
-/solucao-new
+/solucao-novo
 ```
 
-O `/solucao-new` tem dois modos de execução:
+O `/solucao-novo` tem dois modos de execução:
 
-- **Guiado** (padrão): o orquestrador coleta o brief, conduz os quatro agentes funcionais em ordem fixa, salva checkpoint entre cada um e pede `CONTINUAR` antes de avançar. Termina nas specs SDD, com handoff para `/solucao-forward`.
-- **Expresso**: ative com `/solucao-new expresso "<sua ideia>"` ou escolha no menu inicial. Todas as perguntas são concentradas em uma entrevista única no início; depois do `INICIAR`, o pipeline roda sem paradas e, ao concluir as specs, emenda automaticamente no ciclo forward (`requirements → plan → to-do → coding`) até o código implementado. Dúvidas que surgirem no caminho são registradas com selo 🟡 para revisão posterior, sem interromper o fluxo.
+- **Guiado** (padrão): o orquestrador coleta o brief, conduz os quatro agentes funcionais em ordem fixa, salva checkpoint entre cada um e pede `CONTINUAR` antes de avançar. Termina nas specs SDD, com handoff para `/solucao-enviar`.
+- **Expresso**: ative com `/solucao-novo expresso "<sua ideia>"` ou escolha no menu inicial. Todas as perguntas são concentradas em uma entrevista única no início; depois do `INICIAR`, o pipeline roda sem paradas e, ao concluir as specs, emenda automaticamente no ciclo forward (`requisitos → plano → pendencia → codificacao`) até o código implementado. Dúvidas que surgirem no caminho são registradas com selo 🟡 para revisão posterior, sem interromper o fluxo.
 
-Se a sessão for interrompida, em qualquer modo, basta digitar `/solucao-new` de novo: ele lê `state.json#newproject_progress` e retoma exatamente de onde parou, respeitando o modo salvo.
+Se a sessão for interrompida, em qualquer modo, basta digitar `/solucao-novo` de novo: ele lê `state.json#newproject_progress` e retoma exatamente de onde parou, respeitando o modo salvo.
 
 ---
 
 ## Pipeline
 
 ```
-/solucao-new              (orquestrador)
+/solucao-novo              (orquestrador)
        │
        ▼
-/solucao-ideator          → _solucao_sdd/ideation.md
+/solucao-idealizador          → _solucao_sdd/ideation.md
        │
        ▼ CONTINUAR
-/solucao-researcher       → _solucao_sdd/personas.md
+/solucao-pesquisador       → _solucao_sdd/personas.md
        │
        ▼ CONTINUAR
-/solucao-drafter          → _solucao_sdd/prd.md
+/solucao-desenhista-tecnico          → _solucao_sdd/prd.md
        │
        ▼ CONTINUAR
 /solucao-spec-sdd         → _solucao_sdd/sdd/<componente>.md
        │
-       ├── guiado: handoff, sugere /solucao-forward
+       ├── guiado: handoff, sugere /solucao-enviar
        │
        ▼ expresso: continua sem parar
-/solucao-requirements → /solucao-plan → /solucao-to-do → /solucao-coding
+/solucao-requisitos → /solucao-plano → /solucao-pendencia → /solucao-codificacao
        │
        ▼
 código implementado em _solucao_forward/<NNN>-<feature>/
@@ -74,13 +74,13 @@ O time escreve apenas dentro de `_solucao_sdd/` (a mesma pasta usada pelo Discov
         └── <componente>.md      (Spec SDD)
 ```
 
-O estado do orquestrador fica em `.solucao/state.json` sob a chave `newproject_progress`, com `mode` (guiado ou expresso), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` e o `brief` truncado. No modo expresso, `stage` também percorre os estágios `forward-requirements`, `forward-plan`, `forward-todo` e `forward-coding`, e a feature gerada vive em `_solucao_forward/`.
+O estado do orquestrador fica em `.solucao/state.json` sob a chave `newproject_progress`, com `mode` (guiado ou expresso), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` e o `brief` truncado. No modo expresso, `stage` também percorre os estágios `enviar-requisitos`, `enviar-plano`, `forward-todo` e `avancar-codificacao`, e a feature gerada vive em `_solucao_forward/`.
 
 ---
 
 ## Re-execução
 
-Quando o pipeline já está em andamento e você digita `/solucao-new` de novo, o orquestrador detecta o `stage` salvo e oferece quatro opções:
+Quando o pipeline já está em andamento e você digita `/solucao-novo` de novo, o orquestrador detecta o `stage` salvo e oferece quatro opções:
 
 1. **Continuar de onde parou** (recomendado)
 2. **Recriar tudo do zero** (sobrescreve artefatos, exige confirmação explícita)

@@ -4,7 +4,7 @@ generatedAt: <ISO-8601>
 solucao:
   version: "x.y.z"
 kind: parity_specs
-producedBy: inspector
+producedBy: inspetor
 hash: "sha256:<hash do corpo abaixo do front-matter>"
 ---
 

@@ -25,22 +25,22 @@ O Solucao é um time de especialistas. Cada agente faz uma coisa só — e faz b
 | O que você quer fazer? | Comando | Time |
 |---|---|---|
 | Descobrir e documentar um sistema legado | `/solucao` | Solucao Agents Core |
-| Criar um projeto novo a partir de uma ideia | `/solucao-new` | Code New Project Agents |
-| Implementar ou evoluir código a partir das specs | `/solucao-forward` | Code Forward Agents |
-| Planejar a migração de um legado | `/solucao-migrate` | Migration Agents |
-| Gerar um mini-site visual da documentação | `/solucao-docs` | Documentation Agents |
+| Criar um projeto novo a partir de uma ideia | `/solucao-novo` | Code New Project Agents |
+| Implementar ou evoluir código a partir das specs | `/solucao-enviar` | Code Forward Agents |
+| Planejar a migração de um legado | `/solucao-migrar` | Migration Agents |
+| Gerar um mini-site visual da documentação | `/solucao-documentos` | Documentation Agents |
 | Entender qual agente usar | `/solucao-agents-help` | Guia de agentes |
 
-Os times de Pricing e Translators têm comandos especializados. Use `/solucao-pricing-profile`, `/solucao-pricing-size`, `/solucao-pricing-estimate` ou `/solucao-n8n` conforme a necessidade.
+Os times de Pricing e Translators têm comandos especializados. Use `/solucao-perfil-precificacao`, `/solucao-fins-precificacao`, `/solucao-estimativa-preco` ou `/solucao-n8n` conforme a necessidade.
 
 ---
 
 ## 🆕 Solucao New — o fundador de produto
-**Comando:** `/solucao-new`
+**Comando:** `/solucao-novo`
 
 O fundador começa com uma ideia ainda bruta, investiga o problema, entende para quem o produto existe, consolida um PRD e transforma tudo em especificações prontas para implementação.
 
-> Use o Solucao New para projetos greenfield. Ele conduz `Ideator → Researcher → Drafter → Spec SDD` e entrega o resultado ao `/solucao-forward`.
+> Use o Solucao New para projetos greenfield. Ele conduz `Ideator → Researcher → Drafter → Spec SDD` e entrega o resultado ao `/solucao-enviar`.
 
 ---
 
@@ -54,7 +54,7 @@ Um regente de orquestra não toca nenhum instrumento. Ele conhece a partitura in
 ---
 
 ## 🗺️ Scout — o corretor de imóveis
-**Comando:** `/solucao-scout`
+**Comando:** `/solucao-explorador`
 
 O corretor faz o primeiro tour no imóvel. Não abre gavetas, não lê documentos, não mexe em nada. Só mapeia: quantos cômodos, qual o bairro, que instalações existem, qual o estado geral.
 
@@ -63,7 +63,7 @@ O corretor faz o primeiro tour no imóvel. Não abre gavetas, não lê documento
 ---
 
 ## 🧬 Soul Extractor: o biógrafo expresso
-**Comando:** `/solucao-extract-soul`
+**Comando:** `/solucao-extracao-parte-principal`
 
 O biógrafo expresso visita o personagem, lê as anotações do corretor (Scout), folheia rapidamente alguns álbuns de família e o histórico de cartas (git log), e produz uma biografia de uma página: quem é, o que faz, e as decisões fundadoras que moldaram a vida toda. Não é a história completa, é a alma destilada.
 
@@ -72,7 +72,7 @@ O biógrafo expresso visita o personagem, lê as anotações do corretor (Scout)
 ---
 
 ## ⛏️ Archaeologist — o escavador
-**Comando:** `/solucao-archaeologist`
+**Comando:** `/solucao-arqueologo`
 
 O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada artefato encontrado: tamanho, material, localização, forma. Ele não interpreta a civilização, só descreve com precisão o que está lá.
 
@@ -81,7 +81,7 @@ O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada 
 ---
 
 ## 🔍 Detective — o Sherlock Holmes
-**Comando:** `/solucao-detective`
+**Comando:** `/solucao-detetive`
 
 Sherlock Holmes chega depois do arqueólogo. Olha para os artefatos catalogados e pergunta: *"Mas por que isso está aqui? Quem colocou? O que isso revela sobre quem viveu aqui?"* Ele não escava. Ele interpreta.
 
@@ -90,7 +90,7 @@ Sherlock Holmes chega depois do arqueólogo. Olha para os artefatos catalogados 
 ---
 
 ## 📐 Architect — o cartógrafo
-**Comando:** `/solucao-architect`
+**Comando:** `/solucao-arquiteto`
 
 O cartógrafo visita um território e produz mapas formais: planta baixa, mapa de elevação, planta estrutural. Alguém que nunca pisou lá consegue entender tudo olhando para os mapas.
 
@@ -99,7 +99,7 @@ O cartógrafo visita um território e produz mapas formais: planta baixa, mapa d
 ---
 
 ## 📝 Writer — o tabelião
-**Comando:** `/solucao-writer`
+**Comando:** `/solucao-escritor`
 
 O tabelião transforma o que foi descoberto em contratos formais, precisos e rastreáveis. Cada cláusula tem grau de certeza declarado. O documento vale como contrato: um agente de IA pode reimplementar o sistema a partir dele.
 
@@ -108,7 +108,7 @@ O tabelião transforma o que foi descoberto em contratos formais, precisos e ras
 ---
 
 ## ⚖️ Reviewer — o revisor de specs
-**Comando:** `/solucao-reviewer`
+**Comando:** `/solucao-avaliador`
 
 O Reviewer pega os contratos do Writer e tenta furar: *"Isso é contradição. Esse ponto não tem prova. Essa regra some se o usuário fizer X."* Ele não quer destruir, quer garantir que o que ficou de pé seja sólido.
 
@@ -135,7 +135,7 @@ O geólogo mapeia o subsolo — a camada que ninguém vê mas que sustenta tudo.
 ---
 
 ## 🎨 Design System — o estilista
-**Comando:** `/solucao-design-system`
+**Comando:** `/solucao-sistema-design`
 
 O estilista cataloga o guarda-roupa: paleta de cores, tipografia, espaçamentos, tokens de design. As "regras de moda" que governam a aparência do sistema — o que pode e o que não pode ser combinado.
 
@@ -147,8 +147,8 @@ O estilista cataloga o guarda-roupa: paleta de cores, tipografia, espaçamentos,
 
 ```
 Projeto legado: /solucao → descoberta e especificações
-Projeto novo:   /solucao-new → PRD e specs → /solucao-forward
-Migração:       /solucao → /solucao-migrate → /solucao-forward
+Projeto novo:   /solucao-novo → PRD e specs → /solucao-enviar
+Migração:       /solucao → /solucao-migrar → /solucao-enviar
 
 Pipeline legado manual:
 Scout → Archaeologist (N sessões) → Detective → Architect → Writer → Reviewer

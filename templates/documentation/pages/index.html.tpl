@@ -1,6 +1,6 @@
 <!--
   Template: index.html
-  Produtor: solucao-docs-publisher
+  Produtor: solucao-documentos-editor
   Skill invocada: solucao-selo-generativo
   Page ID: index
   Categoria solucao: index

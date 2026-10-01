@@ -6,7 +6,7 @@
 
 ## How it is collected
 
-`/solucao-migrate` runs an interactive interview on first execution. On subsequent runs, it offers **review / keep / recreate**.
+`/solucao-migrar` runs an interactive interview on first execution. On subsequent runs, it offers **review / keep / recreate**.
 
 ---
 

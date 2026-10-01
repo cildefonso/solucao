@@ -11,7 +11,7 @@ Solucao guarda toda su configuración y estado del análisis dentro de la carpet
 ├── state.json          ← estado del análisis entre sesiones
 ├── config.toml         ← configuración del proyecto
 ├── config.user.toml    ← tus preferencias personales (no commitear)
-├── plan.md             ← plan de exploración (puedes editarlo)
+├── plano.md             ← plano de exploración (puedes editarlo)
 ├── version             ← versión instalada de Solucao
 ├── context/
 │   ├── surface.json    ← datos generados por Scout
@@ -31,7 +31,7 @@ name = "mi-proyecto"
 language = "es"
 
 [agents]
-installed = ["solucao", "scout", "archaeologist", "detective", "architect", "writer", "reviewer"]
+installed = ["solucao", "explorador", "arqueologo", "detective", "arquiteto", "escritor", "avaliador"]
 
 [output]
 folder = "_solucao_sdd"

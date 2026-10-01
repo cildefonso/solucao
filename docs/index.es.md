@@ -26,7 +26,7 @@ Luego abre el proyecto en tu agente de IA favorito y elige el flujo:
 
 ```
 /solucao       # descubrir y especificar un sistema existente
-/solucao-new   # convertir una idea nueva en PRD y specs SDD
+/solucao-novo   # convertir una idea nueva en PRD y specs SDD
 ```
 
 Eso es todo. Solucao toma el volante y te guía hasta el final.
@@ -65,7 +65,7 @@ Eso es todo. Solucao toma el volante y te guía hasta el final.
 
     Pasa de una idea en una línea a personas, PRD y specs SDD evaluadas.
 
-    [:octicons-arrow-right-24: Usar /solucao-new](newproject/index.md)
+    [:octicons-arrow-right-24: Usar /solucao-novo](newproject/index.md)
 
 </div>
 

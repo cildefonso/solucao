@@ -15,38 +15,38 @@
 
 schema-version: 1
 
-# Ganchos do /solucao-requirements
-before-requirements: []
-after-requirements: []
+# Ganchos do /solucao-requisitos
+antes-requisitos: []
+depois-requisitos: []
 
-# Ganchos do /solucao-clarify
-before-clarify: []
-after-clarify: []
+# Ganchos do /solucao-clarificar
+antes-clarificar: []
+depois-clarificar: []
 
-# Ganchos do /solucao-plan
-before-plan: []
-after-plan: []
+# Ganchos do /solucao-plano
+antes-plano: []
+depois-plano: []
 
-# Ganchos do /solucao-to-do
-before-to-do: []
-after-to-do: []
+# Ganchos do /solucao-pendencia
+antes-pendencia: []
+depois-pendencia: []
 
-# Ganchos do /solucao-audit
-before-audit: []
-after-audit: []
+# Ganchos do /solucao-auditoria
+antes-auditoria: []
+depois-auditoria: []
 
-# Ganchos do /solucao-quality
-before-quality: []
-after-quality: []
+# Ganchos do /solucao-qualidade
+antes-qualidade: []
+depois-qualidade: []
 
-# Ganchos do /solucao-coding
-before-coding: []
-after-coding: []
+# Ganchos do /solucao-codificacao
+antes-codificacao: []
+depois-codificacao: []
 
-# Ganchos do /solucao-sync
-before-sync: []
-after-sync: []
+# Ganchos do /solucao-sincronizar
+antes-sincronizar: []
+depois-sincronizar: []
 
-# Ganchos do /solucao-principles
-before-principles: []
-after-principles: []
+# Ganchos do /solucao-principios
+antes-principios: []
+depois-principios: []

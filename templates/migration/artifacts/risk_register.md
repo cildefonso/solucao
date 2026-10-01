@@ -4,7 +4,7 @@ generatedAt: <ISO-8601>
 solucao:
   version: "x.y.z"
 kind: risk_register
-producedBy: strategist
+producedBy: estrategista
 hash: "sha256:<hash do corpo abaixo do front-matter>"
 ---
 

@@ -69,7 +69,7 @@ Para cada tela, decida a qual unit ela pertence. A unit segue a `granularity` li
 
 Quando o mapeamento for ambíguo (a tela pertence a duas units potenciais), pergunte ao usuário antes de salvar.
 
-Quando a pasta da unit ainda não existe (Writer não rodou), crie-a vazia para hospedar os screenshots. O Writer, ao rodar depois, encontra a pasta e adiciona `requirements.md`, `design.md`, `tasks.md` (EC-05).
+Quando a pasta da unit ainda não existe (Writer não rodou), crie-a vazia para hospedar os screenshots. O Writer, ao rodar depois, encontra a pasta e adiciona `requisitos.md`, `design.md`, `tasks.md` (EC-05).
 
 ## Saída
 

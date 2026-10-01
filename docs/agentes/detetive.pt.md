@@ -1,6 +1,6 @@
 # Detective
 
-**Comando:** `/solucao-detective`
+**Comando:** `/solucao-detetive`
 **Fase:** 3 - Interpretação
 
 ---

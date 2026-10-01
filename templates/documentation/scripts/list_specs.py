@@ -6,7 +6,7 @@ Esqueleto da Onda 1. Extração de metadados (status, tamanho, autor) na TASK-10
 
 Uso:
     python list_specs.py --sdd-root _solucao_sdd \
-                         --out _solucao_docs/assets/data/features-index.json
+                         --out _solucao_documentos/assets/data/features-index.json
 """
 
 import argparse
@@ -30,7 +30,7 @@ def find_specs(sdd_root: Path):
     for child in sorted(sdd_root.iterdir()):
         if not child.is_dir():
             continue
-        req = child / "requirements.md"
+        req = child / "requisitos.md"
         design = child / "design.md"
         tasks = child / "tasks.md"
         if not req.exists():

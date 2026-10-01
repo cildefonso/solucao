@@ -1,6 +1,6 @@
 # Architect
 
-**Command:** `/solucao-architect`
+**Command:** `/solucao-arquiteto`
 **Phase:** 3 - Interpretation
 
 ---

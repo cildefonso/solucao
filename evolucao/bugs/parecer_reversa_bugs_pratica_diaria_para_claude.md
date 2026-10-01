@@ -1649,7 +1649,7 @@ Manter:
 /solucao-bug
 /solucao-bug-fix
 /solucao-bug-debate
-/solucao-depth-inspection
+/solucao-inspecao-detalhada
 /solucao-bug-graph
 ```
 
@@ -1699,7 +1699,7 @@ Recebe:
 mode: diagnosis | repair | spec
 ```
 
-## `/solucao-depth-inspection`
+## `/solucao-inspecao-detalhada`
 
 Continua diagnóstico-only.
 
@@ -1873,7 +1873,7 @@ Não implementar ainda.
 Primeiro:
 
 ```text
-1. revisar requirements.md
+1. revisar requisitos.md
 2. revisar design.md
 3. revisar tasks.md
 4. atualizar schemas e invariantes

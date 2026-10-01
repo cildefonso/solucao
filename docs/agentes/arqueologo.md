@@ -1,6 +1,6 @@
 # Archaeologist
 
-**Command:** `/solucao-archaeologist`
+**Command:** `/solucao-arqueologo`
 **Phase:** 2 - Excavation
 
 ---

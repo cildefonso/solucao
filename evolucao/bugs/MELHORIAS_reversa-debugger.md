@@ -1,7 +1,7 @@
-# Melhorias no Solução para tornar o /solucao-debugger mais efetivo
+# Melhorias no Solução para tornar o /solucao-depuracao mais efetivo
 
 > Post-mortem acionável escrito a partir do caso `mira-studio-full`, onde o
-> `/solucao-debugger` fechou 8 bugs como "fixed" e ainda assim entregou uma
+> `/solucao-depuracao` fechou 8 bugs como "fixed" e ainda assim entregou uma
 > gravação que nunca funcionou no navegador. O objetivo aqui não é o caso, é o
 > processo: o que mudar no framework para que isso não se repita em nenhuma feature.
 
@@ -51,7 +51,7 @@ mais estrita. O corretor pode propor o diff, mas quem fecha é a evidência bin�
 
 **Problema.** O pente-fino de 17/07 cravou F-conformidade-01 (critical) e escreveu, com
 todas as letras, "o veredito de spec do CGU3 não deveria ser aceito enquanto o oráculo não
-seguir RF-05". No dia seguinte o `/solucao-debugger-fix` fechou o CGU3 assim mesmo. O
+seguir RF-05". No dia seguinte o `/solucao-depuracao-resolver` fechou o CGU3 assim mesmo. O
 diagnóstico estava certo e o gate simplesmente passou por cima.
 
 **Mudança.** Um achado com `suspected_severity: critical` e `promoted_to` apontando para um

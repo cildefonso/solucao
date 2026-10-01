@@ -15,39 +15,39 @@ You have an idea but no code yet. Could be a sentence ("I want users to export t
 Activate with:
 
 ```
-/solucao-new
+/solucao-novo
 ```
 
-`/solucao-new` has two execution modes:
+`/solucao-novo` has two execution modes:
 
-- **Guided** (default): the orchestrator collects the brief, walks the four functional agents in fixed order, saves a checkpoint between each one, and asks for `CONTINUAR` before advancing. It ends at the SDD specs, handing off to `/solucao-forward`.
-- **Express**: activate with `/solucao-new expresso "<your idea>"` (or pick it in the opening menu). Every question is concentrated in a single interview at the start; after `INICIAR`, the pipeline runs without stops and, once the specs are done, it chains straight into the forward cycle (`requirements → plan → to-do → coding`) until the code is implemented. Doubts that appear along the way are recorded with the 🟡 seal for later review, without interrupting the flow.
+- **Guided** (default): the orchestrator collects the brief, walks the four functional agents in fixed order, saves a checkpoint between each one, and asks for `CONTINUAR` before advancing. It ends at the SDD specs, handing off to `/solucao-enviar`.
+- **Express**: activate with `/solucao-novo expresso "<your idea>"` (or pick it in the opening menu). Every question is concentrated in a single interview at the start; after `INICIAR`, the pipeline runs without stops and, once the specs are done, it chains straight into the forward cycle (`requisitos → plano → pendencia → codificacao`) until the code is implemented. Doubts that appear along the way are recorded with the 🟡 seal for later review, without interrupting the flow.
 
-If the session is interrupted, in either mode, just type `/solucao-new` again: it reads `state.json#newproject_progress` and resumes exactly where it stopped, honoring the saved mode.
+If the session is interrupted, in either mode, just type `/solucao-novo` again: it reads `state.json#newproject_progress` and resumes exactly where it stopped, honoring the saved mode.
 
 ---
 
 ## Pipeline
 
 ```
-/solucao-new              (orchestrator)
+/solucao-novo              (orchestrator)
        │
        ▼
-/solucao-ideator          → _solucao_sdd/ideation.md
+/solucao-idealizador          → _solucao_sdd/ideation.md
        │
        ▼ CONTINUAR
-/solucao-researcher       → _solucao_sdd/personas.md
+/solucao-pesquisador       → _solucao_sdd/personas.md
        │
        ▼ CONTINUAR
-/solucao-drafter          → _solucao_sdd/prd.md
+/solucao-desenhista-tecnico          → _solucao_sdd/prd.md
        │
        ▼ CONTINUAR
 /solucao-spec-sdd         → _solucao_sdd/sdd/<component>.md
        │
-       ├── guided: handoff, suggests /solucao-forward
+       ├── guided: handoff, suggests /solucao-enviar
        │
        ▼ express: continues without stopping
-/solucao-requirements → /solucao-plan → /solucao-to-do → /solucao-coding
+/solucao-requisitos → /solucao-plano → /solucao-pendencia → /solucao-codificacao
        │
        ▼
 implemented code in _solucao_forward/<NNN>-<feature>/
@@ -74,13 +74,13 @@ The Team writes only inside `_solucao_sdd/` (same folder used by Discovery). Gre
         └── <component>.md       (Spec SDD)
 ```
 
-The orchestrator state lives in `.solucao/state.json` under the `newproject_progress` key, with `mode` (guided or express), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` and the truncated `brief`. In express mode, `stage` also walks through `forward-requirements`, `forward-plan`, `forward-todo` and `forward-coding`, and the generated feature lives in `_solucao_forward/`.
+The orchestrator state lives in `.solucao/state.json` under the `newproject_progress` key, with `mode` (guided or express), `stage`, `started_at`, `last_checkpoint_at`, `completed_stages` and the truncated `brief`. In express mode, `stage` also walks through `enviar-requisitos`, `enviar-plano`, `forward-todo` and `avancar-codificacao`, and the generated feature lives in `_solucao_forward/`.
 
 ---
 
 ## Re-execution
 
-When the pipeline is already in progress and you type `/solucao-new` again, the orchestrator detects the saved `stage` and offers four options:
+When the pipeline is already in progress and you type `/solucao-novo` again, the orchestrator detects the saved `stage` and offers four options:
 
 1. **Continue from where you stopped** (recommended)
 2. **Recreate from scratch** (overwrites artifacts, requires explicit confirmation)

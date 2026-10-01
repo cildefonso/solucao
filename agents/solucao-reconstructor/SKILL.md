@@ -46,13 +46,13 @@ Verifique se `_solucao_sdd/migration/handoff.md` existe.
 Aguarde a resposta. NÃO escolha por conta própria. Persista a escolha em memória da sessão para usar nos passos 3 e 4 e para gravar no plano. Se a opção 3 for ambígua, refaça a pergunta uma vez antes de decidir.
 
 **Caso especial: migração em andamento (sem `handoff.md`).** Se existir `_solucao_sdd/migration/.state.json` mas não existir `handoff.md`, informe:
-> "Detectei uma migração **em andamento** (sem `handoff.md`). Para reconstruir a partir das specs da migração, finalize-a com `/solucao-migrate` antes. Vou prosseguir com as specs originais. Tudo bem?"
+> "Detectei uma migração **em andamento** (sem `handoff.md`). Para reconstruir a partir das specs da migração, finalize-a com `/solucao-migrar` antes. Vou prosseguir com as specs originais. Tudo bem?"
 >
 > Se o usuário disser não, encerre sem fazer nada.
 
 ### Passo 3 — Verificar plano existente
 
-Verifique se `_solucao_sdd/reconstruction-plan.md` já existe.
+Verifique se `_solucao_sdd/reconstruction-plano.md` já existe.
 
 **Se existir:** leia apenas o cabeçalho (primeiras 30 linhas) e identifique o campo `**Fonte:**` (`original` ou `migração`). Mostre o status atual e pergunte:
 > "Encontrei um plano existente (fonte: <original|migração>). [X] tarefas concluídas, [Y] pendentes.
@@ -79,7 +79,7 @@ Leia APENAS estes arquivos (nesta ordem):
 5. `_solucao_sdd/dependencies.md`
 6. `_solucao_sdd/traceability/code-spec-matrix.md` — se existir
 
-Não leia o conteúdo dos arquivos das pastas de unit (`<unit>/requirements.md`, `design.md`, `tasks.md`), nem de `openapi/` ou `user-stories/` agora. Apenas liste as units existentes (subpastas de `_solucao_sdd/` que contenham os 3 arquivos canônicos) a partir do `code-spec-matrix.md` ou do `dependencies.md`.
+Não leia o conteúdo dos arquivos das pastas de unit (`<unit>/requisitos.md`, `design.md`, `tasks.md`), nem de `openapi/` ou `user-stories/` agora. Apenas liste as units existentes (subpastas de `_solucao_sdd/` que contenham os 3 arquivos canônicos) a partir do `code-spec-matrix.md` ou do `dependencies.md`.
 
 ### Como determinar a ordem das tarefas
 
@@ -94,8 +94,8 @@ Ordem canônica bottom-up:
 1. Schema do banco de dados      → database/erd.md + database/data-dictionary.md
 2. Entidades de domínio          → domain.md
 3. Máquinas de estado            → state-machines.md (se existir)
-4. Units folha                   → <unit>/{requirements,design,tasks}.md (uma por tarefa, sem dependentes)
-5. Units intermediárias          → <unit>/{requirements,design,tasks}.md (ordem da árvore)
+4. Units folha                   → <unit>/{requisitos,design,tasks}.md (uma por tarefa, sem dependentes)
+5. Units intermediárias          → <unit>/{requisitos,design,tasks}.md (ordem da árvore)
 6. Camada de API                 → openapi/
 7. Fluxos de usuário             → user-stories/
 ```
@@ -106,14 +106,14 @@ A partir de `gaps.md` e `confidence-report.md`, identifique gaps 🔴 que bloque
 
 ### Gerar o plano
 
-Gere `_solucao_sdd/reconstruction-plan.md` seguindo o template em `references/reconstruction-plan-template.md`.
+Gere `_solucao_sdd/reconstruction-plano.md` seguindo o template em `references/reconstruction-plano-template.md`.
 
 Inclua no cabeçalho do plano: `**Fonte:** original`.
 
 Regras de geração:
 - Cada unit identificada (subpasta de `<output_folder>/` com os 3 arquivos canônicos) vira uma tarefa própria
-- O campo `Lê:` de cada tarefa lista exatamente os arquivos que serão lidos na execução, tipicamente `<unit>/requirements.md`, `<unit>/design.md` e `<unit>/tasks.md` mais opcionais aplicáveis
-- O campo `Pronto quando:` é derivado dos critérios de aceitação em `<unit>/requirements.md` (se disponíveis) ou do tipo da unit
+- O campo `Lê:` de cada tarefa lista exatamente os arquivos que serão lidos na execução, tipicamente `<unit>/requisitos.md`, `<unit>/design.md` e `<unit>/tasks.md` mais opcionais aplicáveis
+- O campo `Pronto quando:` é derivado dos critérios de aceitação em `<unit>/requisitos.md` (se disponíveis) ou do tipo da unit
 - Units sem `tasks.md` listam `dependencies.md` como referência
 
 Após gerar, apresente ao usuário:
@@ -173,7 +173,7 @@ Em `handoff.md`, releia a seção "REFERIDOS À CODIFICAÇÃO" para garantir cob
 
 ### Gerar o plano (migração)
 
-Gere `_solucao_sdd/reconstruction-plan.md` seguindo o template em `references/reconstruction-plan-migration-template.md`.
+Gere `_solucao_sdd/reconstruction-plano.md` seguindo o template em `references/reconstruction-plano-migration-template.md`.
 
 Inclua no cabeçalho do plano: `**Fonte:** migração`.
 
@@ -204,7 +204,7 @@ Ativado quando o usuário diz "INICIAR", "CONTINUAR", "execute a tarefa N" ou eq
 
 ### Passo 1 — Identificar a tarefa
 
-Leia `_solucao_sdd/reconstruction-plan.md` (cabeçalho + lista de tarefas) e localize:
+Leia `_solucao_sdd/reconstruction-plano.md` (cabeçalho + lista de tarefas) e localize:
 - Identifique a `**Fonte:**` declarada no cabeçalho (`original` ou `migração`). Use isso só para ajustar a base de paths (`_solucao_sdd/...` vs `_solucao_sdd/migration/...`); a execução em si segue a regra "leia apenas o que o campo `Lê:` da tarefa diz".
 - Se o usuário especificou número: a tarefa com esse número
 - Se disse "continuar" ou "iniciar": a primeira tarefa com status `pending`
@@ -214,12 +214,12 @@ Se não houver tarefas pendentes:
 
 ### Passo 2 — Executar
 
-1. Marque a tarefa como `in_progress` no `reconstruction-plan.md`
+1. Marque a tarefa como `in_progress` no `reconstruction-plano.md`
 2. Leia **apenas** os arquivos listados no campo `Lê:` daquela tarefa
 3. Informe: `"Executando Tarefa [N/Total]: [nome]..."`
 4. Implemente com base estritamente nas specs lidas
 5. Para cada 🔴 LACUNA encontrada: pause e pergunte ao usuário antes de continuar
-6. Ao concluir: marque a tarefa como `done` no `reconstruction-plan.md`
+6. Ao concluir: marque a tarefa como `done` no `reconstruction-plano.md`
 7. Informe:
 
 > "Tarefa [N] concluída: [nome]
@@ -236,7 +236,7 @@ Implemente exatamente o que as specs dizem. Não invente comportamentos não doc
 
 ## Saída
 
-- `_solucao_sdd/reconstruction-plan.md` — criado no Modo Planejamento, atualizado a cada tarefa concluída
+- `_solucao_sdd/reconstruction-plano.md` — criado no Modo Planejamento, atualizado a cada tarefa concluída
 - Arquivos de código implementados conforme cada tarefa executada
 
 O Reconstructor não modifica nenhum outro arquivo em `_solucao_sdd/`.

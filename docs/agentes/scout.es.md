@@ -1,6 +1,6 @@
 # Scout
 
-**Comando:** `/solucao-scout`
+**Comando:** `/solucao-explorador`
 **Fase:** 1 - Reconocimiento
 
 ---

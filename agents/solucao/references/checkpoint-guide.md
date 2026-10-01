@@ -47,7 +47,7 @@ O Solucao é o único agente que **escreve** no state.json. Os demais agentes ap
 ```json
 {
   "checkpoints": {
-    "archaeologist": {
+    "arqueologo": {
       "modules_analyzed": ["auth", "orders"],
       "modules_pending": ["payments", "users"]
     }
@@ -88,13 +88,13 @@ Ao mover de fase:
         ".solucao/context/surface.json"
       ]
     },
-    "archaeologist": {
+    "arqueologo": {
       "modules_analyzed": ["auth", "orders"],
       "modules_pending": ["payments", "users"]
     }
   },
   "engines": ["claude-code"],
-  "agents": ["solucao", "solucao-scout", "solucao-archaeologist"],
+  "agents": ["solucao", "solucao-explorador", "solucao-arqueologo"],
   "created_files": []
 }
 ```

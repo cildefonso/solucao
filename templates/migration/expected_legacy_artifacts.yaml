@@ -1,5 +1,5 @@
 # Lista declarativa de artefatos esperados em _solucao_sdd/ antes de iniciar a migração.
-# Atualizar esta lista é uma mudança de configuração; não exige reedição do agente solucao-migrate.
+# Atualizar esta lista é uma mudança de configuração; não exige reedição do agente solucao-migrar.
 #
 # Cada entrada:
 #   path: caminho relativo dentro de _solucao_sdd/

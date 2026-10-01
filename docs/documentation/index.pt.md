@@ -5,7 +5,7 @@ O **Time de Documentação** transforma o conhecimento extraído pelo restante d
 Ative com:
 
 ```
-/solucao-docs
+/solucao-documentos
 ```
 
 O orquestrador detecta quais fontes estão disponíveis (`_solucao_sdd/`, `.solucao/soul.md`, `.solucao/chronicle.md`, código fonte), conduz uma breve entrevista de três perguntas (perfil de leitor, profundidade, estilo visual) e depois executa quatro agentes especialistas em ordem fixa.
@@ -23,7 +23,7 @@ Em um projeto greenfield puro (sem fontes detectadas), o orquestrador pergunta s
 ## Pipeline
 
 ```
-/solucao-docs                   (orquestrador)
+/solucao-documentos                   (orquestrador)
        │
        ▼ Fase 0: vendor bundle
        │   baixa Three.js, D3, Highcharts, OrbitControls
@@ -55,10 +55,10 @@ Há um checkpoint `CONTINUAR` entre agentes. Use `--auto` para pular a entrevist
 
 ## Onde os artefatos ficam
 
-Tudo é gravado em `_solucao_docs/`. O time **nunca** modifica artefatos do core (`_solucao_sdd/`, `.solucao/soul.md`, `.solucao/chronicle.md`), apenas lê.
+Tudo é gravado em `_solucao_documentos/`. O time **nunca** modifica artefatos do core (`_solucao_sdd/`, `.solucao/soul.md`, `.solucao/chronicle.md`), apenas lê.
 
 ```
-_solucao_docs/
+_solucao_documentos/
 ├── index.html              (Publisher: hero, selo, nav)
 ├── arquitetura.html        (Mapper)
 ├── modulos.html            (Mapper)
@@ -78,7 +78,7 @@ _solucao_docs/
 └── .state.json             (telemetria do pipeline, hashes por página)
 ```
 
-Se `_solucao_docs/` já existir, o orquestrador oferece seis opções de regeneração (manter, regenerar tudo, regenerar um agente ou página, refazer a entrevista, ...) e sempre cria `.backup-<timestamp>/` antes de sobrescrever.
+Se `_solucao_documentos/` já existir, o orquestrador oferece seis opções de regeneração (manter, regenerar tudo, regenerar um agente ou página, refazer a entrevista, ...) e sempre cria `.backup-<timestamp>/` antes de sobrescrever.
 
 ---
 

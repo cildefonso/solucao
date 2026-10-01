@@ -1,6 +1,6 @@
 # Os agentes do greenfield
 
-Cinco agentes formam o time **Code New Project Agents**. O orquestrador (`/solucao-new`) conduz os outros quatro em sequência fixa. Cada agente lê o que o anterior produziu e adiciona o próprio artefato.
+Cinco agentes formam o time **Code New Project Agents**. O orquestrador (`/solucao-novo`) conduz os outros quatro em sequência fixa. Cada agente lê o que o anterior produziu e adiciona o próprio artefato.
 
 ---
 
@@ -19,7 +19,7 @@ Há um checkpoint `CONTINUAR` entre agentes. O orquestrador nunca avança por co
 
 ## 1. Solucao New (orquestrador)
 
-**Comando:** `/solucao-new`
+**Comando:** `/solucao-novo`
 
 Lê o brief inicial (passado inline ou perguntado interativamente), salva `_solucao_sdd/newproject-brief.md`, conduz os quatro agentes funcionais em ordem fixa e grava checkpoint em `state.json#newproject_progress` após cada estágio.
 
@@ -31,7 +31,7 @@ Detecta re-execução: se já existe pipeline em andamento, pergunta se quer con
 
 ## 2. Ideator
 
-**Comando:** `/solucao-ideator`
+**Comando:** `/solucao-idealizador`
 
 Brainstorm estruturado com seis perguntas divergentes: problema raiz, valor entregue, alternativas, público-alvo bruto, métricas de sucesso, premissas perigosas. Faz uma pergunta por vez (quando a engine não suporta agrupar bem), aguarda a resposta antes de seguir e nunca colapsa as perguntas em um único prompt.
 
@@ -41,7 +41,7 @@ Brainstorm estruturado com seis perguntas divergentes: problema raiz, valor entr
 
 ## 3. Researcher
 
-**Comando:** `/solucao-researcher`
+**Comando:** `/solucao-pesquisador`
 
 Transforma o público-alvo bruto do `ideation.md` em 1 a 3 personas estruturadas com jornadas (entrada, fricção, desfecho). O usuário escolhe quantas personas; o agente só sugere com base na amplitude da descrição do público.
 
@@ -51,7 +51,7 @@ Transforma o público-alvo bruto do `ideation.md` em 1 a 3 personas estruturadas
 
 ## 4. Drafter
 
-**Comando:** `/solucao-drafter`
+**Comando:** `/solucao-desenhista-tecnico`
 
 Sintetiza ideation e personas em um PRD completo: problema, métricas de sucesso, escopo, não-objetivos, restrições, riscos, perguntas em aberto. Atua como sintetizador, não entrevistador: extrai tudo que consegue das duas fontes e faz no máximo duas perguntas de cobertura para preencher os gaps mais críticos. O que ficar indefinido é marcado com `🟡 [INDEFINIDO, validar com usuário]`.
 
@@ -65,7 +65,7 @@ Sintetiza ideation e personas em um PRD completo: problema, métricas de sucesso
 
 Decompõe o PRD em componentes lógicos e escreve uma spec SDD por componente, com score automático de qualidade (0 a 100) e análise de gaps. A metodologia é **RFC Pragmático mais LLM-First**: estruturada como um RFC (Problem / Goals / Design / Edge Cases), mas otimizada para ser consumida por humanos e por agentes de IA.
 
-Esse agente é uma versão **vendored** da skill global `sdd-spec`: vive nativamente dentro do Solucao, lê `prd.md` como fonte primária, escreve em `_solucao_sdd/sdd/`, marca cada spec com o selo 🟡 (planejado) e, ao concluir, faz handoff para `/solucao-forward`.
+Esse agente é uma versão **vendored** da skill global `sdd-spec`: vive nativamente dentro do Solucao, lê `prd.md` como fonte primária, escreve em `_solucao_sdd/sdd/`, marca cada spec com o selo 🟡 (planejado) e, ao concluir, faz handoff para `/solucao-enviar`.
 
 Também pode ser usado de forma avulsa: avaliando uma spec existente ou gerando uma spec única a partir de qualquer entrada que o usuário forneça.
 
@@ -75,13 +75,13 @@ Também pode ser usado de forma avulsa: avaliando uma spec existente ou gerando 
 
 ## Execução manual
 
-Você quase nunca precisa chamar um agente isolado. `/solucao-new` orquestra tudo. Mas se um agente falhou ou você quer refazer um estágio:
+Você quase nunca precisa chamar um agente isolado. `/solucao-novo` orquestra tudo. Mas se um agente falhou ou você quer refazer um estágio:
 
 ```
-/solucao-new                    # detecta pipeline em andamento, oferece Continuar / Recriar / Re-executar
-/solucao-ideator                # avulso, lê newproject-brief.md
-/solucao-researcher             # avulso, lê ideation.md
-/solucao-drafter                # avulso, lê ideation.md mais personas.md
+/solucao-novo                    # detecta pipeline em andamento, oferece Continuar / Recriar / Re-executar
+/solucao-idealizador                # avulso, lê newproject-brief.md
+/solucao-pesquisador             # avulso, lê ideation.md
+/solucao-desenhista-tecnico                # avulso, lê ideation.md mais personas.md
 /solucao-spec-sdd               # avulso, lê prd.md ou qualquer fonte passada pelo usuário
 ```
 

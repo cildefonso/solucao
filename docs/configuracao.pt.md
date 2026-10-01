@@ -11,7 +11,7 @@ O Solucao guarda toda a sua configuração e estado da análise dentro da pasta 
 ├── state.json          ← estado da análise entre sessões
 ├── config.toml         ← configuração do projeto
 ├── config.user.toml    ← suas preferências pessoais (não commitar)
-├── plan.md             ← plano de exploração (você pode editar)
+├── plano.md             ← plano de exploração (você pode editar)
 ├── version             ← versão instalada do Solucao
 ├── context/
 │   ├── surface.json    ← dados gerados pelo Scout
@@ -33,7 +33,7 @@ name = "meu-projeto"
 language = "pt-br"
 
 [agents]
-installed = ["solucao", "scout", "archaeologist", "detective", "architect", "writer", "reviewer"]
+installed = ["solucao", "explorador", "arqueologo", "detective", "arquiteto", "escritor", "avaliador"]
 
 [output]
 folder = "_solucao_sdd"
@@ -61,7 +61,7 @@ answer_mode = "chat"  # "chat" ou "file"
 
 ---
 
-## `plan.md`: plano de exploração
+## `plano.md`: plano de exploração
 
 O Solucao gera esse arquivo na primeira sessão, depois de conversar com você sobre o projeto. Ele lista as tarefas da análise em ordem.
 

@@ -1,6 +1,6 @@
 # Design System
 
-**Comando:** `/solucao-design-system`
+**Comando:** `/solucao-sistema-design`
 **Fase:** Cualquiera
 
 ---
@@ -23,8 +23,8 @@ El estilista cataloga el guardarropa del sistema: paleta de colores, tipografía
 
 | Archivo | Contenido |
 |---------|-----------|
-| `_solucao_sdd/design-system/color-palette.md` | Paleta completa con valores |
-| `_solucao_sdd/design-system/typography.md` | Sistema tipográfico |
-| `_solucao_sdd/design-system/spacing.md` | Espaciado, grid y breakpoints |
-| `_solucao_sdd/design-system/tokens.md` | Todos los tokens en tabla |
-| `_solucao_sdd/design-system/design-system.md` | Documento consolidado |
+| `_solucao_sdd/sistema-design/color-palette.md` | Paleta completa con valores |
+| `_solucao_sdd/sistema-design/typography.md` | Sistema tipográfico |
+| `_solucao_sdd/sistema-design/spacing.md` | Espaciado, grid y breakpoints |
+| `_solucao_sdd/sistema-design/tokens.md` | Todos los tokens en tabla |
+| `_solucao_sdd/sistema-design/sistema-design.md` | Documento consolidado |

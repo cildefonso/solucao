@@ -1,6 +1,6 @@
 # Design System
 
-**Comando:** `/solucao-design-system`
+**Comando:** `/solucao-sistema-design`
 **Fase:** Qualquer
 
 ---
@@ -61,8 +61,8 @@ Se houver biblioteca de componentes própria: lista de componentes, variantes e 
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| `_solucao_sdd/design-system/color-palette.md` | Paleta completa com valores |
-| `_solucao_sdd/design-system/typography.md` | Sistema tipográfico |
-| `_solucao_sdd/design-system/spacing.md` | Espaçamento, grid e breakpoints |
-| `_solucao_sdd/design-system/tokens.md` | Todos os tokens em tabela |
-| `_solucao_sdd/design-system/design-system.md` | Documento consolidado |
+| `_solucao_sdd/sistema-design/color-palette.md` | Paleta completa com valores |
+| `_solucao_sdd/sistema-design/typography.md` | Sistema tipográfico |
+| `_solucao_sdd/sistema-design/spacing.md` | Espaçamento, grid e breakpoints |
+| `_solucao_sdd/sistema-design/tokens.md` | Todos os tokens em tabela |
+| `_solucao_sdd/sistema-design/sistema-design.md` | Documento consolidado |

@@ -12,7 +12,7 @@ O orquestrador central (o próprio Solucao) coordena quem entra quando, em que o
 |------|--------|---------------|
 | **Solucao Agents Core** | Descoberta e orquestração do legado: mapeia, escava, interpreta e documenta. Detalhado nas tabelas abaixo. | Sempre instalado |
 | **Code New Project Agents** | Pipeline greenfield, da ideia em uma linha até specs SDD. Veja [Code New Project Agents](../newproject/index.md). | Marcado por padrão |
-| **Code Forward Agents** | Conduzem a evolução a partir das specs: requirements, plan, to-do, audit, quality, coding. Veja [Code Forward Agents](../forward/index.md). | Marcado por padrão |
+| **Code Forward Agents** | Conduzem a evolução a partir das specs: requisitos, plano, pendencia, auditoria, quality, codificacao. Veja [Code Forward Agents](../forward/index.md). | Marcado por padrão |
 | **Migration Agents** | Transformam as specs do legado em um plano de reconstrução em stack moderna. Veja [Migração](../migracao/index.md). | Marcado por padrão |
 | **Pricing and Size Agents** | Estimam esforço, tamanho e precificação a partir das specs. Veja [Pricing](../pricing/index.md). | Marcado por padrão |
 | **Documentation Team** | Renderiza o conhecimento extraído como mini-site HTML autocontido. Veja [Time de Documentação](../documentation/index.md). | Marcado por padrão |
@@ -30,7 +30,7 @@ Esses fazem parte do pipeline principal. O orquestrador os executa na sequência
 | Agente | Fase | Analogia | Função |
 |--------|------|----------|--------|
 | [Solucao](solucao.md) | Orquestração | O regente de orquestra | Coordena todos os agentes, salva checkpoints e guia o usuário |
-| [Scout](scout.md) | Reconhecimento | O corretor de imóveis | Mapeia a superfície: pastas, linguagens, frameworks, dependências, entry points |
+| [Scout](explorador.md) | Reconhecimento | O corretor de imóveis | Mapeia a superfície: pastas, linguagens, frameworks, dependências, entry points |
 | [Archaeologist](arqueologo.md) | Escavação | O escavador | Análise profunda módulo a módulo: algoritmos, fluxos, estruturas de dados |
 | [Detective](detetive.md) | Interpretação | Sherlock Holmes | Extrai regras de negócio implícitas, ADRs, máquinas de estado, permissões |
 | [Architect](arquiteto.md) | Interpretação | O cartógrafo | Sintetiza tudo em diagramas C4, ERD e mapa de integrações |
@@ -47,7 +47,7 @@ Instalados por padrão, mas podem ser acionados de forma independente em qualque
 | [Reviewer](revisor.md) | O revisor de specs | Após o Writer: revisa criticamente as specs e valida lacunas |
 | [Visor](visor.md) | O ilustrador forense | Quando tiver screenshots do sistema disponíveis |
 | [Data Master](data-master.md) | O geólogo | Quando houver DDL, migrations ou modelos ORM para analisar |
-| [Design System](design-system.md) | O estilista | Quando houver arquivos CSS, temas ou screenshots de interface |
+| [Design System](sistema-design.md) | O estilista | Quando houver arquivos CSS, temas ou screenshots de interface |
 
 ---
 

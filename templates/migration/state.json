@@ -5,11 +5,11 @@
   "completedAgents": [],
   "pendingAgents": [
     "paradigm_advisor",
-    "curator",
-    "strategist",
+    "curador",
+    "estrategista",
     "designer",
     "screen_translator",
-    "inspector"
+    "inspetor"
   ],
   "currentAgent": {
     "agent": null,

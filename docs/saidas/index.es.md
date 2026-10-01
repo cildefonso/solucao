@@ -39,7 +39,7 @@ _solucao_sdd/
 ├── flowcharts/               # Diagramas de flujo en Mermaid — completo+
 ├── ui/                       # Specs de interfaz (Visor)
 ├── database/                 # Specs de base de datos (Data Master)
-├── design-system/            # Tokens de diseño (Design System)
+├── sistema-design/            # Tokens de diseño (Design System)
 └── traceability/
     ├── spec-impact-matrix.md # Qué spec impacta a cuál — completo+
     └── code-spec-matrix.md   # Archivo de código a spec correspondiente — completo+

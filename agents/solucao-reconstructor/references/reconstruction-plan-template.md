@@ -53,9 +53,9 @@ Nenhum gap crítico identificado. Pode iniciar com segurança.
 
 ### Tarefa 04 — [Nome da Unit]
 **Status:** pending
-**Lê:** `_solucao_sdd/[unit]/requirements.md`, `_solucao_sdd/[unit]/design.md`, `_solucao_sdd/[unit]/tasks.md`, `_solucao_sdd/dependencies.md`
+**Lê:** `_solucao_sdd/[unit]/requisitos.md`, `_solucao_sdd/[unit]/design.md`, `_solucao_sdd/[unit]/tasks.md`, `_solucao_sdd/dependencies.md`
 **Constrói:** [caminho do módulo conforme stack]
-**Pronto quando:** [critério de aceitação extraído de requirements.md, campo "Dado/Quando/Então"]
+**Pronto quando:** [critério de aceitação extraído de requisitos.md, campo "Dado/Quando/Então"]
 **Alerta:** [se houver gap associado, descreva aqui]
 
 <!-- COMPONENT_TASKS_END -->

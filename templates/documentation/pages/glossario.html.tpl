@@ -1,6 +1,6 @@
 <!--
   Template: glossario.html
-  Produtor: solucao-docs-storyteller
+  Produtor: solucao-documentos-contador-historias
   Page ID: glossario
   Categoria solucao: diagram
   Dados consumidos: assets/data/soul.json (derivado de .solucao/soul.md)

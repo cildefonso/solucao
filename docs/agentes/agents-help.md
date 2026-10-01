@@ -15,13 +15,13 @@ It explains each agent with a real-world analogy. But since you're already here,
 | Goal | Command | Team |
 |---|---|---|
 | Discover and document a legacy system | `/solucao` | Solucao Agents Core |
-| Create a new project from an idea | `/solucao-new` | Code New Project Agents |
-| Implement or evolve code from specs | `/solucao-forward` | Code Forward Agents |
-| Plan a legacy migration | `/solucao-migrate` | Migration Agents |
-| Generate a visual documentation mini-site | `/solucao-docs` | Documentation Agents |
+| Create a new project from an idea | `/solucao-novo` | Code New Project Agents |
+| Implement or evolve code from specs | `/solucao-enviar` | Code Forward Agents |
+| Plan a legacy migration | `/solucao-migrar` | Migration Agents |
+| Generate a visual documentation mini-site | `/solucao-documentos` | Documentation Agents |
 | Choose the right agent | `/solucao-agents-help` | Agent guide |
 
-Pricing and Translators use specialized commands: `/solucao-pricing-profile`, `/solucao-pricing-size`, `/solucao-pricing-estimate` and `/solucao-n8n`.
+Pricing and Translators use specialized commands: `/solucao-perfil-precificacao`, `/solucao-fins-precificacao`, `/solucao-estimativa-preco` and `/solucao-n8n`.
 
 ---
 
@@ -31,7 +31,7 @@ Pricing and Translators use specialized commands: `/solucao-pricing-profile`, `/
 
 The founder starts with a rough idea, investigates the problem, identifies the audience, consolidates a PRD and turns it into implementation-ready specifications.
 
-> Use `/solucao-new` for greenfield projects. It drives `Ideator → Researcher → Drafter → Spec SDD` and hands the result to `/solucao-forward`.
+> Use `/solucao-novo` for greenfield projects. It drives `Ideator → Researcher → Drafter → Spec SDD` and hands the result to `/solucao-enviar`.
 
 ### 🎼 Solucao: the orchestra conductor
 
@@ -117,8 +117,8 @@ The stylist catalogs the wardrobe: color palette, typography, spacing, design to
 
 ```
 Legacy project: /solucao → discovery and specifications
-New project:    /solucao-new → PRD and specs → /solucao-forward
-Migration:      /solucao → /solucao-migrate → /solucao-forward
+New project:    /solucao-novo → PRD and specs → /solucao-enviar
+Migration:      /solucao → /solucao-migrar → /solucao-enviar
 
 Manual legacy pipeline:
 Scout → Archaeologist (N sessions) → Detective → Architect → Writer → Reviewer

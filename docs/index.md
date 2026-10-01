@@ -26,7 +26,7 @@ Then open the project in your favorite AI agent and choose the workflow:
 
 ```
 /solucao       # discover and specify an existing system
-/solucao-new   # turn a new product idea into PRD and SDD specs
+/solucao-novo   # turn a new product idea into PRD and SDD specs
 ```
 
 That's it. Solucao takes the wheel and guides you to the end.
@@ -65,7 +65,7 @@ That's it. Solucao takes the wheel and guides you to the end.
 
     Go from a one-line idea to personas, PRD and scored SDD specs.
 
-    [:octicons-arrow-right-24: Use /solucao-new](newproject/index.md)
+    [:octicons-arrow-right-24: Use /solucao-novo](newproject/index.md)
 
 </div>
 

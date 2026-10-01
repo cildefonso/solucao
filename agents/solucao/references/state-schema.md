@@ -18,7 +18,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Solucao l�
   "completed": ["reconhecimento"],
   "pending": ["escavacao", "interpretacao", "geracao", "revisao"],
   "engines": ["claude-code"],
-  "agents": ["solucao", "solucao-scout", "solucao-archaeologist"],
+  "agents": ["solucao", "solucao-explorador", "solucao-arqueologo"],
   "checkpoints": {
     "scout": {
       "completed_at": "2026-04-26T10:00:00Z",
@@ -28,7 +28,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Solucao l�
         ".solucao/context/surface.json"
       ]
     },
-    "archaeologist": {
+    "arqueologo": {
       "completed_at": "2026-04-26T11:00:00Z",
       "modules_analyzed": ["auth", "orders", "payments"],
       "files": [
@@ -42,7 +42,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Solucao l�
     "CLAUDE.md",
     ".agents/skills/solucao/SKILL.md",
     ".solucao/state.json",
-    ".solucao/plan.md"
+    ".solucao/plano.md"
   ]
 }
 ```

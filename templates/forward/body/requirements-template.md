@@ -1,6 +1,6 @@
 <!--
-Template de corpo do requirements.md
-Carregado por /solucao-requirements e atualizado por /solucao-clarify.
+Template de corpo do requisitos.md
+Carregado por /solucao-requisitos e atualizado por /solucao-clarificar.
 
 REGRAS DE PREENCHIMENTO:
 - Mantenha a ordem das seções obrigatórias.
@@ -99,16 +99,16 @@ Cenário: <título do caso negativo>
 ## 9. Esclarecimentos
 
 <!--
-Esta seção é preenchida APENAS por /solucao-clarify.
+Esta seção é preenchida APENAS por /solucao-clarificar.
 Antes da primeira sessão de dúvidas, mantenha a seção com o aviso abaixo.
 -->
 
-> Nenhuma sessão de dúvidas registrada ainda. Rode `/solucao-clarify` quando houver `[DÚVIDA]` pendente.
+> Nenhuma sessão de dúvidas registrada ainda. Rode `/solucao-clarificar` quando houver `[DÚVIDA]` pendente.
 
 ## 10. Lacunas
 
 <!--
-Liste pontos sem resposta. Lacunas resolvidas pelo /solucao-clarify saem daqui e ficam registradas no histórico.
+Liste pontos sem resposta. Lacunas resolvidas pelo /solucao-clarificar saem daqui e ficam registradas no histórico.
 -->
 
 - 🔴 [DÚVIDA] <ponto sem resposta>
@@ -118,4 +118,4 @@ Liste pontos sem resposta. Lacunas resolvidas pelo /solucao-clarify saem daqui e
 
 | Data | Alteração | Autor |
 |------|-----------|-------|
-| YYYY-MM-DD | Versão inicial gerada por `/solucao-requirements` | solucao |
+| YYYY-MM-DD | Versão inicial gerada por `/solucao-requisitos` | solucao |

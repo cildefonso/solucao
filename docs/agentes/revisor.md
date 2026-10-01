@@ -1,6 +1,6 @@
 # Reviewer
 
-**Command:** `/solucao-reviewer`
+**Command:** `/solucao-avaliador`
 **Phase:** 5 - Review
 
 ---
@@ -35,9 +35,9 @@ If Codex is not available, the Reviewer proceeds normally without mentioning it.
 
 For each unit folder under `<output_folder>/`:
 
-- Are the 3 canonical files present (`requirements.md`, `design.md`, `tasks.md`)? If not, that's a gap.
-- Do the rules in `requirements.md` make sense together? Are there internal contradictions?
-- Does `design.md` cover what `requirements.md` promises? Does `tasks.md` cover both?
+- Are the 3 canonical files present (`requisitos.md`, `design.md`, `tasks.md`)? If not, that's a gap.
+- Do the rules in `requisitos.md` make sense together? Are there internal contradictions?
+- Does `design.md` cover what `requisitos.md` promises? Does `tasks.md` cover both?
 - Are there obvious unspecified behaviors?
 - Statements marked as 🟢: the Reviewer goes back to the original code to check. Reclassifies if necessary.
 

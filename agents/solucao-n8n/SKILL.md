@@ -1,6 +1,6 @@
 ---
 name: solucao-n8n
-description: Gera specs SDD (workflow-overview, requirements, design) a partir de workflows do N8N exportados em JSON, preparando o terreno para reimplementação em Python ou outra linguagem. Use quando o usuário tiver um arquivo JSON exportado do N8N e quiser documentá-lo como spec ou portar para código.
+description: Gera specs SDD (workflow-overview, requisitos, design) a partir de workflows do N8N exportados em JSON, preparando o terreno para reimplementação em Python ou outra linguagem. Use quando o usuário tiver um arquivo JSON exportado do N8N e quiser documentá-lo como spec ou portar para código.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -118,7 +118,7 @@ Gere três arquivos seguindo o padrão SDD:
 - Lista de credenciais e dependências externas
 - Seção `## Ambiguidades` no final, se houver
 
-**`requirements.md`** (o que o sistema deve fazer)
+**`requisitos.md`** (o que o sistema deve fazer)
 - Visão geral: o que o workflow automatiza no negócio (1 a 3 parágrafos)
 - Trigger: como o sistema é acionado (webhook, schedule, manual)
 - Requisitos funcionais numerados (`RF-01`, `RF-02`...) derivados de cada ramo do fluxo. Use o formato: "O sistema deve [ação] quando [condição]."
@@ -158,9 +158,9 @@ Se `.solucao/state.json` ainda não existir, crie a partir do template em `templ
 
 Se `.solucao/state.json` já existir, **não sobrescreva**. Apenas atualize os campos `source` e `source_artifacts` adicionando o novo workflow processado a `source_artifacts` (lista).
 
-#### 7.2 Criação de `.solucao/plan.md`
+#### 7.2 Criação de `.solucao/plano.md`
 
-Se `.solucao/plan.md` ainda não existir, crie a partir do template em `templates/plan.md` e substitua:
+Se `.solucao/plano.md` ainda não existir, crie a partir do template em `templates/plano.md` e substitua:
 - `{{PROJECT}}`: nome do workflow N8N
 - `{{DATE}}`: data atual no formato ISO
 
@@ -174,7 +174,7 @@ Adicione uma seção `## Fase 0: Origem N8N 🔁` no topo (antes da Fase 1) com 
 - [x] **N8N Translator**: conversão do workflow `<slug>` para spec SDD
 ```
 
-Se `.solucao/plan.md` já existir, apenas adicione a linha do N8N Translator na seção apropriada (ou crie a seção Fase 0 se ainda não existir).
+Se `.solucao/plano.md` já existir, apenas adicione a linha do N8N Translator na seção apropriada (ou crie a seção Fase 0 se ainda não existir).
 
 #### 7.3 Confirmação ao usuário
 
@@ -182,7 +182,7 @@ Após criar os arquivos, mostre:
 ```
 ✅ Spec gerada em _solucao_n8n/<slug>/
 ✅ Estado inicial criado em .solucao/state.json
-✅ Plano criado em .solucao/plan.md
+✅ Plano criado em .solucao/plano.md
 
 Para continuar com o pipeline completo (Scout, Archaeologist, etc.), digite /solucao.
 ```
@@ -194,7 +194,7 @@ Use estes marcadores ao afirmar algo na spec:
 - 🟡 INFERIDO: deduzido por contexto (nome do nó, parâmetros, código embutido)
 - 🔴 LACUNA: ambíguo ou não detectável a partir do JSON
 
-Aplique principalmente em `requirements.md` e `design.md`.
+Aplique principalmente em `requisitos.md` e `design.md`.
 
 ## Ambiguidades
 
@@ -218,12 +218,12 @@ n8n_json_workflows/                  (entrada, criada se não existir)
 
 _solucao_n8n/<slug-do-workflow>/     (spec gerada da fonte)
 ├── workflow-overview.md
-├── requirements.md
+├── requisitos.md
 └── design.md
 
 .solucao/                            (estado para handoff ao /solucao)
 ├── state.json
-└── plan.md
+└── plano.md
 ```
 
 ## Layout transversal

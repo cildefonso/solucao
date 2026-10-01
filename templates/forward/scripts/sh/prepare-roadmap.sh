@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # prepare-roadmap.sh
-# Helper específico do skill /solucao-plan.
+# Helper específico do skill /solucao-plano.
 # Garante que a pasta da feature ativa esteja pronta para receber roadmap, investigation, data-delta, onboarding e interfaces/.
 # Emite JSON com caminhos absolutos prontos para o agente usar.
 #
@@ -10,7 +10,7 @@
 #
 # Códigos de saída:
 #   0 = sucesso, JSON emitido
-#   1 = active-requirements.json ausente ou inválido
+#   1 = active-requisitos.json ausente ou inválido
 #   2 = feature-dir não existe e não pôde ser criada
 #   3 = uso inválido
 
@@ -20,7 +20,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 SOLUCAO_DIR="$PROJECT_ROOT/.solucao"
 SDD_DIR="$PROJECT_ROOT/_solucao_sdd"
-ACTIVE="$SOLUCAO_DIR/active-requirements.json"
+ACTIVE="$SOLUCAO_DIR/active-requisitos.json"
 
 JSON_MODE=0
 while [ $# -gt 0 ]; do
@@ -31,7 +31,7 @@ while [ $# -gt 0 ]; do
 done
 
 if [ ! -f "$ACTIVE" ]; then
-  echo "erro: $ACTIVE nao existe. rode solucao-requirements antes." >&2
+  echo "erro: $ACTIVE nao existe. rode solucao-requisitos antes." >&2
   exit 1
 fi
 
@@ -44,7 +44,7 @@ fi
 feature_dir="$PROJECT_ROOT/$feature_dir_rel"
 mkdir -p "$feature_dir/interfaces" || { echo "erro: nao foi possivel criar $feature_dir/interfaces" >&2; exit 2; }
 
-requirements_path="$feature_dir/requirements.md"
+requirements_path="$feature_dir/requisitos.md"
 roadmap_path="$feature_dir/roadmap.md"
 investigation_path="$feature_dir/investigation.md"
 data_delta_path="$feature_dir/data-delta.md"
@@ -62,7 +62,7 @@ if [ $JSON_MODE -eq 1 ]; then
   printf '"project-root":"%s",' "$PROJECT_ROOT"
   printf '"sdd-dir":"%s",' "$SDD_DIR"
   printf '"feature-dir":"%s",' "$feature_dir"
-  printf '"requirements":{"path":"%s","present":%s},' "$requirements_path" "$requirements_present"
+  printf '"requisitos":{"path":"%s","present":%s},' "$requirements_path" "$requirements_present"
   printf '"roadmap":{"path":"%s","already-exists":%s},' "$roadmap_path" "$roadmap_already"
   printf '"investigation":"%s",' "$investigation_path"
   printf '"data-delta":"%s",' "$data_delta_path"
@@ -72,7 +72,7 @@ if [ $JSON_MODE -eq 1 ]; then
   printf '}\n'
 else
   echo "feature-dir: $feature_dir"
-  echo "requirements presente: $requirements_present"
+  echo "requisitos presente: $requirements_present"
   echo "roadmap ja existe: $roadmap_already"
 fi
 

@@ -10,13 +10,13 @@
 #   verify-prerequisites.sh [--json] [--require <campo>] [--require <campo>] ...
 #
 # Campos suportados em --require:
-#   active-requirements   Exige que .solucao/active-requirements.json exista.
-#   feature-dir           Exige que a pasta apontada por active-requirements exista.
-#   requirements          Exige feature-dir/requirements.md.
+#   active-requisitos   Exige que .solucao/active-requisitos.json exista.
+#   feature-dir           Exige que a pasta apontada por active-requisitos exista.
+#   requisitos          Exige feature-dir/requisitos.md.
 #   roadmap               Exige feature-dir/roadmap.md.
 #   actions               Exige feature-dir/actions.md.
 #   sdd                   Exige _solucao_sdd/ presente.
-#   principles            Exige .solucao/principles.md.
+#   principios            Exige .solucao/principios.md.
 #
 # Códigos de saída:
 #   0 = todos os requisitos batem
@@ -30,7 +30,7 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 SOLUCAO_DIR="$PROJECT_ROOT/.solucao"
 SDD_DIR="$PROJECT_ROOT/_solucao_sdd"
 FORWARD_DIR="$PROJECT_ROOT/_solucao_forward"
-ACTIVE="$SOLUCAO_DIR/active-requirements.json"
+ACTIVE="$SOLUCAO_DIR/active-requisitos.json"
 
 JSON_MODE=0
 REQUIRES=()
@@ -56,16 +56,16 @@ fi
 check_one() {
   local name="$1"
   case "$name" in
-    active-requirements)
-      [ -f "$ACTIVE" ] || missing+=("active-requirements")
+    active-requisitos)
+      [ -f "$ACTIVE" ] || missing+=("active-requisitos")
       ;;
     feature-dir)
       if [ -z "$feature_dir" ] || [ ! -d "$feature_dir" ]; then
         missing+=("feature-dir")
       fi
       ;;
-    requirements)
-      [ -n "$feature_dir" ] && [ -f "$feature_dir/requirements.md" ] || missing+=("requirements")
+    requisitos)
+      [ -n "$feature_dir" ] && [ -f "$feature_dir/requisitos.md" ] || missing+=("requisitos")
       ;;
     roadmap)
       [ -n "$feature_dir" ] && [ -f "$feature_dir/roadmap.md" ] || missing+=("roadmap")
@@ -76,8 +76,8 @@ check_one() {
     sdd)
       [ -d "$SDD_DIR" ] || missing+=("sdd")
       ;;
-    principles)
-      [ -f "$SOLUCAO_DIR/principles.md" ] || missing+=("principles")
+    principios)
+      [ -f "$SOLUCAO_DIR/principios.md" ] || missing+=("principios")
       ;;
     *)
       missing+=("desconhecido:$name")
@@ -95,7 +95,7 @@ emit_json() {
   printf '"solucao-dir":"%s",' "$SOLUCAO_DIR"
   printf '"sdd-dir":"%s",' "$SDD_DIR"
   printf '"forward-dir":"%s",' "$FORWARD_DIR"
-  printf '"active-requirements":"%s",' "$ACTIVE"
+  printf '"active-requisitos":"%s",' "$ACTIVE"
   printf '"feature-dir":"%s",' "$feature_dir"
   printf '"missing":['
   local first=1

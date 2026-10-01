@@ -6,7 +6,7 @@ O `migration_brief.md` é o primeiro artefato. Ele captura o critério de migra�
 
 ## Como é coletado
 
-O `/solucao-migrate` conduz uma entrevista interativa na primeira execução. Em execuções seguintes, oferece **revisar / manter / recriar**.
+O `/solucao-migrar` conduz uma entrevista interativa na primeira execução. Em execuções seguintes, oferece **revisar / manter / recriar**.
 
 ---
 

@@ -60,12 +60,12 @@ _solucao_sdd/
 │   ├── business-rules.md
 │   └── procedures.md
 │
-├── design-system/            # Tokens de design (Design System)
+├── sistema-design/            # Tokens de design (Design System)
 │   ├── color-palette.md
 │   ├── typography.md
 │   ├── spacing.md
 │   ├── tokens.md
-│   └── design-system.md
+│   └── sistema-design.md
 │
 └── traceability/
     ├── spec-impact-matrix.md # Qual spec impacta qual — completo+

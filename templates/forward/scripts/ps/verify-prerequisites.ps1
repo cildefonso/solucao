@@ -6,7 +6,7 @@
 #   verify-prerequisites.ps1 [-Json] [-Require <campo>] [-Require <campo>] ...
 #
 # Campos suportados:
-#   active-requirements, feature-dir, requirements, roadmap, actions, sdd, principles
+#   active-requisitos, feature-dir, requisitos, roadmap, actions, sdd, principios
 #
 # Códigos de saída: 0 ok, 1 faltando algo, 2 uso inválido.
 
@@ -23,7 +23,7 @@ $projectRoot = (Resolve-Path (Join-Path $scriptDir '..\..')).Path
 $solucaoDir  = Join-Path $projectRoot '.solucao'
 $sddDir      = Join-Path $projectRoot '_solucao_sdd'
 $forwardDir  = Join-Path $projectRoot '_solucao_forward'
-$active      = Join-Path $solucaoDir 'active-requirements.json'
+$active      = Join-Path $solucaoDir 'active-requisitos.json'
 
 $missing  = New-Object System.Collections.Generic.List[string]
 $featureDir = ''
@@ -41,17 +41,17 @@ if (Test-Path -LiteralPath $active) {
 function Test-One {
   param([string]$Name)
   switch ($Name) {
-    'active-requirements' {
-      if (-not (Test-Path -LiteralPath $active)) { $missing.Add('active-requirements') | Out-Null }
+    'active-requisitos' {
+      if (-not (Test-Path -LiteralPath $active)) { $missing.Add('active-requisitos') | Out-Null }
     }
     'feature-dir' {
       if (-not $featureDir -or -not (Test-Path -LiteralPath $featureDir -PathType Container)) {
         $missing.Add('feature-dir') | Out-Null
       }
     }
-    'requirements' {
-      if (-not $featureDir -or -not (Test-Path -LiteralPath (Join-Path $featureDir 'requirements.md'))) {
-        $missing.Add('requirements') | Out-Null
+    'requisitos' {
+      if (-not $featureDir -or -not (Test-Path -LiteralPath (Join-Path $featureDir 'requisitos.md'))) {
+        $missing.Add('requisitos') | Out-Null
       }
     }
     'roadmap' {
@@ -67,8 +67,8 @@ function Test-One {
     'sdd' {
       if (-not (Test-Path -LiteralPath $sddDir -PathType Container)) { $missing.Add('sdd') | Out-Null }
     }
-    'principles' {
-      if (-not (Test-Path -LiteralPath (Join-Path $solucaoDir 'principles.md'))) { $missing.Add('principles') | Out-Null }
+    'principios' {
+      if (-not (Test-Path -LiteralPath (Join-Path $solucaoDir 'principios.md'))) { $missing.Add('principios') | Out-Null }
     }
     default {
       $missing.Add("desconhecido:$Name") | Out-Null
@@ -85,7 +85,7 @@ $result = [ordered]@{
   'solucao-dir'          = $solucaoDir
   'sdd-dir'              = $sddDir
   'forward-dir'          = $forwardDir
-  'active-requirements'  = $active
+  'active-requisitos'  = $active
   'feature-dir'          = $featureDir
   'missing'              = @($missing)
 }

@@ -93,13 +93,13 @@ O que **transfere intacto** dos documentos de origem:
 ```
 65 skills com description · 19.948 chars · ~4.987 tokens  (todas model-invoked hoje)
 50 das 65 declaram um comando /nome digitado pelo humano na própria description
-SKILL.md: média de 149 linhas  (os 3 maiores: solucao-new 329, solucao-docs-publisher 323, solucao-screen-translator 279)
+SKILL.md: média de 149 linhas  (os 3 maiores: solucao-novo 329, solucao-documentos-editor 323, solucao-tradutor-tela 279)
 disable-model-invocation no repo: 0
 agents/openai.yaml no repo: 0
 ```
 
 Ponto de quebra único confirmado: `agents/solucao/references/step-01-first-run.md:63` —
-*"Após confirmação, ative o skill `solucao-scout`."* (ativa por nome, sem alternativa de leitura). Os
+*"Após confirmação, ative o skill `solucao-explorador`."* (ativa por nome, sem alternativa de leitura). Os
 demais sites de invocação já usam o padrão duplo *"Leia o `SKILL.md` … / Ative o skill"*.
 
 ---
@@ -119,18 +119,18 @@ O `role` do frontmatter fecha a lista sem ambiguidade: os **8 `role: orchestrato
 | Skill | role | Por que fica |
 | --- | --- | --- |
 | `solucao` | orchestrator | A palavra `solucao` sozinha ativa (promessa do `CLAUDE.md`) |
-| `solucao-new` | orchestrator | "novo projeto", "forward" por linguagem natural |
-| `solucao-forward` | orchestrator | Fluxo forward |
-| `solucao-migrate` | orchestrator | "quero migrar esse sistema" |
-| `solucao-autonomous` | orchestrator | Modo autônomo |
+| `solucao-novo` | orchestrator | "novo projeto", "forward" por linguagem natural |
+| `solucao-enviar` | orchestrator | Fluxo forward |
+| `solucao-migrar` | orchestrator | "quero migrar esse sistema" |
+| `solucao-autonoma` | orchestrator | Modo autônomo |
 | `solucao-refactor` | orchestrator | "refatorar", "otimizar o código" |
-| `solucao-debugger` | orchestrator | "tem um bug", "debugar" |
-| `solucao-docs` | orchestrator | "documentar esse sistema" |
+| `solucao-depuracao` | orchestrator | "tem um bug", "debugar" |
+| `solucao-documentos` | orchestrator | "documentar esse sistema" |
 | `solucao-agents-help` | help | "quais agentes existem" (único membro discutível — ver nota) |
 
 **As outras ~56 viram user-invoked** (`disable-model-invocation: true`): agentes de fase
-(`solucao-scout`, `solucao-architect`, `solucao-reviewer`), os `solucao-pricing-*`, os
-`solucao-debugger-*` (`-fix`/`-debate`/`-graph`), os `solucao-docs-*`, os especialistas de refactor
+(`solucao-explorador`, `solucao-arquiteto`, `solucao-avaliador`), os `solucao-pricing-*`, os
+`solucao-depuracao-*` (`-fix`/`-debate`/`-graph`), os `solucao-documentos-*`, os especialistas de refactor
 (`solucao-optimize`, `solucao-simplify`, `solucao-prune`…) e os renderizadores. Continuam alcançáveis
 por `/nome` digitado e pelo orquestrador que lê o `SKILL.md`.
 
@@ -157,16 +157,16 @@ marco.*
 
 **Etapa 1 — baseline funcional.** Como a fonte não tem `.solucao/`, instalar a Solução num diretório
 temporário (`npx solucao init` num sandbox, ou via `bin/solucao.js`) e registrar o comportamento de
-`/solucao`, `/solucao-agents-help`, `/solucao-forward` **antes** de qualquer mudança.
+`/solucao`, `/solucao-agents-help`, `/solucao-enviar` **antes** de qualquer mudança.
 
 **Etapa 2 — corrigir os sites de invocação (antes das marcas).** Inverter a precedência para **ler o
 `SKILL.md` e executar no contexto atual** como caminho primário. O único site que hoje ativa por nome
 sem alternativa é `step-01-first-run.md:63`; os demais já têm o padrão duplo — padronizar todos.
 Reinstalar e repetir o teste da Etapa 1: **comportamento idêntico**. *Commit.*
 
-**Etapa 3 — marcar UMA skill.** `solucao-scout` (a mais crítica: primeira que o orquestrador chama e
+**Etapa 3 — marcar UMA skill.** `solucao-explorador` (a mais crítica: primeira que o orquestrador chama e
 alvo do site corrigido). Acrescentar só `disable-model-invocation: true` ao frontmatter — **manter a
-`description`**. Instalar, testar ponta a ponta (`/solucao` chega ao Scout? `/solucao-scout` direto
+`description`**. Instalar, testar ponta a ponta (`/solucao` chega ao Scout? `/solucao-explorador` direto
 ainda funciona?). Se falhar, **parar e reverter**. *Commit.*
 
 **Etapa 4 — marcar as demais.** Script sobre a **árvore única `agents/`** (sem `×2`, sem lockstep entre
@@ -229,7 +229,7 @@ Aplicabilidade das cinco propostas do HANDOFF a este repositório:
 
 | # | Proposta | Situação aqui |
 | --- | --- | --- |
-| M1 | Podar `SKILL.md` grandes (mover blocos p/ `references/`) | 🟢 **Aplica e piorou** — média subiu p/ 149 linhas; `solucao-new` (329), `solucao-docs-publisher` (323). Só custa contexto nas **model-invoked**; nas user-invoked é qualidade de leitura. |
+| M1 | Podar `SKILL.md` grandes (mover blocos p/ `references/`) | 🟢 **Aplica e piorou** — média subiu p/ 149 linhas; `solucao-novo` (329), `solucao-documentos-editor` (323). Só custa contexto nas **model-invoked**; nas user-invoked é qualidade de leitura. |
 | M2 | Buckets por maturidade (in-progress/deprecated não instalados) | 🟢 Aplica — `agents/` é plano hoje; exige tocar `lib/installer/manifest.js` para instalar só o bucket principal. |
 | M3 | Registrar as recusas (out-of-scope) | 🟡 Opcional — combina com esta pasta `evolucao/`. |
 | M4 | Glossário do vocabulário (unit, spec, lacuna, fase, checkpoint…) | 🟢 Aplica — com 65 agentes, é o que impede dois usarem termos diferentes p/ a mesma coisa. |

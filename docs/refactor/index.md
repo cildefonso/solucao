@@ -29,7 +29,7 @@ The Team works best on top of an extraction (`_solucao_sdd/`): the soul and conf
   hygiene      /solucao-standardize   /solucao-prune
       │ each: safety net ──► gate (approved diff) ──► proof of preservation
       ▼
-transformations/OPP-.../  (plan.html, diffs, evidence)  ── always reversible
+transformations/OPP-.../  (plano.html, diffs, evidence)  ── always reversible
 ```
 
 | Agent | Role |
@@ -66,7 +66,7 @@ _solucao_refactor/
     ├── opportunities/            oportunidades detectadas, um arquivo para cada (verbo, alvo, ROI, confiança)
     ├── transformations/
     │   └── OPP-20260723-K4T9-extract-shipping-rules/
-    │       ├── plan.html         plano visual, aprovado ANTES de qualquer arquivo ser alterado
+    │       ├── plano.html         plano visual, aprovado ANTES de qualquer arquivo ser alterado
     │       ├── safety-net/       testes de caracterização + resultado verde/vermelho
     │       ├── before-after/     medição, prova de equivalência ou prova de morte
     │       ├── CHG-NNN.diff       diferenças aplicadas, a origem da reversão

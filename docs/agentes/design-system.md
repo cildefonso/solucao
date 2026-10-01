@@ -1,6 +1,6 @@
 # Design System
 
-**Command:** `/solucao-design-system`
+**Command:** `/solucao-sistema-design`
 **Phase:** Any
 
 ---
@@ -61,8 +61,8 @@ If there's a custom component library: list of components, variants, and main pr
 
 | File | Content |
 |------|---------|
-| `_solucao_sdd/design-system/color-palette.md` | Complete palette with values |
-| `_solucao_sdd/design-system/typography.md` | Typography system |
-| `_solucao_sdd/design-system/spacing.md` | Spacing, grid, and breakpoints |
-| `_solucao_sdd/design-system/tokens.md` | All tokens in a table |
-| `_solucao_sdd/design-system/design-system.md` | Consolidated document |
+| `_solucao_sdd/sistema-design/color-palette.md` | Complete palette with values |
+| `_solucao_sdd/sistema-design/typography.md` | Typography system |
+| `_solucao_sdd/sistema-design/spacing.md` | Spacing, grid, and breakpoints |
+| `_solucao_sdd/sistema-design/tokens.md` | All tokens in a table |
+| `_solucao_sdd/sistema-design/sistema-design.md` | Consolidated document |

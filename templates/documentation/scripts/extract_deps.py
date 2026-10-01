@@ -4,11 +4,11 @@ extract_deps.py — Produz deps.json para o Time Solucao Docs.
 
 Esqueleto da Onda 1. Análise real de imports por linguagem entra na TASK-07.
 
-Schema de saída: ver specs/solucao-docs/design.md, seção "Schema de deps.json".
+Schema de saída: ver specs/solucao-documentos/design.md, seção "Schema de deps.json".
 
 Uso:
-    python extract_deps.py --modules _solucao_docs/assets/data/modules.json \
-                           --out _solucao_docs/assets/data/deps.json
+    python extract_deps.py --modules _solucao_documentos/assets/data/modules.json \
+                           --out _solucao_documentos/assets/data/deps.json
 """
 
 import argparse

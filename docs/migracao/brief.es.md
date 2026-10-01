@@ -6,7 +6,7 @@
 
 ## Cómo se recoge
 
-`/solucao-migrate` conduce una entrevista interactiva en la primera ejecución. En ejecuciones posteriores ofrece **revisar / mantener / recrear**.
+`/solucao-migrar` conduce una entrevista interactiva en la primera ejecución. En ejecuciones posteriores ofrece **revisar / mantener / recrear**.
 
 ---
 

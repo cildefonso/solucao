@@ -24,12 +24,12 @@ Execute as tarefas do plano **sequencialmente, uma por vez**:
 
 1. Informe o usuário: "Iniciando o **[Nome do Agente]** — [o que ele fará]."
 2. Ative o skill `solucao-[agente]` correspondente. Se a engine não suportar ativação direta de skills por nome, leia `.agents/skills/solucao-[agente]/SKILL.md` na íntegra e execute no contexto atual.
-3. Após conclusão: salve checkpoint em `.solucao/state.json` seguindo `references/checkpoint-guide.md` e marque a tarefa com ✅ em `.solucao/plan.md`.
+3. Após conclusão: salve checkpoint em `.solucao/state.json` seguindo `references/checkpoint-guide.md` e marque a tarefa com ✅ em `.solucao/plano.md`.
 4. Apresente resumo breve do que foi gerado.
 
 **Ação especial após o Scout:**
 
-1. Leia `.solucao/context/surface.json` e atualize a Fase 2 de `.solucao/plan.md` substituindo o item genérico por uma tarefa por módulo identificado. Exemplo:
+1. Leia `.solucao/context/surface.json` e atualize a Fase 2 de `.solucao/plano.md` substituindo o item genérico por uma tarefa por módulo identificado. Exemplo:
 ```
 - [ ] **Archaeologist** — Análise do módulo `auth`
 - [ ] **Archaeologist** — Análise do módulo `orders`
@@ -113,7 +113,7 @@ Sempre usar nas specs geradas:
 
 ## Verificação de regressão semântica (re-extrações)
 
-Após o **último agente do plano** concluir e antes de declarar a extração finalizada, leia e siga `references/step-04-regression-check.md`. O gatilho é posição (último item do plan.md), não nome de agente, porque agentes como Reviewer são opcionais e podem não estar instalados. Esse passo só executa trabalho real quando o projeto já tem `_solucao_forward/` com pelo menos um `regression-watch.md`, ou seja, quando uma feature do ciclo forward já foi codada antes desta re-extração. Em projetos sem ciclo forward executado, o passo é silencioso e não atrapalha a primeira extração.
+Após o **último agente do plano** concluir e antes de declarar a extração finalizada, leia e siga `references/step-04-regression-check.md`. O gatilho é posição (último item do plano.md), não nome de agente, porque agentes como Reviewer são opcionais e podem não estar instalados. Esse passo só executa trabalho real quando o projeto já tem `_solucao_forward/` com pelo menos um `regression-watch.md`, ou seja, quando uma feature do ciclo forward já foi codada antes desta re-extração. Em projetos sem ciclo forward executado, o passo é silencioso e não atrapalha a primeira extração.
 
 A verificação compara cada watch item declarado em `_solucao_forward/<feature>/regression-watch.md` contra os artefatos recém-gerados em `_solucao_sdd/`, atribui veredito 🟢 / 🟡 / 🔴 a cada um, e atualiza o histórico de re-extrações no próprio `regression-watch.md`. Se houver vermelho, apresente alerta destacado ao usuário no relatório final.
 

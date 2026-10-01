@@ -1,6 +1,6 @@
 # The 4 visual agents
 
-Four agents make up the Documentation Team, plus the orchestrator. Each one runs in fixed order, can be invoked standalone with `/solucao-docs-<role>`, and writes only inside `_solucao_docs/`.
+Four agents make up the Documentation Team, plus the orchestrator. Each one runs in fixed order, can be invoked standalone with `/solucao-documentos-<role>`, and writes only inside `_solucao_documentos/`.
 
 ---
 
@@ -21,7 +21,7 @@ There is a human review pause between agents. Default mode is interactive. Add `
 
 ## 1. Solucao Docs (orchestrator)
 
-**Command:** `/solucao-docs`
+**Command:** `/solucao-documentos`
 
 Detects which sources are available, runs the three-question interview (reader profile, depth, visual style), computes a deterministic seed from `soul.md` (or project name), persists everything in `.config.json` and walks the four specialists. Saves telemetry in `.state.json` and offers six regeneration options on subsequent runs.
 
@@ -31,7 +31,7 @@ Detects which sources are available, runs the three-question interview (reader p
 
 ## 2. Mapper
 
-**Command:** `/solucao-docs-mapper`
+**Command:** `/solucao-documentos-mapeador`
 
 Spatial structure of the project. Renders Code City in 3D (Three.js, with the `solucao-arquitetura-3d` skill) where each building is a module, height encodes LOC and color encodes complexity. Also generates a 2D force-directed module map (D3) and, when topology is detected, a side-by-side legacy vs modern view.
 
@@ -41,7 +41,7 @@ Spatial structure of the project. Renders Code City in 3D (Three.js, with the `s
 
 ## 3. Analyst
 
-**Command:** `/solucao-docs-analyst`
+**Command:** `/solucao-documentos-analista`
 
 Quantitative dashboard. Highcharts treemap (LOC per module), columns (complexity per module), sankey (dependencies between modules), histogram (LOC distribution). When `.solucao/chronicle.md` exists, also renders an interactive timeline of project events.
 
@@ -53,7 +53,7 @@ Reuses the Mapper's JSONs. In standalone invocation, runs minimal extraction whe
 
 ## 4. Storyteller
 
-**Command:** `/solucao-docs-storyteller`
+**Command:** `/solucao-documentos-contador-historias`
 
 Narrative and onboarding. Three artifacts: an interactive glossary (Concept Explainer with client-side search), a navigable slide deck (6 to 10 slides) and one detailed page per feature in the *How a Feature Works* layout.
 
@@ -65,7 +65,7 @@ Does not require Analyst or Mapper as a hard prerequisite: the deck adapts to wh
 
 ## 5. Publisher
 
-**Command:** `/solucao-docs-publisher`
+**Command:** `/solucao-documentos-editor`
 
 Last piece of the pipeline. Integrates the work of the three specialists in a coherent mini-site with a unique generative seal (via the `solucao-selo-generativo` skill), retroactively injects a mini-seal into every page, auto-discovers auxiliary HTMLs left by other Solucao core agents (via the `solucao-category` meta tag), validates links and runs a real smoke test (boots `http.server`, fetches each page, greps for error patterns) before declaring success.
 
@@ -84,22 +84,22 @@ The Team brings five shared skills that ship alongside it. They are not standalo
 | `solucao-arquitetura-3d` | Mapper | Code City 3D rendering on top of Three.js |
 | `solucao-especialista-d3` | Mapper | Force-directed module map in D3 |
 | `solucao-highcharts-visualizer` | Analyst | Highcharts treemap, sankey, histogram and columns |
-| `solucao-image-prompt-json` | Storyteller | Optional premium covers for the deck slides |
+| `solucao-prompt-de-imagem-json` | Storyteller | Optional premium covers for the deck slides |
 | `solucao-selo-generativo` | Publisher | Unique generative seal per project, derived from the deterministic seed |
 
 ---
 
 ## Running manually
 
-You rarely need to call an isolated agent. `/solucao-docs` orchestrates everything. But if a specific page broke or you want to regenerate one section:
+You rarely need to call an isolated agent. `/solucao-documentos` orchestrates everything. But if a specific page broke or you want to regenerate one section:
 
 ```
-/solucao-docs                    # full pipeline (with interview and CONTINUAR)
-/solucao-docs --auto             # full pipeline, no pauses, default profile
-/solucao-docs-mapper             # regenerate arquitetura / modulos / topologia
-/solucao-docs-analyst            # regenerate metricas / timeline
-/solucao-docs-storyteller        # regenerate glossario / deck / features
-/solucao-docs-publisher          # regenerate index + seal + nav, re-run smoke test
+/solucao-documentos                    # full pipeline (with interview and CONTINUAR)
+/solucao-documentos --auto             # full pipeline, no pauses, default profile
+/solucao-documentos-mapeador             # regenerate arquitetura / modulos / topologia
+/solucao-documentos-analista            # regenerate metricas / timeline
+/solucao-documentos-contador-historias        # regenerate glossario / deck / features
+/solucao-documentos-editor          # regenerate index + seal + nav, re-run smoke test
 ```
 
 Each standalone agent runs the Publisher's Phase 0 (vendor bundle) as a preamble when `assets/vendor/` is empty, so a single-agent call still produces a working page.

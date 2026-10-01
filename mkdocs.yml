@@ -205,8 +205,8 @@ nav:
     - Solucao Agents Core:
       - Solucao (Orchestrator): agentes/solucao.md
       - Guide with analogies: agentes/agents-help.md
-      - Scout: agentes/scout.md
-      - Soul Extractor: agentes/extract-soul.md
+      - Scout: agentes/explorador.md
+      - Soul Extractor: agentes/extracao-parte-principal.md
       - Archaeologist: agentes/arqueologo.md
       - Detective: agentes/detetive.md
       - Architect: agentes/arquiteto.md
@@ -214,7 +214,7 @@ nav:
       - Reviewer: agentes/revisor.md
       - Visor: agentes/visor.md
       - Data Master: agentes/data-master.md
-      - Design System: agentes/design-system.md
+      - Design System: agentes/sistema-design.md
       - Reconstructor: agentes/reconstructor.md
     - Code New Project Agents:
       - Overview: newproject/index.md

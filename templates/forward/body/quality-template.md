@@ -1,6 +1,6 @@
 <!--
-Template de corpo do requirements-audit.md
-Carregado por /solucao-quality.
+Template de corpo do requisitos-auditoria.md
+Carregado por /solucao-qualidade.
 
 REGRAS DE PREENCHIMENTO:
 - Total entre dez e trinta itens. Menos é raso, mais é ruído.
@@ -14,7 +14,7 @@ REGRAS DE PREENCHIMENTO:
 
 > Identificador da feature: `<NNN>-<short-name>`
 > Data: `YYYY-MM-DD`
-> Documento auditado: `<feature-dir>/requirements.md`
+> Documento auditado: `<feature-dir>/requisitos.md`
 
 ## Resumo
 
@@ -29,7 +29,7 @@ REGRAS DE PREENCHIMENTO:
 
 ### Clareza
 
-- [ ] Q-001 | Clareza | Cada frase do requirements tem sujeito, verbo e objeto explícitos
+- [ ] Q-001 | Clareza | Cada frase do requisitos tem sujeito, verbo e objeto explícitos
 - [ ] Q-002 | Clareza | Não há frases iniciadas por "talvez", "provavelmente" ou "se possível" sem qualificação numérica
 - [ ] Q-003 | Clareza | Termos do glossário do projeto são definidos na primeira ocorrência
 
@@ -58,17 +58,17 @@ REGRAS DE PREENCHIMENTO:
 
 ### Jargão
 
-- [ ] Q-015 | Jargão | Um humano novo no time entenderia o requirements sem glossário
+- [ ] Q-015 | Jargão | Um humano novo no time entenderia o requisitos sem glossário
 - [ ] Q-016 | Jargão | Siglas são expandidas na primeira ocorrência
 
 ### SoluçãoImplícita
 
-- [ ] Q-017 | SoluçãoImplícita | O requirements descreve o quê, não o como
+- [ ] Q-017 | SoluçãoImplícita | O requisitos descreve o quê, não o como
 - [ ] Q-018 | SoluçãoImplícita | Não há nome de biblioteca, framework ou produto comercial no documento
 
 ### Princípios
 
-- [ ] Q-019 | Princípios | Cada Regra de Negócio respeita os princípios ativos em `.solucao/principles.md`
+- [ ] Q-019 | Princípios | Cada Regra de Negócio respeita os princípios ativos em `.solucao/principios.md`
 - [ ] Q-020 | Princípios | Conflitos com princípios estão registrados explicitamente, não escondidos
 
 ## Itens reprovados, detalhe
@@ -100,4 +100,4 @@ Itens CRITICAL: cobertura ausente, princípio violado, contradição interna ent
 
 | Data | Alteração | Autor |
 |------|-----------|-------|
-| YYYY-MM-DD | Auditoria gerada por `/solucao-quality` | solucao |
+| YYYY-MM-DD | Auditoria gerada por `/solucao-qualidade` | solucao |

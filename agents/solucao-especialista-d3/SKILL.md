@@ -15,7 +15,7 @@ metadata:
 1. Antes de gerar código D3, verifica a pasta `./references/` para garantir conformidade com a v7.
 2. Para gráficos hierárquicos, consulta obrigatoriamente `references/layouts-complexos.md`.
 3. Prioriza o uso de escalas flexíveis descritas em `references/api-core.md`.
-4. **Vendor local quando rodada pelo Time Solucao Docs**: use `<script src="assets/vendor/d3.v7.min.js"></script>`. O Publisher baixa essa lib via `agents/solucao-docs-publisher/references/vendor-pins.yaml`. Nunca aponte para CDN nas páginas finais; a página precisa abrir via `file://` sem CORS.
+4. **Vendor local quando rodada pelo Time Solucao Docs**: use `<script src="assets/vendor/d3.v7.min.js"></script>`. O Publisher baixa essa lib via `agents/solucao-documentos-editor/references/vendor-pins.yaml`. Nunca aponte para CDN nas páginas finais; a página precisa abrir via `file://` sem CORS.
 5. **Sem `fetch()` para arquivos locais**: dados vêm de `window.RV_DATA.<chave>` (carregado pelo `assets/js/data.js` que o Publisher gera). Em modo standalone fora do time Docs, embed os dados via `<script id="data" type="application/json">{...}</script>`.
 
 ## CAPACIDADES PRINCIPAIS:

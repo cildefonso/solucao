@@ -1,6 +1,6 @@
 <!--
   Template: metricas.html
-  Produtor: solucao-docs-analyst
+  Produtor: solucao-documentos-analista
   Skill invocada: highcharts-visualizer
   Page ID: metricas
   Categoria solucao: diagram

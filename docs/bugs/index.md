@@ -19,22 +19,22 @@ The Team works best on top of an extraction (`_solucao_sdd/`), but degrades grac
 ## The 5 commands
 
 ```
-/solucao-debugger ──registers──► _solucao_bugs/bugs/BUG-.../   ◄──registers findings── /solucao-depth-inspection
+/solucao-depuracao ──registers──► _solucao_bugs/bugs/BUG-.../   ◄──registers findings── /solucao-inspecao-detalhada
       │
       ▼
-/solucao-debugger-fix ──opt-in──► /solucao-debugger-debate (diagnosis | repair | spec)
+/solucao-depuracao-resolver ──opt-in──► /solucao-depuracao-considerar (diagnosis | repair | spec)
       │
       ▼ closes per closure policy
-/solucao-debugger-graph ──regenerates──► generated/* + _solucao_sdd/traceability/bugs.md
+/solucao-depuracao-grafico ──regenerates──► generated/* + _solucao_sdd/traceability/bugs.md
 ```
 
 | Agent | Role |
 |-------|------|
-| **Bug** | Intake, triage, dedupe, classification (`taxonomy.yaml`), initial traceability and security suspicion. Never fixes. `/solucao-debugger` |
-| **Bug Fix** | Lifecycle orchestrator: optional mitigation, reproduction capsule, evidence-based root cause (with `git bisect` for regressions), two approval gates (failing tests first, then the correction change set), spec verdict, closure policy. `/solucao-debugger-fix` |
-| **Bug Debate** | Fixed-epoch multi-agent debate with an isolated judge, in three modes: `diagnosis` (competing causal hypotheses), `repair` (competing strategies), `spec` (code vs spec divergence; ends in a recommendation, the decision is human). Always opt-in with cost shown upfront. External harnesses (Codex, Gemini CLI, OpenCode) may join as debaters only with explicit consent. `/solucao-debugger-debate` |
-| **Depth Inspection** | Deep sweep of a problematic feature through specialized lenses: spec conformance, data flow, contracts, error states, test coverage, concurrency. Diagnosis only; confirmed findings become registered bugs. `/solucao-depth-inspection` |
-| **Bug Graph** | Regenerates all derived views: index, compact catalog (`catalog.jsonl`), sparse relation matrix, mermaid graph with clusters and impact score, and the BUG ↔ SPEC traceability matrix on both ends. Validates invariants and stops with an explicit error on inconsistency. `/solucao-debugger-graph` |
+| **Bug** | Intake, triage, dedupe, classification (`taxonomy.yaml`), initial traceability and security suspicion. Never fixes. `/solucao-depuracao` |
+| **Bug Fix** | Lifecycle orchestrator: optional mitigation, reproduction capsule, evidence-based root cause (with `git bisect` for regressions), two approval gates (failing tests first, then the correction change set), spec verdict, closure policy. `/solucao-depuracao-resolver` |
+| **Bug Debate** | Fixed-epoch multi-agent debate with an isolated judge, in three modes: `diagnosis` (competing causal hypotheses), `repair` (competing strategies), `spec` (code vs spec divergence; ends in a recommendation, the decision is human). Always opt-in with cost shown upfront. External harnesses (Codex, Gemini CLI, OpenCode) may join as debaters only with explicit consent. `/solucao-depuracao-considerar` |
+| **Depth Inspection** | Deep sweep of a problematic feature through specialized lenses: spec conformance, data flow, contracts, error states, test coverage, concurrency. Diagnosis only; confirmed findings become registered bugs. `/solucao-inspecao-detalhada` |
+| **Bug Graph** | Regenerates all derived views: index, compact catalog (`catalog.jsonl`), sparse relation matrix, mermaid graph with clusters and impact score, and the BUG ↔ SPEC traceability matrix on both ends. Validates invariants and stops with an explicit error on inconsistency. `/solucao-depuracao-grafico` |
 
 ---
 
@@ -56,7 +56,7 @@ _solucao_bugs/
     │       ├── DONE.md       closure lock: once present, the folder is read-only for every agent
     │       ├── evidence/     logs, screenshots, reproduction capsule
     │       ├── debate/       if opened: rounds, convergence, final answer
-    │       └── fix/          plan.html (visual fix plan, approved BEFORE any change) + change set diffs
+    │       └── fix/          plano.html (visual fix plan, approved BEFORE any change) + change set diffs
     ├── inspections/<sweep>/  depth-inspection reports for this context
     └── generated/            per-context views incl. graph.html (never hand-edited)
 ```
@@ -68,7 +68,7 @@ Key schema concepts:
 - **Epistemic states**: root cause and bug-to-bug relations carry `hypothesized / supported / confirmed / rejected` with evidence. A hypothesis never enters the graph as a fact.
 - **Correction Change Set**: a fix is a typed set of changes (code, test, configuration, migration, data repair, specification...), because healed code is not a healed system.
 - **Closure policy**: what `resolved` requires depends on the project profile: local software closes on passing regression tests; a production service only after delivery and an observation window with no recurrence.
-- **Annotation first, visual outputs always**: `/solucao-debugger` starts as a scribe (reports and screenshots land in `intake/` before any record), and the views, including the self-contained `graph.html` (clickable nodes, stats, relation edges), are generated automatically as part of documenting. `/solucao-debugger-fix` produces a visual fix plan (`fix/plan.html`, with linked relation matrix and the proposed change set) that the user approves before any file is touched, and writes the `DONE.md` lock when the closure policy is satisfied.
+- **Annotation first, visual outputs always**: `/solucao-depuracao` starts as a scribe (reports and screenshots land in `intake/` before any record), and the views, including the self-contained `graph.html` (clickable nodes, stats, relation edges), are generated automatically as part of documenting. `/solucao-depuracao-resolver` produces a visual fix plan (`fix/plano.html`, with linked relation matrix and the proposed change set) that the user approves before any file is touched, and writes the `DONE.md` lock when the closure policy is satisfied.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: solucao-designer
-description: "Quarto agente do Time de Migração. Opera em duas fases. Fase 1: detecta a topologia do legado, sempre propõe uma topologia moderna alternativa e produz topology_decision.md (com pausa humana para aprovação). Fase 2: desenha as specs do sistema novo sob a topologia escolhida, produzindo target_architecture.md, target_domain_model.md, target_data_model.md e data_migration_plan.md, com rastreabilidade total para o legado. Ativação: /solucao-designer (geralmente invocado por /solucao-migrate)."
+description: "Quarto agente do Time de Migração. Opera em duas fases. Fase 1: detecta a topologia do legado, sempre propõe uma topologia moderna alternativa e produz topology_decision.md (com pausa humana para aprovação). Fase 2: desenha as specs do sistema novo sob a topologia escolhida, produzindo target_architecture.md, target_domain_model.md, target_data_model.md e data_migration_plan.md, com rastreabilidade total para o legado. Ativação: /solucao-designer (geralmente invocado por /solucao-migrar)."
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -204,7 +204,7 @@ Em `data_migration_plan.md`:
 
 ## Layout de saída (transversal)
 
-Este agente faz parte do Time de Migração e escreve exclusivamente em `_solucao_sdd/migration/`. Essa pasta é transversal à organização escolhida em `[specs]` do `config.toml`, fora das pastas de unit (feature folders) do Time de Descoberta. Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
+Este agente faz parte do Time de Migração e escreve exclusivamente em `_solucao_sdd/migration/`. Essa pasta é transversal à organização escolhida em `[specs]` do `config.toml`, fora das pastas de unit (feature folders) do Time de Descoberta. Não aplicar aqui a estrutura `<unit>/requisitos.md|design.md|tasks.md`, ela pertence ao Writer.
 
 ## Regras absolutas
 

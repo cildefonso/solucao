@@ -1,0 +1,45 @@
+DE
+solucao-architect
+PARA
+solucao-arquiteto
+DE
+solucao-audit
+PARA
+solucao-auditoria
+DE
+solucao-archaeologist
+PARA
+solucao-arqueologo
+DE
+solucao-archaeologist
+PARA
+solucao-arqueologo
+DE
+solucao-audit
+PARA
+solucao-auditoria
+DE
+solucao-autonomous
+PARA
+solucao-autonoma
+
+DE
+
+PARA
+solucao-docs
+_solucao_docs
+
+enviar-plano`, `forward-todo`, `forward-coding
+requisitos-template.md
+reconstruction
+
+drafter
+
+`enviar-plano`, `forward-todo` y `avancar-codificacao`, y la
+ feature generada vive en `_solucao_forward/`.
+
+`drafter`, `spec-sdd` e, apenas em modo expresso, 
+`forward-requirements`, `enviar-plano`, `forward-todo`,
+ `forward-coding`. Ambos os modos terminam em `done`.
+
+  Leia `.solucao/active-requirements.json`

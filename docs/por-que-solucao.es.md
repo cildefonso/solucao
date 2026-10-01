@@ -31,7 +31,7 @@ El resultado no es documentación para que los humanos lean en una tarde tranqui
 ## Para quién es
 
 - **Empresas con sistemas heredados** que quieren modernizar sin reescribir todo desde cero
-- **Equipos que usan vibe coding** y nunca escribieron specs formales (sin juicios)
+- **Equipos que usan vibe codificacao** y nunca escribieron specs formales (sin juicios)
 - **Desarrolladores que heredaron un proyecto** y necesitan entender qué hace antes de cambiar algo
 - **Cualquier persona** con un sistema funcionando pero sin documentación que quiera usar agentes de IA para evolucionarlo con seguridad
 

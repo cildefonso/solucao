@@ -1,0 +1,59 @@
+# Configurações do Servidor HTTP
+quarkus.http.port=${PORT:8080}
+quarkus.resteasy.path=/api
+quarkus.transaction-manager.default-transaction-timeout=PT60M
+
+#################
+## OIDC CONFIG ##
+#################
+quarkus.oidc.auth-server-url=${OIDC_AUTH_SERVER_URL:https://login.des.caixa/auth/realms/intranet}
+quarkus.oidc.client-id=${OIDC_CLIENT_ID:cli-web-app}
+quarkus.oidc.credentials.secret=${OIDC_CLIENT_SECRET:secret}
+quarkus.oidc.application-type=service
+quarkus.oidc.roles.source=accesstoken
+quarkus.oidc.token.auto-refresh-interval=18000
+
+quarkus.http.auth.permission.authenticated.paths=/api/*
+quarkus.http.auth.permission.authenticated.policy=authenticated
+
+#######################
+## DATASOURCE CONFIG ##
+#######################
+quarkus.datasource.db-kind=${DB_KIND:db2}
+quarkus.datasource.username=${DB_USER:usuario}
+quarkus.datasource.password=${DB_PASSWORD:senha}
+quarkus.datasource.jdbc.url=${DB_JDBC_URL:jdbc:db2://localhost:50000/DB:currentSchema=SCHEMA;}
+quarkus.datasource.jdbc.driver=${DB_DRIVER:com.ibm.db2.jcc.DB2Driver}
+quarkus.datasource.jdbc.max-size=40
+
+quarkus.hibernate-orm.packages=${PACKAGE_PREFIX}.${PROJECT_ID}.api.domain.model
+quarkus.hibernate-orm.dialect=org.hibernate.dialect.DB2Dialect
+quarkus.hibernate-orm.schema-management.strategy=none
+quarkus.hibernate-orm.sql-load-script=no-file
+quarkus.hibernate-orm.validate-in-dev-mode=false
+
+#################
+## CORS CONFIG ##
+#################
+quarkus.http.cors.enabled=true
+quarkus.http.cors.origins=${QUARKUS_CORS_ORIGINS:*}
+quarkus.http.cors.methods=GET,POST,PUT,DELETE,OPTIONS
+quarkus.http.cors.headers=accept,authorization,content-type,x-requested-with,parametro-portal
+quarkus.http.cors.exposed-headers=location,Content-Disposition,authorization,content-type,parametro-portal
+quarkus.http.cors.access-control-allow-credentials=true
+
+####################
+## SWAGGER / DOCS ##
+####################
+quarkus.swagger-ui.always-include=true
+quarkus.swagger-ui.path=/q/swagger-ui
+quarkus.smallrye-openapi.path=/q/openapi
+
+#############
+## LOGGING ##
+#############
+quarkus.log.level=INFO
+quarkus.log.category."org.hibernate".level=INFO
+quarkus.log.category."org.hibernate.SQL".level=DEBUG
+quarkus.log.category."${PACKAGE_PREFIX}".level=DEBUG
+quarkus.log.category."${PACKAGE_PREFIX}.${PROJECT_ID}".level=DEBUG

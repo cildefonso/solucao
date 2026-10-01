@@ -6,14 +6,14 @@ The Migration Team is the next step after the Discovery Team. While Discovery pr
 
 ## Prerequisite
 
-You must have run `/solucao` first and have `_solucao_sdd/` populated with legacy specs. Without that, `/solucao-migrate` aborts with a clear message.
+You must have run `/solucao` first and have `_solucao_sdd/` populated with legacy specs. Without that, `/solucao-migrar` aborts with a clear message.
 
 ---
 
 ## How to run
 
 ```
-/solucao-migrate
+/solucao-migrar
 ```
 
 The first execution conducts an interview (objective, success metrics, constraints, target stack) and generates `_solucao_sdd/migration/migration_brief.md`. Subsequent runs reuse the brief.
@@ -53,7 +53,7 @@ Between agents there is a **human decision pause**. Default mode is interactive.
 
 ## Where artifacts land
 
-The Migration Team never touches legacy code or Discovery Team artifacts. Every `/solucao-migrate` output lands in `_solucao_sdd/migration/`, a subfolder inside the original specs.
+The Migration Team never touches legacy code or Discovery Team artifacts. Every `/solucao-migrar` output lands in `_solucao_sdd/migration/`, a subfolder inside the original specs.
 
 ```
 <your-legacy-project>/
@@ -68,7 +68,7 @@ The Migration Team never touches legacy code or Discovery Team artifacts. Every 
     ├── architecture.md            (Architect)
     ├── erd-complete.md            (Architect)
     │
-    ├── <unit>/                    (Writer: feature folder with requirements.md, design.md, tasks.md per unit)
+    ├── <unit>/                    (Writer: feature folder with requisitos.md, design.md, tasks.md per unit)
     ├── openapi/                   (Writer: API specs)
     ├── user-stories/              (Writer: user flows)
     ├── traceability/              (Writer + Architect: matrices)
