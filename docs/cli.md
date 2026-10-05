@@ -13,14 +13,14 @@ The `by cildefonso` signature must appear in white on the last line of the artwo
 Expected format:
 
 ```text
-  ______
-  | ___ \
-  | |_/ /_____   _____ _ __ ___  __ _
-  |    // _ \ \ / / _ \ '__/ __|/ _` |
-  | |\ \  __/\ V /  __/ |  \__ \ (_| |
-  \_| \_\___| \_/ \___|_|  |___/\__,_|  by cildefonso
+ _____       _
+/  ___|     | |
+\ `--.  ___ | |_   _  ___ __ _  ___
+ `--. \/ _ \| | | | |/ __/ _` |/ _ \
+/\__/ / (_) | | |_| | (_| (_| | (_) |
+\____/ \___/|_|\__,_|\___\__,_|\___/  by cildefonso
 
-  AI-Powered Reverse Engineering Framework
+  Framework de Engenharia Solução Baseado em IA
 ```
 
 ---
