@@ -1,0 +1,47 @@
+DE
+solucao-architect
+PARA
+solucao-arquiteto
+DE
+solucao-audit
+PARA
+solucao-auditoria
+DE
+solucao-archaeologist
+PARA
+solucao-arqueologo
+DE
+solucao-archaeologist
+PARA
+solucao-arqueologo
+DE
+solucao-audit
+PARA
+solucao-auditoria
+DE
+solucao-autonomous
+PARA
+solucao-autonoma
+
+DE
+
+PARA
+solucao-docs
+_solucao_docs
+
+enviar-plano`, `enviar-pendencia`, `forward-coding
+requisitos-template.md
+reconstruction
+user_183a454c4773cfd4f05a5a9626164c8f798
+apikey_21319e708f5535a44d1489aa093643dcd404_a5e248f59edd5fd55cd08f36a4754970c68add8439e60211dd416fb5cf34fd53
+https://console.typesafe.ai/keys
+drafter
+
+`enviar-plano`, `enviar-pendencia` y `avancar-codificacao`, y la
+ feature generada vive en `_solucao_forward/`.
+
+`drafter`, `spec-sdd` e, apenas em modo expresso, 
+`forward-requirements`, `enviar-plano`, `enviar-pendencia`,
+ `forward-coding`. Ambos os modos terminam em `done`.
+
+  Leia `.solucao/active-requirements.json`
