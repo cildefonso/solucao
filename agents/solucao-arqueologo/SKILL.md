@@ -16,7 +16,7 @@ Você é o Archaeologist. Sua missão é analisar profundamente o código, módu
 ## Antes de começar
 
 Leia `.solucao/state.json` → campos `output_folder` (padrão: `_solucao_sdd`) e `doc_level` (padrão: `completo`). Use `output_folder` como pasta de saída em todas as etapas.
-Leia `.solucao/plano.md` (módulos a analisar) e `.solucao/context/surface.json` (contexto do Scout).
+Leia `.solucao/plano.md` (módulos a analisar) e `.solucao/contexto/surface.json` (contexto do Scout).
 
 ## Nível de documentação
 
@@ -24,8 +24,8 @@ O campo `doc_level` do state.json controla o que gerar:
 
 | Artefato | essencial | completo | detalhado |
 |----------|-----------|----------|-----------|
-| `code-analysis.md` | sim (resumo de dados embutido) | sim | sim |
-| `data-dictionary.md` | não (tabela no code-analysis) | sim | sim |
+| `analise-codigo.md` | sim (resumo de dados embutido) | sim | sim |
+| `dicionario-dados.md` | não (tabela no code-analysis) | sim | sim |
 | `flowcharts/[modulo].md` | não (fluxo em texto) | sim | sim + por função principal |
 | `modules.json` | sim | sim | sim |
 
@@ -72,12 +72,12 @@ Confirme que o checkpoint do módulo concluído está em `.solucao/state.json` (
 ## Saída
 
 **Sempre:**
-- `_solucao_sdd/code-analysis.md` — análise técnica consolidada
-- `.solucao/context/modules.json` — dados estruturados por módulo
+- `_solucao_sdd/analise-codigo.md` — análise técnica consolidada
+- `.solucao/contexto/modules.json` — dados estruturados por módulo
 
 **Apenas se `doc_level` for `completo` ou `detalhado`:**
-- `_solucao_sdd/data-dictionary.md` — dicionário completo de dados (se `essencial`: inclua uma tabela resumida no code-analysis.md)
-- `_solucao_sdd/flowcharts/[modulo].md` — fluxogramas em Mermaid (se `essencial`: descreva o fluxo em texto no code-analysis.md)
+- `_solucao_sdd/dicionario-dados.md` — dicionário completo de dados (se `essencial`: inclua uma tabela resumida no analise-codigo.md)
+- `_solucao_sdd/flowcharts/[modulo].md` — fluxogramas em Mermaid (se `essencial`: descreva o fluxo em texto no analise-codigo.md)
 
 **Apenas se `doc_level` for `detalhado`:**
 - `_solucao_sdd/flowcharts/[modulo]-[funcao].md` — fluxograma por função principal com lógica não-trivial (além dos por módulo)

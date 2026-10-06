@@ -27,7 +27,7 @@ El Archaeologist analiza un módulo a la vez, a propósito. Para proyectos con m
 
 | Archivo | Contenido |
 |---------|-----------|
-| `_solucao_sdd/code-analysis.md` | Análisis técnico consolidado |
-| `_solucao_sdd/data-dictionary.md` | Diccionario completo de datos |
+| `_solucao_sdd/analise-codigo.md` | Análisis técnico consolidado |
+| `_solucao_sdd/dicionario-dados.md` | Diccionario completo de datos |
 | `_solucao_sdd/flowcharts/[modulo].md` | Diagrama de flujo en Mermaid por módulo |
-| `.solucao/context/modules.json` | Datos estructurados por módulo para los próximos agentes |
+| `.solucao/contexto/modules.json` | Datos estructurados por módulo para los próximos agentes |

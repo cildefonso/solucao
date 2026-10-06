@@ -158,10 +158,10 @@ Política de re-execução: se `active-requisitos.json` já apontar para uma fea
 
 Antes de escrever o requisitos, leia, na ordem (pulando o que não existir):
 
-1. `_solucao_sdd/architecture.md` (panorama dos componentes)
-2. `_solucao_sdd/domain.md` (regras de negócio confirmadas)
-3. `_solucao_sdd/inventory.md` (superfície do código)
-4. `_solucao_sdd/code-analysis.md` SOMENTE nas seções dos componentes que o argumento livre parece tocar
+1. `_solucao_sdd/arquitetura.md` (panorama dos componentes)
+2. `_solucao_sdd/dominio.md` (regras de negócio confirmadas)
+3. `_solucao_sdd/inventario.md` (superfície do código)
+4. `_solucao_sdd/analise-codigo.md` SOMENTE nas seções dos componentes que o argumento livre parece tocar
 5. `_solucao_sdd/addenda/*.md` (adendos de features já entregues pelo ciclo forward, criados pelo `/solucao-sincronizar`). Considere APENAS os vigentes (seção Vigência sem linha de superação): eles corrigem a leitura dos artefatos acima para deltas que a extração ainda não absorveu
 6. `.solucao/principios.md` (princípios do projeto, se existir)
 

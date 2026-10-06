@@ -24,7 +24,7 @@ Nenhum gap crítico identificado. Pode iniciar com segurança.
 
 ### Tarefa 01 — Schema do Banco de Dados
 **Status:** pending
-**Lê:** `_solucao_sdd/erd-complete.md`, `_solucao_sdd/data-dictionary.md`
+**Lê:** `_solucao_sdd/erd-complete.md`, `_solucao_sdd/dicionario-dados.md`
 **Constrói:** migrations, schema, modelos ORM (conforme stack detectada)
 **Pronto quando:** Todas as tabelas do ERD existem com tipos, constraints e foreign keys corretos
 
@@ -32,7 +32,7 @@ Nenhum gap crítico identificado. Pode iniciar com segurança.
 
 ### Tarefa 02 — Entidades de Domínio
 **Status:** pending
-**Lê:** `_solucao_sdd/domain.md`, `_solucao_sdd/data-dictionary.md`
+**Lê:** `_solucao_sdd/dominio.md`, `_solucao_sdd/dicionario-dados.md`
 **Constrói:** entidades, value objects, validações de domínio
 **Pronto quando:** Todas as entidades implementadas com as regras de negócio descritas
 
@@ -40,20 +40,20 @@ Nenhum gap crítico identificado. Pode iniciar com segurança.
 
 ### Tarefa 03 — Máquinas de Estado
 **Status:** pending
-**Lê:** `_solucao_sdd/state-machines.md`
+**Lê:** `_solucao_sdd/maquina-estado.md`
 **Constrói:** implementação dos fluxos de estado de cada entidade
 **Pronto quando:** Todos os estados e transições documentados estão implementados
-**Obs:** Pular esta tarefa se `_solucao_sdd/state-machines.md` não existir
+**Obs:** Pular esta tarefa se `_solucao_sdd/maquina-estado.md` não existir
 
 ---
 
 <!-- COMPONENT_TASKS_START -->
-<!-- O Reconstructor insere aqui uma tarefa por unit, na ordem bottom-up determinada pelo dependencies.md -->
+<!-- O Reconstructor insere aqui uma tarefa por unit, na ordem bottom-up determinada pelo dependencias.md -->
 <!-- Exemplo de tarefa de unit: -->
 
 ### Tarefa 04 — [Nome da Unit]
 **Status:** pending
-**Lê:** `_solucao_sdd/[unit]/requisitos.md`, `_solucao_sdd/[unit]/design.md`, `_solucao_sdd/[unit]/tasks.md`, `_solucao_sdd/dependencies.md`
+**Lê:** `_solucao_sdd/[unit]/requisitos.md`, `_solucao_sdd/[unit]/design.md`, `_solucao_sdd/[unit]/tasks.md`, `_solucao_sdd/dependencias.md`
 **Constrói:** [caminho do módulo conforme stack]
 **Pronto quando:** [critério de aceitação extraído de requisitos.md, campo "Dado/Quando/Então"]
 **Alerta:** [se houver gap associado, descreva aqui]

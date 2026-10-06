@@ -60,7 +60,7 @@ Generated in Mermaid (`erDiagram`). For large databases, generates partial ERDs 
 | File | Content |
 |------|---------|
 | `_solucao_sdd/database/erd.md` | Full ERD in Mermaid |
-| `_solucao_sdd/database/data-dictionary.md` | All tables and columns |
+| `_solucao_sdd/database/dicionario-dados.md` | All tables and columns |
 | `_solucao_sdd/database/relationships.md` | Detailed relationships |
 | `_solucao_sdd/database/business-rules.md` | Business rules in the database |
 | `_solucao_sdd/database/procedures.md` | Stored procedures and functions (if any) |

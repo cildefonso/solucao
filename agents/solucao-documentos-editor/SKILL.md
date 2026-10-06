@@ -21,7 +21,7 @@ Quarto agente do pipeline `/solucao-documentos`. Roda por último porque depende
 ## Inputs
 
 - Todas as páginas existentes em `_solucao_documentos/` (HTMLs gerados pelos 3 agentes anteriores)
-- HTMLs auxiliares em `_solucao_sdd/` e `.solucao/` (descobertos via meta-tag `solucao-category`)
+- HTMLs auxiliares em `_solucao_sdd/` e `.solucao/contexto/` (descobertos via meta-tag `solucao-category`)
 - `_solucao_documentos/.config.json` (seed, estilo visual, project name)
 - `_solucao_documentos/.state.json` (cronograma, agentes concluídos)
 - Skill `solucao-selo-generativo`
@@ -154,7 +154,7 @@ Se o marcador já foi substituído numa execução anterior (não há `<!-- MINI
 
 Configuração em `references/auxiliary_sources.yaml`. Resumo:
 
-- **Raízes**: `_solucao_sdd/` e `.solucao/` (excluindo `.solucao/_config/`, `.solucao/context/`).
+- **Raízes**: `_solucao_sdd/` e `.solucao/` (excluindo `.solucao/_config/`, `.solucao/contexto/`).
 - **Profundidade máxima**: 6 níveis.
 - **Timeout**: 10 segundos no total.
 - **Filtro**: apenas HTMLs com `<meta name="solucao-category" content="...">` no `<head>`.
@@ -201,7 +201,7 @@ Não aborte por links quebrados (gera mesmo assim), mas reporte no resumo final.
 
 Para cada item em `pagesOmitted` que tem `href` mapeado em `nav`, gere uma página HTML mínima explicando por que foi omitida e como habilitar. Exemplo para `topologia.html`:
 
-> Esta página seria gerada a partir de `_solucao_sdd/architecture.md` se ele declarasse variantes de topologia. Rode `/solucao-arquiteto` com `--topology` para habilitar.
+> Esta página seria gerada a partir de `_solucao_sdd/arquitetura.md` se ele declarasse variantes de topologia. Rode `/solucao-arquiteto` com `--topology` para habilitar.
 
 Use o chassis `viewer.html` normal e marque `<meta name="solucao-placeholder" content="true">` no `<head>` para inspeção futura. Isso evita links 404 no nav quando a omissão é estrutural.
 

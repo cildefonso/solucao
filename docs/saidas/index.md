@@ -16,22 +16,22 @@ The set of artifacts generated depends on the **documentation level** chosen at 
 
 ```
 _solucao_sdd/
-├── inventory.md              # Project inventory — all levels
-├── dependencies.md           # Dependencies with versions — all levels
-├── code-analysis.md          # Technical analysis per module — all levels
-├── data-dictionary.md        # Complete data dictionary — complete+
-├── domain.md                 # Glossary and business rules — all levels
-├── state-machines.md         # State machines in Mermaid — complete+
+├── inventario.md              # Project inventory — all levels
+├── dependencias.md           # Dependencies with versions — all levels
+├── analise-codigo.md          # Technical analysis per module — all levels
+├── dicionario-dados.md        # Complete data dictionary — complete+
+├── dominio.md                 # Glossary and business rules — all levels
+├── maquina-estado.md         # State machines in Mermaid — complete+
 ├── permissions.md            # Permission matrix — complete+
-├── architecture.md           # General architectural overview — all levels
-├── c4-context.md             # C4 Diagram: Context — all levels
-├── c4-containers.md          # C4 Diagram: Containers — complete+
-├── c4-components.md          # C4 Diagram: Components — complete+
+├── arquitetura.md           # General architectural overview — all levels
+├── c4-contexto.md             # C4 Diagram: Context — all levels
+├── c4-conteineres.md          # C4 Diagram: Containers — complete+
+├── c4-componentes.md          # C4 Diagram: Components — complete+
 ├── erd-complete.md           # Full ERD in Mermaid — complete+
 ├── deployment.md             # Infrastructure diagram — detailed only
 ├── confidence-report.md      # Confidence report 🟢🟡🔴 — all levels
-├── gaps.md                   # Unresolved gaps — complete+
-├── questions.md              # Human validation questions — all levels
+├── lacunas.md                   # Lacunas não resolvidas — completar+
+├── duvidas.md              # Human validation questions — all levels
 ├── sdd/                      # Specs per component — all levels
 │   └── [component].md
 │
@@ -48,14 +48,14 @@ _solucao_sdd/
 │   └── [module].md
 │
 ├── ui/                       # Interface specs (Visor)
-│   ├── inventory.md
+│   ├── inventario.md
 │   ├── flow.md
 │   └── screens/
 │       └── [screen].md
 │
 ├── database/                 # Database specs (Data Master)
 │   ├── erd.md
-│   ├── data-dictionary.md
+│   ├── dicionario-dados.md
 │   ├── relationships.md
 │   ├── business-rules.md
 │   └── procedures.md

@@ -155,10 +155,10 @@ _solucao_bugs/
 <code>status</code> segue com só 3 valores (<code>open</code>, <code>active</code>, <code>resolved</code>), e um campo <code>phase</code> separado registra a etapa do ciclo de vida dentro de <code>active</code> (ex.: <code>mitigating</code>, <code>reproducing</code>, <code>diagnosing</code>, <code>patching</code>, <code>observing</code>, <code>awaiting-human</code>). Bloqueio é uma <b>condição</b>, não um estado: campo estruturado <code>blocking:</code> (por outro bug ou por causa externa) com <code>is_blocked</code> derivado. Um bug só vira <code>resolved</code> quando a <b>closure policy do projeto</b> é satisfeita (seção 13): biblioteca local fecha com testes de regressão passando; serviço em produção só fecha depois de entregue e observado sem recorrência. E todo fechamento carrega um <code>resolution_kind</code> (<code>fixed</code>, <code>duplicate</code>, <code>invalid</code>, <code>cannot-reproduce</code>, <code>spec-only</code>, <code>instrumentation-required</code>).
 </p>
 <h3>taxonomy.yaml</h3>
-<p>Impede que agentes inventem nomes inconsistentes. Os campos <code>area</code>, <code>module</code> e <code>feature</code> de todo bug DEVEM usar valores deste catálogo. Se nada servir, o agente usa <code>unclassified</code> e propõe o novo termo em Agent Notes. Na primeira execução, o catálogo é semeado a partir dos módulos da extração (<code>_solucao_sdd/architecture.md</code>).</p>
+<p>Impede que agentes inventem nomes inconsistentes. Os campos <code>area</code>, <code>module</code> e <code>feature</code> de todo bug DEVEM usar valores deste catálogo. Se nada servir, o agente usa <code>unclassified</code> e propõe o novo termo em Agent Notes. Na primeira execução, o catálogo é semeado a partir dos módulos da extração (<code>_solucao_sdd/arquitetura.md</code>).</p>
 
 <h2><span class="num">5.</span>Anatomia de um bug (exemplo completo)</h2>
-<p>Exemplo em um sistema legado de vendas cuja extração do Solução registrou a regra "desconto máximo de 10% por pedido" em <code>_solucao_sdd/domain.md</code>:</p>
+<p>Exemplo em um sistema legado de vendas cuja extração do Solução registrou a regra "desconto máximo de 10% por pedido" em <code>_solucao_sdd/dominio.md</code>:</p>
 <pre>
 Arquivo: _solucao_bugs/bugs/BUG-20260715-A7K3-desconto-duplicado/bug.md
 ---
@@ -198,7 +198,7 @@ relationships:
 
 traceability:
   specs:
-    - _solucao_sdd/domain.md#regras-de-desconto
+    - _solucao_sdd/dominio.md#regras-de-desconto
   affected_code:
     - src/checkout/fechamento.py
   root_cause: null           # preenchido pelo fix, com estado epistemológico e evidências
@@ -221,7 +221,7 @@ Pedidos com cupom têm o desconto aplicado no carrinho e novamente no fechamento
 resultando em desconto efetivo acima do teto de 10% definido na spec.
 
 ## Expected Behavior
-Conforme `_solucao_sdd/domain.md#regras-de-desconto`: desconto máximo de 10%
+Conforme `_solucao_sdd/dominio.md#regras-de-desconto`: desconto máximo de 10%
 por pedido, aplicado uma única vez.
 
 ## Actual Behavior
@@ -270,7 +270,7 @@ Não alterar o cálculo de frete durante a correção.
 Exemplo de fim de execução:
 
   BUG-007 (BUG-20260715-A7K3) registrado em _solucao_bugs/bugs/BUG-20260715-A7K3-desconto-duplicado/
-  Spec vinculada: domain.md#regras-de-desconto
+  Spec vinculada: dominio.md#regras-de-desconto
   Relação proposta (proposed): related-to BUG-003 (arredondamento no mesmo módulo)
 
   Digite CONTINUAR para prosseguir com /solucao-bug-fix BUG-007,
@@ -389,20 +389,20 @@ Ponta dos bugs: _solucao_bugs/spec-matrix.md
 
 | Spec (seção)                                | Bugs abertos     | Bugs ativos | Bugs resolvidos |
 |---------------------------------------------|------------------|-------------|-----------------|
-| _solucao_sdd/domain.md#regras-de-desconto   | BUG-007          |             | BUG-003         |
-| _solucao_sdd/architecture.md#checkout       | BUG-007, BUG-014 |             |                 |
+| _solucao_sdd/dominio.md#regras-de-desconto   | BUG-007          |             | BUG-003         |
+| _solucao_sdd/arquitetura.md#checkout       | BUG-007, BUG-014 |             |                 |
 | (spec-gap, sem spec correspondente)         | BUG-019          |             |                 |
 
 Ponta das specs: _solucao_sdd/traceability/bugs.md   (arquivo espelho, gerado)
 
 &lt;!-- GENERATED, DO NOT EDIT: regenerado por /solucao-bug-graph --&gt;
 
-## domain.md#regras-de-desconto
+## dominio.md#regras-de-desconto
 - BUG-007 (open, P1): desconto aplicado duas vezes no fechamento
 - BUG-003 (resolved/fixed): arredondamento incorreto, corrigido em 2026-07-02
 </pre>
 <ul>
-  <li>A spec original (<code>domain.md</code>, <code>architecture.md</code>, specs SDD) <b>nunca é editada</b>: o registro do lado da spec é o arquivo espelho <code>_solucao_sdd/traceability/bugs.md</code>, regenerável, ao lado do <code>traceability/code-spec-matrix.md</code> que a extração do solucao já gera (sugestão do Codex, encaixa na convenção existente). Quando o conteúdo da spec precisa mudar (veredito <code>spec-desatualizada</code>), aí entra o adendo em <code>_solucao_sdd/addenda/</code>.</li>
+  <li>A spec original (<code>dominio.md</code>, <code>arquitetura.md</code>, specs SDD) <b>nunca é editada</b>: o registro do lado da spec é o arquivo espelho <code>_solucao_sdd/traceability/bugs.md</code>, regenerável, ao lado do <code>traceability/code-spec-matrix.md</code> que a extração do solucao já gera (sugestão do Codex, encaixa na convenção existente). Quando o conteúdo da spec precisa mudar (veredito <code>spec-desatualizada</code>), aí entra o adendo em <code>_solucao_sdd/addenda/</code>.</li>
   <li>Quem lê a spec descobre na hora quais bugs a atingem; quem lê o bug chega à spec pela <code>traceability.specs</code> do front matter. Um bug com <code>spec-gap</code> aparece na matriz na linha própria, denunciando comportamento sem especificação.</li>
   <li>As duas pontas são views regeneradas pelo <code>/solucao-bug-graph</code> e atualizadas automaticamente pelos demais comandos ao registrar ou resolver bugs.</li>
 </ul>
@@ -440,7 +440,7 @@ Teste prova que a divergência foi eliminada.
 Root cause (confirmed): reaplicação do cupom em aplicar_ajustes(),
 introduzida no commit a1b2c3 (localizado via git bisect).
 Spec verdict: spec-correta, aprovado por Solução
-(domain.md#regras-de-desconto já definia o teto de 10%).
+(dominio.md#regras-de-desconto já definia o teto de 10%).
 Resolution kind: fixed. Closure policy local-software satisfeita.
 
 ### Correction Change Set
@@ -451,7 +451,7 @@ Resolution kind: fixed. Closure policy local-software satisfeita.
 
 ### Diff do código (fix/CHG-002.diff, na pasta do bug)
 <span class="del">-    total = aplicar_cupom(total, cupom)   # cupom já aplicado no carrinho</span>
-<span class="add">+    # cupom aplicado uma única vez, no carrinho (domain.md#regras-de-desconto)</span>
+<span class="add">+    # cupom aplicado uma única vez, no carrinho (dominio.md#regras-de-desconto)</span>
 
 ### Diff da spec
 Nenhum. Veredito spec-correta: o código foi realinhado à spec vigente.
@@ -468,7 +468,7 @@ Arquivo novo: _solucao_sdd/addenda/BUG-012-spec-update-teto-desconto.md
 Vigente desde 2026-07-15. Origem: /solucao-bug-fix BUG-012.
 
 ## Seção afetada
-_solucao_sdd/domain.md#regras-de-desconto
+_solucao_sdd/dominio.md#regras-de-desconto
 
 ## Diff da spec (como a seção deve ser lida a partir de agora)
 <span class="del">- Desconto máximo de 10% por pedido.</span>

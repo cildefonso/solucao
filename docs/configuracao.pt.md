@@ -13,7 +13,7 @@ O Solucao guarda toda a sua configuração e estado da análise dentro da pasta 
 ├── config.user.toml    ← suas preferências pessoais (não commitar)
 ├── plano.md             ← plano de exploração (você pode editar)
 ├── version             ← versão instalada do Solucao
-├── context/
+├── contexto/
 │   ├── surface.json    ← dados gerados pelo Scout
 │   └── modules.json    ← dados gerados pelo Archaeologist
 └── _config/
@@ -84,7 +84,7 @@ Controla como o Reviewer levanta perguntas de validação para você:
 | Modo | Comportamento |
 |------|---------------|
 | `chat` (padrão) | As perguntas aparecem no chat, uma a uma. Você responde na conversa. |
-| `file` | O Reviewer gera um arquivo `_solucao_sdd/questions.md` com todas as perguntas. Você preenche e avisa quando terminar. |
+| `file` | O Reviewer gera um arquivo `_solucao_sdd/duvidas.md` com todas as perguntas. Você preenche e avisa quando terminar. |
 
 O modo `file` é útil quando há muitas perguntas e você quer responder com calma, fora da sessão.
 

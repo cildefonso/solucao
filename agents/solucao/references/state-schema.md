@@ -23,18 +23,18 @@ Este arquivo persiste o estado completo da análise entre sessões. O Solucao l�
     "scout": {
       "completed_at": "2026-04-26T10:00:00Z",
       "files": [
-        "_solucao_sdd/inventory.md",
-        "_solucao_sdd/dependencies.md",
-        ".solucao/context/surface.json"
+        "_solucao_sdd/inventario.md",
+        "_solucao_sdd/dependencias.md",
+        ".solucao/contexto/surface.json"
       ]
     },
     "arqueologo": {
       "completed_at": "2026-04-26T11:00:00Z",
       "modules_analyzed": ["auth", "orders", "payments"],
       "files": [
-        "_solucao_sdd/code-analysis.md",
-        "_solucao_sdd/data-dictionary.md",
-        ".solucao/context/modules.json"
+        "_solucao_sdd/analise-codigo.md",
+        "_solucao_sdd/dicionario-dados.md",
+        ".solucao/contexto/modules.json"
       ]
     }
   },

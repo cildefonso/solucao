@@ -25,9 +25,9 @@ O Solucao é o único agente que **escreve** no state.json. Os demais agentes ap
     "scout": {
       "completed_at": "2026-04-26T10:30:00Z",
       "files": [
-        "_solucao_sdd/inventory.md",
-        "_solucao_sdd/dependencies.md",
-        ".solucao/context/surface.json"
+        "_solucao_sdd/inventario.md",
+        "_solucao_sdd/dependencias.md",
+        ".solucao/contexto/surface.json"
       ]
     }
   }
@@ -83,9 +83,9 @@ Ao mover de fase:
     "scout": {
       "completed_at": "2026-04-26T10:30:00Z",
       "files": [
-        "_solucao_sdd/inventory.md",
-        "_solucao_sdd/dependencies.md",
-        ".solucao/context/surface.json"
+        "_solucao_sdd/inventario.md",
+        "_solucao_sdd/dependencias.md",
+        ".solucao/contexto/surface.json"
       ]
     },
     "arqueologo": {

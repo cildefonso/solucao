@@ -23,8 +23,8 @@ El Scout es el primero en entrar al proyecto. Hace el tour inicial: no abre cajo
 
 | Archivo | Contenido |
 |---------|-----------|
-| `_solucao_sdd/inventory.md` | Inventario completo del proyecto |
-| `_solucao_sdd/dependencies.md` | Dependencias con versiones |
-| `.solucao/context/surface.json` | Datos estructurados para los demás agentes |
+| `_solucao_sdd/inventario.md` | Inventario completo del proyecto |
+| `_solucao_sdd/dependencias.md` | Dependencias con versiones |
+| `.solucao/contexto/surface.json` | Datos estructurados para los demás agentes |
 
 El `surface.json` es especialmente importante: Solucao lo usa para personalizar las tareas de la Fase 2 basándose en los módulos identificados.

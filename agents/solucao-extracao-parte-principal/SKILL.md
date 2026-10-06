@@ -27,7 +27,7 @@ Esse skill faz parte do Time de Descoberta (Solucao Core), mas **não entra no p
 
 ## Pré-requisito obrigatório
 
-`.solucao/context/surface.json` deve existir. Esse é o sinal de que o Scout já mapeou a superfície.
+`.solucao/contexto/surface.json` deve existir. Esse é o sinal de que o Scout já mapeou a superfície.
 
 Se o arquivo não existir, pare imediatamente e diga ao usuário:
 
@@ -60,7 +60,7 @@ Nunca apague nem reescreva o `soul.md` original sem confirmação explícita do 
 
 ## Idioma da Spec
 
-Os nomes de arquivo são fixos em inglês (`soul.md`), seguindo a convenção dos demais artefatos transversais (`architecture.md`, `domain.md`, `inventory.md`). O **conteúdo** do `soul.md` segue `doc_language` do state.json.
+Os nomes de arquivo são fixos em inglês (`soul.md`), seguindo a convenção dos demais artefatos transversais (`arquitetura.md`, `dominio.md`, `inventario.md`). O **conteúdo** do `soul.md` segue `doc_language` do state.json.
 
 ## Processo
 
@@ -89,7 +89,7 @@ Localize entidades de domínio amostrando os arquivos certos a partir do `surfac
 
 - ORM models, schemas Prisma/SQLAlchemy/TypeORM/Hibernate
 - DDLs e migrations
-- Pastas `domain/`, `entities/`, `models/`, `schemas/`
+- Pastas `dominio/`, `entities/`, `models/`, `schemas/`
 - Tipos/interfaces principais em linguagens com tipagem estática
 
 Limite a amostragem a 3 a 5 arquivos representativos. Não faça varredura completa, isso é trabalho do Archaeologist.
@@ -179,10 +179,10 @@ Estrutura sugerida (adapte ao `doc_language`):
 ## 5. Como ler esse documento
 
 Esse `soul.md` é uma síntese, não substitui:
-- `inventory.md` (Scout) para mapeamento de superfície
-- `code-analysis.md` (Archaeologist) para detalhes módulo a módulo
-- `domain.md` (Detective) para regras de negócio implícitas
-- `architecture.md` (Architect) para diagramas C4 e ERD completo
+- `inventario.md` (Scout) para mapeamento de superfície
+- `analise-codigo.md` (Archaeologist) para detalhes módulo a módulo
+- `dominio.md` (Detective) para regras de negócio implícitas
+- `arquitetura.md` (Architect) para diagramas C4 e ERD completo
 ```
 
 ## Layout de saída (transversal)

@@ -3,14 +3,14 @@ schemaVersion: 1
 generatedAt: <ISO-8601>
 solucao:
   version: "x.y.z"
-kind: target_domain_model
+kind: target_dominio_model
 producedBy: designer
 hash: "sha256:<hash do corpo abaixo do front-matter>"
 ---
 
 # Target Domain Model
 
-> Modelo de domínio do sistema novo. Rastreabilidade explícita para o legado (em `_solucao_sdd/domain.md` ou equivalente).
+> Modelo de domínio do sistema novo. Rastreabilidade explícita para o legado (em `_solucao_sdd/dominio.md` ou equivalente).
 
 ## Aggregates
 
@@ -21,7 +21,7 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
   - <invariante 2>
 - **Comandos aceitos**: <lista>
 - **Eventos publicados** (se paradigma event-driven): <lista>
-- **Origem no legado**: <ref para `domain.md` ou equivalente>
+- **Origem no legado**: <ref para `dominio.md` ou equivalente>
 
 <repetir por aggregate>
 
@@ -55,7 +55,7 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 
 | Elemento novo | Origem no legado | Tipo de mapeamento |
 |---|---|---|
-| AGG-Pedido | `domain.md § Pedido` + `sdd/orders.md` | fundido |
+| AGG-Pedido | `dominio.md § Pedido` + `sdd/orders.md` | fundido |
 | <novo> | <ref> | 1-para-1 / fundido / dividido / novo |
 
 ## Notas

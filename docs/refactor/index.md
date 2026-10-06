@@ -62,7 +62,7 @@ Everything lives in `_solucao_refactor/`, separate from extraction (`_solucao_sd
 ```
 _solucao_refactor/
 ├── README.md                     o contrato de registro (modo de controle, política de rede de segurança)
-└── <context>/                    e.g. shipping-calculation/
+└── <contexto>/                    e.g. shipping-calculation/
     ├── opportunities/            oportunidades detectadas, um arquivo para cada (verbo, alvo, ROI, confiança)
     ├── transformations/
     │   └── OPP-20260723-K4T9-extract-shipping-rules/

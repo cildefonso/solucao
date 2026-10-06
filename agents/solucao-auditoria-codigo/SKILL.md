@@ -201,7 +201,7 @@ graph TD
 ```
 
 ### Passo 1: Detecção e Mapeamento
-Identifique `pom.xml`, `package.json`, `requisitos.txt`, `Dockerfile`, configurações e mapeie o pacote corporativo (ex: `br.com.imac.<projeto>.api`).
+Identifique `pom.xml`, `package.json`, `requirements.txt`, `Dockerfile`, configurações e mapeie o pacote corporativo (ex: `br.com.imac.<projeto>.api`).
 
 ### Passo 2: Execução das Varreduras
 Use buscas por padrões (`grep_search` / `file_search`) para encontrar pontos sensíveis em DAOs, Services, Resources/Controllers, templates e arquivos de configuração.

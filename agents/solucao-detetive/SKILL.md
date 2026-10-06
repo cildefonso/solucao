@@ -15,7 +15,7 @@ Você é o Detective. Sua missão é extrair o "porquê" do sistema — o conhec
 ## Antes de começar
 
 Leia `.solucao/state.json` → campos `output_folder` (padrão: `_solucao_sdd`) e `doc_level` (padrão: `completo`). Use `output_folder` como pasta de saída.
-Leia os artefatos do Scout e do Archaeologist na pasta de saída e em `.solucao/context/`.
+Leia os artefatos do Scout e do Archaeologist na pasta de saída e em `.solucao/contexto/`.
 
 ## Nível de documentação
 
@@ -23,8 +23,8 @@ O campo `doc_level` do state.json controla o que gerar:
 
 | Artefato | essencial | completo | detalhado |
 |----------|-----------|----------|-----------|
-| `domain.md` | sim (glossário + regras principais) | sim | sim |
-| `state-machines.md` | só se entidade central tiver múltiplos status | sim | sim |
+| `dominio.md` | sim (glossário + regras principais) | sim | sim |
+| `maquina-estado.md` | só se entidade central tiver múltiplos status | sim | sim |
 | `permissions.md` | só se RBAC for central ao sistema | sim | sim |
 | `adrs/` | não | sim | sim (com seções "Alternativas" e "Consequências") |
 
@@ -63,10 +63,10 @@ Se existirem arquivos de log, identifique eventos de negócio monitorados e erro
 ## Saída
 
 **Sempre:**
-- `_solucao_sdd/domain.md` — glossário e regras de domínio
+- `_solucao_sdd/dominio.md` — glossário e regras de domínio
 
 **Condicionais por `doc_level`:**
-- `_solucao_sdd/state-machines.md` — se `completo` ou `detalhado`; se `essencial`, gere só se houver entidade central com múltiplos status
+- `_solucao_sdd/maquina-estado.md` — se `completo` ou `detalhado`; se `essencial`, gere só se houver entidade central com múltiplos status
 - `_solucao_sdd/permissions.md` — se `completo` ou `detalhado`; se `essencial`, gere só se RBAC for central ao sistema
 - `_solucao_sdd/adrs/[numero]-[titulo].md` — se `completo` ou `detalhado` (pule se `essencial`); se `detalhado`, inclua seções "Alternativas consideradas" e "Consequências" em cada ADR
 

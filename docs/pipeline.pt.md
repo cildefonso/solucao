@@ -25,9 +25,9 @@ O Scout faz o primeiro tour no projeto. Como um corretor de imóveis que visita 
 
 O que ele produz:
 
-- Inventário completo do projeto (`inventory.md`)
-- Lista de dependências com versões (`dependencies.md`)
-- Estrutura de dados em JSON para os próximos agentes (`.solucao/context/surface.json`)
+- Inventário completo do projeto (`inventario.md`)
+- Lista de dependências com versões (`dependencias.md`)
+- Estrutura de dados em JSON para os próximos agentes (`.solucao/contexto/surface.json`)
 
 Depois que o Scout termina, o Solucao usa o `surface.json` para personalizar a Fase 2: em vez de uma tarefa genérica "analisar o código", o plano vira uma tarefa por módulo identificado.
 
@@ -45,10 +45,10 @@ O Archaeologist escava o terreno módulo a módulo. Com paciência e precisão, 
 
 O que ele produz:
 
-- Análise técnica consolidada (`code-analysis.md`)
-- Dicionário de dados (`data-dictionary.md`)
+- Análise técnica consolidada (`analise-codigo.md`)
+- Dicionário de dados (`dicionario-dados.md`)
 - Fluxogramas em Mermaid por módulo (`flowcharts/[modulo].md`)
-- Dados estruturados por módulo (`.solucao/context/modules.json`)
+- Dados estruturados por módulo (`.solucao/contexto/modules.json`)
 
 ---
 
@@ -64,13 +64,13 @@ Aqui a análise deixa de ser descritiva e vira interpretativa. Dois agentes trab
 
 O que eles produzem:
 
-- Domínio e regras de negócio (`domain.md`)
-- Máquinas de estado em Mermaid (`state-machines.md`)
+- Domínio e regras de negócio (`dominio.md`)
+- Máquinas de estado em Mermaid (`maquina-estado.md`)
 - Matriz de permissões (`permissions.md`)
 - ADRs retroativos (`adrs/`)
-- Diagramas C4 (`c4-context.md`, `c4-containers.md`, `c4-components.md`)
+- Diagramas C4 (`c4-contexto.md`, `c4-conteineres.md`, `c4-componentes.md`)
 - ERD completo (`erd-complete.md`)
-- Visão arquitetural geral (`architecture.md`)
+- Visão arquitetural geral (`arquitetura.md`)
 
 ---
 
@@ -105,9 +105,9 @@ Bônus: se o plugin do Codex estiver ativo na sessão, o Reviewer pode solicitar
 
 O que ele produz:
 
-- Perguntas para validação (`questions.md`)
+- Perguntas para validação (`duvidas.md`)
 - Relatório final de confiança (`confidence-report.md`)
-- Lacunas sem resposta (`gaps.md`)
+- Lacunas sem resposta (`lacunas.md`)
 - Specs atualizadas in-place com as reclassificações
 
 ---

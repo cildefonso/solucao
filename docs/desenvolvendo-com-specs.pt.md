@@ -11,8 +11,8 @@ Comece lendo esses três arquivos:
 | Arquivo | Por que ler primeiro |
 |---|---|
 | `_solucao_sdd/confidence-report.md` | Mostra o que tem alta confiança (verde) vs. lacunas (vermelho). Evita implementar algo baseado em inferência errada. |
-| `_solucao_sdd/gaps.md` | Lista o que o Solucao não conseguiu determinar. Preencha manualmente antes de começar. |
-| `_solucao_sdd/architecture.md` + diagramas C4 | Mostra a visão macro: camadas, módulos, fronteiras do sistema. |
+| `_solucao_sdd/lacunas.md` | Lista o que o Solucao não conseguiu determinar. Preencha manualmente antes de começar. |
+| `_solucao_sdd/arquitetura.md` + diagramas C4 | Mostra a visão macro: camadas, módulos, fronteiras do sistema. |
 
 ---
 
@@ -20,8 +20,8 @@ Comece lendo esses três arquivos:
 
 ```
 1. database/  +  erd-complete.md                  (estrutura de dados, migrations)
-2. domain.md  +  <unit>/ das entidades core       (regras de negócio centrais: leia requisitos.md, design.md, tasks.md de cada unit)
-3. <unit>/ dos serviços ordenados por dependência (use dependencies.md como guia)
+2. dominio.md  +  <unit>/ das entidades core       (regras de negócio centrais: leia requisitos.md, design.md, tasks.md de cada unit)
+3. <unit>/ dos serviços ordenados por dependência (use dependencias.md como guia)
 4. openapi/   +  contratos de API                 (se houver)
 5. ui/                                            (camada de apresentação por último)
 ```

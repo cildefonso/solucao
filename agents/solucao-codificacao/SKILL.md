@@ -22,7 +22,7 @@ Você é o executor. Sua missão é transformar `actions.md` em código real, fa
 
 Esse skill **EXIGE** uma âncora de contexto em `_solucao_sdd/`, senão os dois artefatos centrais (`legacy-impact.md` e `regression-watch.md`) perdem o valor e o ciclo forward vira um framework genérico qualquer. Duas âncoras são válidas:
 
-1. **Legado:** `_solucao_sdd/` contém `architecture.md` E `domain.md` (extração do Time de Descoberta via `/solucao`). Comportamento clássico.
+1. **Legado:** `_solucao_sdd/` contém `arquitetura.md` E `dominio.md` (extração do Time de Descoberta via `/solucao`). Comportamento clássico.
 2. **Greenfield:** `_solucao_sdd/` contém `prd.md` E pelo menos uma spec em `_solucao_sdd/sdd/` (artefatos do `/solucao-novo`). Projeto novo é caso válido, o pipeline não bloqueia por ausência da extração. Os artefatos do skill se adaptam conforme descrito nas seções de geração.
 
 Se existirem as duas âncoras (projeto que rodou `/solucao` e `/solucao-novo`), use a de legado como principal e as specs SDD como complemento.
@@ -36,13 +36,13 @@ A verificação continua estrita quando NENHUMA âncora existe: o skill aborta c
 2. Verifique a existência de `feature-dir/actions.md`
    2.1. Se ausente, aborte com mensagem apontando `/solucao-pendencia`
 3. Verifique a âncora de contexto:
-   3.1. **Âncora de legado:** `_solucao_sdd/` existe E contém `architecture.md` E `domain.md`. Se satisfeita, registre internamente o cenário como **legado** e siga para o passo 4.
+   3.1. **Âncora de legado:** `_solucao_sdd/` existe E contém `arquitetura.md` E `dominio.md`. Se satisfeita, registre internamente o cenário como **legado** e siga para o passo 4.
    3.2. **Âncora greenfield:** `_solucao_sdd/` existe E contém `prd.md` E pelo menos um arquivo `.md` em `_solucao_sdd/sdd/`. Se satisfeita (e a de legado não), registre o cenário como **greenfield**, informe ao usuário ("Sem extração de legado, vou ancorar nos artefatos do `/solucao-novo`: `prd.md` e specs SDD.") e siga para o passo 4.
    3.3. Se NENHUMA das duas âncoras estiver satisfeita, aborte com a mensagem:
 
        > 🛑 `/solucao-codificacao` exige uma âncora de contexto em `_solucao_sdd/` e não encontrei nenhuma:
        >
-       > - **Legado:** `architecture.md` + `domain.md` (gere com `/solucao`)
+       > - **Legado:** `arquitetura.md` + `dominio.md` (gere com `/solucao`)
        > - **Greenfield:** `prd.md` + specs em `sdd/` (gere com `/solucao-novo`)
        >
        > Sem esse contexto, `legacy-impact.md` e `regression-watch.md` ficariam sem âncora e o ciclo forward perderia seu diferencial. Rode um dos dois pipelines e volte para cá.
@@ -77,14 +77,14 @@ Para cada fase, na ordem Preparação, Testes, Núcleo, Integração, Polimento:
 
 Após executar (mesmo que parcialmente):
 
-**Cenário greenfield:** não há legado para impactar. Gere o arquivo mesmo assim, com adaptações: mapeie cada arquivo criado ao componente correspondente das specs em `_solucao_sdd/sdd/` (em vez de `architecture.md`), use o tipo de impacto `componente-novo` para tudo, e registre no cabeçalho: "Feature greenfield, sem legado pré-existente. Âncora: prd.md + specs SDD." As seções "Preservadas" e "Modificadas" ficam vazias com essa nota. Pule os passos 4 e 5 abaixo.
+**Cenário greenfield:** não há legado para impactar. Gere o arquivo mesmo assim, com adaptações: mapeie cada arquivo criado ao componente correspondente das specs em `_solucao_sdd/sdd/` (em vez de `arquitetura.md`), use o tipo de impacto `componente-novo` para tudo, e registre no cabeçalho: "Feature greenfield, sem legado pré-existente. Âncora: prd.md + specs SDD." As seções "Preservadas" e "Modificadas" ficam vazias com essa nota. Pule os passos 4 e 5 abaixo.
 
 **Cenário legado:**
 
-1. Para cada arquivo do projeto tocado, mapeie ao componente correspondente em `_solucao_sdd/architecture.md` quando possível
+1. Para cada arquivo do projeto tocado, mapeie ao componente correspondente em `_solucao_sdd/arquitetura.md` quando possível
 2. Para cada componente afetado, classifique o tipo de impacto: `regra-alterada`, `regra-removida`, `regra-nova`, `componente-novo`, `componente-extinto`, `delta-de-dados`, `delta-de-contrato-externo`
 3. Atribua severidade alinhada com `/solucao-auditoria` (CRITICAL, HIGH, MEDIUM, LOW)
-4. Liste regras 🟢 do `_solucao_sdd/domain.md` que continuam intactas (vão para a seção "Preservadas")
+4. Liste regras 🟢 do `_solucao_sdd/dominio.md` que continuam intactas (vão para a seção "Preservadas")
 5. Liste regras 🟢 que foram alteradas ou removidas (vão para a seção "Modificadas")
 
 Estrutura do arquivo:

@@ -16,22 +16,22 @@ El conjunto de artefactos generados depende del **nivel de documentación** eleg
 
 ```
 _solucao_sdd/
-├── inventory.md              # Inventario del proyecto — todos
-├── dependencies.md           # Dependencias con versiones — todos
-├── code-analysis.md          # Análisis técnico por módulo — todos
-├── data-dictionary.md        # Diccionario completo de datos — completo+
-├── domain.md                 # Glosario y reglas de negocio — todos
-├── state-machines.md         # Máquinas de estado en Mermaid — completo+
+├── inventario.md              # Inventario del proyecto — todos
+├── dependencias.md           # Dependencias con versiones — todos
+├── analise-codigo.md          # Análisis técnico por módulo — todos
+├── dicionario-dados.md        # Diccionario completo de datos — completo+
+├── dominio.md                 # Glosario y reglas de negocio — todos
+├── maquina-estado.md         # Máquinas de estado en Mermaid — completo+
 ├── permissions.md            # Matriz de permisos — completo+
-├── architecture.md           # Visión arquitectónica general — todos
-├── c4-context.md             # Diagrama C4: Contexto — todos
-├── c4-containers.md          # Diagrama C4: Containers — completo+
-├── c4-components.md          # Diagrama C4: Componentes — completo+
+├── arquitetura.md           # Visión arquitectónica general — todos
+├── c4-contexto.md             # Diagrama C4: Contexto — todos
+├── c4-conteineres.md          # Diagrama C4: Containers — completo+
+├── c4-componentes.md          # Diagrama C4: Componentes — completo+
 ├── erd-complete.md           # ERD completo en Mermaid — completo+
 ├── deployment.md             # Diagrama de infraestructura — detalhado
 ├── confidence-report.md      # Reporte de confianza 🟢🟡🔴 — todos
-├── gaps.md                   # Brechas sin resolver — completo+
-├── questions.md              # Preguntas para validación humana — todos
+├── lacunas.md                   # Brechas sin resolver — completo+
+├── duvidas.md              # Preguntas para validación humana — todos
 ├── sdd/                      # Specs por componente — todos
 ├── openapi/                  # Specs de API — completo+
 ├── user-stories/             # User stories — completo+

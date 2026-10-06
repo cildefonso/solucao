@@ -50,5 +50,5 @@ Quando `_solucao_sdd/characterization_specs/` existe:
 
 Quando não existe:
 
-1. Inferir fluxos críticos a partir de `code-analysis.md` + `sequences/` + regras `BR-MIGRAR` marcadas como críticas.
+1. Inferir fluxos críticos a partir de `analise-codigo.md` + `sequences/` + regras `BR-MIGRAR` marcadas como críticas.
 2. Documentar lacuna em `parity_specs.md § Reuso de characterization_specs`.

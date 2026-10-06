@@ -49,7 +49,7 @@ Apresente ao usuário um resumo do que o Scout encontrou e as três opções de 
 > Qual nível de documentação você quer para este projeto?
 >
 > ◉ **1. Essencial** ← padrão
-> &nbsp;&nbsp;&nbsp;&nbsp;Artefatos principais (code-analysis, domain, architecture, specs SDD). Ideal para projetos simples.
+> &nbsp;&nbsp;&nbsp;&nbsp;Artefatos principais (code-analysis, dominio, arquiteto, specs SDD). Ideal para projetos simples.
 >
 > ○ **2. Completo**
 > &nbsp;&nbsp;&nbsp;&nbsp;Documentação completa com diagramas C4, ERD, ADRs, OpenAPI e matrizes de rastreabilidade. Recomendado para a maioria dos projetos.

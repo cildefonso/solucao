@@ -23,7 +23,7 @@ Para cada `_solucao_forward/<feature>/regression-watch.md`:
 2. Para cada watch item da tabela principal (não os arquivados):
    2.1. Identifique o `Tipo de verificação`, valores possíveis: `presença`, `ausência`, `redação`, `confidência`.
    2.2. Aplique a verificação correspondente contra os artefatos recém-gerados em `_solucao_sdd/`:
-        - `presença`: a regra precisa estar presente em `_solucao_sdd/domain.md` (ou no arquivo apontado pela coluna Origem) com a mesma essência semântica.
+        - `presença`: a regra precisa estar presente em `_solucao_sdd/dominio.md` (ou no arquivo apontado pela coluna Origem) com a mesma essência semântica.
         - `ausência`: a regra original NÃO pode mais aparecer no SDD.
         - `redação`: o texto foi alterado deliberadamente, verifique se a versão nova bate com a expectativa.
         - `confidência`: a regra continua presente, mas a confidência (🟢, 🟡, 🔴) deve ser igual ou maior à esperada.
@@ -38,7 +38,7 @@ Para cada `_solucao_forward/<feature>/regression-watch.md`:
 
 | ID | Veredito | Observação |
 |----|----------|------------|
-| W001 | 🟢 verde | regra preservada em _solucao_sdd/domain.md#regra-X |
+| W001 | 🟢 verde | regra preservada em _solucao_sdd/dominio.md#regra-X |
 | W005 | 🔴 vermelho | regra removida do código atual; mudança não pretendida |
 | W010 | 🟡 amarelo | texto equivalente mas difere literalmente; aguarda julgamento |
 ```

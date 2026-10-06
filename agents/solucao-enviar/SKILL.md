@@ -61,7 +61,7 @@ Mesmo no caminho greenfield, o pipeline precisa saber como as specs serão organ
 
 ### 2. Apresentar o menu
 
-No caminho greenfield NÃO há `surface.json` (Scout não rodou). Apresente o menu sem pré-marcar opção. Se for legado e existir `.solucao/context/surface.json` com `organization_suggestion.granularity`, pré-marque a sugestão e mostre a `rationale`.
+No caminho greenfield NÃO há `surface.json` (Scout não rodou). Apresente o menu sem pré-marcar opção. Se for legado e existir `.solucao/contexto/surface.json` com `organization_suggestion.granularity`, pré-marque a sugestão e mostre a `rationale`.
 
 Use exatamente este formato (idioma seguindo `chat_language`):
 

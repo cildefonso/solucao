@@ -12,7 +12,7 @@ Pre-checked in the installer.
 
 You already ran `/solucao` and have specs in `_solucao_sdd/`. Now you want to evolve the system: a new feature, an extension, a fix that needs a delta description before it becomes code. Forward takes a free-form sentence ("I want users to export their invoices as PDF") and walks it down the funnel until the file changes are on disk.
 
-`/solucao-codificacao` requires a context anchor in `_solucao_sdd/`: either the legacy extraction (`architecture.md` + `domain.md`, from `/solucao`) or the greenfield artifacts (`prd.md` + at least one spec in `sdd/`, from `/solucao-novo`). Without any anchor, it refuses to run: the code bridge would be hollow and Forward would degrade into a generic scaffolding tool.
+`/solucao-codificacao` requires a context anchor in `_solucao_sdd/`: either the legacy extraction (`arquitetura.md` + `dominio.md`, from `/solucao`) or the greenfield artifacts (`prd.md` + at least one spec in `sdd/`, from `/solucao-novo`). Without any anchor, it refuses to run: the code bridge would be hollow and Forward would degrade into a generic scaffolding tool.
 
 ---
 
@@ -98,7 +98,7 @@ This means an interrupted session can be resumed safely even if a skill forgot t
 | `solucao-resumo` | resumo | `active-requisitos.json` (swap), no feature artifacts |  |
 
 ### `solucao-requisitos`
-Turns a free-form idea into a complete `requisitos.md`, anchored to the legacy via `_solucao_sdd/` (architecture, domain, state machines, glossary). It detects when a previous feature is already in progress and asks the user whether to continue, run in parallel (pausing the previous one), or abandon, never decides on its own.
+Turns a free-form idea into a complete `requisitos.md`, anchored to the legacy via `_solucao_sdd/` (architecture, dominio, state machines, glossary). It detects when a previous feature is already in progress and asks the user whether to continue, run in parallel (pausing the previous one), or abandon, never decides on its own.
 
 ### `solucao-clarificar`
 Generates up to five targeted questions to clear `[DOUBT]` markers, vague phrases ("probably", "maybe", "if possible"), and obvious gaps. Questions are multiple choice or short answer, never open. Answers are integrated back into `requisitos.md` under a dated `## Clarifications` section.
@@ -113,7 +113,7 @@ The evolution architect. Translates requirements into a concrete technical propo
 Decomposes the roadmap into atomic actions across five fixed phases: Preparation, Tests, Core, Integration, Polish. Each action gets a stable ID (`T001`, `T002`, ...; never recycled), explicit dependencies, a target file, an inherited confidence marker, and a `[//]` flag when it can run in parallel with siblings.
 
 ### `solucao-auditoria`
-Read-only cross-check between requirements, roadmap and actions. Findings are reported with severity (CRITICAL, HIGH, MEDIUM, LOW), grouped along four axes: coverage, consistency, coherence with the legacy (`_solucao_sdd/domain.md`, `architecture.md`), and sanity of the actions graph (no cycles, parallel tasks don't share files). The skill never edits the analyzed documents, even if the user asks.
+Read-only cross-check between requirements, roadmap and actions. Findings are reported with severity (CRITICAL, HIGH, MEDIUM, LOW), grouped along four axes: coverage, consistency, coherence with the legacy (`_solucao_sdd/dominio.md`, `arquitetura.md`), and sanity of the actions graph (no cycles, parallel tasks don't share files). The skill never edits the analyzed documents, even if the user asks.
 
 ### `solucao-codificacao`
 The executor. Walks `actions.md` phase by phase, respects `[//]` parallelism and dependencies, flips checkboxes from `[ ]` to `[X]` only on success, and appends one line per action to `progress.jsonl`. On completion (full or partial) it writes `legacy-impact.md` (which legacy files were touched) and `regression-watch.md` (invariants that must hold on the next Solucao extraction).

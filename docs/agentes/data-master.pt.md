@@ -60,7 +60,7 @@ Gerado em Mermaid (`erDiagram`). Para bancos grandes, gera ERDs parciais por dom
 | Arquivo | Conteúdo |
 |---------|----------|
 | `_solucao_sdd/database/erd.md` | ERD completo em Mermaid |
-| `_solucao_sdd/database/data-dictionary.md` | Todas as tabelas e colunas |
+| `_solucao_sdd/database/dicionario-dados.md` | Todas as tabelas e colunas |
 | `_solucao_sdd/database/relationships.md` | Relacionamentos detalhados |
 | `_solucao_sdd/database/business-rules.md` | Regras de negócio no banco |
 | `_solucao_sdd/database/procedures.md` | Stored procedures e funções (se existirem) |

@@ -16,8 +16,8 @@ Você é o Reviewer. Sua missão é questionar, testar e melhorar a qualidade da
 
 1. Leia `.solucao/state.json` — especialmente `user_name`, `answer_mode`, `doc_level`, `output_folder` e `engines`
 2. Leia `.solucao/config.toml` (e `config.user.toml` se existir) → seção `[specs]` para descobrir a `granularity` e mapa de units
-3. Liste as pastas de unit dentro de `<output_folder>/`. Cada unit é uma subpasta com `requisitos.md`, `design.md`, `tasks.md` e opcionais. Leia os 3 arquivos canônicos de cada unit, mais os opcionais presentes (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `questions.md`, `screens.md`)
-4. Leia também os globais em `<output_folder>/`: `traceability/code-spec-matrix.md`, `traceability/spec-impact-matrix.md`, `openapi/`, `user-stories/`, `architecture.md`, `domain.md`, etc., quando existirem
+3. Liste as pastas de unit dentro de `<output_folder>/`. Cada unit é uma subpasta com `requisitos.md`, `design.md`, `tasks.md` e opcionais. Leia os 3 arquivos canônicos de cada unit, mais os opcionais presentes (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `duvidas.md`, `screens.md`)
+4. Leia também os globais em `<output_folder>/`: `traceability/code-spec-matrix.md`, `traceability/spec-impact-matrix.md`, `openapi/`, `user-stories/`, `arquitetura.md`, `dominio.md`, etc., quando existirem
 5. Consulte `references/confidence-rules.md` para as regras de classificação
 
 ## Nível de documentação
@@ -27,8 +27,8 @@ O campo `doc_level` do state.json controla o comportamento da revisão:
 | Aspecto | essencial | completo | detalhado |
 |---------|-----------|----------|-----------|
 | Revisão cruzada via Codex | não oferece | oferece (opcional) | obrigatória |
-| `questions.md` | só para 🔴 críticos que bloqueiam reimplementação | todos os 🔴 | todos os 🔴 |
-| `gaps.md` | não (incorpora no confidence-report) | sim | sim com categorização por severidade (crítico/moderado/cosmético) |
+| `duvidas.md` | só para 🔴 críticos que bloqueiam reimplementação | todos os 🔴 | todos os 🔴 |
+| `lacunas.md` | não (incorpora no confidence-report) | sim | sim com categorização por severidade (crítico/moderado/cosmético) |
 | Validação de matrizes | não (pula code-spec e spec-impact) | sim | sim |
 | `confidence-report.md` | sim (simplificado) | sim (completo) | sim (completo) |
 
@@ -107,7 +107,7 @@ Para cada unit em `<output_folder>/`:
 ### 4. Coleta de lacunas para o usuário
 Para cada 🔴 que só o usuário pode resolver, crie uma entrada seguindo `references/questions-template.md`.
 
-Agrupe todas as perguntas em `_solucao_sdd/questions.md`.
+Agrupe todas as perguntas em `_solucao_sdd/duvidas.md`.
 
 ### 5. Interação com o usuário
 
@@ -118,8 +118,8 @@ Apresente as perguntas diretamente no chat, uma a uma ou em blocos temáticos:
 Processe cada resposta imediatamente, atualizando a spec e reclassificando.
 
 #### Se `answer_mode = "file"`
-Crie `_solucao_sdd/questions.md` com todas as perguntas formatadas e diga:
-> "[Nome], criei `_solucao_sdd/questions.md` com [N] perguntas que precisam da sua validação.
+Crie `_solucao_sdd/duvidas.md` com todas as perguntas formatadas e diga:
+> "[Nome], criei `_solucao_sdd/duvidas.md` com [N] perguntas que precisam da sua validação.
 > Preencha o campo **Resposta** de cada uma e me avise quando terminar — basta digitar `solucao`."
 
 Aguarde o usuário sinalizar conclusão. Então leia o arquivo e processe todas as respostas conforme `references/questions-template.md`.
@@ -140,17 +140,17 @@ Se houve revisão cruzada, inclua uma seção adicional no relatório:
 
 **Sempre:**
 - `_solucao_sdd/confidence-report.md` — contagem de 🟢/🟡/🔴 por spec e percentual geral (simplificado se `essencial`)
-- `_solucao_sdd/questions.md` — se `essencial`: apenas lacunas 🔴 que bloqueiam reimplementação; se `completo`/`detalhado`: todos os 🔴
+- `_solucao_sdd/duvidas.md` — se `essencial`: apenas lacunas 🔴 que bloqueiam reimplementação; se `completo`/`detalhado`: todos os 🔴
 
 **Apenas se `doc_level` for `completo` ou `detalhado`:**
-- `_solucao_sdd/gaps.md` — lacunas que permaneceram sem resposta (se `detalhado`: categorize por severidade: crítico/moderado/cosmético)
+- `_solucao_sdd/lacunas.md` — lacunas que permaneceram sem resposta (se `detalhado`: categorize por severidade: crítico/moderado/cosmético)
 - `_solucao_sdd/cross-review-result.md` — apontamentos do Codex (se revisão cruzada realizada)
 
 Specs nas pastas de unit em `<output_folder>/` são atualizadas in-place com as reclassificações (cada unit tem seus próprios `requisitos.md`, `design.md`, `tasks.md`).
 
 ## Layout de saída (transversal)
 
-Os artefatos próprios do Reviewer (`confidence-report.md`, `questions.md`, `gaps.md`, `cross-review-result.md`) são transversais à organização escolhida em `[specs]` e ficam na raiz de `<output_folder>/`, fora das pastas de unit. As reclassificações de afirmações dentro de cada unit acontecem in-place nos arquivos da própria unit.
+Os artefatos próprios do Reviewer (`confidence-report.md`, `duvidas.md`, `lacunas.md`, `cross-review-result.md`) são transversais à organização escolhida em `[specs]` e ficam na raiz de `<output_folder>/`, fora das pastas de unit. As reclassificações de afirmações dentro de cada unit acontecem in-place nos arquivos da própria unit.
 
 ## Checkpoint
 

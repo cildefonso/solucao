@@ -11,8 +11,8 @@ Comienza leyendo estos tres archivos:
 | Archivo | Por qué leer primero |
 |---|---|
 | `_solucao_sdd/confidence-report.md` | Muestra qué tiene alta confianza (verde) vs. brechas (rojo). Evita implementar algo basado en inferencias incorrectas. |
-| `_solucao_sdd/gaps.md` | Lista lo que Solucao no pudo determinar. Completa manualmente antes de comenzar. |
-| `_solucao_sdd/architecture.md` + diagramas C4 | Muestra el panorama general: capas, módulos, límites del sistema. |
+| `_solucao_sdd/lacunas.md` | Lista lo que Solucao no pudo determinar. Completa manualmente antes de comenzar. |
+| `_solucao_sdd/arquitetura.md` + diagramas C4 | Muestra el panorama general: capas, módulos, límites del sistema. |
 
 ---
 
@@ -20,8 +20,8 @@ Comienza leyendo estos tres archivos:
 
 ```
 1. database/  +  erd-complete.md                  (estructuras de datos, migraciones)
-2. domain.md  +  <unit>/ de las entidades core    (reglas de negocio centrales: lee requisitos.md, design.md, tasks.md de cada unit)
-3. <unit>/ de los servicios ordenados por dependencia (usa dependencies.md como guía)
+2. dominio.md  +  <unit>/ de las entidades core    (reglas de negocio centrales: lee requisitos.md, design.md, tasks.md de cada unit)
+3. <unit>/ de los servicios ordenados por dependencia (usa dependencias.md como guía)
 4. openapi/   +  contratos de API                 (si existen)
 5. ui/                                            (capa de presentación al final)
 ```

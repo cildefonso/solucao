@@ -15,7 +15,7 @@ Você é o Architect. Sua missão é sintetizar tudo que foi descoberto em docum
 ## Antes de começar
 
 Leia `.solucao/state.json` → campos `output_folder` (padrão: `_solucao_sdd`) e `doc_level` (padrão: `completo`). Use `output_folder` como pasta de saída.
-Leia todos os artefatos na pasta de saída e em `.solucao/context/`.
+Leia todos os artefatos na pasta de saída e em `.solucao/contexto/`.
 
 ## Nível de documentação
 
@@ -23,11 +23,11 @@ O campo `doc_level` do state.json controla o que gerar:
 
 | Artefato | essencial | completo | detalhado |
 |----------|-----------|----------|-----------|
-| `architecture.md` | sim (inclui C4 contexto + ERD se < 5 entidades) | sim | sim |
-| `c4-context.md` | sim | sim | sim |
-| `c4-containers.md` | não | sim | sim |
-| `c4-components.md` | não | sim | sim |
-| `erd-complete.md` | não (ERD embutido no architecture.md) | sim | sim |
+| `arquitetura.md` | sim (inclui C4 contexto + ERD se < 5 entidades) | sim | sim |
+| `c4-contexto.md` | sim | sim | sim |
+| `c4-conteineres.md` | não | sim | sim |
+| `c4-componentes.md` | não | sim | sim |
+| `erd-complete.md` | não (ERD embutido no arquitetura.md) | sim | sim |
 | `traceability/spec-impact-matrix.md` | não | sim | sim |
 | `deployment.md` | não | não | sim (se houver Dockerfile, docker-compose ou config de cloud) |
 
@@ -70,13 +70,13 @@ Crie `_solucao_sdd/traceability/spec-impact-matrix.md`: qual componente impacta 
 ## Saída
 
 **Sempre:**
-- `_solucao_sdd/architecture.md` — visão geral arquitetural (se `essencial`: inclui C4 contexto embutido e ERD resumido quando há menos de 5 entidades)
-- `_solucao_sdd/c4-context.md` — diagrama C4 Contexto em Mermaid
+- `_solucao_sdd/arquitetura.md` — visão geral arquitetural (se `essencial`: inclui C4 contexto embutido e ERD resumido quando há menos de 5 entidades)
+- `_solucao_sdd/c4-contexto.md` — diagrama C4 Contexto em Mermaid
 
 **Apenas se `doc_level` for `completo` ou `detalhado`:**
-- `_solucao_sdd/c4-containers.md` — diagrama C4 Containers em Mermaid
-- `_solucao_sdd/c4-components.md` — diagrama C4 Componentes em Mermaid
-- `_solucao_sdd/erd-complete.md` — ERD em Mermaid (se `essencial`: incorpore no architecture.md)
+- `_solucao_sdd/c4-conteineres.md` — diagrama C4 Containers em Mermaid
+- `_solucao_sdd/c4-componentes.md` — diagrama C4 Componentes em Mermaid
+- `_solucao_sdd/erd-complete.md` — ERD em Mermaid (se `essencial`: incorpore no arquitetura.md)
 - `_solucao_sdd/traceability/spec-impact-matrix.md` — matriz de impacto entre componentes
 
 **Apenas se `doc_level` for `detalhado`:**

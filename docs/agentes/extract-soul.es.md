@@ -25,7 +25,7 @@ La síntesis cubre tres cosas:
 
 ## Prerrequisito
 
-`.solucao/context/surface.json` debe existir. El agente depende del mapeo de superficie del Scout. Si el archivo no existe, el agente se detiene e indica ejecutar `/solucao-explorador` primero (o `/solucao` para el pipeline completo).
+`.solucao/contexto/surface.json` debe existir. El agente depende del mapeo de superficie del Scout. Si el archivo no existe, el agente se detiene e indica ejecutar `/solucao-explorador` primero (o `/solucao` para el pipeline completo).
 
 ---
 
@@ -37,7 +37,7 @@ Un único archivo:
 |---------|-----------|
 | `_solucao_sdd/soul.md` | El alma del proyecto: propósito, entidades centrales, decisiones fundadoras, brechas |
 
-El nombre del archivo permanece en inglés (siguiendo la convención de `architecture.md`, `domain.md`, `inventory.md`), pero el contenido respeta el `doc_language` del `state.json`.
+El nombre del archivo permanece en inglés (siguiendo la convención de `arquitetura.md`, `dominio.md`, `inventario.md`), pero el contenido respeta el `doc_language` del `state.json`.
 
 ---
 

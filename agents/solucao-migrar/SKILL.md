@@ -202,7 +202,7 @@ Grave log completo em `_solucao_sdd/migration/.logs/<timestamp>-migrar.log` com 
 3. Apague artefatos:
    - `--regenerate=<agent>`: artefatos do agente especificado **e de todos os agentes posteriores** na ordem do pipeline. Para o Designer, inclui `topology_decision.md` e reseta `currentAgent.topologyApproved = false`. Para o Screen Translator, inclui `screen_modernization_decision.md`, `target_screens.md`, `screen_deviation_log.md`, `_solucao_sdd/screens/inventory.json` e `_solucao_sdd/screens/golden/`, e reseta `currentAgent.screenModeApproved = false`.
    - `--regenerate=designer:topology`: apaga todos os artefatos do Designer (incluindo `topology_decision.md`) e reseta `topologyApproved`. Equivalente a `--regenerate=designer` mas explícito sobre voltar à Fase 1.
-   - `--regenerate=designer:architecture`: apaga apenas artefatos da Fase 2 do Designer (`target_architecture.md`, `target_domain_model.md`, `target_data_model.md`, `data_migration_plan.md`). Preserva `topology_decision.md` e `topologyApproved`.
+   - `--regenerate=designer:architecture`: apaga apenas artefatos da Fase 2 do Designer (`target_arquitetura.md`, `target_dominio_model.md`, `target_data_model.md`, `data_migration_plan.md`). Preserva `topology_decision.md` e `topologyApproved`.
    - `--regenerate=screen_translator:mode`: apaga todos os artefatos do Screen Translator (incluindo `screen_modernization_decision.md`) e reseta `screenModeApproved`. Equivalente a `--regenerate=screen_translator` mas explícito sobre voltar à Fase 1.
    - `--regenerate=screen_translator:generation`: apaga apenas artefatos da Fase 2 (`target_screens.md`, `screen_deviation_log.md`, `_solucao_sdd/screens/inventory.json`, `_solucao_sdd/screens/golden/`). Preserva `screen_modernization_decision.md` e `screenModeApproved`.
 4. Atualize `.state.json` removendo agentes do `completedAgents` (quando aplicável) e ajustando `currentAgent`.
@@ -247,8 +247,8 @@ _solucao_sdd/
 │   ├── risk_register.md
 │   ├── cutover_plan.md
 │   ├── topology_decision.md
-│   ├── target_architecture.md
-│   ├── target_domain_model.md
+│   ├── target_arquitetura.md
+│   ├── target_dominio_model.md
 │   ├── target_data_model.md
 │   ├── data_migration_plan.md
 │   ├── screen_modernization_decision.md

@@ -1,4 +1,4 @@
-# Schema — .solucao/context/modules.json
+# Schema — .solucao/contexto/modules.json
 
 Arquivo gerado pelo Arqueólogo. Usado pelo Detetive, Arquiteto e Redator.
 

@@ -28,10 +28,10 @@ A decisão final é humana. Você sugere, justifica e prepara o terreno.
 ## Inputs
 
 - Os três artefatos acima.
-- `_solucao_sdd/domain.md`
-- `_solucao_sdd/architecture.md`
-- `_solucao_sdd/dependencies.md`
-- `_solucao_sdd/inventory.md` (para entender tamanho do legado)
+- `_solucao_sdd/dominio.md`
+- `_solucao_sdd/arquitetura.md`
+- `_solucao_sdd/dependencias.md`
+- `_solucao_sdd/inventario.md` (para entender tamanho do legado)
 - Catálogo: `references/migration-strategies.md`
 
 ## Outputs

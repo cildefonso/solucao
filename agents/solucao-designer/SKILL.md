@@ -1,6 +1,6 @@
 ---
 name: solucao-designer
-description: "Quarto agente do Time de Migração. Opera em duas fases. Fase 1: detecta a topologia do legado, sempre propõe uma topologia moderna alternativa e produz topology_decision.md (com pausa humana para aprovação). Fase 2: desenha as specs do sistema novo sob a topologia escolhida, produzindo target_architecture.md, target_domain_model.md, target_data_model.md e data_migration_plan.md, com rastreabilidade total para o legado. Ativação: /solucao-designer (geralmente invocado por /solucao-migrar)."
+description: "Quarto agente do Time de Migração. Opera em duas fases. Fase 1: detecta a topologia do legado, sempre propõe uma topologia moderna alternativa e produz topology_decision.md (com pausa humana para aprovação). Fase 2: desenha as specs do sistema novo sob a topologia escolhida, produzindo target_arquitetura.md, target_dominio_model.md, target_data_model.md e data_migration_plan.md, com rastreabilidade total para o legado. Ativação: /solucao-designer (geralmente invocado por /solucao-migrar)."
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -29,19 +29,19 @@ Se a estratégia ainda não foi confirmada pelo usuário, encerre e instrua a ap
 ## Inputs
 
 - Os quatro pré-requisitos.
-- `_solucao_sdd/domain.md`
-- `_solucao_sdd/architecture.md`
-- `_solucao_sdd/inventory.md` (ou `legacy_inventory.md`)
-- `_solucao_sdd/data-dictionary.md` (se existir; trate ausência graciosamente)
-- `_solucao_sdd/dependencies.md`
+- `_solucao_sdd/dominio.md`
+- `_solucao_sdd/arquitetura.md`
+- `_solucao_sdd/inventario.md` (ou `legacy_inventario.md`)
+- `_solucao_sdd/dicionario-dados.md` (se existir; trate ausência graciosamente)
+- `_solucao_sdd/dependencias.md`
 - `_solucao_sdd/erd-complete.md` (se existir)
 - `_solucao_sdd/migration/topology_decision.md` (apenas na Fase 2; produzido pela Fase 1 deste mesmo agente)
 
 ## Outputs
 
 - `_solucao_sdd/migration/topology_decision.md` (produzido na Fase 1, antes dos demais)
-- `_solucao_sdd/migration/target_architecture.md` (com diagrama Mermaid)
-- `_solucao_sdd/migration/target_domain_model.md`
+- `_solucao_sdd/migration/target_arquitetura.md` (com diagrama Mermaid)
+- `_solucao_sdd/migration/target_dominio_model.md`
 - `_solucao_sdd/migration/target_data_model.md`
 - `_solucao_sdd/migration/data_migration_plan.md`
 
@@ -84,7 +84,7 @@ Internalize o paradigma alvo e as `Implicações pendentes para próximos agente
 
 #### 2. Detectar a topologia do legado
 
-A partir de `_solucao_sdd/architecture.md`, `_solucao_sdd/inventory.md` e `_solucao_sdd/dependencies.md`, classifique a organização do legado: package-by-layer, package-by-feature, feature-sliced, módulos por domínio, DDD com bounded contexts, monorepo, monolito sem fronteiras claras, ou híbrido.
+A partir de `_solucao_sdd/arquitetura.md`, `_solucao_sdd/inventario.md` e `_solucao_sdd/dependencias.md`, classifique a organização do legado: package-by-layer, package-by-feature, feature-sliced, módulos por domínio, DDD com bounded contexts, monorepo, monolito sem fronteiras claras, ou híbrido.
 
 Registre evidências citáveis com referência aos artefatos. Use a escala 🟢 CONFIRMADO / 🟡 INFERIDO / 🔴 LACUNA / ⚠️ AMBÍGUO. Inclua um esboço curto da árvore legada.
 
@@ -131,7 +131,7 @@ A Fase 2 só roda após o orquestrador devolver a aprovação. Não escreva nenh
 
 #### 8. Identificar bounded contexts
 
-A partir de `target_business_rules.md` (regras MIGRAR), `domain.md` e da topologia decidida em `topology_decision.md`, agrupe regras / aggregates por:
+A partir de `target_business_rules.md` (regras MIGRAR), `dominio.md` e da topologia decidida em `topology_decision.md`, agrupe regras / aggregates por:
 
 - **Coesão de invariantes** (regras que falham juntas, vivem juntas).
 - **Transação** (operações que precisam ser atômicas localmente).
@@ -142,7 +142,7 @@ Documente cada bounded context com nome, responsabilidade, justificativa de agru
 
 #### 9. Esboçar arquitetura
 
-Desenhe `target_architecture.md`:
+Desenhe `target_arquitetura.md`:
 
 - Visão geral (3 a 6 linhas).
 - Diagrama Mermaid (válido).
@@ -154,7 +154,7 @@ Desenhe `target_architecture.md`:
 
 #### 10. Modelar domínio
 
-Em `target_domain_model.md`:
+Em `target_dominio_model.md`:
 
 - Aggregates com root, invariantes, comandos, eventos publicados (se event-driven).
 - Entidades, value objects.

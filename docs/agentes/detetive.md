@@ -61,7 +61,7 @@ For each entity with a status/state field, the Detective maps:
 | File | Content |
 |------|---------|
 | `_solucao_sdd/domain.md` | Glossary and domain rules |
-| `_solucao_sdd/state-machines.md` | State machines in Mermaid |
+| `_solucao_sdd/maquina-estado.md` | State machines in Mermaid |
 | `_solucao_sdd/permissions.md` | Permission matrix |
 | `_solucao_sdd/adrs/[number]-[title].md` | One ADR per identified decision |
 

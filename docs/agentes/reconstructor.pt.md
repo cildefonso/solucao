@@ -37,10 +37,10 @@ Preservação de tokens. Cada tarefa carrega apenas o contexto que precisa. Voc�
 ## O que ele lê (planejamento)
 
 - `.solucao/state.json` (metadados do projeto, se houver)
-- `_solucao_sdd/gaps.md` (quando disponível)
+- `_solucao_sdd/lacunas.md` (quando disponível)
 - `_solucao_sdd/confidence-report.md` (quando disponível)
-- `_solucao_sdd/architecture.md`
-- `_solucao_sdd/dependencies.md`
+- `_solucao_sdd/arquitetura.md`
+- `_solucao_sdd/dependencias.md`
 - `_solucao_sdd/traceability/code-spec-matrix.md` (quando disponível)
 - `_solucao_sdd/migration/handoff.md` (quando existe migração concluída)
 
@@ -52,9 +52,9 @@ Arquivos de nível de unit (`<unit>/requisitos.md`, `design.md`, `tasks.md`) nã
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| `_solucao_sdd/reconstruction-plano.md` | Lista completa de tarefas bottom-up com `Lê:` e `Pronto quando:` por tarefa, mais alertas pré-voo mapeados de `gaps.md` |
+| `_solucao_sdd/reconstruction-plano.md` | Lista completa de tarefas bottom-up com `Lê:` e `Pronto quando:` por tarefa, mais alertas pré-voo mapeados de `lacunas.md` |
 
-Durante a execução, o Reconstructor escreve o código de fato no projeto alvo (de acordo com `paradigm_decision.md`/`target_architecture.md` quando a fonte é a migração). Cada tarefa concluída é marcada no `reconstruction-plano.md`.
+Durante a execução, o Reconstructor escreve o código de fato no projeto alvo (de acordo com `paradigm_decision.md`/`target_arquitetura.md` quando a fonte é a migração). Cada tarefa concluída é marcada no `reconstruction-plano.md`.
 
 ---
 

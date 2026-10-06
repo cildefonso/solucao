@@ -4,7 +4,7 @@
   Skill invocada: especialista-d3 (modo hierárquico) ou HTML manual
   Page ID: topologia
   Categoria solucao: diagram
-  Dados consumidos: _solucao_sdd/architecture.md (parseado)
+  Dados consumidos: _solucao_sdd/arquitetura.md (parseado)
 
   Marcadores:
   - TOPOLOGY_LEGACY: coluna esquerda, topologia detectada do legado

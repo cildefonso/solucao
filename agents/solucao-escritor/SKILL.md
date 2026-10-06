@@ -19,8 +19,8 @@ Leia, nesta ordem:
 1. `.solucao/state.json` → campos `output_folder` (padrão: `_solucao_sdd`), `doc_level` (padrão: `completo`) e `doc_language`.
 2. `.solucao/config.toml` → seção `[specs]` (campos `granularity`, `custom_folders`).
 3. `.solucao/config.user.toml` → seção `[specs]` se existir, com precedência chave a chave sobre `config.toml`.
-4. `.solucao/context/surface.json` → especialmente `modules` e `organization_suggestion.features`.
-5. Demais artefatos em `<output_folder>/` e `.solucao/context/` (gerados por agentes anteriores).
+4. `.solucao/contexto/surface.json` → especialmente `modules` e `organization_suggestion.features`.
+5. Demais artefatos em `<output_folder>/` e `.solucao/contexto/` (gerados por agentes anteriores).
 
 Se a seção `[specs]` ainda não está decidida (granularity vazia), pare e peça ao orquestrador Solucao para executar `references/step-03-specs-organization.md` antes de continuar.
 
@@ -67,7 +67,7 @@ Para cada módulo `M` em `surface.json.modules`, crie a pasta `<output_folder>/<
 | `edge-cases.md` | `doc_level` = `detalhado`, com pelo menos 2 casos extremos por unit |
 | `decisions.md` | A unit tem decisões arquiteturais explícitas (ADR-style) que mereçam registro |
 | `legacy-mapping.md` | Útil para `module`, mas o Archaeologist é quem normalmente preenche |
-| `questions.md` | A unit tem 🔴 lacunas que dependem de validação humana |
+| `duvidas.md` | A unit tem 🔴 lacunas que dependem de validação humana |
 
 `tests.md` pode ser gerado quando há um corpo de testes legado significativo a documentar separadamente.
 

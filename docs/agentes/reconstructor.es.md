@@ -37,10 +37,10 @@ Preservación de tokens. Cada tarea lleva solo el contexto que necesita. Puedes 
 ## Qué lee (planificación)
 
 - `.solucao/state.json` (metadatos del proyecto, si existen)
-- `_solucao_sdd/gaps.md` (cuando está disponible)
+- `_solucao_sdd/lacunas.md` (cuando está disponible)
 - `_solucao_sdd/confidence-report.md` (cuando está disponible)
-- `_solucao_sdd/architecture.md`
-- `_solucao_sdd/dependencies.md`
+- `_solucao_sdd/arquitetura.md`
+- `_solucao_sdd/dependencias.md`
 - `_solucao_sdd/traceability/code-spec-matrix.md` (cuando está disponible)
 - `_solucao_sdd/migration/handoff.md` (cuando hay migración concluida)
 
@@ -52,9 +52,9 @@ Los archivos a nivel de unit (`<unit>/requisitos.md`, `design.md`, `tasks.md`) n
 
 | Archivo | Contenido |
 |---------|-----------|
-| `_solucao_sdd/reconstruction-plano.md` | Lista completa de tareas bottom-up con `Lee:` y `Listo cuando:` por tarea, más alertas pre-vuelo mapeadas desde `gaps.md` |
+| `_solucao_sdd/reconstruction-plano.md` | Lista completa de tareas bottom-up con `Lee:` y `Listo cuando:` por tarea, más alertas pre-vuelo mapeadas desde `lacunas.md` |
 
-Durante la ejecución, el Reconstructor escribe el código real en el proyecto objetivo (según `paradigm_decision.md`/`target_architecture.md` cuando la fuente es la migración). Cada tarea finalizada se marca en `reconstruction-plano.md`.
+Durante la ejecución, el Reconstructor escribe el código real en el proyecto objetivo (según `paradigm_decision.md`/`target_arquitetura.md` cuando la fuente es la migración). Cada tarea finalizada se marca en `reconstruction-plano.md`.
 
 ---
 

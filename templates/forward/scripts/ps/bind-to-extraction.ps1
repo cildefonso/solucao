@@ -4,11 +4,11 @@
 # Uso:
 #   bind-to-extraction.ps1 [-Json] [-For <comando>]
 #
-# -For requisitos   architecture, domain, inventory
-# -For plano           architecture, c4-context, state-machines, dependencies, code-analysis
+# -For requisitos   architecture, dominio, inventario
+# -For plano           architecture, c4-contexto, maquina-estado, dependencies, code-analysis
 # -For pendencia          architecture, code-analysis
-# -For auditoria          architecture, domain
-# -For codificacao         architecture, domain, code-analysis
+# -For auditoria          architecture, dominio
+# -For codificacao         architecture, dominio, code-analysis
 # sem -For            todos os arquivos do _solucao_sdd
 #
 # Códigos de saída: 0 ok, 1 _solucao_sdd ausente, 2 uso inválido.
@@ -31,13 +31,13 @@ if (-not (Test-Path -LiteralPath $sddDir -PathType Container)) {
 }
 
 $wanted = switch ($For) {
-  'requisitos' { @('architecture.md','domain.md','inventory.md') }
-  'plano'         { @('architecture.md','c4-context.md','state-machines.md','dependencies.md','code-analysis.md') }
-  'pendencia'        { @('architecture.md','code-analysis.md') }
-  'todo'         { @('architecture.md','code-analysis.md') }
-  'auditoria'        { @('architecture.md','domain.md') }
-  'codificacao'       { @('architecture.md','domain.md','code-analysis.md') }
-  default        { @('architecture.md','c4-context.md','code-analysis.md','confidence-report.md','dependencies.md','domain.md','inventory.md','questions.md','state-machines.md') }
+  'requisitos' { @('arquitetura.md','dominio.md','inventario.md') }
+  'plano'         { @('arquitetura.md','c4-contexto.md','maquina-estado.md','dependencias.md','analise-codigo.md') }
+  'pendencia'        { @('arquitetura.md','analise-codigo.md') }
+  'todo'         { @('arquitetura.md','analise-codigo.md') }
+  'auditoria'        { @('arquitetura.md','dominio.md') }
+  'codificacao'       { @('arquitetura.md','dominio.md','analise-codigo.md') }
+  default        { @('arquitetura.md','c4-contexto.md','analise-codigo.md','confidence-report.md','dependencias.md','dominio.md','inventario.md','duvidas.md','maquina-estado.md') }
 }
 
 $present = New-Object System.Collections.Generic.List[string]

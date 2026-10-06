@@ -51,7 +51,7 @@ Gere em Mermaid (`erDiagram`). Para bancos grandes, gere ERDs parciais por domí
 
 **Em `_solucao_sdd/database/`:**
 - `erd.md` — ERD completo em Mermaid
-- `data-dictionary.md` — todas as tabelas e colunas
+- `dicionario-dados.md` — todas as tabelas e colunas
 - `relationships.md` — relacionamentos detalhados
 - `business-rules.md` — regras de negócio no banco
 - `procedures.md` — stored procedures e funções (se existirem)

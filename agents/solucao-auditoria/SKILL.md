@@ -45,8 +45,8 @@ Verifique cada par de artefatos quanto a:
    2.2. Identificadores citados existem (RF-12 referenciado no roadmap precisa existir no requisitos)
    2.3. Contratos descritos em `interfaces/` aparecem no roadmap
 3. Coerência com o legado
-   3.1. Decisões do roadmap não contradizem regras 🟢 do `_solucao_sdd/domain.md`
-   3.2. Componentes do `_solucao_sdd/architecture.md` citados existem mesmo
+   3.1. Decisões do roadmap não contradizem regras 🟢 do `_solucao_sdd/dominio.md`
+   3.2. Componentes do `_solucao_sdd/arquitetura.md` citados existem mesmo
 4. Sanidade do actions
    4.1. Dependências apontam para IDs existentes
    4.2. Tarefas marcadas `[//]` não compartilham arquivo alvo

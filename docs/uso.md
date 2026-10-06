@@ -88,7 +88,7 @@ After the Scout finishes, Solucao presents a summary of what it found (number of
 
 | Level | When to use | What it generates |
 |-------|-------------|-------------------|
-| **Essential** | Simple projects, scripts, prototypes | Core artifacts: code analysis, domain, architecture, SDD specs |
+| **Essential** | Simple projects, scripts, prototypes | Core artifacts: code analysis, dominio, architecture, SDD specs |
 | **Complete** | Medium projects, small teams (default) | Everything in essential + C4 diagrams, ERD, ADRs, OpenAPI, user stories and traceability matrices |
 | **Detailed** | Enterprise systems, multiple teams | Everything in complete + per-function flowcharts, expanded ADRs, deployment diagram and mandatory cross-review |
 

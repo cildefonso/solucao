@@ -73,7 +73,7 @@ Each unit becomes a folder under `<output_folder>/`. The "unit" depends on the `
 | `feature` | A feature listed by Scout |
 | `custom` | A folder defined by the user |
 
-Every unit folder has the three canonical SDD files: `requisitos.md`, `design.md`, `tasks.md`. Optional files (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `questions.md`) are added when the doc level and context call for them.
+Every unit folder has the three canonical SDD files: `requisitos.md`, `design.md`, `tasks.md`. Optional files (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `duvidas.md`) are added when the doc level and context call for them.
 
 ---
 

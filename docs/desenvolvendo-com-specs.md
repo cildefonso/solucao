@@ -11,8 +11,8 @@ Start by reading these three files:
 | File | Why read first |
 |---|---|
 | `_solucao_sdd/confidence-report.md` | Shows what is high-confidence (green) vs. gaps (red). Avoids building on wrong inferences. |
-| `_solucao_sdd/gaps.md` | Lists what Solucao could not determine. Fill these in manually before starting. |
-| `_solucao_sdd/architecture.md` + C4 diagrams | Shows the big picture: layers, modules, system boundaries. |
+| `_solucao_sdd/lacunas.md` | Lists what Solucao could not determine. Fill these in manually before starting. |
+| `_solucao_sdd/arquitetura.md` + C4 diagrams | Shows the big picture: layers, modules, system boundaries. |
 
 ---
 
@@ -20,8 +20,8 @@ Start by reading these three files:
 
 ```
 1. database/  +  erd-complete.md             (data structures, migrations)
-2. domain.md  +  <unit>/ for core entities   (core business rules: read requisitos.md, design.md, tasks.md of each)
-3. <unit>/ for services sorted by dependency (use dependencies.md as a guide)
+2. dominio.md  +  <unit>/ for core entities   (core business rules: read requisitos.md, design.md, tasks.md of each)
+3. <unit>/ for services sorted by dependency (use dependencias.md as a guide)
 4. openapi/   +  API contracts               (if present)
 5. ui/                                       (presentation layer last)
 ```

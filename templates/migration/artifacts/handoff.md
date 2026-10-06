@@ -22,8 +22,8 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 2. `migration_brief.md`
 3. `target_business_rules.md`
 4. `migration_strategy.md`
-5. `target_architecture.md`
-6. `target_domain_model.md`
+5. `target_arquitetura.md`
+6. `target_dominio_model.md`
 7. `target_data_model.md`
 8. `data_migration_plan.md`
 9. `parity_specs.md` + `parity_tests/`
@@ -42,8 +42,8 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 | migration_strategy.md | estrategista | criado |
 | risk_register.md | estrategista | criado |
 | cutover_plan.md | estrategista | criado |
-| target_architecture.md | designer | criado |
-| target_domain_model.md | designer | criado |
+| target_arquitetura.md | designer | criado |
+| target_dominio_model.md | designer | criado |
 | target_data_model.md | designer | criado |
 | data_migration_plan.md | designer | criado |
 | parity_specs.md | inspetor | criado |
@@ -60,10 +60,10 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 
 1. **Ler `paradigm_decision.md` e internalizar**: o paradigma alvo é <do paradigm_decision>. Toda escolha de código deve honrar esse paradigma.
 2. **Configurar o repositório novo** com a stack declarada em `migration_brief.md`.
-3. **Implementar bottom-up** seguindo `target_architecture.md` e `target_domain_model.md`:
+3. **Implementar bottom-up** seguindo `target_arquitetura.md` e `target_dominio_model.md`:
    - infraestrutura → dados → domínio → aplicação → bordas.
 4. **Escrever os testes** a partir de `parity_specs.md` e `parity_tests/*.feature` desde o início.
-5. **Para cada componente**, validar que respeita o paradigma escolhido (sinais explícitos em `target_architecture.md § Honra ao paradigma escolhido`).
+5. **Para cada componente**, validar que respeita o paradigma escolhido (sinais explícitos em `target_arquitetura.md § Honra ao paradigma escolhido`).
 6. **Para a migração de dados**, seguir `data_migration_plan.md`.
 7. **Para o cutover**, seguir `cutover_plan.md` e os critérios go/no-go.
 

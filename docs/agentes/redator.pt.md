@@ -73,7 +73,7 @@ Cada unit vira uma pasta dentro de `<output_folder>/`. O que é uma "unit" depen
 | `feature` | Uma feature listada pelo Scout |
 | `custom` | Pasta definida pelo usuário |
 
-Toda pasta de unit tem os 3 arquivos canônicos SDD: `requisitos.md`, `design.md`, `tasks.md`. Arquivos opcionais (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `questions.md`) são adicionados conforme o nível de documentação e o contexto.
+Toda pasta de unit tem os 3 arquivos canônicos SDD: `requisitos.md`, `design.md`, `tasks.md`. Arquivos opcionais (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `duvidas.md`) são adicionados conforme o nível de documentação e o contexto.
 
 ---
 

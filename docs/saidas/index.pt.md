@@ -16,22 +16,22 @@ O conjunto de artefatos gerados depende do **nível de documentação** escolhid
 
 ```
 _solucao_sdd/
-├── inventory.md              # Inventário do projeto — todos
-├── dependencies.md           # Dependências com versões — todos
-├── code-analysis.md          # Análise técnica por módulo — todos
-├── data-dictionary.md        # Dicionário completo de dados — completo+
-├── domain.md                 # Glossário e regras de negócio — todos
-├── state-machines.md         # Máquinas de estado em Mermaid — completo+
+├── inventario.md              # Inventário do projeto — todos
+├── dependencias.md           # Dependências com versões — todos
+├── analise-codigo.md          # Análise técnica por módulo — todos
+├── dicionario-dados.md        # Dicionário completo de dados — completo+
+├── dominio.md                 # Glossário e regras de negócio — todos
+├── maquina-estado.md         # Máquinas de estado em Mermaid — completo+
 ├── permissions.md            # Matriz de permissões — completo+
-├── architecture.md           # Visão arquitetural geral — todos
-├── c4-context.md             # Diagrama C4: Contexto — todos
-├── c4-containers.md          # Diagrama C4: Containers — completo+
-├── c4-components.md          # Diagrama C4: Componentes — completo+
+├── arquitetura.md           # Visão arquitetural geral — todos
+├── c4-contexto.md             # Diagrama C4: Contexto — todos
+├── c4-conteineres.md          # Diagrama C4: Containers — completo+
+├── c4-componentes.md          # Diagrama C4: Componentes — completo+
 ├── erd-complete.md           # ERD completo em Mermaid — completo+
 ├── deployment.md             # Diagrama de infraestrutura — detalhado
 ├── confidence-report.md      # Relatório de confiança 🟢🟡🔴 — todos
-├── gaps.md                   # Lacunas sem resposta — completo+
-├── questions.md              # Perguntas para validação humana — todos
+├── lacunas.md                   # Lacunas sem resposta — completo+
+├── duvidas.md              # Perguntas para validação humana — todos
 ├── sdd/                      # Specs por componente — todos
 │   └── [componente].md
 │
@@ -48,14 +48,14 @@ _solucao_sdd/
 │   └── [modulo].md
 │
 ├── ui/                       # Specs de interface (Visor)
-│   ├── inventory.md
+│   ├── inventario.md
 │   ├── flow.md
 │   └── screens/
 │       └── [tela].md
 │
 ├── database/                 # Specs de banco de dados (Data Master)
 │   ├── erd.md
-│   ├── data-dictionary.md
+│   ├── dicionario-dados.md
 │   ├── relationships.md
 │   ├── business-rules.md
 │   └── procedures.md

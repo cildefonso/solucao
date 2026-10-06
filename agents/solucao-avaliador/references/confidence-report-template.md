@@ -42,7 +42,7 @@ Itens que permaneceram sem confirmação após a revisão:
 
 ### [Nome da Spec]
 - **[Afirmação]** — [por que não foi possível confirmar]
-  - Pergunta correspondente: `questions.md#pergunta-N`
+  - Pergunta correspondente: `duvidas.md#pergunta-N`
 
 ---
 

@@ -31,7 +31,7 @@ Aguarde resposta afirmativa explícita antes de seguir para o menu. Resposta vaz
 
 ## 2. Apresentar o menu
 
-Leia `.solucao/context/surface.json` → `organization_suggestion`. Use o campo `granularity` para pré-marcar a opção sugerida e o campo `rationale` para mostrar a razão.
+Leia `.solucao/contexto/surface.json` → `organization_suggestion`. Use o campo `granularity` para pré-marcar a opção sugerida e o campo `rationale` para mostrar a razão.
 
 Se o `surface.json` não tiver `organization_suggestion` preenchida (Scout não rodou ou falhou), exiba o menu sem default e peça que o usuário escolha manualmente, conforme EC-01 da spec de organização.
 

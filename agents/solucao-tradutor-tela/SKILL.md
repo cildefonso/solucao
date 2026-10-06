@@ -24,7 +24,7 @@ A tradução visual, hoje, não tem dono no pipeline: o Designer cobre arquitetu
 - `_solucao_sdd/migration/migration_brief.md`
 - `_solucao_sdd/migration/paradigm_decision.md`
 - `_solucao_sdd/migration/topology_decision.md` (Designer Fase 1 aprovada)
-- `_solucao_sdd/migration/target_architecture.md` (Designer Fase 2)
+- `_solucao_sdd/migration/target_arquitetura.md` (Designer Fase 2)
 
 Em modo standalone (sem `/solucao-migrar` rodado), os pré-requisitos do Designer caem; o agente passa a perguntar a plataforma alvo diretamente ao usuário. Antes de gravar qualquer artefato, garanta que `_solucao_sdd/migration/` e `_solucao_sdd/screens/` existam; crie se necessário (sem tocar em qualquer outro caminho do projeto).
 
@@ -32,10 +32,10 @@ Em modo standalone (sem `/solucao-migrar` rodado), os pré-requisitos do Designe
 
 - Os pré-requisitos acima (em modo pipeline).
 - `_solucao_sdd/sistema-design/*.md` (paleta, componentes, tokens). Se ausente, o agente alerta e oferece rodar `solucao-sistema-design` antes.
-- `_solucao_sdd/ui/inventory.md` (telas catalogadas). Se ausente, o agente alerta e oferece rodar `solucao-visor` antes.
+- `_solucao_sdd/ui/inventario.md` (telas catalogadas). Se ausente, o agente alerta e oferece rodar `solucao-visor` antes.
 - `_solucao_sdd/ui/flow.md` se existir.
 - `_solucao_sdd/ui/screens/*` (screenshots) se existirem.
-- Fontes legados das telas (lidos via `_solucao_sdd/inventory.md` e o repositório legado em modo read-only).
+- Fontes legados das telas (lidos via `_solucao_sdd/inventario.md` e o repositório legado em modo read-only).
 
 ## Outputs
 
@@ -78,7 +78,7 @@ Sempre verifique antes de qualquer outra ação:
 
 #### 1. Detectar plataforma de origem
 
-Analise extensões e assinaturas no repositório legado e em `_solucao_sdd/inventory.md`:
+Analise extensões e assinaturas no repositório legado e em `_solucao_sdd/inventario.md`:
 
 - `.cob` + `PROCEDURE DIVISION` + `DISPLAY` → COBOL ANSI TUI.
 - `.c` + `<curses.h>` ou `<ncurses.h>` → ncurses C.
@@ -99,7 +99,7 @@ Se não conseguir classificar (framework proprietário sem assinatura conhecida)
 
 #### 2. Confirmar plataforma alvo
 
-Em modo pipeline, leia `paradigm_decision.md`, `topology_decision.md` e `target_architecture.md` para inferir a plataforma alvo (ex: stack Go + CLI = "go-cli"; stack React + REST = "web-spa"; stack Flutter = "flutter").
+Em modo pipeline, leia `paradigm_decision.md`, `topology_decision.md` e `target_arquitetura.md` para inferir a plataforma alvo (ex: stack Go + CLI = "go-cli"; stack React + REST = "web-spa"; stack Flutter = "flutter").
 
 Se houver conflito ou ambiguidade (arquitetura silente sobre UI), pergunte ao usuário com `AskUserQuestion` ou equivalente.
 
@@ -118,11 +118,11 @@ Liste cada unidade visual detectada no legado, com identidade estável:
 
 Salve em `_solucao_sdd/screens/inventory.json` com schema definido em `references/templates/inventory.schema.json`.
 
-Se o inventário interno divergir de `_solucao_sdd/ui/inventory.md` em mais de 10% das entradas: pare e peça revisão (RF-05).
+Se o inventário interno divergir de `_solucao_sdd/ui/inventario.md` em mais de 10% das entradas: pare e peça revisão (RF-05).
 
 Se o inventário tiver **zero telas**: o legado é batch/API puro/daemon. Emita:
 
-- `screen_modernization_decision.md` com `mode: skipped` no front-matter, razão preenchida (ex: "Legado é batch puro, sem UI. Inventário interno detectou 0 telas; `_solucao_sdd/ui/inventory.md` ausente ou vazio."), e seções "Modos avaliados" / "Decisão" marcadas como N/A.
+- `screen_modernization_decision.md` com `mode: skipped` no front-matter, razão preenchida (ex: "Legado é batch puro, sem UI. Inventário interno detectou 0 telas; `_solucao_sdd/ui/inventario.md` ausente ou vazio."), e seções "Modos avaliados" / "Decisão" marcadas como N/A.
 - `target_screens.md` com a nota "Nenhuma tela detectada, agente pulado em modo skipped".
 - `screen_deviation_log.md` vazio (apenas front-matter + cabeçalho).
 
@@ -238,8 +238,8 @@ Deviations pendentes bloqueiam o handoff ao Inspector. Deviations aprovadas são
 | ID | Cenário | Comportamento |
 |---|---|---|
 | EC-01 | Plataforma origem desconhecida | Sinaliza, oferece template "raw" para descrição em prosa estruturada |
-| EC-02 | Conflito entre `paradigm_decision.md` e `target_architecture.md` sobre alvo | Para e pede reconciliação |
-| EC-03 | Inventário do agente difere de `ui/inventory.md` em > 10% | Para e pede revisão |
+| EC-02 | Conflito entre `paradigm_decision.md` e `target_arquitetura.md` sobre alvo | Para e pede reconciliação |
+| EC-03 | Inventário do agente difere de `ui/inventario.md` em > 10% | Para e pede revisão |
 | EC-04 | Tela com renderização customizada (Canvas, OpenGL) | Recusa modo literal, recomenda modernizado, documenta deviation |
 | EC-05 | Telas multi-idioma (`.po`, `.resx`, `R.string.xxx`) | Coleta catálogo, mantém referências `{{i18n.<key>}}` em vez de literais |
 | EC-06 | Telas dinâmicas (form builder em runtime) | Especifica metaspec; não enumera instâncias |
@@ -254,7 +254,7 @@ Deviations pendentes bloqueiam o handoff ao Inspector. Deviations aprovadas são
 | EC-15 | Encoding heterogêneo (CP1252 + UTF-8 misturados) | Detecta por arquivo, normaliza para UTF-8, marca em deviation |
 | EC-16 | Legado sem UI (batch, API, daemon) | Marca status `skipped`, grava nota em `target_screens.md`, libera pipeline |
 | EC-17 | `_solucao_sdd/sistema-design/` ausente | Alerta o usuário, oferece rodar `solucao-sistema-design` antes; em modo `--auto` cria `tokens-derived.md` mínimo |
-| EC-18 | `_solucao_sdd/ui/inventory.md` ausente | Alerta o usuário, oferece rodar `solucao-visor` antes; em modo `--auto` constrói inventário só a partir do código fonte |
+| EC-18 | `_solucao_sdd/ui/inventario.md` ausente | Alerta o usuário, oferece rodar `solucao-visor` antes; em modo `--auto` constrói inventário só a partir do código fonte |
 
 ## Layout de saída (transversal)
 

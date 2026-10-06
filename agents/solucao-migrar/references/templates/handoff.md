@@ -26,8 +26,8 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 4. `migration_brief.md`
 5. `target_business_rules.md`
 6. `migration_strategy.md`
-7. `target_architecture.md`
-8. `target_domain_model.md`
+7. `target_arquitetura.md`
+8. `target_dominio_model.md`
 9. `target_data_model.md`
 10. `data_migration_plan.md`
 11. `target_screens.md` (quando há UI)
@@ -49,8 +49,8 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 | risk_register.md | estrategista | criado |
 | cutover_plan.md | estrategista | criado |
 | topology_decision.md | designer (Fase 1) | criado |
-| target_architecture.md | designer | criado |
-| target_domain_model.md | designer | criado |
+| target_arquitetura.md | designer | criado |
+| target_dominio_model.md | designer | criado |
 | target_data_model.md | designer | criado |
 | data_migration_plan.md | designer | criado |
 | screen_modernization_decision.md | screen_translator (Fase 1) | criado / skipped |
@@ -74,11 +74,11 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 2. **Ler `topology_decision.md` e internalizar**: a topologia escolhida é <preservar | modernizar | híbrido>. Use o esboço da árvore registrado nesse artefato como base para criar a estrutura de pastas do novo repositório.
 3. **Ler `screen_modernization_decision.md` e internalizar** (quando há UI): o modo de tradução de telas é <literal | modernizado | híbrido>. Em literal, materialize byte-a-byte (ou pixel-equivalente) o que está em `target_screens.md`; em modernizado, honre a hierarquia de componentes, tokens e os 4 estados (idle, loading, error, success).
 4. **Configurar o repositório novo** com a stack declarada em `migration_brief.md` e a topologia decidida.
-5. **Implementar bottom-up** seguindo `target_architecture.md` e `target_domain_model.md`:
+5. **Implementar bottom-up** seguindo `target_arquitetura.md` e `target_dominio_model.md`:
    - infraestrutura → dados → domínio → aplicação → bordas.
 6. **Implementar as telas** consumindo `target_screens.md` como contrato literal. Em modo literal com golden files presentes em `_solucao_sdd/screens/golden/`, o resultado da implementação deve casar com o golden file dentro das `normalizationRules` declaradas no `manifest.yaml`.
 7. **Escrever os testes** a partir de `parity_specs.md` e `parity_tests/*.feature` desde o início. Honrar a seção § Exceções, que reflete deviations aprovadas em `screen_deviation_log.md`.
-8. **Para cada componente**, validar que respeita o paradigma escolhido (sinais explícitos em `target_architecture.md § Honra ao paradigma escolhido`) e a topologia escolhida (sinais explícitos em `target_architecture.md § Honra à topologia escolhida`).
+8. **Para cada componente**, validar que respeita o paradigma escolhido (sinais explícitos em `target_arquitetura.md § Honra ao paradigma escolhido`) e a topologia escolhida (sinais explícitos em `target_arquitetura.md § Honra à topologia escolhida`).
 9. **Para a migração de dados**, seguir `data_migration_plan.md`.
 10. **Para o cutover**, seguir `cutover_plan.md` e os critérios go/no-go.
 

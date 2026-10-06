@@ -33,9 +33,9 @@ Quantos módulos existem? Qual linguagem? Qual framework? Quais as dependências
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| `_solucao_sdd/inventory.md` | Inventário completo do projeto |
-| `_solucao_sdd/dependencies.md` | Dependências com versões |
-| `.solucao/context/surface.json` | Dados estruturados para os demais agentes |
+| `_solucao_sdd/inventario.md` | Inventário completo do projeto |
+| `_solucao_sdd/dependencias.md` | Dependências com versões |
+| `.solucao/contexto/surface.json` | Dados estruturados para os demais agentes |
 
 O `surface.json` é especialmente importante: o Solucao o usa para personalizar as tarefas da Fase 2 com base nos módulos identificados.
 

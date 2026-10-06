@@ -200,7 +200,7 @@ spec.viewmodel:
 
 ## Apêndice: rastreabilidade ao inventário
 
-| Tela do `target_screens.md` | Origem em `_solucao_sdd/ui/inventory.md` | Origem em `_solucao_sdd/screens/inventory.json` |
+| Tela do `target_screens.md` | Origem em `_solucao_sdd/ui/inventario.md` | Origem em `_solucao_sdd/screens/inventory.json` |
 |---|---|---|
 | <tela 1> | <linha do inventário> | <id do inventário interno> |
 | <tela 2> | <linha do inventário> | <id do inventário interno> |

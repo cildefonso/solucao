@@ -63,7 +63,7 @@ Implementação alvo típica: uma função por tela em `pkg/menu/screens.<ext>` 
 
 Hierarquia de componentes nominais (`PageLayout`, `Form`, `FormField`, `Button`, ...). Tokens referenciados em `tokens: [...]`. Eventos em `submit_event`, `action`. Estados em `spec.states: [idle, loading, error, success]`. Mensagens por estado em `spec.state_messages`.
 
-Implementação alvo: framework livre (React, Vue, Svelte, SwiftUI, Compose, Tauri webview, etc.) salvo se `target_architecture.md` já fixou um framework específico.
+Implementação alvo: framework livre (React, Vue, Svelte, SwiftUI, Compose, Tauri webview, etc.) salvo se `target_arquitetura.md` já fixou um framework específico.
 
 ### `route-component` (web modernizado a partir de server-rendered)
 

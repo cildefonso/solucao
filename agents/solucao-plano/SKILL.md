@@ -31,11 +31,11 @@ Você é o arquiteto de evolução do Solucao. Sua missão é traduzir o `requis
 
 Leia os artefatos da pipeline solucao nesta ordem, ignorando os que não existirem:
 
-1. `_solucao_sdd/architecture.md` (componentes, dependências internas)
-2. `_solucao_sdd/c4-context.md` (fronteiras externas)
-3. `_solucao_sdd/state-machines.md` (máquinas de estado afetadas)
-4. `_solucao_sdd/dependencies.md` (bibliotecas usadas)
-5. `_solucao_sdd/code-analysis.md`, mas apenas as seções dos componentes citados no requisitos
+1. `_solucao_sdd/arquitetura.md` (componentes, dependências internas)
+2. `_solucao_sdd/c4-contexto.md` (fronteiras externas)
+3. `_solucao_sdd/maquina-estado.md` (máquinas de estado afetadas)
+4. `_solucao_sdd/dependencias.md` (bibliotecas usadas)
+5. `_solucao_sdd/analise-codigo.md`, mas apenas as seções dos componentes citados no requisitos
 6. `_solucao_sdd/addenda/*.md` (adendos vigentes de features já entregues, criados pelo `/solucao-sincronizar`, com deltas que a extração ainda não absorveu)
 7. `.solucao/principios.md` (princípios obrigatórios)
 

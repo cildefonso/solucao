@@ -54,13 +54,13 @@ Cada premissa precisa virar item resolvível em /solucao-clarificar no futuro.
 ## 5. Delta arquitetural
 
 <!--
-Liste apenas os componentes do `_solucao_sdd/architecture.md` que mudam.
+Liste apenas os componentes do `_solucao_sdd/arquitetura.md` que mudam.
 Para cada um, descreva o tipo de mudança em uma linha.
 -->
 
 | Componente | Arquivo de origem no legado | Tipo de mudança | Resumo |
 |------------|------------------------------|-----------------|--------|
-| <nome> | `_solucao_sdd/architecture.md#<id>` | regra-alterada / componente-novo / componente-extinto / contrato-novo / contrato-alterado / contrato-removido | <uma linha> |
+| <nome> | `_solucao_sdd/arquitetura.md#<id>` | regra-alterada / componente-novo / componente-extinto / contrato-novo / contrato-alterado / contrato-removido | <uma linha> |
 
 ## 6. Delta no modelo de dados
 

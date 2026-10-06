@@ -27,7 +27,7 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 - **Confiança**: 🟢 CONFIRMADO | 🟡 INFERIDO | 🔴 LACUNA | ⚠️ AMBÍGUO
 - **Plataforma alvo**: <slug> (ex: `go-cli`, `web-spa`, `flutter`, `tauri`)
 - **Telas inventariadas**: <N>
-- **Origem do inventário**: `_solucao_sdd/screens/inventory.json` + `_solucao_sdd/ui/inventory.md`
+- **Origem do inventário**: `_solucao_sdd/screens/inventory.json` + `_solucao_sdd/ui/inventario.md`
 - **Adapter aplicado**: `<adapters/origem__alvo>` (ver `references/adapter-pairs.md`)
 
 ## Modos avaliados

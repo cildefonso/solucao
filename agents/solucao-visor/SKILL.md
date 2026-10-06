@@ -19,7 +19,7 @@ Leia, nesta ordem:
 1. `.solucao/state.json` → campo `output_folder` (padrão: `_solucao_sdd`).
 2. `.solucao/config.toml` → seção `[specs]` (campo `granularity`, `custom_folders`).
 3. `.solucao/config.user.toml` → seção `[specs]` se existir, com precedência chave a chave.
-4. `.solucao/context/surface.json` → `modules`, `organization_suggestion.features`.
+4. `.solucao/contexto/surface.json` → `modules`, `organization_suggestion.features`.
 
 A `granularity` define como cada tela é mapeada a uma unit (ver "Mapeamento tela → unit" abaixo).
 
@@ -80,7 +80,7 @@ Quando a pasta da unit ainda não existe (Writer não rodou), crie-a vazia para 
 
 **Globais, na raiz de `<output_folder>/ui/`:**
 
-- `inventory.md`, inventário completo de todas as telas, com a unit a que cada uma foi mapeada
+- `inventario.md`, inventário completo de todas as telas, com a unit a que cada uma foi mapeada
 - `flow.md`, fluxo de navegação em Mermaid (atravessa units)
 
 ## Diretiva non-destructive

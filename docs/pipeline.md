@@ -25,9 +25,9 @@ The Scout does the first tour of the project. Like a real estate agent visiting 
 
 What it produces:
 
-- Complete project inventory (`inventory.md`)
-- Dependency list with versions (`dependencies.md`)
-- Structured JSON data for the next agents (`.solucao/context/surface.json`)
+- Complete project inventory (`inventario.md`)
+- Dependency list with versions (`dependencias.md`)
+- Structured JSON data for the next agents (`.solucao/contexto/surface.json`)
 
 After the Scout finishes, Solucao uses the `surface.json` to personalize Phase 2: instead of a generic "analyze the code" task, the plan becomes one task per identified module.
 
@@ -45,10 +45,10 @@ The Archaeologist digs through the code module by module. With patience and prec
 
 What it produces:
 
-- Consolidated technical analysis (`code-analysis.md`)
-- Data dictionary (`data-dictionary.md`)
+- Consolidated technical analysis (`analise-codigo.md`)
+- Data dictionary (`dicionario-dados.md`)
 - Mermaid flowcharts per module (`flowcharts/[module].md`)
-- Structured data per module (`.solucao/context/modules.json`)
+- Structured data per module (`.solucao/contexto/modules.json`)
 
 ---
 
@@ -64,13 +64,13 @@ Here the analysis stops being descriptive and becomes interpretive. Two agents w
 
 What they produce:
 
-- Domain and business rules (`domain.md`)
-- State machines in Mermaid (`state-machines.md`)
+- Domain and business rules (`dominio.md`)
+- State machines in Mermaid (`maquina-estado.md`)
 - Permission matrix (`permissions.md`)
 - Retroactive ADRs (`adrs/`)
-- C4 diagrams (`c4-context.md`, `c4-containers.md`, `c4-components.md`)
+- C4 diagrams (`c4-contexto.md`, `c4-conteineres.md`, `c4-componentes.md`)
 - Full ERD (`erd-complete.md`)
-- Architectural overview (`architecture.md`)
+- Architectural overview (`arquitetura.md`)
 
 ---
 
@@ -105,9 +105,9 @@ Bonus: if the Codex plugin is active in the session, the Reviewer can request an
 
 What it produces:
 
-- Validation questions (`questions.md`)
+- Validation questions (`duvidas.md`)
 - Final confidence report (`confidence-report.md`)
-- Unresolved gaps (`gaps.md`)
+- Unresolved gaps (`lacunas.md`)
 - Specs updated in-place with reclassifications
 
 ---

@@ -270,11 +270,11 @@ A sequência de agentes é a mesma do modo guiado, com estes overrides (em confl
 Ao concluir o `solucao-spec-sdd`, NÃO pare no handoff. Atualize `stage` para `enviar-requisitos` e continue:
 
 1. **solucao-requisitos** com argumento derivado da seção "Escopo (in)" do `prd.md`: a primeira feature é o MVP descrito no PRD. Overrides:
-   - Coleta de contexto greenfield: leia `prd.md`, `personas.md`, `ideation.md` e `sdd/*.md` no lugar de `architecture.md`, `domain.md`, `inventory.md` e `code-analysis.md`. As citações do requisitos apontam para esses arquivos.
+   - Coleta de contexto greenfield: leia `prd.md`, `personas.md`, `ideation.md` e `sdd/*.md` no lugar de `arquitetura.md`, `dominio.md`, `inventario.md` e `analise-codigo.md`. As citações do requisitos apontam para esses arquivos.
    - `[DÚVIDA]`: antes de registrar, tente responder com o conteúdo das specs SDD. As que sobrarem (máximo 3) não param o fluxo.
 2. **solucao-clarificar é pulado.** `[DÚVIDA]` remanescentes viram premissas 🟡 no `roadmap.md`, comportamento que o `solucao-plano` já prevê. A pergunta "prefere rodar clarificar antes?" é respondida pelo orquestrador: prosseguir.
 3. **solucao-plano** e **solucao-pendencia** com o mesmo contexto greenfield (specs SDD e PRD no lugar dos artefatos de descoberta).
-4. **solucao-codificacao** em cenário greenfield, que o próprio skill já suporta nativamente: a âncora é `<output_folder>/prd.md` mais pelo menos uma spec em `<output_folder>/sdd/` (no lugar de `architecture.md` + `domain.md`), e `legacy-impact.md`/`regression-watch.md` se adaptam conforme descrito no SKILL.md do codificacao. Reforço do modo expresso:
+4. **solucao-codificacao** em cenário greenfield, que o próprio skill já suporta nativamente: a âncora é `<output_folder>/prd.md` mais pelo menos uma spec em `<output_folder>/sdd/` (no lugar de `arquitetura.md` + `dominio.md`), e `legacy-impact.md`/`regression-watch.md` se adaptam conforme descrito no SKILL.md do codificacao. Reforço do modo expresso:
    - Escrita de código: o codificacao pode criar arquivos novos no projeto e editar arquivos criados por ele mesmo nesta execução (rastreados em `progress.jsonl`). Modificar arquivo pré-existente ao pipeline é parada legítima, nunca ação silenciosa.
 5. **auditoria e quality** continuam opcionais e fora do caminho expresso.
 

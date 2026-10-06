@@ -58,7 +58,7 @@ For each 🔴 gap that only a human who knows the business can resolve, the Revi
 
 **`chat` (default):** questions appear directly in the chat, one by one. You answer in the conversation and it updates the specs in real time.
 
-**`file`:** the Reviewer creates `_solucao_sdd/questions.md` with all questions. You fill it in at your own pace and notify when done.
+**`file`:** the Reviewer creates `_solucao_sdd/duvidas.md` with all questions. You fill it in at your own pace and notify when done.
 
 ---
 
@@ -66,9 +66,9 @@ For each 🔴 gap that only a human who knows the business can resolve, the Revi
 
 | File | Content |
 |------|---------|
-| `_solucao_sdd/questions.md` | Human validation questions |
+| `_solucao_sdd/duvidas.md` | Human validation questions |
 | `_solucao_sdd/confidence-report.md` | Count of 🟢/🟡/🔴 per spec and overall percentage |
-| `_solucao_sdd/gaps.md` | Gaps that remained unanswered |
+| `_solucao_sdd/lacunas.md` | Gaps that remained unanswered |
 | `_solucao_sdd/cross-review-result.md` | Codex findings (if cross-review was requested) |
 
-Specs in each unit folder under `<output_folder>/` are updated in-place with the reclassifications. The Reviewer's own outputs (`questions.md`, `confidence-report.md`, `gaps.md`, `cross-review-result.md`) stay at the root, outside the unit folders.
+Specs in each unit folder under `<output_folder>/` are updated in-place with the reclassifications. The Reviewer's own outputs (`duvidas.md`, `confidence-report.md`, `lacunas.md`, `cross-review-result.md`) stay at the root, outside the unit folders.

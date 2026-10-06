@@ -48,7 +48,7 @@ REGRAS DE PREENCHIMENTO:
 ### Cobertura
 
 - [ ] Q-010 | Cobertura | Todo Requisito Funcional tem pelo menos um cenário Gherkin
-- [ ] Q-011 | Cobertura | Toda Regra de Negócio nova ou alterada cita a regra original do `_solucao_sdd/domain.md` quando aplicável
+- [ ] Q-011 | Cobertura | Toda Regra de Negócio nova ou alterada cita a regra original do `_solucao_sdd/dominio.md` quando aplicável
 
 ### EdgeCases
 

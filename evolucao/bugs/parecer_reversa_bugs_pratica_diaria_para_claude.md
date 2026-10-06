@@ -638,7 +638,7 @@ O formato:
 
 ```yaml
 specs:
-  - _solucao_sdd/domain.md#regras-de-desconto
+  - _solucao_sdd/dominio.md#regras-de-desconto
 ```
 
 é um locator, não uma identidade estável.
@@ -646,7 +646,7 @@ specs:
 Após reextração:
 
 ```text
-domain.md
+dominio.md
 ```
 
 pode virar:
@@ -672,7 +672,7 @@ kind: business-rule
 title: Limite máximo de desconto
 
 current_location:
-  file: _solucao_sdd/domain.md
+  file: _solucao_sdd/dominio.md
   anchor: regras-de-desconto
 ```
 

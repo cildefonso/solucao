@@ -53,21 +53,21 @@ Nenhum item bloqueante. Pode iniciar.
 
 ### Tarefa 04 — Entidades de Domínio Alvo
 **Status:** pending
-**Lê:** `_solucao_sdd/migration/target_domain_model.md`, `_solucao_sdd/migration/target_business_rules.md`
+**Lê:** `_solucao_sdd/migration/target_dominio_model.md`, `_solucao_sdd/migration/target_business_rules.md`
 **Constrói:** entidades, value objects, agregados, regras de negócio
 **Pronto quando:** Domínio implementado conforme o modelo alvo, regras de negócio cobertas por testes
 
 ---
 
 <!-- MODULE_TASKS_START -->
-<!-- O Reconstructor insere aqui uma tarefa por módulo identificado em target_architecture.md, na ordem de dependência. -->
+<!-- O Reconstructor insere aqui uma tarefa por módulo identificado em target_arquitetura.md, na ordem de dependência. -->
 <!-- Exemplo: -->
 
 ### Tarefa 05 — [Nome do Módulo]
 **Status:** pending
-**Lê:** `_solucao_sdd/migration/target_architecture.md` (seção `[módulo]`), `_solucao_sdd/migration/target_domain_model.md`, `_solucao_sdd/migration/target_business_rules.md`
+**Lê:** `_solucao_sdd/migration/target_arquitetura.md` (seção `[módulo]`), `_solucao_sdd/migration/target_dominio_model.md`, `_solucao_sdd/migration/target_business_rules.md`
 **Constrói:** [caminho do módulo conforme topologia aprovada]
-**Pronto quando:** [critério de paridade extraído de parity_specs.md, se aplicável; senão, critério em target_architecture.md]
+**Pronto quando:** [critério de paridade extraído de parity_specs.md, se aplicável; senão, critério em target_arquitetura.md]
 **Alerta:** [se houver item REFERIDO À CODIFICAÇÃO associado]
 
 <!-- MODULE_TASKS_END -->

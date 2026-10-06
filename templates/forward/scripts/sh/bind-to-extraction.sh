@@ -8,11 +8,11 @@
 #   bind-to-extraction.sh [--json] [--for <comando>]
 #
 # Argumentos:
-#   --for requisitos   Lista architecture, domain, inventory, principios
-#   --for plano           Lista architecture, c4-context, state-machines, dependencies, code-analysis, principios
-#   --for pendencia          Lista architecture, code-analysis
-#   --for auditoria          Lista architecture, domain
-#   --for codificacao         Lista architecture, domain, code-analysis (para gerar legacy-impact)
+#   --for requisitos   Lista arquiteto, dominio, inventario, principios
+#   --for plano           Lista arquiteto, c4-contexto, maquina-estado, dependencies, code-analysis, principios
+#   --for pendencia          Lista arquiteto, code-analysis
+#   --for auditoria          Lista arquiteto, dominio
+#   --for codificacao         Lista arquiteto, dominio, code-analysis (para gerar legacy-impact)
 #   sem --for            Lista todos os arquivos presentes em _solucao_sdd/
 #
 # Códigos de saída:
@@ -45,12 +45,12 @@ fi
 declare -a wanted
 
 case "$TARGET" in
-  requisitos) wanted=("architecture.md" "domain.md" "inventory.md") ;;
-  plano)         wanted=("architecture.md" "c4-context.md" "state-machines.md" "dependencies.md" "code-analysis.md") ;;
-  pendencia|todo)   wanted=("architecture.md" "code-analysis.md") ;;
-  auditoria)    wanted=("architecture.md" "domain.md") ;;
-  codificacao)       wanted=("architecture.md" "domain.md" "code-analysis.md") ;;
-  *)            wanted=("architecture.md" "c4-context.md" "code-analysis.md" "confidence-report.md" "dependencies.md" "domain.md" "inventory.md" "questions.md" "state-machines.md") ;;
+  requisitos) wanted=("arquitetura.md" "dominio.md" "inventario.md") ;;
+  plano)         wanted=("arquitetura.md" "c4-contexto.md" "maquina-estado.md" "dependencias.md" "analise-codigo.md") ;;
+  pendencia|todo)   wanted=("arquitetura.md" "analise-codigo.md") ;;
+  auditoria)    wanted=("arquitetura.md" "dominio.md") ;;
+  codificacao)       wanted=("arquitetura.md" "dominio.md" "analise-codigo.md") ;;
+  *)            wanted=("arquitetura.md" "c4-contexto.md" "analise-codigo.md" "confidence-report.md" "dependencias.md" "dominio.md" "inventario.md" "duvidas.md" "maquina-estado.md") ;;
 esac
 
 declare -a present

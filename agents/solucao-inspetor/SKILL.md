@@ -23,18 +23,18 @@ Os artefatos produzidos são **specs de paridade**, não testes executáveis. O 
 
 - `_solucao_sdd/migration/paradigm_decision.md`
 - `_solucao_sdd/migration/migration_strategy.md` (com estratégia confirmada)
-- `_solucao_sdd/migration/target_architecture.md` (Designer concluído e arquitetura aprovada)
+- `_solucao_sdd/migration/target_arquitetura.md` (Designer concluído e arquitetura aprovada)
 - `_solucao_sdd/migration/screen_modernization_decision.md` (Screen Translator concluído ou em modo `skipped`)
 - `_solucao_sdd/migration/screen_deviation_log.md` sem deviations pendentes (deviations bloqueiam o handoff ao Inspector)
 
 ## Inputs
 
 - Os pré-requisitos acima.
-- `_solucao_sdd/code-analysis.md` (fluxos legados)
+- `_solucao_sdd/analise-codigo.md` (fluxos legados)
 - `_solucao_sdd/sequences/` ou `_solucao_sdd/flowcharts/` (se existirem)
 - `_solucao_sdd/characterization_specs/` (se existir; reusar como base)
 - `_solucao_sdd/migration/target_business_rules.md` (regras MIGRAR)
-- `_solucao_sdd/migration/target_domain_model.md`
+- `_solucao_sdd/migration/target_dominio_model.md`
 - `_solucao_sdd/migration/target_screens.md` (Screen Translator) quando há UI
 - `_solucao_sdd/screens/golden/manifest.yaml` (Screen Translator) quando o oráculo executa
 
@@ -95,14 +95,14 @@ Documente a cobertura adaptada na seção "Cobertura adaptada ao paradigma" de `
 Liste fluxos que precisam de cobertura Gherkin:
 
 - Fluxos cobertos por `characterization_specs/` (se existir): adaptar.
-- Fluxos críticos identificados em `code-analysis.md` ou `sequences/`.
+- Fluxos críticos identificados em `analise-codigo.md` ou `sequences/`.
 - Fluxos derivados de regras `BR-MIGRAR-XXX` marcadas como críticas.
 
 Para cada fluxo, gere um arquivo `parity_tests/<NN>-<nome-curto>.feature` usando o template em `references/templates/parity_test.feature`.
 
 Cada `.feature` deve:
 
-- Conter front-matter de comentário com `spec-id`, rastreabilidade ao `process_flows`, ao `target_architecture` e ao paradigma alvo.
+- Conter front-matter de comentário com `spec-id`, rastreabilidade ao `process_flows`, ao `target_arquitetura` e ao paradigma alvo.
 - Cobrir cenário positivo, edge case relevante, e (quando paradigma exigir) cenários de idempotência e ordem.
 - Usar tags consistentes (`@paridade`, `@critico`, `@idempotencia`, `@ordem`, `@regulatorio` quando aplicável).
 - Estar em **Gherkin válido** (Funcionalidade / Cenário / Dado / Quando / Então).
@@ -127,7 +127,7 @@ Se `_solucao_sdd/characterization_specs/` existir, leia e reuse como base. Adapt
 
 ## Casos de borda
 
-- **Sem `characterization_specs/`**: derivar cenários a partir de `code-analysis.md` e `sequences/`. Sinalizar lacuna em `parity_specs.md`.
+- **Sem `characterization_specs/`**: derivar cenários a partir de `analise-codigo.md` e `sequences/`. Sinalizar lacuna em `parity_specs.md`.
 - **Paradigma alvo é o mesmo do legado**: `parity_specs.md` usa equivalência funcional padrão sem dimensões adicionais.
 - **Paradigma alvo event-driven com fluxos do legado puramente síncronos**: cada fluxo gera ao menos 3 cenários (`@paridade`, `@idempotencia`, `@ordem`).
 - **Estratégia Parallel Run**: detalhar em `parity_specs.md` que comparação é online; especificar campos de divergência aceitável.
@@ -142,5 +142,5 @@ Este agente faz parte do Time de Migração e escreve exclusivamente em `_soluca
 
 - Não escrever fora de `_solucao_sdd/migration/`.
 - Arquivos `.feature` são **specs**, não testes executáveis. Não introduza chamadas a frameworks.
-- Cada cenário tem rastreabilidade explícita à origem (process_flows, target_architecture).
+- Cada cenário tem rastreabilidade explícita à origem (process_flows, target_arquitetura).
 - Cobertura adaptada ao paradigma é **obrigatória** quando há mudança de paradigma; não pode ser equivalência funcional ingênua.

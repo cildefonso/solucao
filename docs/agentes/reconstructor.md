@@ -37,10 +37,10 @@ Token preservation. Every task carries only the context it needs. You can pause 
 ## What it reads (planning)
 
 - `.solucao/state.json` (project metadata, if present)
-- `_solucao_sdd/gaps.md` (when available)
+- `_solucao_sdd/lacunas.md` (when available)
 - `_solucao_sdd/confidence-report.md` (when available)
-- `_solucao_sdd/architecture.md`
-- `_solucao_sdd/dependencies.md`
+- `_solucao_sdd/arquitetura.md`
+- `_solucao_sdd/dependencias.md`
 - `_solucao_sdd/traceability/code-spec-matrix.md` (when available)
 - `_solucao_sdd/migration/handoff.md` (when a migration is complete)
 
@@ -52,9 +52,9 @@ Unit-level files (`<unit>/requisitos.md`, `design.md`, `tasks.md`) are not read 
 
 | File | Content |
 |------|---------|
-| `_solucao_sdd/reconstruction-plano.md` | Full bottom-up task list with `Reads:` and `Done when:` per task, plus pre-flight alerts mapped from `gaps.md` |
+| `_solucao_sdd/reconstruction-plano.md` | Full bottom-up task list with `Reads:` and `Done when:` per task, plus pre-flight alerts mapped from `lacunas.md` |
 
-During execution, the Reconstructor writes the actual code in the target project (according to `paradigm_decision.md`/`target_architecture.md` when the source is the migration). Each finished task gets checked off in `reconstruction-plano.md`.
+During execution, the Reconstructor writes the actual code in the target project (according to `paradigm_decision.md`/`target_arquitetura.md` when the source is the migration). Each finished task gets checked off in `reconstruction-plano.md`.
 
 ---
 

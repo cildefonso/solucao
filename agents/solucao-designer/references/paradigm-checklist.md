@@ -1,6 +1,6 @@
 # Checklist de honra ao paradigma alvo
 
-Lista de verificação rápida que o Designer aplica antes de fechar `target_architecture.md` e `target_domain_model.md`.
+Lista de verificação rápida que o Designer aplica antes de fechar `target_arquitetura.md` e `target_dominio_model.md`.
 
 ## Event-driven
 

@@ -18,7 +18,7 @@ Requirements → Clarify → Quality → Plan → To-Do → Audit → Coding
 Principles y Resume corren fuera de este flujo lineal.
 ```
 
-Hay un checkpoint `CONTINUAR` entre agentes. Cada skill verifica sus propias precondiciones y se niega a correr si falta un predecesor obligatorio. `solucao-codificacao` es el más estricto: aborta a menos que `_solucao_sdd/` tenga un ancla de contexto, ya sea el par de legado `architecture.md` + `domain.md` (de `/solucao`) o el par greenfield `prd.md` + al menos una spec en `sdd/` (de `/solucao-novo`), para mantener sólido el puente specs-código.
+Hay un checkpoint `CONTINUAR` entre agentes. Cada skill verifica sus propias precondiciones y se niega a correr si falta un predecesor obligatorio. `solucao-codificacao` es el más estricto: aborta a menos que `_solucao_sdd/` tenga un ancla de contexto, ya sea el par de legado `arquitetura.md` + `dominio.md` (de `/solucao`) o el par greenfield `prd.md` + al menos una spec en `sdd/` (de `/solucao-novo`), para mantener sólido el puente specs-código.
 
 ---
 
@@ -38,7 +38,7 @@ Detecta greenfield (sin `_solucao_sdd/`), crea las carpetas que `/solucao` habr�
 
 **Comando:** `/solucao-requisitos`
 
-Transforma una idea en texto libre ("quiero que el usuario exporte facturas en PDF") en un `requisitos.md` completo, anclado a `_solucao_sdd/architecture.md`, `domain.md`, `state-machines.md` y al glosario. Marca puntos abiertos con `[DOUBT]`, lista gaps y registra la feature en `.solucao/active-requisitos.json`.
+Transforma una idea en texto libre ("quiero que el usuario exporte facturas en PDF") en un `requisitos.md` completo, anclado a `_solucao_sdd/arquitetura.md`, `dominio.md`, `maquina-estado.md` y al glosario. Marca puntos abiertos con `[DOUBT]`, lista gaps y registra la feature en `.solucao/active-requisitos.json`.
 
 Detecta features en curso: si otra está activa, pregunta al usuario si quiere continuar, correr en paralelo (pausando la anterior) o abandonar. Nunca decide por sí solo.
 
@@ -90,7 +90,7 @@ Descompone el roadmap en acciones atómicas distribuidas en cinco fases fijas: P
 
 **Comando:** `/solucao-auditoria`
 
-Cross-check read-only entre requisitos, roadmap y actions. Los hallazgos se reportan con severidad (CRITICAL, HIGH, MEDIUM, LOW), agrupados en cuatro ejes: cobertura, consistencia, coherencia con el legado (`_solucao_sdd/domain.md`, `architecture.md`) y sanidad del grafo de actions (sin ciclos, tareas paralelas no comparten archivos). El skill nunca edita los documentos analizados, ni siquiera si el usuario lo pide.
+Cross-check read-only entre requisitos, roadmap y actions. Los hallazgos se reportan con severidad (CRITICAL, HIGH, MEDIUM, LOW), agrupados en cuatro ejes: cobertura, consistencia, coherencia con el legado (`_solucao_sdd/dominio.md`, `arquitetura.md`) y sanidad del grafo de actions (sin ciclos, tareas paralelas no comparten archivos). El skill nunca edita los documentos analizados, ni siquiera si el usuario lo pide.
 
 **Produce:** `auditoria/cross-check.md`.
 

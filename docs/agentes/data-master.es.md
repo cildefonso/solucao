@@ -34,7 +34,7 @@ El Scout hace un escaneo superficial de la base de datos (solo lista los archivo
 | Archivo | Contenido |
 |---------|-----------|
 | `_solucao_sdd/database/erd.md` | ERD completo en Mermaid |
-| `_solucao_sdd/database/data-dictionary.md` | Todas las tablas y columnas |
+| `_solucao_sdd/database/dicionario-dados.md` | Todas las tablas y columnas |
 | `_solucao_sdd/database/relationships.md` | Relaciones detalladas |
 | `_solucao_sdd/database/business-rules.md` | Reglas de negocio en la base de datos |
 | `_solucao_sdd/database/procedures.md` | Stored procedures y funciones (si los hay) |

@@ -3,7 +3,7 @@ schemaVersion: 1
 generatedAt: <ISO-8601>
 solucao:
   version: "x.y.z"
-kind: target_architecture
+kind: target_arquitetura
 producedBy: designer
 hash: "sha256:<hash do corpo abaixo do front-matter>"
 ---

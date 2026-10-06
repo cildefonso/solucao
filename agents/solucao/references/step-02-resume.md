@@ -72,7 +72,7 @@ Exemplo:
 ## 5. Modo de resposta a lacunas
 
 Se `answer_mode` for `"file"`:
-> "Lembre-se: suas respostas às perguntas devem ser preenchidas em `_solucao_sdd/questions.md`. Me avise quando terminar."
+> "Lembre-se: suas respostas às perguntas devem ser preenchidas em `_solucao_sdd/duvidas.md`. Me avise quando terminar."
 
 Se `answer_mode` for `"chat"` (padrão):
 > Continue normalmente — farei as perguntas aqui no chat.

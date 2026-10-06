@@ -22,7 +22,7 @@ Primeiro agente do pipeline `/solucao-documentos`. Pode ser invocado isolado par
 
 - `_solucao_documentos/.config.json` (entrevista, seed, estilo visual)
 - Código fonte do projeto legado (LOC, complexidade, dependências)
-- `_solucao_sdd/architecture.md` se houver (topologia detectada)
+- `_solucao_sdd/arquitetura.md` se houver (topologia detectada)
 - Skills: `solucao-arquitetura-3d` (3D), `especialista-d3` (2D)
 
 ## Outputs
@@ -109,7 +109,7 @@ Se Python não estiver disponível, gere os JSONs lendo o código fonte direto v
 
 ### 4. Gerar `topologia.html` (apenas se topologia detectada)
 
-1. Verifique se `_solucao_sdd/architecture.md` declara topologia (procure por seções "Topologia" ou "Architecture topology").
+1. Verifique se `_solucao_sdd/arquitetura.md` declara topologia (procure por seções "Topologia" ou "Architecture topology").
 2. Se ausente, **omita** a página e registre em `.config.json.pagesOmitted` com motivo "topology not detected".
 3. Se presente, parse as 2 (ou 3) variantes (legado, moderno, híbrido opcional).
 4. Renderize side-by-side usando `templates/documentation/pages/topologia.html.tpl`. HTML manual ou D3 hierárquico, depende da complexidade.
@@ -134,7 +134,7 @@ Apenas escreve em `_solucao_documentos/`. Código fonte do projeto legado é lid
 | Fonte ausente | Comportamento |
 |---|---|
 | Código fonte (projeto vazio) | Omite arquitetura.html e modulos.html. Gera apenas placeholder mínimo. |
-| `_solucao_sdd/architecture.md` | Omite topologia.html. |
+| `_solucao_sdd/arquitetura.md` | Omite topologia.html. |
 | Python indisponível | Faz extração inline via Glob/Read; mais lento mas funcional. |
 | Skill `solucao-arquitetura-3d` ausente | Aborta com mensagem "Instale com npx github:cildefonso/solucao install antes de rodar /solucao-documentos-mapeador". |
 

@@ -13,7 +13,7 @@ Solucao guarda toda su configuración y estado del análisis dentro de la carpet
 ├── config.user.toml    ← tus preferencias personales (no commitear)
 ├── plano.md             ← plano de exploración (puedes editarlo)
 ├── version             ← versión instalada de Solucao
-├── context/
+├── contexto/
 │   ├── surface.json    ← datos generados por Scout
 │   └── modules.json    ← datos generados por Archaeologist
 └── _config/
@@ -60,7 +60,7 @@ answer_mode = "chat"  # "chat" o "file"
 | Modo | Comportamiento |
 |------|----------------|
 | `chat` (por defecto) | Las preguntas aparecen en el chat, una a una. Respondes en la conversación. |
-| `file` | El Reviewer genera un archivo `_solucao_sdd/questions.md` con todas las preguntas. Lo rellenas y avisas cuando termines. |
+| `file` | El Reviewer genera un archivo `_solucao_sdd/duvidas.md` con todas las preguntas. Lo rellenas y avisas cuando termines. |
 
 ---
 

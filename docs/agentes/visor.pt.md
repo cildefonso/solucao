@@ -47,6 +47,6 @@ Mande as imagens e ele cuida do resto.
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| `_solucao_sdd/ui/inventory.md` | Inventário completo de telas |
+| `_solucao_sdd/ui/inventario.md` | Inventário completo de telas |
 | `_solucao_sdd/ui/flow.md` | Fluxo de navegação em Mermaid |
 | `_solucao_sdd/ui/screens/[nome-da-tela].md` | Spec detalhada por tela |

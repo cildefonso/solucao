@@ -24,6 +24,6 @@ El ilustrador forense trabaja solo con imágenes. Le envías screenshots y él r
 
 | Archivo | Contenido |
 |---------|-----------|
-| `_solucao_sdd/ui/inventory.md` | Inventario completo de pantallas |
+| `_solucao_sdd/ui/inventario.md` | Inventario completo de pantallas |
 | `_solucao_sdd/ui/flow.md` | Flujo de navegación en Mermaid |
 | `_solucao_sdd/ui/screens/[nombre-pantalla].md` | Spec detallada por pantalla |

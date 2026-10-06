@@ -6,7 +6,7 @@
 # spec-id: PT-001
 # rastreabilidade:
 #   process_flows: <ref ao fluxo no _solucao_sdd>
-#   target_architecture: <ref a componente no target_architecture.md>
+#   target_arquitetura: <ref a componente no target_arquitetura.md>
 #   paradigma_alvo: <do paradigm_decision.md>
 
 Funcionalidade: <Nome do fluxo>

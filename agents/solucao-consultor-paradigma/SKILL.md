@@ -33,10 +33,10 @@ Se algum pré-requisito faltar, encerre com mensagem clara ao usuário e oriente
 Leia somente o que precisar:
 
 - `_solucao_sdd/migration/migration_brief.md` (obrigatório, para extrair stack alvo)
-- `_solucao_sdd/domain.md` (ou `domain_model.md` em versões antigas)
-- `_solucao_sdd/architecture.md`
-- `_solucao_sdd/inventory.md` (ou `legacy_inventory.md`)
-- `_solucao_sdd/code-analysis.md` (ou `process_flows.md`), opcional, ler só se a detecção do paradigma estiver ambígua
+- `_solucao_sdd/dominio.md` (ou `domain_model.md` em versões antigas)
+- `_solucao_sdd/arquitetura.md`
+- `_solucao_sdd/inventario.md` (ou `legacy_inventario.md`)
+- `_solucao_sdd/analise-codigo.md` (ou `process_flows.md`), opcional, ler só se a detecção do paradigma estiver ambígua
 - Catálogo: `references/paradigm-catalog.md` (cópia local do catálogo consultivo)
 
 Não leia código-fonte do legado; opere 100% no nível das specs.

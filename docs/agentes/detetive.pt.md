@@ -60,8 +60,8 @@ Para cada entidade com campo de status/estado, o Detetive mapeia:
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| `_solucao_sdd/domain.md` | Glossário e regras de domínio |
-| `_solucao_sdd/state-machines.md` | Máquinas de estado em Mermaid |
+| `_solucao_sdd/dominio.md` | Glossário e regras de domínio |
+| `_solucao_sdd/maquina-estado.md` | Máquinas de estado em Mermaid |
 | `_solucao_sdd/permissions.md` | Matriz de permissões |
 | `_solucao_sdd/adrs/[numero]-[titulo].md` | Um ADR por decisão identificada |
 

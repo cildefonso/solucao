@@ -149,6 +149,64 @@ Seguindo o ciclo de vida do projeto:
      Invoke-RestMethod -Uri "http://localhost:<porta>/api/<novo-recurso>/health" -Method Get
      ```
 
+3. **Conformidade Sonar nas Classes Java Tocadas**:
+   - Se, durante o fluxo, qualquer classe Java for criada ou alterada (ex.: ajuste em `Resource`, DAO ou testes), aplicar as regras da seção 6 antes de finalizar.
+
+---
+
+## 6. Regras de Qualidade Sonar (Classes Java Criadas ou Alteradas)
+Para evitar apontamentos do SonarQube na etapa de deploy, todo código Java criado ou alterado no fluxo deve respeitar:
+
+- **Literais String duplicados (regra "Define a constant instead of duplicating this literal \"X\" N times")**: qualquer literal String usado 3 ou mais vezes na mesma classe deve ser extraído para uma constante `private static final String`, nomeada em `UPPER_SNAKE_CASE`, declarada no topo da classe. Isso vale principalmente para nomes de parâmetros de `Query` (`.setParameter("beneficio", ...)`), chaves de mapas, mensagens e códigos de situação.
+  - Convenção de nomes: `PARAM_<NOME>` para parâmetros de query (ex.: `PARAM_BENEFICIO`, `PARAM_NIT`, `PARAM_PV`, `PARAM_CONTA`); `MSG_<NOME>` para mensagens; `SIT_<NOME>` para códigos de situação.
+  - O nome dentro do SQL (`:beneficio`) continua literal, pois está dentro do text block.
+  - Exemplo incorreto:
+    ```java
+    List<Object[]> rows = entityManager.createNativeQuery(sql)
+            .setParameter("beneficio", numeroBeneficio)
+            .getResultList();
+    // ... mais 5 métodos repetindo .setParameter("beneficio", ...)
+    ```
+  - Exemplo correto:
+    ```java
+    @ApplicationScoped
+    public class BeneficioContaDao {
+
+        private static final String PARAM_BENEFICIO = "beneficio";
+
+        // ...
+        List<Object[]> rows = entityManager.createNativeQuery(sql)
+                .setParameter(PARAM_BENEFICIO, numeroBeneficio)
+                .getResultList();
+    }
+    ```
+  - **Classes de teste (`*Test.java`)**: a regra vale também para testes. Valores de massa de teste repetidos (CPF, NIT, nomes, mensagens esperadas, valores monetários como `"500.00"`) usados 3 ou mais vezes na mesma classe, inclusive em `assertEquals(...)` e nas chamadas ao método testado, devem virar constantes `private static final String` no topo da classe de teste. Classes internas estáticas (stubs/fakes) acessam as constantes da classe externa.
+    - Convenção de nomes: `CPF_VALIDO`, `CPF_BASE`, `VALOR_<NOME>`, `COMPETENCIA_<NOME>`, `MSG_<NOME>`.
+    - Exemplo incorreto (Sonar: `Define a constant instead of duplicating this literal "12345678901" 4 times`):
+      ```java
+      resource.extratoPagamentoService = new ExtratoPagamentoService() {
+          @Override
+          public ApiResponse<ExtratoPagamentoResponse> consultar(Long beneficio, String cpf, LocalDate dataReferencia) {
+              assertEquals(987654L, beneficio);
+              assertEquals("12345678901", cpf);
+              // ...
+          }
+      };
+      var response = resource.consultar(987654L, "12345678901", referencia);
+      ```
+    - Exemplo correto:
+      ```java
+      class ResourceTest {
+
+          private static final String CPF_VALIDO = "12345678901";
+
+          // ...
+          assertEquals(CPF_VALIDO, cpf);
+          var response = resource.consultar(987654L, CPF_VALIDO, referencia);
+      }
+      ```
+  - Antes de finalizar uma classe (principal ou de teste), revisar se algum literal se repete 3 ou mais vezes e, se houver, extrair a constante. Para listar candidatos, agrupar os literais do arquivo (regex `"[^"\r\n]{4,}"`) e tratar todos com contagem maior ou igual a 3, não apenas o apontado pelo Sonar.
+
 ---
 
 ## Recursos e Referências

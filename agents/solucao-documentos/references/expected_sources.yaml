@@ -24,7 +24,7 @@ sources:
     description: "Histórico de eventos, releases e incidentes. Origem da timeline interativa."
 
   - id: topology
-    path: "_solucao_sdd/architecture.md"
+    path: "_solucao_sdd/arquitetura.md"
     producer: "solucao-arquiteto"
     consumed_by:
       - "Mapper (topologia.html)"

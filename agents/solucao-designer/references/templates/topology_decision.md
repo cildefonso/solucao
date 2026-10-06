@@ -17,7 +17,7 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 - **Padrão organizacional**: <package-by-layer | package-by-feature | feature-sliced | módulos por domínio | DDD com bounded contexts | monorepo | monolito sem fronteiras claras | híbrido: ...>
 - **Confiança**: 🟢 CONFIRMADO | 🟡 INFERIDO | 🔴 LACUNA | ⚠️ AMBÍGUO
 - **Evidências**:
-  - <evidência 1, com referência a artefato do `_solucao_sdd/` (architecture.md, inventory.md, dependencies.md)>
+  - <evidência 1, com referência a artefato do `_solucao_sdd/` (arquitetura.md, inventario.md, dependencias.md)>
   - <evidência 2>
 - **Mapa da árvore legada** (resumido):
   ```
@@ -74,8 +74,8 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 | Etapa do Designer | Implicação | Como honrar |
 |---|---|---|
 | Bounded contexts | <implicação> | <ação esperada> |
-| target_architecture | <implicação> | <ação esperada> |
-| target_domain_model | <implicação> | <ação esperada> |
+| target_arquitetura | <implicação> | <ação esperada> |
+| target_dominio_model | <implicação> | <ação esperada> |
 | target_data_model | <implicação> | <ação esperada> |
 
 ## Notas

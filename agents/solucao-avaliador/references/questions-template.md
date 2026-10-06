@@ -1,4 +1,4 @@
-# Template — _solucao_sdd/questions.md
+# Template — _solucao_sdd/duvidas.md
 
 Este arquivo é gerado pelo Revisor e preenchido pelo usuário.
 

@@ -76,11 +76,11 @@
           },
           "matchesUiInventory": {
             "type": "boolean",
-            "description": "true se a tela aparece em _solucao_sdd/ui/inventory.md."
+            "description": "true se a tela aparece em _solucao_sdd/ui/inventario.md."
           },
           "uiInventoryRef": {
             "type": ["string", "null"],
-            "description": "Linha ou âncora correspondente em _solucao_sdd/ui/inventory.md."
+            "description": "Linha ou âncora correspondente em _solucao_sdd/ui/inventario.md."
           },
           "interpolations": {
             "type": "array",
@@ -118,7 +118,7 @@
     },
     "divergenceFromUiInventory": {
       "type": "object",
-      "description": "Comparação contra _solucao_sdd/ui/inventory.md. Se divergencePercent > 10, o agente para e pede revisão (RF-05).",
+      "description": "Comparação contra _solucao_sdd/ui/inventario.md. Se divergencePercent > 10, o agente para e pede revisão (RF-05).",
       "properties": {
         "totalInUiInventory": { "type": "integer" },
         "totalInThisInventory": { "type": "integer" },

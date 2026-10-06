@@ -34,9 +34,9 @@ Use confidência herdada da fonte original.
 
 | Fonte | Trecho relevante | Confidência |
 |-------|------------------|-------------|
-| `_solucao_sdd/architecture.md#<seção>` | <resumo> | 🟢 |
-| `_solucao_sdd/domain.md#<seção>` | <resumo> | 🟢 |
-| `_solucao_sdd/code-analysis.md#<componente>` | <resumo> | 🟡 |
+| `_solucao_sdd/arquitetura.md#<seção>` | <resumo> | 🟢 |
+| `_solucao_sdd/dominio.md#<seção>` | <resumo> | 🟢 |
+| `_solucao_sdd/analise-codigo.md#<componente>` | <resumo> | 🟡 |
 
 ## 3. Personas e cenários de uso
 
@@ -50,12 +50,12 @@ Use confidência herdada da fonte original.
 
 <!--
 Cada regra como item numerado. Para regras que ALTERAM regra confirmada do legado,
-referencie a regra original via `_solucao_sdd/domain.md#<id>`.
+referencie a regra original via `_solucao_sdd/dominio.md#<id>`.
 Marque cada regra com 🟢 / 🟡 / 🔴.
 -->
 
 1. **RN-01:** <descrição> 🟢
-   - Origem no legado: `_solucao_sdd/domain.md#<id>` (se aplicável)
+   - Origem no legado: `_solucao_sdd/dominio.md#<id>` (se aplicável)
    - Tipo: nova | alterada | removida
 2. **RN-02:** ...
 

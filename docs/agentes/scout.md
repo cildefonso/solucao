@@ -33,9 +33,9 @@ How many modules are there? What language? What framework? What are the critical
 
 | File | Content |
 |------|---------|
-| `_solucao_sdd/inventory.md` | Complete project inventory |
-| `_solucao_sdd/dependencies.md` | Dependencies with versions |
-| `.solucao/context/surface.json` | Structured data for the other agents |
+| `_solucao_sdd/inventario.md` | Complete project inventory |
+| `_solucao_sdd/dependencias.md` | Dependencies with versions |
+| `.solucao/contexto/surface.json` | Structured data for the other agents |
 
 The `surface.json` is especially important: Solucao uses it to customize Phase 2 tasks based on identified modules.
 

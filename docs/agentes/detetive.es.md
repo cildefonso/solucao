@@ -23,7 +23,7 @@ No excava más código. Interpreta lo que fue excavado. Es el especialista en ex
 
 | Archivo | Contenido |
 |---------|-----------|
-| `_solucao_sdd/domain.md` | Glosario y reglas de dominio |
-| `_solucao_sdd/state-machines.md` | Máquinas de estado en Mermaid |
+| `_solucao_sdd/dominio.md` | Glosario y reglas de dominio |
+| `_solucao_sdd/maquina-estado.md` | Máquinas de estado en Mermaid |
 | `_solucao_sdd/permissions.md` | Matriz de permisos |
 | `_solucao_sdd/adrs/[numero]-[titulo].md` | Un ADR por decisión identificada |

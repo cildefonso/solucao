@@ -23,9 +23,9 @@ Trabaja junto al Detective en la Fase 3. Mientras el Detective extrae el *por qu
 
 | Archivo | Contenido |
 |---------|-----------|
-| `_solucao_sdd/architecture.md` | Visión arquitectónica general |
-| `_solucao_sdd/c4-context.md` | Diagrama C4: Contexto |
-| `_solucao_sdd/c4-containers.md` | Diagrama C4: Containers |
-| `_solucao_sdd/c4-components.md` | Diagrama C4: Componentes |
+| `_solucao_sdd/arquitetura.md` | Visión arquitectónica general |
+| `_solucao_sdd/c4-contexto.md` | Diagrama C4: Contexto |
+| `_solucao_sdd/c4-conteineres.md` | Diagrama C4: Containers |
+| `_solucao_sdd/c4-componentes.md` | Diagrama C4: Componentes |
 | `_solucao_sdd/erd-complete.md` | ERD completo en Mermaid |
 | `_solucao_sdd/traceability/spec-impact-matrix.md` | Matriz de impacto |

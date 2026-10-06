@@ -25,7 +25,7 @@ The synthesis covers three things:
 
 ## Prerequisite
 
-`.solucao/context/surface.json` must exist. The agent depends on the Scout's surface map. If it doesn't exist, the agent stops and tells you to run `/solucao-explorador` first (or `/solucao` for the full pipeline).
+`.solucao/contexto/surface.json` must exist. The agent depends on the Scout's surface map. If it doesn't exist, the agent stops and tells you to run `/solucao-explorador` first (or `/solucao` for the full pipeline).
 
 ---
 
@@ -37,7 +37,7 @@ A single file:
 |------|---------|
 | `_solucao_sdd/soul.md` | The project's soul: purpose, core entities, founding decisions, gaps |
 
-The file name stays in English (following the convention of `architecture.md`, `domain.md`, `inventory.md`), but the content respects `doc_language` from `state.json`.
+The file name stays in English (following the convention of `arquitetura.md`, `dominio.md`, `inventario.md`), but the content respects `doc_language` from `state.json`.
 
 ---
 

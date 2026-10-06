@@ -35,7 +35,7 @@ Brief (interview)
 [3] Strategist          → proposes strategies (Strangler, Big Bang, Parallel Run, Branch by Abstraction)
    │
    ▼
-[4] Designer            → drafts target architecture, domain model, data plan
+[4] Designer            → drafts target architecture, dominio model, data plan
    │
    ▼
 [5] Screen Translator   → translates legacy screens into specs (modes + golden files)
@@ -58,14 +58,14 @@ The Migration Team never touches legacy code or Discovery Team artifacts. Every 
 ```
 <your-legacy-project>/
 └── _solucao_sdd/                  ← Discovery Team writes here
-    ├── inventory.md               (Scout)
-    ├── dependencies.md            (Scout)
-    ├── code-analysis.md           (Archaeologist)
-    ├── data-dictionary.md         (Archaeologist)
-    ├── domain.md                  (Detective)
-    ├── state-machines.md          (Detective)
+    ├── inventario.md               (Scout)
+    ├── dependencias.md            (Scout)
+    ├── analise-codigo.md           (Archaeologist)
+    ├── dicionario-dados.md         (Archaeologist)
+    ├── dominio.md                  (Detective)
+    ├── maquina-estado.md          (Detective)
     ├── permissions.md             (Detective)
-    ├── architecture.md            (Architect)
+    ├── arquitetura.md            (Architect)
     ├── erd-complete.md            (Architect)
     │
     ├── <unit>/                    (Writer: feature folder with requisitos.md, design.md, tasks.md per unit)
@@ -85,8 +85,8 @@ The Migration Team never touches legacy code or Discovery Team artifacts. Every 
         ├── migration_strategy.md
         ├── risk_register.md
         ├── cutover_plan.md
-        ├── target_architecture.md
-        ├── target_domain_model.md
+        ├── target_arquitetura.md
+        ├── target_dominio_model.md
         ├── target_data_model.md
         ├── data_migration_plan.md
         ├── parity_specs.md
@@ -106,7 +106,7 @@ Artifacts produced by the Migration Team:
 | `paradigm_decision.md` | Paradigm Advisor |
 | `target_business_rules.md` + `discard_log.md` | Curator |
 | `migration_strategy.md` + `risk_register.md` + `cutover_plan.md` | Strategist |
-| `target_architecture.md` + `target_domain_model.md` + `target_data_model.md` + `data_migration_plan.md` | Designer |
+| `target_arquitetura.md` + `target_dominio_model.md` + `target_data_model.md` + `data_migration_plan.md` | Designer |
 | `screen_modernization_decision.md` + `target_screens.md` + `screen_deviation_log.md` (+ `screens/golden/*` if oracle runs) | Screen Translator |
 | `parity_specs.md` + `parity_tests/*.feature` | Inspector |
 | `handoff.md` | Orchestrator |

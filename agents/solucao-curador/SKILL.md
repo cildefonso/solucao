@@ -33,10 +33,10 @@ Se algum faltar, pare e instrua o usuário a executar `/solucao-migrar` ou rodar
 - `_solucao_sdd/migration/migration_brief.md`
 - `_solucao_sdd/migration/paradigm_decision.md`
 - `_solucao_sdd/<unit>/requisitos.md` e `_solucao_sdd/<unit>/design.md` de cada unit (specs por unit, contêm regras de negócio)
-- `_solucao_sdd/domain.md`
-- `_solucao_sdd/code-analysis.md` (para fluxos)
-- `_solucao_sdd/gaps.md`
-- `_solucao_sdd/questions.md` (se existir)
+- `_solucao_sdd/dominio.md`
+- `_solucao_sdd/analise-codigo.md` (para fluxos)
+- `_solucao_sdd/lacunas.md`
+- `_solucao_sdd/duvidas.md` (se existir)
 - `_solucao_sdd/permissions.md` (se existir)
 
 ## Outputs
@@ -54,7 +54,7 @@ Aplique nesta ordem (a primeira que casa decide):
 1. **Regra ⚠️ AMBÍGUA** ou **🔴 LACUNA** → DECISÃO HUMANA. Liste em seção dedicada de `target_business_rules.md` e replique resumo em `ambiguity_log.md`.
 2. **Regra incompatível com `migration_brief.md`** (escopo excluído, restrição técnica que invalida, regulação que muda) → DESCARTAR com justificativa explícita.
 3. **Regra que é artefato do paradigma legado e não do negócio** (ver lista de exemplos abaixo) e o paradigma mudou → DESCARTAR, registrando vínculo a paradigma em `discard_log.md`.
-4. **Regra citada em `pain_points.md` / `gaps.md` como problema** → DECISÃO HUMANA com recomendação do Curator.
+4. **Regra citada em `pain_points.md` / `lacunas.md` como problema** → DECISÃO HUMANA com recomendação do Curator.
 5. **Regra 🟡 INFERIDA** → MIGRAR com aviso para validação no agente de codificação.
 6. **Regra 🟢 CONFIRMADA** sem conexão com pain points e compatível com paradigma alvo → MIGRAR.
 
@@ -116,7 +116,7 @@ Adicione cada item ⚠️ ou pendente em `ambiguity_log.md` com status PENDENTE 
 
 ## Casos de borda
 
-- **Pastas de unit em `_solucao_sdd/` ausentes ou pobres** (Writer não rodou, ou rodou parcialmente): trate `domain.md` e `code-analysis.md` como fontes; explicite no resumo que a granularidade está limitada pela qualidade do `_solucao_sdd/`.
+- **Pastas de unit em `_solucao_sdd/` ausentes ou pobres** (Writer não rodou, ou rodou parcialmente): trate `dominio.md` e `analise-codigo.md` como fontes; explicite no resumo que a granularidade está limitada pela qualidade do `_solucao_sdd/`.
 - **Regra duplicada entre componentes**: consolide num único `BR-MIGRAR-XXX` com múltiplas origens.
 - **Regra que é parcialmente afetada pelo paradigma**: prefira MIGRAR + nota de "compatibilidade com paradigma alvo" em vez de DESCARTAR.
 

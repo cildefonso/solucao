@@ -55,9 +55,9 @@ Uma matriz que mostra qual componente impacta qual. Útil para saber o raio de b
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| `_solucao_sdd/architecture.md` | Visão geral arquitetural |
-| `_solucao_sdd/c4-context.md` | Diagrama C4: Contexto |
-| `_solucao_sdd/c4-containers.md` | Diagrama C4: Containers |
-| `_solucao_sdd/c4-components.md` | Diagrama C4: Componentes |
+| `_solucao_sdd/arquitetura.md` | Visão geral arquitetural |
+| `_solucao_sdd/c4-contexto.md` | Diagrama C4: Contexto |
+| `_solucao_sdd/c4-conteineres.md` | Diagrama C4: Containers |
+| `_solucao_sdd/c4-componentes.md` | Diagrama C4: Componentes |
 | `_solucao_sdd/erd-complete.md` | ERD completo em Mermaid |
 | `_solucao_sdd/traceability/spec-impact-matrix.md` | Matriz de impacto |

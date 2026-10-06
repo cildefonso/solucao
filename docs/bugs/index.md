@@ -48,7 +48,7 @@ Bugs are grouped by **context**: the feature, module or use case the user is tal
 _solucao_bugs/
 ├── README.md                 the project contract (lifecycle, closure policy, rules)
 ├── taxonomy.yaml             controlled vocabulary for area/module/feature
-└── <context>/                e.g. credit-system/ (created the moment the first problem is reported)
+└── <contexto>/                e.g. credit-system/ (created the moment the first problem is reported)
     ├── intake/               annotated reports + screenshots received BEFORE any bug record exists
     ├── bugs/
     │   └── BUG-20260715-A7K3-duplicated-discount/

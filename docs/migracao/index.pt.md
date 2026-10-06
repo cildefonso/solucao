@@ -58,14 +58,14 @@ O Time de Migração nunca toca em código legado nem nos artefatos do Time de D
 ```
 <seu-projeto-legado>/
 └── _solucao_sdd/                  ← Time de Descoberta escreve aqui
-    ├── inventory.md               (Scout)
-    ├── dependencies.md            (Scout)
-    ├── code-analysis.md           (Archaeologist)
-    ├── data-dictionary.md         (Archaeologist)
-    ├── domain.md                  (Detective)
-    ├── state-machines.md          (Detective)
+    ├── inventario.md               (Scout)
+    ├── dependencias.md            (Scout)
+    ├── analise-codigo.md           (Archaeologist)
+    ├── dicionario-dados.md         (Archaeologist)
+    ├── dominio.md                  (Detective)
+    ├── maquina-estado.md          (Detective)
     ├── permissions.md             (Detective)
-    ├── architecture.md            (Architect)
+    ├── arquitetura.md            (Architect)
     ├── erd-complete.md            (Architect)
     │
     ├── <unit>/                    (Writer: feature folder com requisitos.md, design.md, tasks.md por unit)
@@ -85,8 +85,8 @@ O Time de Migração nunca toca em código legado nem nos artefatos do Time de D
         ├── migration_strategy.md
         ├── risk_register.md
         ├── cutover_plan.md
-        ├── target_architecture.md
-        ├── target_domain_model.md
+        ├── target_arquitetura.md
+        ├── target_dominio_model.md
         ├── target_data_model.md
         ├── data_migration_plan.md
         ├── parity_specs.md
@@ -106,7 +106,7 @@ Artefatos produzidos pelo Time de Migração:
 | `paradigm_decision.md` | Paradigm Advisor |
 | `target_business_rules.md` + `discard_log.md` | Curator |
 | `migration_strategy.md` + `risk_register.md` + `cutover_plan.md` | Strategist |
-| `target_architecture.md` + `target_domain_model.md` + `target_data_model.md` + `data_migration_plan.md` | Designer |
+| `target_arquitetura.md` + `target_dominio_model.md` + `target_data_model.md` + `data_migration_plan.md` | Designer |
 | `screen_modernization_decision.md` + `target_screens.md` + `screen_deviation_log.md` (+ `screens/golden/*` se o oráculo rodar) | Screen Translator |
 | `parity_specs.md` + `parity_tests/*.feature` | Inspector |
 | `handoff.md` | Orquestrador |

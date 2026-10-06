@@ -4,31 +4,31 @@
 
 schemaVersion: 1
 artifacts:
-  - path: "code-analysis.md"
+  - path: "analise-codigo.md"
     kind: code_analysis
     required: true
     minSchemaVersion: 1
-  - path: "domain.md"
+  - path: "dominio.md"
     kind: domain_model
     required: true
     minSchemaVersion: 1
-  - path: "architecture.md"
+  - path: "arquitetura.md"
     kind: architecture
     required: true
     minSchemaVersion: 1
-  - path: "dependencies.md"
+  - path: "dependencias.md"
     kind: dependencies
     required: true
     minSchemaVersion: 1
-  - path: "inventory.md"
-    kind: legacy_inventory
+  - path: "inventario.md"
+    kind: legacy_inventario
     required: true
     minSchemaVersion: 1
-  - path: "data-dictionary.md"
+  - path: "dicionario-dados.md"
     kind: data_dictionary
     required: false
     minSchemaVersion: 1
-  - path: "state-machines.md"
+  - path: "maquina-estado.md"
     kind: state_machines
     required: false
     minSchemaVersion: 1
@@ -36,11 +36,11 @@ artifacts:
     kind: permissions
     required: false
     minSchemaVersion: 1
-  - path: "gaps.md"
+  - path: "lacunas.md"
     kind: gaps
     required: true
     minSchemaVersion: 1
-  - path: "questions.md"
+  - path: "duvidas.md"
     kind: questions
     required: false
     minSchemaVersion: 1
@@ -58,12 +58,12 @@ artifacts:
     minSchemaVersion: 1
 
 aliases:
-  "domain.md":
+  "dominio.md":
     - "domain_model.md"
-  "architecture.md":
+  "arquitetura.md":
     - "architecture_legacy.md"
-  "code-analysis.md":
+  "analise-codigo.md":
     - "code_analysis.md"
     - "process_flows.md"
-  "inventory.md":
-    - "legacy_inventory.md"
+  "inventario.md":
+    - "legacy_inventario.md"

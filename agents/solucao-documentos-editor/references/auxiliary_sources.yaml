@@ -9,7 +9,7 @@ scan_roots:
     exclude:
       - "_solucao_documentos/"
       - ".solucao/_config/"
-      - ".solucao/context/"
+      - ".solucao/contexto/"
 
 categories:
   - id: review

@@ -54,7 +54,7 @@ Desenha as specs do sistema novo: arquitetura alvo (com diagrama Mermaid), domai
 
 Não decompõe ingenuamente 1-para-1: identifica bounded contexts reais e justifica agrupamentos e separações.
 
-**Produz:** `target_architecture.md`, `target_domain_model.md`, `target_data_model.md`, `data_migration_plan.md`.
+**Produz:** `target_arquitetura.md`, `target_dominio_model.md`, `target_data_model.md`, `data_migration_plan.md`.
 
 ---
 

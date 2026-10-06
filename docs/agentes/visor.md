@@ -47,6 +47,6 @@ Send the images and it handles the rest.
 
 | File | Content |
 |------|---------|
-| `_solucao_sdd/ui/inventory.md` | Complete screen inventory |
+| `_solucao_sdd/ui/inventario.md` | Complete screen inventory |
 | `_solucao_sdd/ui/flow.md` | Navigation flow in Mermaid |
 | `_solucao_sdd/ui/screens/[screen-name].md` | Detailed spec per screen |

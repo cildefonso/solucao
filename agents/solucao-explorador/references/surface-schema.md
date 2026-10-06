@@ -1,4 +1,4 @@
-# Schema — .solucao/context/surface.json
+# Schema — .solucao/contexto/surface.json
 
 Arquivo gerado pelo Scout. Usado pelos demais agentes como fonte de contexto estruturado.
 

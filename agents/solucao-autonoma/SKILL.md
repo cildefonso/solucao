@@ -49,7 +49,7 @@ A mesma pergunta que o fluxo normal faz após o Scout, antecipada. Se `doc_level
 
 > Qual nível de documentação você quer para este projeto?
 >
-> 1. **Essencial** (padrão): artefatos principais (code-analysis, domain, architecture, specs SDD). Ideal para projetos simples.
+> 1. **Essencial** (padrão): artefatos principais (code-analysis, dominio, architecture, specs SDD). Ideal para projetos simples.
 > 2. **Completo**: diagramas C4, ERD, ADRs, OpenAPI e matrizes de rastreabilidade. Recomendado para a maioria dos projetos.
 > 3. **Detalhado**: máxima profundidade, flowcharts por função, ADRs expandidos, deployment, revisão cruzada obrigatória.
 > 4. **Outro**: descreva o que precisa.
@@ -79,7 +79,7 @@ Resposta vazia assume `automática`. Guarde a escolha em `state.json` → campo 
 
 > Se surgirem dúvidas durante a análise (regras ambíguas, código sem contexto), o que prefiro fazer?
 >
-> 1. **Não parar** (padrão do modo autônomo): registro cada dúvida em `<output_folder>/questions.md`, marco 🔴 LACUNA na spec e sigo em frente. Você responde depois.
+> 1. **Não parar** (padrão do modo autônomo): registro cada dúvida em `<output_folder>/duvidas.md`, marco 🔴 LACUNA na spec e sigo em frente. Você responde depois.
 > 2. **Parar e perguntar**: pauso e pergunto no chat a cada dúvida.
 > 3. **Outro**: descreva.
 
@@ -103,7 +103,7 @@ Execute o plano sequencialmente, um agente por vez, exatamente como o `solucao` 
    - `specs_choice = "auto"`: use `organization_suggestion.granularity` do `surface.json`. Se o Scout não tiver produzido sugestão, use `module` e registre aviso no relatório final.
    - Qualquer outro valor: use o valor escolhido (e `custom_folders`, se houver).
 4. **Conflitos que o fluxo normal pergunta viram avisos.** Detecção de estrutura divergente em disco (RF-11) e override em `config.user.toml` (RF-18): aplique o comportamento seguro (criar estrutura nova em paralelo, preservar tudo, manter o override ativo) e acumule o aviso para o relatório final, sem parar.
-5. **Lacunas:** com `answer_mode = "file"`, nenhum agente pergunta no chat. Toda dúvida vai para `<output_folder>/questions.md` com contexto e marcador 🔴 LACUNA na spec correspondente. Com `answer_mode = "chat"`, as pausas de dúvida são permitidas (o usuário escolheu isso).
+5. **Lacunas:** com `answer_mode = "file"`, nenhum agente pergunta no chat. Toda dúvida vai para `<output_folder>/duvidas.md` com contexto e marcador 🔴 LACUNA na spec correspondente. Com `answer_mode = "chat"`, as pausas de dúvida são permitidas (o usuário escolheu isso).
 6. **Checkpoints continuam obrigatórios.** Salve `state.json` após cada agente, seguindo `checkpoint-guide.md`. O modo autônomo não dispensa a retomabilidade.
 7. **Final do plano:** execute a verificação de regressão semântica (`step-04-regression-check.md`) normalmente.
 
@@ -134,6 +134,6 @@ Ao concluir o plano (e a verificação de regressão), apresente:
 
 1. Fases e agentes executados, com os artefatos gerados em `<output_folder>/`.
 2. Contagem por escala de confiança: 🟢 CONFIRMADO, 🟡 INFERIDO, 🔴 LACUNA.
-3. Perguntas pendentes em `<output_folder>/questions.md`, se houver, com pedido para o usuário respondê-las.
+3. Perguntas pendentes em `<output_folder>/duvidas.md`, se houver, com pedido para o usuário respondê-las.
 4. Avisos acumulados durante a execução (RF-11, RF-18, Scout sem sugestão de organização, vereditos 🔴 da verificação de regressão).
 5. Sugestão de próximos passos (ex. `/solucao-enviar` para evoluir o sistema, `/solucao-documentos` para documentação viva).

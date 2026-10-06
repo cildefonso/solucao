@@ -42,10 +42,10 @@ The Archaeologist analyzes one module at a time, intentionally. For projects wit
 
 | File | Content |
 |------|---------|
-| `_solucao_sdd/code-analysis.md` | Consolidated technical analysis |
-| `_solucao_sdd/data-dictionary.md` | Complete data dictionary |
+| `_solucao_sdd/analise-codigo.md` | Consolidated technical analysis |
+| `_solucao_sdd/dicionario-dados.md` | Complete data dictionary |
 | `_solucao_sdd/flowcharts/[module].md` | Mermaid flowchart per module |
-| `.solucao/context/modules.json` | Structured data per module for the next agents |
+| `.solucao/contexto/modules.json` | Structured data per module for the next agents |
 
 ---
 

@@ -73,17 +73,17 @@ Se a fonte do plano existente for diferente da escolhida no Passo 2, alerte expl
 Leia APENAS estes arquivos (nesta ordem):
 
 1. `.solucao/state.json` — se existir: extrai `project`, `user_name`, `chat_language`
-2. `_solucao_sdd/gaps.md` — se existir
+2. `_solucao_sdd/lacunas.md` — se existir
 3. `_solucao_sdd/confidence-report.md` — se existir
-4. `_solucao_sdd/architecture.md`
-5. `_solucao_sdd/dependencies.md`
+4. `_solucao_sdd/arquitetura.md`
+5. `_solucao_sdd/dependencias.md`
 6. `_solucao_sdd/traceability/code-spec-matrix.md` — se existir
 
-Não leia o conteúdo dos arquivos das pastas de unit (`<unit>/requisitos.md`, `design.md`, `tasks.md`), nem de `openapi/` ou `user-stories/` agora. Apenas liste as units existentes (subpastas de `_solucao_sdd/` que contenham os 3 arquivos canônicos) a partir do `code-spec-matrix.md` ou do `dependencies.md`.
+Não leia o conteúdo dos arquivos das pastas de unit (`<unit>/requisitos.md`, `design.md`, `tasks.md`), nem de `openapi/` ou `user-stories/` agora. Apenas liste as units existentes (subpastas de `_solucao_sdd/` que contenham os 3 arquivos canônicos) a partir do `code-spec-matrix.md` ou do `dependencias.md`.
 
 ### Como determinar a ordem das tarefas
 
-A partir do `dependencies.md`, identifique a árvore de dependências entre as units:
+A partir do `dependencias.md`, identifique a árvore de dependências entre as units:
 - Units sem dependências (folhas da árvore) devem ser implementadas primeiro
 - Units que dependem de outras vêm após suas dependências
 - Infraestrutura (banco, cache, filas) sempre antes do domínio
@@ -91,9 +91,9 @@ A partir do `dependencies.md`, identifique a árvore de dependências entre as u
 Ordem canônica bottom-up:
 
 ```
-1. Schema do banco de dados      → database/erd.md + database/data-dictionary.md
-2. Entidades de domínio          → domain.md
-3. Máquinas de estado            → state-machines.md (se existir)
+1. Schema do banco de dados      → database/erd.md + database/dicionario-dados.md
+2. Entidades de domínio          → dominio.md
+3. Máquinas de estado            → maquina-estado.md (se existir)
 4. Units folha                   → <unit>/{requisitos,design,tasks}.md (uma por tarefa, sem dependentes)
 5. Units intermediárias          → <unit>/{requisitos,design,tasks}.md (ordem da árvore)
 6. Camada de API                 → openapi/
@@ -102,7 +102,7 @@ Ordem canônica bottom-up:
 
 ### Alertas de pré-voo
 
-A partir de `gaps.md` e `confidence-report.md`, identifique gaps 🔴 que bloqueiam tarefas específicas. Associe cada alert à tarefa correspondente no plano.
+A partir de `lacunas.md` e `confidence-report.md`, identifique gaps 🔴 que bloqueiam tarefas específicas. Associe cada alert à tarefa correspondente no plano.
 
 ### Gerar o plano
 
@@ -114,7 +114,7 @@ Regras de geração:
 - Cada unit identificada (subpasta de `<output_folder>/` com os 3 arquivos canônicos) vira uma tarefa própria
 - O campo `Lê:` de cada tarefa lista exatamente os arquivos que serão lidos na execução, tipicamente `<unit>/requisitos.md`, `<unit>/design.md` e `<unit>/tasks.md` mais opcionais aplicáveis
 - O campo `Pronto quando:` é derivado dos critérios de aceitação em `<unit>/requisitos.md` (se disponíveis) ou do tipo da unit
-- Units sem `tasks.md` listam `dependencies.md` como referência
+- Units sem `tasks.md` listam `dependencias.md` como referência
 
 Após gerar, apresente ao usuário:
 
@@ -138,10 +138,10 @@ Leia APENAS estes arquivos (nesta ordem):
 3. `_solucao_sdd/migration/paradigm_decision.md` — decide o "como pensar" (paradigma alvo)
 4. `_solucao_sdd/migration/topology_decision.md` — decide o "como organizar a árvore" (preservar/modernizar/híbrido)
 5. `_solucao_sdd/migration/migration_strategy.md` — fases e ordem da migração (big bang, strangler, paralela, etc.)
-6. `_solucao_sdd/migration/target_architecture.md` — módulos da arquitetura alvo
+6. `_solucao_sdd/migration/target_arquitetura.md` — módulos da arquitetura alvo
 7. `_solucao_sdd/migration/ambiguity_log.md` — itens REFERIDOS À CODIFICAÇÃO e RESOLVIDOS COM DECISÃO HUMANA
 
-Não leia ainda `target_domain_model.md`, `target_data_model.md`, `data_migration_plan.md`, `target_business_rules.md`, `parity_specs.md`, nem `parity_tests/`. Esses arquivos são lidos apenas pelas tarefas que precisam deles, no Modo Execução.
+Não leia ainda `target_dominio_model.md`, `target_data_model.md`, `data_migration_plan.md`, `target_business_rules.md`, `parity_specs.md`, nem `parity_tests/`. Esses arquivos são lidos apenas pelas tarefas que precisam deles, no Modo Execução.
 
 ### Como determinar a ordem das tarefas (migração)
 
@@ -154,13 +154,13 @@ A ordem segue duas fontes complementares:
 1. Setup do projeto novo            → topology_decision.md + paradigm_decision.md
 2. Schema do banco alvo             → target_data_model.md
 3. Plano de migração de dados       → data_migration_plan.md (geração de scripts/jobs)
-4. Entidades de domínio alvo        → target_domain_model.md + target_business_rules.md
-5. Módulos da arquitetura alvo      → target_architecture.md (uma tarefa por módulo, na ordem de dependência)
+4. Entidades de domínio alvo        → target_dominio_model.md + target_business_rules.md
+5. Módulos da arquitetura alvo      → target_arquitetura.md (uma tarefa por módulo, na ordem de dependência)
 6. Cutover                          → cutover_plan.md
 7. Validação de paridade            → parity_specs.md + parity_tests/<arquivo>.feature
 ```
 
-Para extrair os módulos de `target_architecture.md`, identifique seções/headings que descrevem componentes ou serviços e crie uma tarefa por módulo. Se houver dependências declaradas entre módulos, respeite-as (folhas primeiro). Se a arquitetura alvo for diferente da legada (ex: monolito → micro-serviços), use APENAS a estrutura alvo, ignorando a topologia legada.
+Para extrair os módulos de `target_arquitetura.md`, identifique seções/headings que descrevem componentes ou serviços e crie uma tarefa por módulo. Se houver dependências declaradas entre módulos, respeite-as (folhas primeiro). Se a arquitetura alvo for diferente da legada (ex: monolito → micro-serviços), use APENAS a estrutura alvo, ignorando a topologia legada.
 
 ### Alertas de pré-voo (migração)
 
@@ -178,9 +178,9 @@ Gere `_solucao_sdd/reconstruction-plano.md` seguindo o template em `references/r
 Inclua no cabeçalho do plano: `**Fonte:** migração`.
 
 Regras de geração:
-- Cada módulo identificado em `target_architecture.md` vira uma tarefa própria
-- O campo `Lê:` de cada tarefa lista exatamente os arquivos que serão lidos na execução. Para módulos, normalmente `target_architecture.md` (seção do módulo), `target_domain_model.md` e `target_business_rules.md`
-- O campo `Pronto quando:` é derivado de `parity_specs.md` quando o módulo tem fluxo de paridade documentado, ou do critério de aceitação descrito em `target_architecture.md`
+- Cada módulo identificado em `target_arquitetura.md` vira uma tarefa própria
+- O campo `Lê:` de cada tarefa lista exatamente os arquivos que serão lidos na execução. Para módulos, normalmente `target_arquitetura.md` (seção do módulo), `target_dominio_model.md` e `target_business_rules.md`
+- O campo `Pronto quando:` é derivado de `parity_specs.md` quando o módulo tem fluxo de paridade documentado, ou do critério de aceitação descrito em `target_arquitetura.md`
 - Tarefa de cutover lê `cutover_plan.md` integralmente
 - Tarefa de paridade lê `parity_specs.md` mais os `.feature` correspondentes
 

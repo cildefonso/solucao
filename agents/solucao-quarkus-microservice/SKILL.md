@@ -228,6 +228,108 @@ O arquivo `.gitignore` deve cobrir **todos** os arquivos e pastas que não devem
 ### 4.6. `README.md` Dinâmico
 - Gerar o README com o título `# ${PROJECT_UPPER} Backend API (Java ${JAVA_VERSION})`, pré-requisito de JDK `${JAVA_VERSION}`, comandos de build com Maven Wrapper (`./mvnw.cmd clean package`), execução com `./start.ps1` e endpoints de documentação (`/q/swagger-ui`, `/q/openapi`, `/q/health`).
 
+### 4.7. Regras de Qualidade Sonar (Obrigatórias nas Classes Geradas)
+Para evitar apontamentos do SonarQube na etapa de deploy, todo código Java gerado deve respeitar:
+
+- **Literais String duplicados (regra "Define a constant instead of duplicating this literal \"X\" N times")**: qualquer literal String usado 3 ou mais vezes na mesma classe deve ser extraído para uma constante `private static final String`, nomeada em `UPPER_SNAKE_CASE`. Isso vale principalmente para nomes de parâmetros de `Query` (`.setParameter("beneficio", ...)`), chaves de mapas, mensagens e códigos de situação.
+  - Convenção de nomes: `PARAM_<NOME>` para parâmetros de query (ex.: `PARAM_BENEFICIO`, `PARAM_NIT`, `PARAM_PV`, `PARAM_CONTA`); `MSG_<NOME>` para mensagens; `SIT_<NOME>` para códigos de situação.
+  - A constante deve ficar no topo da classe, antes dos campos injetados.
+  - A mesma constante deve ser usada em todos os `setParameter` do mesmo nome, mas o nome dentro do SQL (`:beneficio`) continua literal, pois está dentro do text block.
+  - Exemplo incorreto:
+    ```java
+    List<Object[]> rows = entityManager.createNativeQuery(sql)
+            .setParameter("beneficio", numeroBeneficio)
+            .getResultList();
+    // ... mais 5 métodos repetindo .setParameter("beneficio", ...)
+    ```
+  - Exemplo correto:
+    ```java
+    @ApplicationScoped
+    public class BeneficioContaDao {
+
+        private static final String PARAM_BENEFICIO = "beneficio";
+
+        // ...
+        List<Object[]> rows = entityManager.createNativeQuery(sql)
+                .setParameter(PARAM_BENEFICIO, numeroBeneficio)
+                .getResultList();
+    }
+    ```
+  - **Classes de teste (`*Test.java`)**: a regra vale também para os testes gerados. Valores de massa de teste repetidos (CPF, NIT, nomes, mensagens esperadas, valores monetários como `"500.00"`) usados 3 ou mais vezes na mesma classe, inclusive em `assertEquals(...)` e nas chamadas ao método testado, devem virar constantes `private static final String` no topo da classe de teste. Classes internas estáticas e classes anônimas (stubs/fakes) acessam as constantes da classe externa.
+    - Convenção de nomes: `CPF_VALIDO`, `CPF_BASE`, `VALOR_<NOME>`, `COMPETENCIA_<NOME>`, `MSG_<NOME>`.
+    - Exemplo incorreto (Sonar: `Define a constant instead of duplicating this literal "12345678901" 4 times`):
+      ```java
+      resource.extratoPagamentoService = new ExtratoPagamentoService() {
+          @Override
+          public ApiResponse<ExtratoPagamentoResponse> consultar(Long beneficio, String cpf, LocalDate dataReferencia) {
+              assertEquals(987654L, beneficio);
+              assertEquals("12345678901", cpf);
+              // ...
+          }
+      };
+      var response = resource.consultar(987654L, "12345678901", referencia);
+      ```
+    - Exemplo correto:
+      ```java
+      class ResourceTest {
+
+          private static final String CPF_VALIDO = "12345678901";
+
+          // ...
+          assertEquals(CPF_VALIDO, cpf);
+          var response = resource.consultar(987654L, CPF_VALIDO, referencia);
+      }
+      ```
+  - Antes de finalizar uma classe (principal ou de teste), revisar se algum literal se repete 3 ou mais vezes e, se houver, extrair a constante. Para listar candidatos, agrupar os literais do arquivo (regex `"[^"\r\n]{4,}"`) e tratar todos com contagem maior ou igual a 3, não apenas o apontado pelo Sonar.
+- **Operador ternário aninhado (regra "Extract this nested ternary operation into an independent statement")**: nunca usar um `? :` dentro de outro `? :`, na condição, no resultado verdadeiro ou no falso. Extrair a lógica interna para uma variável local, para `if/else` ou para um método privado com nome descritivo.
+  - Ternários simples (um único `? :` por expressão) continuam permitidos.
+  - Antes de aninhar, verificar se o ternário interno é redundante. Expressões como `x != null ? x : null` equivalem apenas a `x`.
+  - Exemplo incorreto:
+    ```java
+    String mensagemFinal = mensagemAviso != null ? mensagemAviso : (rejeicao != null ? rejeicao : null);
+    ```
+  - Exemplo correto (ternário interno redundante removido):
+    ```java
+    String mensagemFinal = mensagemAviso != null ? mensagemAviso : rejeicao;
+    ```
+  - Exemplo correto (lógica interna realmente necessária, extraída para método privado com `if`):
+    ```java
+    String cpfFormatado = formatarCpf(cpf, dvCpf);
+
+    private String formatarCpf(Long cpf, Integer dvCpf) {
+        if (cpf == null) {
+            return null;
+        }
+        if (dvCpf == null) {
+            return String.format("%09d", cpf);
+        }
+        return String.format("%09d%02d", cpf, dvCpf);
+    }
+    ```
+  - Cada ramificação extraída deve ser coberta por teste unitário, mantendo os 100% de cobertura.
+  - Antes de finalizar uma classe, procurar ternários aninhados (regex `\?[^:;\n]*\?[^;\n]*:|:[^;\n]*\?[^;\n]*:` e também expressões em várias linhas) e eliminá-los.
+- **Reutilizar constante já definida (regra "Use already-defined constant 'X' instead of duplicating its value here")**: se a classe já declara uma constante com determinado valor (ex.: `CPF_BASE = "123456789"`), nenhum outro trecho da mesma classe pode repetir esse valor literal. Isso vale também para código adicionado depois, como um novo método de teste ou um novo helper.
+  - Antes de escrever um literal em uma classe, verificar as constantes `private static final` já declaradas no topo e usar a existente.
+  - A regra vale para qualquer tipo de literal (String, números), inclusive em `assertEquals(...)` e em chamadas de métodos.
+  - Ao adicionar um teste a uma classe existente, reler as constantes do topo da classe antes de criar massa de dados nova.
+  - Exemplo incorreto (a classe de teste já declara `CPF_BASE = "123456789"`):
+    ```java
+    @Test
+    void deveFormatarCpfDoProcuradorSemDvOuSemCpf() {
+        assertNull(consultarProcuradorComLinha(new Object[]{"SEM CPF", null, null}).cpf());
+        assertEquals("123456789", consultarProcuradorComLinha(new Object[]{"SEM DV", 123456789, null}).cpf());
+    }
+    ```
+  - Exemplo correto:
+    ```java
+    @Test
+    void deveFormatarCpfDoProcuradorSemDvOuSemCpf() {
+        assertNull(consultarProcuradorComLinha(new Object[]{"SEM CPF", null, null}).cpf());
+        assertEquals(CPF_BASE, consultarProcuradorComLinha(new Object[]{"SEM DV", 123456789, null}).cpf());
+    }
+    ```
+  - Para detectar, listar as constantes da classe (`private static final`) e buscar o valor de cada uma no restante do arquivo; qualquer ocorrência fora da declaração deve ser trocada pela constante.
+
 ---
 
 ## 5. Validação Pós-Criação
@@ -241,7 +343,7 @@ Após gerar a estrutura dinâmica:
    ```powershell
    .\start.ps1
    ```
-3. Garantir 100% de cobertura nos testes e ausência de literais duplicados para conformidade no SonarQube.
+3. Garantir 100% de cobertura nos testes e ausência de literais duplicados (constantes `private static final String` para qualquer literal repetido 3 ou mais vezes, conforme a seção 4.7) para conformidade no SonarQube.
 
 ---
 

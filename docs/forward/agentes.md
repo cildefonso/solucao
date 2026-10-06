@@ -18,7 +18,7 @@ Requirements → Clarify → Quality → Plan → To-Do → Audit → Coding
 Principles and Resume run outside this linear flow.
 ```
 
-There is a `CONTINUAR` checkpoint between agents. Each skill verifies its own preconditions and refuses to run if a required predecessor is missing. `solucao-codificacao` is the strictest: it aborts unless `_solucao_sdd/` holds a context anchor, either the legacy pair `architecture.md` + `domain.md` (from `/solucao`) or the greenfield pair `prd.md` + at least one spec in `sdd/` (from `/solucao-novo`), to keep the specs-to-code bridge solid.
+There is a `CONTINUAR` checkpoint between agents. Each skill verifies its own preconditions and refuses to run if a required predecessor is missing. `solucao-codificacao` is the strictest: it aborts unless `_solucao_sdd/` holds a context anchor, either the legacy pair `arquitetura.md` + `dominio.md` (from `/solucao`) or the greenfield pair `prd.md` + at least one spec in `sdd/` (from `/solucao-novo`), to keep the specs-to-code bridge solid.
 
 ---
 
@@ -38,7 +38,7 @@ Detects greenfield (no `_solucao_sdd/`), creates the folders that would have bee
 
 **Command:** `/solucao-requisitos`
 
-Turns a free-form idea ("I want users to export their invoices as PDF") into a complete `requisitos.md`, anchored to `_solucao_sdd/architecture.md`, `domain.md`, `state-machines.md` and the glossary. Marks open points with `[DOUBT]`, lists gaps and registers the feature in `.solucao/active-requisitos.json`.
+Turns a free-form idea ("I want users to export their invoices as PDF") into a complete `requisitos.md`, anchored to `_solucao_sdd/arquitetura.md`, `dominio.md`, `maquina-estado.md` and the glossary. Marks open points with `[DOUBT]`, lists gaps and registers the feature in `.solucao/active-requisitos.json`.
 
 Detects in-progress features: if another one is active, asks the user to continue, run in parallel (pausing the previous one) or abandon. Never decides on its own.
 
@@ -90,7 +90,7 @@ Decomposes the roadmap into atomic actions across five fixed phases: Preparation
 
 **Command:** `/solucao-auditoria`
 
-Read-only cross-check between requirements, roadmap and actions. Findings are reported with severity (CRITICAL, HIGH, MEDIUM, LOW), grouped along four axes: coverage, consistency, coherence with the legacy (`_solucao_sdd/domain.md`, `architecture.md`) and sanity of the actions graph (no cycles, parallel tasks do not share files). The skill never edits the analyzed documents, even if the user asks.
+Read-only cross-check between requirements, roadmap and actions. Findings are reported with severity (CRITICAL, HIGH, MEDIUM, LOW), grouped along four axes: coverage, consistency, coherence with the legacy (`_solucao_sdd/dominio.md`, `arquitetura.md`) and sanity of the actions graph (no cycles, parallel tasks do not share files). The skill never edits the analyzed documents, even if the user asks.
 
 **Produces:** `auditoria/cross-check.md`.
 

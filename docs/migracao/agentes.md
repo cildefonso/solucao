@@ -54,7 +54,7 @@ Drafts the new system specs: target architecture (with Mermaid diagram), domain 
 
 Does not naively decompose 1-to-1: identifies real bounded contexts and justifies groupings and separations.
 
-**Produces:** `target_architecture.md`, `target_domain_model.md`, `target_data_model.md`, `data_migration_plan.md`.
+**Produces:** `target_arquitetura.md`, `target_dominio_model.md`, `target_data_model.md`, `data_migration_plan.md`.
 
 ---
 

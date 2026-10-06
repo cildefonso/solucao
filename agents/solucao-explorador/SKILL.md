@@ -64,10 +64,10 @@ Preencha sempre:
 ## Saída
 
 **Em `_solucao_sdd/`:**
-- `inventory.md` — inventário completo
-- `dependencies.md` — dependências com versões
+- `inventario.md` — inventário completo
+- `dependencias.md` — dependências com versões
 
-**Em `.solucao/context/`:**
+**Em `.solucao/contexto/`:**
 - `surface.json` — dados estruturados para os demais agentes
 
 ## Checkpoint

@@ -21,64 +21,64 @@ A Solução é um framework de engenharia solucao de especificações. Ao instal
 
 ## Porque a Solução existe?
 
-Most production systems carry years of accumulated knowledge: implicit business rules, undocumented architectural decisions, critical logic buried in code nobody wants to touch. That knowledge exists, but it's trapped.
+A maioria dos sistemas em produção carrega anos de conhecimento acumulado: regras de negócio implícitas, decisões arquiteturais não documentadas e lógica crítica oculta em códigos que ninguém deseja modificar. Esse conhecimento existe, mas encontra-se aprisionado.
 
-AI agents are transformative for creating and evolving software, but they depend on specifications to operate safely. For new systems, you write the spec and the agent executes. For legacy systems — or those built with pure vibe coding — there is no spec: the agent has no way of knowing what it cannot break.
+Os agentes de IA são transformadores na criação e na evolução de software, porém dependem de especificações para operar com segurança. Em sistemas novos, escreve-se a especificação e o agente a executa. Em sistemas legados — ou naqueles construídos exclusivamente com vibe coding — não há especificação: o agente não tem como saber o que não pode quebrar.
 
 **A Solução é a ponte entre o sistema legado e os agentes de IA.**
 
-It analyzes the existing code, extracts accumulated knowledge (business rules, flows, module contracts, retroactive architectural decisions) and transforms everything into executable, traceable specifications ready for any coding agent.
+Ele analisa o código existente, extrai o conhecimento acumulado (regras de negócio, fluxos, contratos entre módulos e decisões arquiteturais retroativas) e transforma tudo em especificações executáveis e rastreáveis, prontas para qualquer agente de codificação.
 
-The result is not documentation for humans to read. These are **operational contracts** that allow an agent to evolve the system with fidelity to what already exists.
+O resultado não é uma documentação destinada à leitura humana. Trata-se de **contratos operacionais** que permitem a um agente evoluir o sistema com fidelidade ao que já existe.
 
 ---
 
-## Installation
+## Instalação
 
-In the root of the legacy project:
+Na raiz do projeto legado:
 
 ```bash
 npx solucao install
 ```
 
-The installer will:
-1. Detect the AI engines present in the environment (Claude Code, Codex, Cursor, etc.)
-2. Ask which agents to install — all selected by default
-3. Collect project name, language, and preferences
-4. Copy agents to `.agents/skills/` (and `.claude/skills/` for Claude Code)
-5. Create the engine entry file (`CLAUDE.md`, `AGENTS.md`, etc.)
-6. Create the `.solucao/` structure with state, configuration, and plan
-7. Generate SHA-256 manifest for safe updates
+O instalador irá:
+1. Detectar os motores de IA presentes no ambiente (Claude Code, Codex, Cursor etc.)
+2. Perguntar quais agentes devem ser instalados — todos vêm selecionados por padrão
+3. Coletar o nome do projeto, o idioma e as preferências
+4. Copiar os agentes para `.agents/skills/` (e para `.claude/skills/`, no caso do Claude Code)
+5. Criar o arquivo de entrada do motor (`CLAUDE.md`, `AGENTS.md` etc.)
+6. Criar a estrutura `.solucao/` com o estado, a configuração e o plano
+7. Gerar um manifesto SHA-256 para atualizações seguras
 
-> Solução **never deletes or modifies** existing files in your project.
-> Agents write only to `.solucao/` and the output folder (`_solucao_sdd/` by default).
+> Solução **nunca exclui nem modifica** os arquivos existentes em seu projeto.
+> Os agentes gravam apenas em `.solucao/` e na pasta de saída (`_solucao_sdd/`, por padrão).
 
-**Requirements:** Node.js 18+
-
----
-
-> [!IMPORTANT]
-> ### 🔒 Guaranteed immutability of the legacy project
->
-> The installer only creates new files (`CLAUDE.md`, `AGENTS.md`, `.agents/skills/`, etc.) and **never modifies or deletes any existing file** in your project. During analysis, agents operate under a strict and inviolable directive: **all writes are restricted to `.solucao/` and `_solucao_sdd/`** — no other file in your project is touched.
-
-> [!CAUTION]
-> ### 💾 Back up your project before starting
->
-> Although Solução never modifies your files, AI agents can make mistakes. **We strongly recommend:**
->
-> 1. **Version the project in Git** — make sure all files are committed before starting the analysis
-> 2. **Have the repository on GitHub** (or GitLab, Bitbucket) — so you have a safe remote copy
-> 3. **Make a local copy of the folder** — a simple `cp -r my-project my-project-backup` protects against any unexpected event
->
-> If something unexpected happens during analysis, you can restore the original state with `git restore .` or from the backup copy.
-
-> [!WARNING]
-> 🔑 **SOlução não solicita, armazena ou transmite chaves de API de qualquer serviço LLM.** All intelligence is delegated to the AI agent already present in your environment (Claude Code, Codex, Cursor, etc.) — no external authentication dependencies.
+**Requisitos:** Node.js 18+
 
 ---
 
-## How to use
+> [!IMPORTANTE]
+> ### 🔒 Imutabilidade garantida do projeto legado
+>
+> O instalador apenas cria novos arquivos (`CLAUDE.md`, `AGENTS.md`, `.agents/skills/` etc.) e **nunca modifica nem exclui nenhum arquivo existente** em seu projeto. Durante a análise, os agentes operam sob uma diretriz rigorosa e inviolável: **todas as gravações restringem-se a `.solucao/` e `_solucao_sdd/`** — nenhum outro arquivo de seu projeto é alterado.
+
+> > [!CUIDADO]
+> ### 💾 Faça um backup do seu projeto antes de começar
+>
+> Embora o Solução nunca modifique seus arquivos, os agentes de IA podem cometer erros. **Recomendamos enfaticamente:**
+>
+> 1. **Versionar o projeto no Git** — certifique-se de que todos os arquivos estejam commitados antes de iniciar a análise
+> 2. **Manter o repositório no GitHub** (ou GitLab, Bitbucket) — para dispor de uma cópia remota segura
+> 3. **Fazer uma cópia local da pasta** — um simples `cp -r meu-projeto meu-projeto-backup` protege contra qualquer imprevisto
+>
+> Caso ocorra algum imprevisto durante a análise, é possível restaurar o estado original com `git restore .` ou a partir da cópia de backup.
+
+> [!AVISO]
+> 🔑 **SOlução não solicita, armazena ou transmite chaves de API de qualquer serviço LLM.** Toda a inteligência é delegada ao agente de IA já presente em seu ambiente (Claude Code, Codex, Cursor etc.), sem dependências externas de autenticação.
+
+---
+
+## Como usar
 
 Após a instalação, abra o projeto no agente AI e ative a Solução:
 
@@ -86,65 +86,65 @@ Após a instalação, abra o projeto no agente AI e ative a Solução:
 /solucao
 ```
 
-For engines without slash command support (like Codex):
+Para motores sem suporte a slash commands (como o Codex):
 
 ```
 solucao
 ```
 
-solucao will introduce itself, create a personalized exploration plan, and coordinate the entire analysis. Progress is saved in `.solucao/state.json` at each checkpoint — if the session is interrupted, just type `solucao` to resume where you left off.
+O solucao se apresentará, criará um plano de exploração personalizado e coordenará toda a análise. O progresso é salvo em `.solucao/state.json` a cada checkpoint — caso a sessão seja interrompida, basta digitar `solucao` para retomar de onde parou.
 
 For other workflows, use the matching entry command:
 
-| Goal | Command |
+| Meta | Comando |
 |------|---------|
-| Analyze an existing legacy and produce specs | `/solucao` |
-| Run the same analysis end to end, without intermediate stops | `/solucao-autonoma` |
-| Start a brand new project from a one-line idea | `/solucao-novo` (add `expresso` to go all the way to code) |
-| Evolve the system one feature at a time, from spec to code | `/solucao-enviar` |
-| Add a short amendment to the feature you just delivered | `/solucao-add` |
-| Converge a delivered feature back into the extraction | `/solucao-sincronizar` |
-| Rebuild the legacy on a modern stack | `/solucao-migrar` |
-| Render the extracted knowledge as an HTML mini-site | `/solucao-documentos` |
-| Track and fix defects with causal traceability | `/solucao-depuracao`, `/solucao-depuracao-resolver` |
-| Estimate effort and pricing on top of the specs | `/solucao-perfil-precificacao`, `/solucao-fins-precificacao`, `/solucao-estimativa-preco` |
+| Analisar um sistema legado existente e produzir especificações | `/solucao` |
+| Executar a mesma análise de ponta a ponta, sem paradas intermediárias | `/solucao-autonoma` |
+| Iniciar um projeto totalmente novo a partir de uma ideia descrita em uma única linha | `/solucao-novo` (acrescente `expresso` para avançar até o código) |
+| Evoluir o sistema uma funcionalidade por vez, da especificação ao código | `/solucao-enviar` |
+| Acrescentar um breve complemento à funcionalidade recém-entregue | `/solucao-add` |
+| Reintegrar à extração uma funcionalidade já entregue | `/solucao-sincronizar` |
+| Reconstruir o sistema legado em uma stack moderna | `/solucao-migrar` |
+| Gerar um minissite em HTML com o conhecimento extraído | `/solucao-documentos` |
+| Rastrear e corrigir defeitos com rastreabilidade causal | `/solucao-depuracao`, `/solucao-depuracao-resolver` |
+| Estimar esforço e preço com base nas especificações | `/solucao-perfil-precificacao`, `/solucao-fins-precificacao`, `/solucao-estimativa-preco` |
 
-Each orchestrator pauses between agents and asks for `CONTINUAR` before advancing, so you stay in control of every step.
+Cada orquestrador faz uma pausa entre os agentes e solicita `CONTINUAR` antes de prosseguir, de modo que você mantém o controle de cada etapa.
 
-### Unattended runs
+### Execuções autônomas
 
-Two commands concentrate every question in a **single interview at the start** and then run without stopping, for sessions where nobody is watching the terminal (Claude Code YOLO mode or equivalent):
+Dois comandos concentram todas as perguntas em uma **única entrevista no início** e, em seguida, são executados sem interrupções, para sessões em que ninguém está acompanhando o terminal (modo YOLO do Claude Code ou equivalente):
 
-- `/solucao-autonoma` — the full Discovery pipeline, same agents and same checkpoints as `/solucao`.
-- `/solucao-novo expresso "<your idea>"` — greenfield from the idea all the way to implemented code, chaining into the forward cycle after the specs.
+- `/solucao-autonoma` — o pipeline completo de Discovery, com os mesmos agentes e os mesmos checkpoints do `/solucao`.
+- `/solucao-novo expresso "<sua ideia>"` — projeto greenfield, da ideia até o código implementado, encadeando o ciclo de evolução após as especificações.
 
-Both keep the non-destructive rule intact: writes stay inside `.solucao/` and the output folders, and no destructive or outward-facing command (delete, `git push`, publish, install) is ever run on its own. Doubts that come up along the way are recorded with the 🟡 seal instead of interrupting the flow.
+Ambos preservam integralmente a regra não destrutiva: as gravações permanecem restritas a `.solucao/` e às pastas de saída, e nenhum comando destrutivo ou com efeitos externos (exclusão, `git push`, publicação, instalação) é executado por conta própria. As dúvidas que surgirem ao longo do processo são registradas com o selo 🟡, em vez de interromperem o fluxo.
 
 ---
 
-## How it works
+## Como funciona
 
-The Discovery pipeline (`/solucao`) is the heart of the framework: a 5-phase sequence orchestrated by the **Solucao** agent.
-
-```
-Reconnaissance  Excavation  Interpretation  Generation  Review
-    Scout       Archaeologist  Detective      Writer    Reviewer
-                                Architect
-```
-
-Independent agents (run at any phase): **Visor**, **Data Master**, **Design System**, **Soul Extractor**, **Reconstructor**.
-
-Once the specs exist, you can move forward in three directions, depending on the goal:
+O pipeline de Discovery (`/solucao`) é o núcleo do framework: uma sequência de 5 fases orquestrada pelo agente **Solucao**.
 
 ```
-Discovery (/solucao)
+Reconhecimento  Escavação       Interpretação   Geração         Revisão
+  Explorador    Arqueólogo        Detetive      Redator         Revisor
+                                  Arquiteto
+```
+
+Agentes independentes (executáveis em qualquer fase): **Visor**, **Mestre de Dados**, **Design System**, **Extrator de Essência**, **Reconstrutor**.
+
+Uma vez existentes as especificações, é possível avançar em três direções, conforme o objetivo:
+
+```
+Descoberta (/solucao)
         │
-        ├── /solucao-enviar    Evolve the system from specs to code
-        ├── /solucao-migrar    Rebuild the legacy on a modern stack
-        └── /solucao-documentos       Render specs as an HTML mini-site
+        ├── /solucao-enviar    Evoluir o sistema, das especificações ao código
+        ├── /solucao-migrar    Reconstruir o sistema legado em uma stack moderna
+        └── /solucao-documentos       Gerar um minissite em HTML a partir das especificações
 ```
 
-For a **greenfield** project (no legacy to extract), start with `/solucao-novo` instead. It walks from a one-line idea to SDD specs and then hands off to `/solucao-enviar`.
+Para um projeto **greenfield** (sem sistema legado a ser extraído), comece pelo `/solucao-novo`. Ele conduz o processo desde uma ideia descrita em uma única linha até as especificações SDD e, em seguida, transfere a continuidade para o `/solucao-enviar`.
 
 ---
 
@@ -152,179 +152,179 @@ For a **greenfield** project (no legacy to extract), start with `/solucao-novo` 
 
 A Solução organiza seus agentes em **dez equipes especializadas**. A equipe Discovery (núcleo de agentes da Solução) e os agentes de bugs vêm sempre instalados; sete equipes já vêm selecionadas no instalador, enquanto a instalação das equipes de tradução é opcional.
 
-| Team | Purpose | Entry command |
-|------|---------|---------------|
-| **Solução Agents Core** (Discovery) | Analyze the existing legacy and produce specs | `/solucao` |
-| **Ideation Agents** | Clarify a raw idea before any development artifact exists, in greenfield or legacy | `/solucao-brainstorm` |
-| **Code New Project Agents** | Start a new project (greenfield) from a one-line idea and produce specs | `/solucao-novo` |
-| **Code Forward Agents** | Evolve the system from specs to running code, one feature at a time | `/solucao-enviar` |
-| **Migration Agents** | Turn legacy specs into a rebuild plan for a modern stack | `/solucao-migrar` |
-| **Pricing and Size Agents** | Estimate effort, size and pricing on top of the specs | `/solucao-pricing-*` |
-| **Documentation Team** | Render the extracted knowledge as a self-contained HTML mini-site | `/solucao-documentos` |
-| **Bug Agents** | Track, debate and fix defects with causal traceability to the specs | `/solucao-depuracao` |
-| **Code Quality Agents** | Improve existing code without changing behavior: refactor, optimize, standardize, prune dead code | `/solucao-refactor` |
+| Equipe | Finalidade | Comando de entrada |
+|--------|------------|--------------------|
+| **Núcleo de Agentes do Solução** (Discovery) | Analisar o sistema legado existente e produzir especificações | `/solucao` |
+| **Agentes de Ideação** | Refinar uma ideia inicial antes que exista qualquer artefato de desenvolvimento, tanto em projetos greenfield quanto em sistemas legados | `/solucao-brainstorm` |
+| **Agentes de Novo Projeto** | Iniciar um novo projeto (greenfield) a partir de uma ideia descrita em uma única linha e produzir especificações | `/solucao-novo` |
+| **Agentes de Evolução de Código** | Evoluir o sistema das especificações ao código em execução, uma funcionalidade por vez | `/solucao-enviar` |
+| **Agentes de Migração** | Converter as especificações do sistema legado em um plano de reconstrução para uma stack moderna | `/solucao-migrar` |
+| **Agentes de Precificação e Dimensionamento** | Estimar esforço, dimensão e preço com base nas especificações | `/solucao-pricing-*` |
+| **Equipe de Documentação** | Gerar um minissite em HTML autocontido com o conhecimento extraído | `/solucao-documentos` |
+| **Agentes de Defeitos** | Rastrear, discutir e corrigir defeitos com rastreabilidade causal até as especificações | `/solucao-depuracao` |
+| **Agentes de Qualidade de Código** | Aprimorar o código existente sem alterar seu comportamento: refatorar, otimizar, padronizar e remover código morto | `/solucao-refactor` |
 
-### Discovery Team, required
+### Equipe de Descoberta, obrigatório
 
-These run the main `/solucao` pipeline.
+Estes agentes executam o pipeline principal do `/solucao`.
 
-| Agent | Role |
-|-------|------|
-| **Solucao** | Central orchestrator. Coordinates all agents, saves checkpoints, guides the user |
-| **Scout** | Maps the surface: folder structure, languages, frameworks, dependencies, entry points |
-| **Archaeologist** | Deep module-by-module analysis: algorithms, control flows, data structures |
-| **Detective** | Extracts implicit business knowledge: rules, retroactive ADRs, state machines, permissions |
-| **Architect** | Synthesizes everything into C4 diagrams, full ERD, integration map, and technical debt |
-| **Writer** | Generates specifications as operational contracts with code traceability |
+| Agente | Função |
+|--------|--------|
+| **Solucao** | Orquestrador central. Coordena todos os agentes, salva os checkpoints e orienta o usuário |
+| **Explorador** | Mapeia a superfície: estrutura de pastas, linguagens, frameworks, dependências e pontos de entrada |
+| **Arqueólogo** | Análise aprofundada, módulo por módulo: algoritmos, fluxos de controle e estruturas de dados |
+| **Detetive** | Extrai o conhecimento de negócio implícito: regras, ADRs retroativos, máquinas de estado e permissões |
+| **Arquiteto** | Sintetiza tudo em diagramas C4, DER completo, mapa de integrações e dívida técnica |
+| **Redator** | Gera especificações na forma de contratos operacionais com rastreabilidade até o código |
 
-### Discovery Team, optional (installed by default)
+### Equipe de Discovery, opcional (instalada por padrão)
 
-| Agent | Role |
-|-------|------|
-| **Reviewer** | Reviews specs, finds inconsistencies, and validates gaps with the user |
-| **Visor** | Documents the interface from screenshots, without needing the system to be running |
-| **Data Master** | Complete database analysis: DDL, migrations, ORM, ERD, triggers, procedures |
-| **Design System** | Extracts design tokens: colors, typography, spacing, themes, and components |
-| **Soul Extractor** | Produces a single executive Spec (`soul.md`) with purpose, core entities and founding decisions, useful right after Scout |
-| **Agents Help** | Explica cada agente de Solucao usando analogias; útil para iniciantes. |
-| **Reconstructor** | Generates a bottom-up reconstruction plan from the specs and implements one task at a time, preserving tokens. Activation: `/solucao-reconstrutor` |
-| **Autonomous** | Runs the same sequence as `/solucao` end to end, with a single interview at the start and no intermediate stops. Activation: `/solucao-autonoma` |
+| Agente | Função |
+|--------|--------|
+| **Revisor** | Revisa as especificações, identifica inconsistências e valida as lacunas com o usuário |
+| **Visor** | Documenta a interface a partir de capturas de tela, sem que o sistema precise estar em execução |
+| **Mestre de Dados** | Análise completa do banco de dados: DDL, migrations, ORM, DER, triggers e procedures |
+| **Design System** | Extrai os design tokens: cores, tipografia, espaçamento, temas e componentes |
+| **Extrator de Essência** | Produz uma única especificação executiva (`soul.md`) com o propósito, as entidades centrais e as decisões fundadoras do sistema; útil logo após o Explorador |
+| **Ajuda dos Agentes** | Explica cada agente do Solução por meio de analogias; útil para iniciantes |
+| **Reconstrutor** | Gera um plano de reconstrução bottom-up a partir das especificações e implementa uma tarefa por vez, economizando tokens. Ativação: `/solucao-reconstrutor` |
+| **Autônomo** | Executa a mesma sequência do `/solucao` de ponta a ponta, com uma única entrevista no início e sem paradas intermediárias. Ativação: `/solucao-autonoma` |
 
-### Ideation Agents (before anything is built)
+### Agentes de Ideação (antes de qualquer construção)
 
-For the moment when the idea is still raw. Works in **both** scenarios: greenfield, and evolution of an existing legacy. Activate with `/solucao-brainstorm` and the orchestrator drives the pipeline `Framer → Explorer → Challenger → Arbiter → Pre-Spec`, with a `CONTINUAR` checkpoint between agents. Nothing here produces code.
+Destinados ao momento em que a ideia ainda está em estado bruto. Funcionam em **ambos** os cenários: projetos greenfield e evolução de um sistema legado existente. Ative com `/solucao-brainstorm`, e o orquestrador conduzirá o pipeline `Enquadrador → Prospector → Desafiador → Árbitro → Pré-Especificação`, com um checkpoint `CONTINUAR` entre os agentes. Nenhuma etapa desta equipe produz código.
 
-Artifacts live in one folder per session: `_solucao_sdd/brainstorms/<NNN>-<short-name>/`. The active session is tracked in `.solucao/active-ideation.json`. Final handoff goes to `/solucao-novo` in greenfield, `/solucao-requisitos` in legacy, or `/solucao-migrar` when the intent is a rebuild.
+Os artefatos ficam em uma pasta por sessão: `_solucao_sdd/brainstorms/<NNN>-<nome-curto>/`. A sessão ativa é registrada em `.solucao/active-ideation.json`. A transferência final é feita para o `/solucao-novo` em projetos greenfield, para o `/solucao-requisitos` em sistemas legados ou para o `/solucao-migrar` quando a intenção for uma reconstrução.
 
-| Agent | Role |
-|-------|------|
-| **Solução Brainstorm** | Orchestrator. Detects greenfield vs legacy, opens the session folder, routes by physical stage. Writes no pipeline artifact itself |
-| **Framer** | Separates problem from solution and refuses to let a solution pass as a problem. Produces `framing.md` with the job to be done and the cost of doing nothing |
-| **Explorer** | Opens 3 to 5 materially distinct paths, always including "do not build" and "use something off the shelf". Forbidden from recommending. Produces `options.md` |
-| **Challenger** | Premortem, the assumption that kills each option, the cheap test for it, and the hidden cost in the legacy. Adversarial by design. Produces `risks.md` |
-| **Arbiter** | Scores the options against the risks and recommends one with an explicit trade-off. The choice stays human, and a divergence from the recommendation is recorded as such. Produces `decision.md` |
-| **Pre-Spec** | Turns the decision into the minimum package the next pipeline needs: minimum scope, non-goals, done criterion, open `[DOUBT]` markers. Writes no requirements and no architecture. Produces `pre-spec.md` |
+| Agente | Função |
+|--------|--------|
+| **Solução Brainstorm** | Orquestrador. Identifica se o cenário é greenfield ou legado, abre a pasta da sessão e direciona o fluxo conforme a etapa física. Não grava, por si só, nenhum artefato do pipeline |
+| **Enquadrador** | Separa o problema da solução e não permite que uma solução se passe por problema. Produz `framing.md` com o job to be done e o custo de não fazer nada |
+| **Prospector** | Abre de 3 a 5 caminhos substancialmente distintos, incluindo sempre "não construir" e "usar uma solução pronta". Não está autorizado a fazer recomendações. Produz `options.md` |
+| **Desafiador** | Premortem, a premissa capaz de inviabilizar cada opção, o teste de baixo custo para verificá-la e o custo oculto no sistema legado. Adversarial por concepção. Produz `risks.md` |
+| **Árbitro** | Pontua as opções em relação aos riscos e recomenda uma delas com um trade-off explícito. A escolha permanece humana, e qualquer divergência em relação à recomendação é registrada como tal. Produz `decision.md` |
+| **Pré-Especificação** | Converte a decisão no pacote mínimo de que o próximo pipeline necessita: escopo mínimo, não objetivos, critério de conclusão e marcadores `[DOUBT]` em aberto. Não redige requisitos nem arquitetura. Produz `pre-spec.md` |
 
-### Code New Project Agents (greenfield)
+### Agentes de Novo Projeto (greenfield)
 
-For projects that do not exist yet. Activate with `/solucao-novo` and the orchestrator drives the pipeline `Ideator → Researcher → Drafter → Spec SDD`, with a `CONTINUAR` checkpoint between agents. Final handoff suggests `/solucao-enviar` to take the specs to code.
+Destinados a projetos que ainda não existem. Ative com `/solucao-novo`, e o orquestrador conduzirá o pipeline `Idealizador → Pesquisador → Projetista → Especificação SDD`, com um checkpoint `CONTINUAR` entre os agentes. Ao final, a transferência sugere o `/solucao-enviar` para levar as especificações ao código.
 
-The orchestrator has **two modes**. In *guided* mode (default) it stops at every agent and ends at the specs. In *express* mode (`/solucao-novo expresso "<your idea>"`) every question is concentrated in one interview at the start and, after `INICIAR`, the pipeline runs straight through the specs and into the forward cycle (`requisitos → plano → pendencia → codificacao`) until the code is on disk.
+O orquestrador possui **dois modos**. No modo *guiado* (padrão), ele faz uma pausa a cada agente e encerra o processo nas especificações. No modo *expresso* (`/solucao-novo expresso "<sua ideia>"`), todas as perguntas são concentradas em uma única entrevista no início e, após o comando `INICIAR`, o pipeline é executado sem interrupções, passando pelas especificações e seguindo para o ciclo de evolução (`requisitos → plano → pendencia → codificacao`) até que o código esteja gravado em disco.
 
-| Agent | Role |
-|-------|------|
-| **Solução New** | Orchestrator. Reads the initial brief, walks the pipeline, saves `newproject_progress` in `state.json` |
-| **Ideator** | Structured brainstorm with 6 divergent questions (root problem, value, alternatives, audience, success metrics, dangerous assumptions). Produces `_solucao_sdd/ideation.md` |
-| **Researcher** | Turns the raw audience into 1 to 3 structured personas with journeys. Produces `_solucao_sdd/personas.md` |
-| **Drafter** | Synthesizes ideation and personas into a complete PRD (problem, metrics, scope, non-goals, constraints, risks). Produces `_solucao_sdd/prd.md` |
-| **Spec SDD** | Decomposes the PRD into logical components and writes one SDD spec per component, with an automatic quality score. Vendored from the global `sdd-spec` skill. Produces `_solucao_sdd/sdd/*.md` |
+| Agente | Função |
+|--------|--------|
+| **Solução Novo** | Orquestrador. Lê o briefing inicial, percorre o pipeline e salva `newproject_progress` em `state.json` |
+| **Idealizador** | Brainstorm estruturado com 6 perguntas divergentes (problema raiz, valor, alternativas, público, métricas de sucesso e premissas perigosas). Produz `_solucao_sdd/ideation.md` |
+| **Pesquisador** | Transforma a descrição inicial do público em 1 a 3 personas estruturadas, com suas respectivas jornadas. Produz `_solucao_sdd/personas.md` |
+| **Projetista** | Sintetiza a ideação e as personas em um PRD completo (problema, métricas, escopo, não objetivos, restrições e riscos). Produz `_solucao_sdd/prd.md` |
+| **Especificação SDD** | Decompõe o PRD em componentes lógicos e redige uma especificação SDD por componente, com pontuação de qualidade automática. Incorporada a partir da skill global `sdd-spec`. Produz `_solucao_sdd/sdd/*.md` |
 
-### Code Forward Agents (evolution)
+### Agentes de Evolução de Código (evolução)
 
-The bridge from specs to running code. Pipeline: `requisitos → clarificar → quality → plano → pendencia → auditoria → codificacao → sincronizar`. Use `/solucao-enviar` as the entry point: it detects the **physical stage** of the active feature (by inspecting the artifacts on disk, not metadata) and suggests the next agent.
+A ponte entre as especificações e o código em execução. Pipeline: `requisitos → clarificar → quality → plano → pendencia → auditoria → codificacao → sincronizar`. Utilize o `/solucao-enviar` como ponto de entrada: ele identifica a **etapa física** da funcionalidade ativa (inspecionando os artefatos em disco, e não os metadados) e sugere o próximo agente.
 
-| Agent | Role |
-|-------|------|
-| **Solução Forward** | Orchestrator. Detects the physical stage and suggests the next skill. Never executes code itself |
-| **Requirements** | Turns a free-form idea into `requisitos.md` anchored to the legacy, with `[DOUBT]` markers, gaps and glossary |
-| **Clarify** | Up to 5 targeted questions to resolve `[DOUBT]` markers in place |
-| **Quality** | Read-only auditor of writing clarity. Produces `requisitos-auditoria.md` |
-| **Plan** | Translates requisitos into a technical proposal expressed as a **delta over the legacy**. Produces `roadmap.md`, `investigation.md`, `data-delta.md`, `onboarding.md`, `interfaces/` |
-| **To-Do** | Decomposes the roadmap into atomic actions across five phases with stable IDs, dependencies and parallelism markers. Produces `actions.md` |
-| **Audit** | Read-only cross-check between requirements, roadmap and actions. Produces `auditoria/cross-check.md` |
-| **Coding** | Executes `actions.md`, flips checkboxes, writes `progress.jsonl`, `legacy-impact.md` and `regression-watch.md` |
-| **Add** | Optional and repeatable after coding. Short amendment on the delivered feature: records it in `## Emendas` in `requisitos.md`, then implements. Refuses anything needing a new dependency, a schema or contract change, a new public surface, an auth path, or anything outside the active feature's scope. Activation: `/solucao-add` |
-| **Sync** | Optional convergence step after coding. Distills the delivered feature into an addendum in `_solucao_sdd/addenda/`, so the extraction keeps describing the system as it is today until the next full re-extraction. Never edits the original artifacts. Activation: `/solucao-sincronizar` |
-| **Principles** | Manages durable project rules (`principios.md`) and emits impact reports when they change |
-| **Resume** | Swaps the active feature with one from the `paused-features` queue |
+| Agente | Função |
+|--------|--------|
+| **Solução Evolução** | Orquestrador. Identifica a etapa física e sugere a próxima skill. Nunca executa código diretamente |
+| **Requisitos** | Transforma uma ideia descrita livremente em `requisitos.md`, ancorado no sistema legado, com marcadores `[DOUBT]`, lacunas e glossário |
+| **Clarificar** | Até 5 perguntas direcionadas para resolver os marcadores `[DOUBT]` no próprio documento |
+| **Qualidade** | Auditor somente leitura da clareza da redação. Produz `requisitos-auditoria.md` |
+| **Plano** | Traduz os requisitos em uma proposta técnica expressa como um **delta em relação ao sistema legado**. Produz `roadmap.md`, `investigation.md`, `data-delta.md`, `onboarding.md` e `interfaces/` |
+| **Pendência** | Decompõe o roadmap em ações atômicas distribuídas em cinco fases, com IDs estáveis, dependências e marcadores de paralelismo. Produz `actions.md` |
+| **Auditoria** | Verificação cruzada, somente leitura, entre requisitos, roadmap e ações. Produz `auditoria/cross-check.md` |
+| **Codificação** | Executa o `actions.md`, marca as caixas de seleção e grava `progress.jsonl`, `legacy-impact.md` e `regression-watch.md` |
+| **Adição** | Opcional e repetível após a codificação. Aplica uma breve emenda à funcionalidade entregue: registra-a na seção `## Emendas` do `requisitos.md` e, em seguida, a implementa. Recusa qualquer alteração que exija nova dependência, mudança de schema ou de contrato, nova superfície pública, novo fluxo de autenticação ou qualquer item fora do escopo da funcionalidade ativa. Ativação: `/solucao-add` |
+| **Sincronização** | Etapa opcional de convergência após a codificação. Condensa a funcionalidade entregue em um adendo em `_solucao_sdd/addenda/`, de modo que a extração continue descrevendo o sistema como ele é atualmente até a próxima reextração completa. Nunca edita os artefatos originais. Ativação: `/solucao-sincronizar` |
+| **Princípios** | Gerencia as regras permanentes do projeto (`principios.md`) e emite relatórios de impacto quando elas são alteradas |
+| **Retomada** | Substitui a funcionalidade ativa por outra da fila `paused-features` |
 
-### Migration Team
+### Equipe de Migração
 
-Use after `/solucao` when the goal is to rebuild the legacy on a modern stack. Activate with `/solucao-migrar`. Pipeline: `Paradigm Advisor → Curator → Strategist → Designer → Screen Translator → Inspector`, with a human review pause between agents. Every artifact lands in `_solucao_sdd/migration/`.
+Utilize após o `/solucao` quando o objetivo for reconstruir o sistema legado em uma stack moderna. Ative com `/solucao-migrar`. Pipeline: `Consultor de Paradigma → Curador → Estrategista → Designer → Tradutor de Telas → Inspetor`, com uma pausa para revisão humana entre os agentes. Todos os artefatos são gravados em `_solucao_sdd/migration/`.
 
-| Agent | Role |
-|-------|------|
-| **Paradigm Advisor** | Detects the legacy paradigm, infers the target paradigm, forces a conscious user decision |
-| **Curator** | Decides rule by rule: MIGRATE, DISCARD or HUMAN DECISION |
-| **Strategist** | Evaluates Strangler Fig, Big Bang, Parallel Run, Branch by Abstraction and recommends one |
-| **Designer** | Drafts target architecture, domain model, data model and data migration plan |
-| **Screen Translator** | Translates legacy screens into executable specs in 2 phases (mode decision + spec generation), emitting golden files for the Inspector when an oracle is available |
-| **Inspector** | Defines how to prove the new system is behaviorally equivalent to the legacy, with Gherkin parity specs |
+| Agente | Função |
+|--------|--------|
+| **Consultor de Paradigma** | Identifica o paradigma do sistema legado, infere o paradigma de destino e exige uma decisão consciente do usuário |
+| **Curador** | Decide, regra por regra: MIGRAR, DESCARTAR ou DECISÃO HUMANA |
+| **Estrategista** | Avalia as estratégias Strangler Fig, Big Bang, Parallel Run e Branch by Abstraction e recomenda uma delas |
+| **Designer** | Elabora a arquitetura de destino, o modelo de domínio, o modelo de dados e o plano de migração de dados |
+| **Tradutor de Telas** | Converte as telas do sistema legado em especificações executáveis em 2 fases (definição do modo e geração das especificações), emitindo golden files para o Inspetor quando há um oráculo disponível |
+| **Inspetor** | Define como comprovar que o novo sistema é comportamentalmente equivalente ao legado, por meio de especificações de paridade em Gherkin |
 
-### Pricing and Size Team
+### Equipe de Precificação e Dimensionamento
 
-Three agents on top of the specs to estimate effort, size and price. Activate with `/solucao-perfil-precificacao`, `/solucao-fins-precificacao` and `/solucao-estimativa-preco`.
+Três agentes que atuam sobre as especificações para estimar esforço, dimensão e preço. Ative com `/solucao-perfil-precificacao`, `/solucao-fins-precificacao` e `/solucao-estimativa-preco`.
 
-### Translators (input adapters)
+### Tradutores (adaptadores de entrada)
 
-Use when the legacy "code" is not source code but a structured artifact like a visual workflow. Generates the SDD spec and prepares the state for the main pipeline to take over.
+Utilize quando o "código" do sistema legado não for código-fonte, mas sim um artefato estruturado, como um workflow visual. Gera a especificação SDD e prepara o estado para que o pipeline principal assuma a continuidade.
 
-| Agent | Role |
-|-------|------|
-| **N8N Translator** | Reads N8N workflows exported as JSON and produces SDD specs ready for Python reimplementation. Activated via `/solucao-n8n` |
+| Agente | Função |
+|--------|--------|
+| **Tradutor N8N** | Lê workflows do N8N exportados em JSON e produz especificações SDD prontas para reimplementação em Python. Ativação: `/solucao-n8n` |
 
-### Documentation Team (HTML mini-site)
+### Equipe de Documentação (minissite em HTML)
 
-After discovery completes, this team turns the extracted knowledge into a self-contained HTML mini-site under `_solucao_documentos/`. Run `/solucao-documentos` to orchestrate the full team, or activate any agent in isolation to regenerate only its pages.
+Após a conclusão do Discovery, esta equipe transforma o conhecimento extraído em um minissite em HTML autocontido, gravado em `_solucao_documentos/`. Execute `/solucao-documentos` para orquestrar a equipe completa ou ative qualquer agente isoladamente para regenerar apenas as respectivas páginas.
 
-| Agent | Role |
-|-------|------|
-| **Solução Docs** | Orchestrates the team, runs the 3-question interview, computes deterministic seed. Activated via `/solucao-documentos` |
-| **Mapper** | Spatial structure: `arquitetura.html` (Code City 3D, Three.js), `modulos.html` (force-directed D3), `topologia.html` (legacy vs modern side-by-side) |
-| **Analyst** | Quantitative data: `metricas.html` (Highcharts treemap, sankey, histogram, columns), `timeline.html` (events from `.solucao/chronicle.md`) |
-| **Storyteller** | Narrative: `glossario.html` (client-side search), `deck.html` (6 to 10 navigable slides), `features/<spec>.html` (one per SDD spec) |
-| **Publisher** | Final integration: `index.html` with hero + unique generative seal, auto-discovery of auxiliary HTMLs from other agents, link validation, local telemetry |
+| Agente | Função |
+|--------|--------|
+| **Solução Documentos** | Orquestra a equipe, conduz a entrevista de 3 perguntas e calcula a seed determinística. Ativação: `/solucao-documentos` |
+| **Cartógrafo** | Estrutura espacial: `arquitetura.html` (Code City 3D, Three.js), `modulos.html` (grafo force-directed em D3) e `topologia.html` (comparação lado a lado entre o sistema legado e o moderno) |
+| **Analista** | Dados quantitativos: `metricas.html` (treemap, sankey, histograma e gráfico de colunas em Highcharts) e `timeline.html` (eventos extraídos de `.solucao/chronicle.md`) |
+| **Narrador** | Narrativa: `glossario.html` (com busca no lado do cliente), `deck.html` (de 6 a 10 slides navegáveis) e `features/<spec>.html` (uma página por especificação SDD) |
+| **Publicador** | Integração final: `index.html` com seção de destaque (hero) e selo generativo exclusivo, detecção automática dos HTMLs auxiliares gerados pelos demais agentes, validação de links e telemetria local |
 
-The team brings 5 shared skills (`solucao-arquitetura-3d`, `solucao-selo-generativo`, `solucao-highcharts-visualizer`, `solucao-especialista-d3`, `solucao-prompt-de-imagem-json`) which are installed automatically alongside the team. The output is a static mini-site that opens via `file://` with no server required.
+A equipe inclui 5 skills compartilhadas (`solucao-arquitetura-3d`, `solucao-selo-generativo`, `solucao-highcharts-visualizer`, `solucao-especialista-d3`, `solucao-prompt-de-imagem-json`), que são instaladas automaticamente junto com ela. O resultado é um minissite estático que pode ser aberto via `file://`, sem necessidade de servidor.
 
-### Bug Agents
+### Agentes de Defeitos
 
-A repository-native causal defect memory, organized by **context** (the feature/module/use case the user is talking about): each context folder under `_solucao_bugs/<context>/` aggregates everything of that area (annotated reports in `intake/`, self-contained bug folders, inspections and generated views incl. a clickable `graph.html`). Every bug carries a YAML front matter record traceable to the specs (`SPEC ↔ CODE ↔ TEST ↔ BUG`), a visual fix plan approved before any change, and a `DONE.md` lock once closed. Registering and fixing are strictly separate acts.
+Uma memória causal de defeitos nativa do repositório, organizada por **contexto** (a funcionalidade, o módulo ou o caso de uso a que o usuário se refere): cada pasta de contexto em `_solucao_bugs/<contexto>/` reúne tudo o que diz respeito àquela área (relatos anotados em `intake/`, pastas autocontidas de cada bug, inspeções e visualizações geradas, incluindo um `graph.html` clicável). Cada bug possui um registro em front matter YAML rastreável até as especificações (`SPEC ↔ CODE ↔ TEST ↔ BUG`), um plano visual de correção aprovado antes de qualquer alteração e um bloqueio `DONE.md` após o encerramento. Registrar e corrigir são atos estritamente separados.
 
-| Agent | Role |
-|-------|------|
-| **Bug** | Intake, triage, dedupe, classification and initial traceability. Never fixes. Activated via `/solucao-depuracao` |
-| **Bug Fix** | Lifecycle orchestrator: mitigation, reproduction capsule, evidence-based root cause, two approval gates (failing tests, then the change set), spec verdict with versioned addenda, closure policy. Activated via `/solucao-depuracao-resolver` |
-| **Bug Debate** | Fixed-epoch multi-agent debate with an isolated judge, in three modes (`diagnosis`, `repair`, `spec`). Always opt-in, with cost shown upfront; external harnesses (Codex, Gemini CLI, ...) may join only with explicit consent. Activated via `/solucao-depuracao-considerar` |
-| **Depth Inspection** | Deep sweep of a problematic feature through specialized lenses (spec conformance, data flow, contracts, error states, test coverage, concurrency). Diagnosis only; confirmed findings become registered bugs. Activated via `/solucao-inspecao-detalhada` |
-| **Bug Graph** | Regenerates the derived views: index, compact catalog, sparse relation matrix, mermaid graph with clusters and impact score, and the BUG ↔ SPEC traceability matrix on both ends (`_solucao_bugs/generated/` and `_solucao_sdd/traceability/bugs.md`). Activated via `/solucao-depuracao-grafico` |
+| Agente | Função |
+|--------|--------|
+| **Registro de Defeitos** | Recebimento, triagem, eliminação de duplicatas, classificação e rastreabilidade inicial. Nunca realiza correções. Ativação: `/solucao-depuracao` |
+| **Correção de Defeitos** | Orquestrador do ciclo de vida: mitigação, cápsula de reprodução, causa raiz baseada em evidências, dois pontos de aprovação (primeiro os testes que falham, depois o conjunto de alterações), parecer sobre a especificação com adendos versionados e política de encerramento. Ativação: `/solucao-depuracao-resolver` |
+| **Debate de Defeitos** | Debate entre múltiplos agentes, com número fixo de rodadas e um juiz isolado, em três modos (`diagnosis`, `repair`, `spec`). Sempre opcional, com o custo informado previamente; harnesses externos (Codex, Gemini CLI etc.) só podem participar mediante consentimento explícito. Ativação: `/solucao-depuracao-considerar` |
+| **Inspeção Detalhada** | Varredura aprofundada de uma funcionalidade problemática sob lentes especializadas (conformidade com a especificação, fluxo de dados, contratos, estados de erro, cobertura de testes e concorrência). Apenas diagnóstico; as constatações confirmadas tornam-se bugs registrados. Ativação: `/solucao-inspecao-detalhada` |
+| **Grafo de Defeitos** | Regenera as visualizações derivadas: índice, catálogo compacto, matriz esparsa de relações, grafo em Mermaid com clusters e pontuação de impacto, e a matriz de rastreabilidade BUG ↔ SPEC em ambas as pontas (`_solucao_bugs/generated/` e `_solucao_sdd/traceability/bugs.md`). Ativação: `/solucao-depuracao-grafico` |
 
-### Code Quality Agents
+### Agentes de Qualidade de Código
 
-Perfective and preventive maintenance on code that already works: improve the internal structure **without changing observable behavior**, and prove that preservation before touching the code. Organized by **context** under `_solucao_refactor/<context>/`, with each transformation anchored to the soul (`soul.md`) and confirmed specs. The founding rule: proposing a transformation and applying it are separate acts, and nothing touches the legacy without proof of behavior preservation (a **safety net** of characterization tests, plus soul and regression checks). Project code changes only through an approved, reversible diff gate.
+Manutenção perfectiva e preventiva de código que já funciona: aprimorar a estrutura interna **sem alterar o comportamento observável** e comprovar essa preservação antes de modificar o código. Organizados por **contexto** em `_solucao_refactor/<contexto>/`, com cada transformação ancorada na essência do sistema (`soul.md`) e nas especificações confirmadas. A regra fundamental: propor uma transformação e aplicá-la são atos distintos, e nada altera o sistema legado sem a comprovação de que o comportamento foi preservado (uma **rede de segurança** composta por testes de caracterização, além de verificações de essência e de regressão). O código do projeto somente é alterado por meio de um ponto de aprovação de diff, que deve ser aprovado e reversível.
 
-| Agent | Role |
-|-------|------|
-| **Refactor** | Orchestrator: inventories improvement opportunities, prioritizes by real ROI (hotpath, not aesthetics), routes to the right specialist and runs the gates. Never applies a transformation. Activated via `/solucao-refactor` |
-| **Restructure** | Internal structure at method/class level via the Fowler catalog, in small reversible steps. Activated via `/solucao-restructure` |
-| **Modularize** | Splits a large piece into cohesive modules with well-defined responsibility, respecting the soul's boundaries. Activated via `/solucao-modularize` |
-| **Decouple** | Reduces direct dependencies (dependency inversion, Feathers seams, cycle breaking), coupling measured before and after. Activated via `/solucao-decouple` |
-| **Optimize** | Reduces time, memory and resource use, with a before/after measurement and preserved output. Activated via `/solucao-optimize` |
-| **Simplify** | Replaces complex logic with a simpler one, with a proof of output equivalence. Activated via `/solucao-simplify` |
-| **Standardize** | Applies naming, formatting and organization conventions from the project's dominant pattern, never changing semantics. Activated via `/solucao-standardize` |
-| **Prune** | Removes dead code, and only what it can prove is dead, telling dead code from a suspected orphan. Activated via `/solucao-prune` |
+| Agente | Função |
+|--------|--------|
+| **Refatoração** | Orquestrador: inventaria as oportunidades de melhoria, prioriza pelo ROI real (hotpath, e não estética), direciona ao especialista adequado e executa os pontos de aprovação. Nunca aplica uma transformação. Ativação: `/solucao-refactor` |
+| **Reestruturação** | Estrutura interna no nível de métodos e classes, com base no catálogo de Fowler, em pequenos passos reversíveis. Ativação: `/solucao-restructure` |
+| **Modularização** | Divide um componente extenso em módulos coesos, com responsabilidades bem definidas, respeitando os limites estabelecidos pela essência do sistema. Ativação: `/solucao-modularize` |
+| **Desacoplamento** | Reduz as dependências diretas (inversão de dependência, seams de Feathers e quebra de ciclos), com o acoplamento medido antes e depois. Ativação: `/solucao-decouple` |
+| **Otimização** | Reduz o consumo de tempo, memória e recursos, com medição antes e depois e preservação da saída. Ativação: `/solucao-optimize` |
+| **Simplificação** | Substitui uma lógica complexa por outra mais simples, com comprovação de equivalência da saída. Ativação: `/solucao-simplify` |
+| **Padronização** | Aplica convenções de nomenclatura, formatação e organização com base no padrão predominante do projeto, sem jamais alterar a semântica. Ativação: `/solucao-standardize` |
+| **Poda** | Remove código morto, e somente aquilo que consegue comprovar que está morto, distinguindo código morto de código suspeito de estar órfão. Ativação: `/solucao-prune` |
 
 ---
 
-## What is generated
+## O que é gerado
 
 ```
 _solucao_sdd/
-├── inventory.md              # Project inventory
-├── dependencies.md           # Dependencies with versions
-├── code-analysis.md          # Technical analysis per module
-├── data-dictionary.md        # Data dictionary
-├── domain.md                 # Glossary and business rules
-├── state-machines.md         # State machines in Mermaid
+├── inventario.md              # Projeto inventário
+├── dependencias.md           # Dependências with versions
+├── analise-codigo.md          # Technical analysis per module
+├── dicionario-dados.md        # Data dictionary
+├── dominio.md                 # Glossary and business rules
+├── maquina-estado.md         # State machines in Mermaid
 ├── permissions.md            # Permission matrix
-├── architecture.md           # Architectural overview
-├── c4-context.md             # C4 Diagram: Context
-├── c4-containers.md          # C4 Diagram: Containers
-├── c4-components.md          # C4 Diagram: Components
+├── arquitetura.md           # Architectural overview
+├── c4-contexto.md             # C4 Diagram: Context
+├── c4-conteineres.md          # C4 Diagram: Containers
+├── c4-componentes.md          # C4 Diagram: Components
 ├── erd-complete.md           # Full ERD in Mermaid
 ├── confidence-report.md      # Confidence report 🟢🟡🔴
-├── gaps.md                   # Identified gaps
-├── questions.md              # Questions for human validation
+├── lacunas.md                # Lacunas identificadas
+├── duvidas.md              # Questions for human validation
 ├── sdd/                      # Specs per component
 │   └── [component].md
 ├── openapi/                  # API specs (if applicable)
@@ -341,7 +341,7 @@ _solucao_sdd/
     └── code-spec-matrix.md   # Code file to corresponding spec
 ```
 
-In a greenfield run, `/solucao-novo` adds the following on top of `_solucao_sdd/`:
+Em uma execução greenfield, o `/solucao-novo` acrescenta os seguintes itens a `_solucao_sdd/`:
 
 ```
 _solucao_sdd/
@@ -353,11 +353,11 @@ _solucao_sdd/
     └── [component].md       # SDD specs with quality score (Spec SDD)
 ```
 
-Forward features land in a separate folder, `_solucao_forward/` by default:
+As funcionalidades do ciclo de evolução são gravadas em uma pasta separada, `_solucao_forward/` por padrão:
 
 ```
 _solucao_forward/
-└── <NNN>-<short-name>/      # One folder per feature
+└── <NNN>-<short-name>/      # Uma pasta por funcionalidade
     ├── requisitos.md
     ├── roadmap.md
     ├── investigation.md
@@ -373,15 +373,15 @@ _solucao_forward/
         └── cross-check.md
 ```
 
-After `/solucao-codificacao`, the optional `/solucao-sincronizar` distills the delivered feature into `_solucao_sdd/addenda/<feature-id>-<short-name>.md`. The addendum is a bridge: it keeps the extraction representative of the system as it is today, points at the sections of `architecture.md` and `domain.md` that drifted, and is marked as superseded by the next full re-extraction. Original extraction artifacts are never edited.
+Após o `/solucao-codificacao`, o comando opcional `/solucao-sincronizar` condensa a funcionalidade entregue em `_solucao_sdd/addenda/<id-da-funcionalidade>-<nome-curto>.md`. O adendo funciona como uma ponte: mantém a extração representativa do sistema como ele é atualmente, aponta as seções de `arquitetura.md` e `dominio.md` que se desatualizaram e é marcado como substituído na próxima reextração completa. Os artefatos originais da extração nunca são editados.
 
-Ideation Agents write only inside `_solucao_sdd/brainstorms/` (one folder per session) and `.solucao/active-ideation.json`. They never touch project code and never produce code.
+Os Agentes de Ideação gravam apenas em `_solucao_sdd/brainstorms/` (uma pasta por sessão) e em `.solucao/active-ideation.json`. Eles nunca alteram o código do projeto e nunca produzem código.
 
-The Documentation Team writes only inside `_solucao_documentos/` (HTML mini-site, fully offline).
+A Equipe de Documentação grava apenas em `_solucao_documentos/` (minissite em HTML, totalmente offline).
 
-Bug Agents write only inside `_solucao_bugs/` (one folder per bug, plus generated views), spec addenda in `_solucao_sdd/addenda/` and the generated mirror `_solucao_sdd/traceability/bugs.md`. Original specs are never edited; project code changes only through approval gates with explicit diffs.
+Os Agentes de Defeitos gravam apenas em `_solucao_bugs/` (uma pasta por bug, além das visualizações geradas), nos adendos de especificação em `_solucao_sdd/addenda/` e no espelho gerado `_solucao_sdd/traceability/bugs.md`. As especificações originais nunca são editadas; o código do projeto só é alterado por meio de pontos de aprovação com diffs explícitos.
 
-Code Quality Agents write only inside `_solucao_refactor/` (opportunities, plans and transformation records per context). Project code changes exclusively through an approved, reversible diff gate, and only after the safety net proves behavior is preserved.
+Os Agentes de Qualidade de Código gravam apenas em `_solucao_refactor/` (oportunidades, planos e registros de transformação por contexto). O código do projeto só é alterado mediante um diff aprovado e reversível, e somente depois que a rede de segurança comprova a preservação do comportamento.
 
 ### Confidence scale
 
@@ -415,40 +415,40 @@ Every statement in the specs is marked with:
 
 ---
 
-## CLI commands
+## Comandos da CLI
 
 ```bash
-npx solucao install      # Install solucao in the project
-npx solucao status       # Show current analysis state
-npx solucao update       # Update agents to the latest version
-npx solucao add-agent    # Add an agent to the project
-npx solucao add-engine   # Add support for a new engine
-npx solucao uninstall    # Remove Solução from the project
+npx solucao install      # Instala o Solução no projeto
+npx solucao status       # Exibe o estado atual da análise
+npx solucao update       # Atualiza os agentes para a versão mais recente
+npx solucao add-agent    # Adiciona um agente ao projeto
+npx solucao add-engine   # Adiciona suporte a um novo motor
+npx solucao uninstall    # Remove o Solução do projeto
 ```
 
-The `update` command detects files you modified via SHA-256 and never overwrites customizations.
-O `uninstall` O comando remove apenas arquivos criados pela Solução — nada do projeto legado é afetado.
+O comando `update` identifica, por meio de SHA-256, os arquivos que você modificou e nunca sobrescreve personalizações.
+O comando `uninstall` remove apenas os arquivos criados pelo Solução — nada do projeto legado é afetado.
 
 ---
 
-## Internal structure
+## Estrutura interna
 
 ```
 .solucao/
-├── state.json          # Analysis state between sessions
-├── config.toml         # Project configuration
-├── config.user.toml    # Personal preferences (don't commit)
-├── plano.md             # Exploration plan (user-editable)
-├── version             # Installed version
-├── context/
-│   ├── surface.json    # Generated by Scout
-│   └── modules.json    # Generated by Archaeologist
+├── state.json          # Estado da análise entre sessões
+├── config.toml         # Configuração do projeto
+├── config.user.toml    # Preferências pessoais (não versionar)
+├── plano.md            # Plano de exploração (editável pelo usuário)
+├── version             # Versão instalada
+├── contexto/
+│   ├── surface.json    # Gerado pelo Explorador
+│   └── modules.json    # Gerado pelo Arqueólogo
 └── _config/
-    ├── manifest.yaml       # Installation metadata
-    └── files-manifest.json # SHA-256 hashes for safe updates
+    ├── manifest.yaml       # Metadados da instalação
+    └── files-manifest.json # Hashes SHA-256 para atualizações seguras
 
-.agents/skills/         # Universal skills (all compatible agents)
-.claude/skills/         # Mirror for Claude Code
+.agents/skills/         # Skills universais (todos os agentes compatíveis)
+.claude/skills/         # Espelho para o Claude Code
 ```
 
 ---

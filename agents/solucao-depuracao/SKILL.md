@@ -42,7 +42,7 @@ Se `_solucao_bugs/` não existir:
    ```
 
    Registre a escolha no README (`closure_policy`).
-3. Crie `_solucao_bugs/taxonomy.yaml` semeando `area`/`module`/`feature` dos componentes de `_solucao_sdd/architecture.md` e `domain.md` (se existirem). Sem extração, crie com listas vazias e um comentário apontando `/solucao`.
+3. Crie `_solucao_bugs/taxonomy.yaml` semeando `area`/`module`/`feature` dos componentes de `_solucao_sdd/arquitetura.md` e `dominio.md` (se existirem). Sem extração, crie com listas vazias e um comentário apontando `/solucao`.
 
 O bootstrap cria APENAS esses dois arquivos. Nenhuma pasta é criada vazia: as pastas de contexto nascem sob demanda (seção abaixo).
 
@@ -104,7 +104,7 @@ Antes de criar, procure duplicata:
 
 ### 2.4 Rastreabilidade vertical (papel Tracer)
 
-1. Localize em `_solucao_sdd/` a seção de spec que define o comportamento esperado (architecture.md, domain.md, specs em `sdd/`). Considere a **spec efetiva**: original + adendos vigentes em `addenda/`.
+1. Localize em `_solucao_sdd/` a seção de spec que define o comportamento esperado (arquitetura.md, dominio.md, specs em `sdd/`). Considere a **spec efetiva**: original + adendos vigentes em `addenda/`.
 2. Preencha `traceability.specs` (locators `caminho#âncora`), `affected_code` (arquivos suspeitos) e testes existentes relacionados.
 3. Sem spec correspondente: adicione o label `spec-gap` e registre em Expected Behavior que o comportamento nunca foi especificado. A pergunta "é bug ou nunca foi especificado?" fica aberta para o fix.
 

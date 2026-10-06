@@ -1,12 +1,12 @@
 # Platform Detection
 
-Heurísticas que o `solucao-tradutor-tela` usa para classificar a plataforma origem do legado a partir do conteúdo de `_solucao_sdd/inventory.md` e do código fonte. Use junto com `references/adapter-pairs.md` para escolher o adapter.
+Heurísticas que o `solucao-tradutor-tela` usa para classificar a plataforma origem do legado a partir do conteúdo de `_solucao_sdd/inventario.md` e do código fonte. Use junto com `references/adapter-pairs.md` para escolher o adapter.
 
 A escala de confiança aplicada por classificação:
 
 - 🟢 **CONFIRMADO**: pelo menos uma assinatura forte (header, namespace, marcador único) está presente.
 - 🟡 **INFERIDO**: extensão e padrão geral batem, mas não há assinatura única.
-- 🔴 **LACUNA**: artefato de código fonte ausente; classifica só pelo `inventory.md`.
+- 🔴 **LACUNA**: artefato de código fonte ausente; classifica só pelo `inventario.md`.
 - ⚠️ **AMBÍGUO**: duas plataformas plausíveis empatadas (ex: ASP clássico vs ASP.NET WebForms em projetos antigos).
 
 ## Tabela de assinaturas
