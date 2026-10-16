@@ -1,0 +1,1 @@
+{"applicationPath":null,"sourceAngular":null,"targetAngular":null,"packageManager":null,"registry":null,"currentStep":"diagnostic","checkpoints":[],"blockers":[],"risks":[],"commands":[],"results":[],"evidence":[],"tests":[],"builds":[],"rollback":{"branch":"chore/migrate-angular-<origem>-to-latest","tag":"backup-before-angular-migration"}}

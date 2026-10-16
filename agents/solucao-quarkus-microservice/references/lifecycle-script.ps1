@@ -15,17 +15,13 @@ $applicationProperties = Join-Path $projectRoot 'src\main\resources\application.
 $mavenWrapper = Join-Path $projectRoot 'mvnw.cmd'
 
 if (-not $env:JAVA_HOME) {
-    $defaultJavaHome = 'C:\caixa\software\jdk-${JAVA_VERSION}'
-    if (-not (Test-Path $defaultJavaHome)) {
-        $found = Get-ChildItem 'C:\caixa\software' -Filter "jdk-${JAVA_VERSION}*" -Directory -ErrorAction SilentlyContinue | Select-Object -First 1
-        if ($found) { $defaultJavaHome = $found.FullName }
-    }
+    $defaultJavaHome = '${JDK_PATH}'
 
     if (Test-Path $defaultJavaHome) {
         $env:JAVA_HOME = $defaultJavaHome
     }
     else {
-        throw "JAVA_HOME não está definido. Configure-o para um JDK ${JAVA_VERSION} antes de iniciar a aplicação."
+        throw "JAVA_HOME não está definido e o caminho do JDK '$defaultJavaHome' não existe. Configure JAVA_HOME para um JDK ${JAVA_VERSION} antes de iniciar a aplicação."
     }
 }
 

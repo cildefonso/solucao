@@ -1,6 +1,6 @@
-# Guia de Arquitetura em Camadas (Padrão SIABE-micro)
+# Guia de Arquitetura em Camadas (Padrão XPTO-backend)
 
-Este guia documenta o padrão arquitetural em camadas adotado no `SIABE-micro`, otimizado para microsserviços Quarkus de alta performance, fácil manutenção e conformidade com SonarQube e cobertura de testes de 100%.
+Este guia documenta o padrão arquitetural em camadas adotado no `XPTO-backend`, otimizado para microsserviços Quarkus de alta performance, fácil manutenção e conformidade com SonarQube e cobertura de testes de 100%.
 
 ---
 
@@ -27,6 +27,7 @@ O pacote base segue a convenção: `<prefixo-do-pacote>.<sistema>.api` (padrão 
 ## 2. Padrões por Camada
 
 ### 2.1. Envelope de Retorno (`ApiResponse<T>`)
+
 Toda resposta da API deve seguir um envelope único padronizado:
 
 ```java
@@ -50,6 +51,7 @@ public record ApiResponse<T>(
 ```
 
 ### 2.2. Camada Resource (`@Path`)
+
 - Expõe endpoints REST com boas práticas de documentação OpenAPI/Swagger.
 - Deve conter endpoint de `/health` próprio ou expor health check SmallRye.
 - **Padrão de Testabilidade (Test Seam)**: Para métodos com tratamento de exceções internas em blocos `try-catch`, fornecer um método package-private auxiliar (ex: `registrarHealth()`) permitindo que testes unitários simulem falhas sem necessidade de reflection ou instrumentação de bytecode:
@@ -72,17 +74,20 @@ void registrarHealth(String status) {
 ```
 
 ### 2.3. Camada Service (`@ApplicationScoped`)
+
 - Contém regras de negócio e validações.
 - Utiliza `@Transactional` (quando necessário escrita/leitura atômica).
 - Delega queries complexas ou native queries para a camada DAO.
 - Retorna `ApiResponse<T>` ou objetos de domínio já mapeados para DTOs.
 
 ### 2.4. Camada DAO / Persistência
+
 - Pode utilizar Hibernate com Panache (`PanacheRepositoryBase`) ou injeção de `EntityManager`.
 - Native Queries para bancos corporativos legados (ex: IBM DB2 Mainframe ou Linux/Windows).
 - Conversão segura de colunas e tipos de dados.
 
 ### 2.5. Camada Exception (`ExceptionMapper<T>`)
+
 - Mapeamento explícito de exceções de banco (ex: `DB2Exception` / `PersistenceException`) e validação.
 - Respostas consistentes no envelope `ApiResponse<Void>` ou formato JSON estruturado com status HTTP adequado (400, 404, 500).
 
@@ -91,6 +96,7 @@ void registrarHealth(String status) {
 ## 3. Padrões de Qualidade SonarQube
 
 Para evitar apontamentos comuns no Sonar:
+
 1. **Sem literais de String duplicados**:
    - Reutilizar constantes `public static final String` em classes utilitárias ou locais nos testes (ex: `SQL_TESTE`, `CHAVE_MENSAGEM`, `CHAVE_TIMESTAMP`).
 2. **Métodos de teste claros e independentes**:

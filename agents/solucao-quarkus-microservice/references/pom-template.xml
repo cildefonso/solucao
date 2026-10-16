@@ -52,20 +52,10 @@
             <artifactId>quarkus-hibernate-orm-panache</artifactId>
         </dependency>
 
-        <!-- Driver de Banco (ex: DB2 / PostgreSQL) -->
+        <!-- Driver de Banco (ex: PostgreSQL / DB2) -->
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-jdbc-db2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.ibm.db2</groupId>
-            <artifactId>db2jcc4</artifactId>
-            <version>4</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ibm.db2</groupId>
-            <artifactId>db2jcc_license_cisuz</artifactId>
-            <version>4</version>
+            <artifactId>quarkus-jdbc-postgresql</artifactId>
         </dependency>
 
         <!-- Validação -->

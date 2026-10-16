@@ -28,8 +28,8 @@ Esta skill guia e executa o desenvolvimento de **novas funcionalidades** de form
 Antes de criar qualquer arquivo, o agente **DEVE INSPECIONAR** o workspace atual para descobrir as convenções adotadas:
 
 1. **Leitura do `pom.xml`**:
-   - Identificar o `groupId` (ex: `br.com.imac.siabe` ou `br.com.imac.<projeto>`).
-   - Identificar o `artifactId` (ex: `siabe-micro` ou `<projeto>-micro`).
+   - Identificar o `groupId` (ex: `br.com.imac.xpto` ou `br.com.imac.<projeto>`).
+   - Identificar o `artifactId` (ex: `xpto-micro` ou `<projeto>-micro`).
    - Identificar a versão do Java configurada em `<maven.compiler.release>` (ex: `21`, `24`, `17`).
    - Identificar dependências e extensões Quarkus presentes (OIDC, Panache, DB2, OpenAPI, etc.).
 
@@ -57,7 +57,7 @@ Se o usuário forneceu apenas uma instrução genérica (ex: *"Crie uma nova fun
 3. **Parâmetros e Regras de Validação**:
    - Campos obrigatórios, tamanhos, limites mínimos/máximos, expressões regulares.
 4. **Fonte de Dados / Persistência**:
-   - Native query SQL via `EntityManager` (padrão legado Caixa / DB2).
+   - Native query SQL via `EntityManager` (padrão legado Xpto / DB2).
    - Panache Entity ou Panache Repository.
    - Chamada externa ou processamento em memória.
 

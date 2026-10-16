@@ -6,7 +6,7 @@ quarkus.transaction-manager.default-transaction-timeout=PT60M
 #################
 ## OIDC CONFIG ##
 #################
-quarkus.oidc.auth-server-url=${OIDC_AUTH_SERVER_URL:https://login.des.caixa/auth/realms/intranet}
+quarkus.oidc.auth-server-url=${OIDC_AUTH_SERVER_URL:https://www.des.xpto/auth/realms/intranet}
 quarkus.oidc.client-id=${OIDC_CLIENT_ID:cli-web-app}
 quarkus.oidc.credentials.secret=${OIDC_CLIENT_SECRET:secret}
 quarkus.oidc.application-type=service
@@ -19,15 +19,15 @@ quarkus.http.auth.permission.authenticated.policy=authenticated
 #######################
 ## DATASOURCE CONFIG ##
 #######################
-quarkus.datasource.db-kind=${DB_KIND:db2}
+quarkus.datasource.db-kind=${DB_KIND:postgresql}
 quarkus.datasource.username=${DB_USER:usuario}
 quarkus.datasource.password=${DB_PASSWORD:senha}
-quarkus.datasource.jdbc.url=${DB_JDBC_URL:jdbc:db2://localhost:50000/DB:currentSchema=SCHEMA;}
-quarkus.datasource.jdbc.driver=${DB_DRIVER:com.ibm.db2.jcc.DB2Driver}
+quarkus.datasource.jdbc.url=${DB_JDBC_URL:jdbc:postgresql://localhost:5432/DB:currentSchema=SCHEMA;}
+quarkus.datasource.jdbc.driver=${DB_DRIVER:org.postgresql.Driver}
 quarkus.datasource.jdbc.max-size=40
 
 quarkus.hibernate-orm.packages=${PACKAGE_PREFIX}.${PROJECT_ID}.api.domain.model
-quarkus.hibernate-orm.dialect=org.hibernate.dialect.DB2Dialect
+quarkus.hibernate-orm.dialect=org.hibernate.dialect.PostgreSQLDialect
 quarkus.hibernate-orm.schema-management.strategy=none
 quarkus.hibernate-orm.sql-load-script=no-file
 quarkus.hibernate-orm.validate-in-dev-mode=false

@@ -1,220 +1,242 @@
 ---
 name: solucao-auditoria-codigo
-description: 'Executa auditoria estática e contextual de segurança de código de alta precisão em qualquer stack tecnológica (Java Quarkus/Spring, Node.js/TypeScript, Python, C#, PHP, Go, frontends React/Angular/Vue e infraestrutura Docker/Helm/Terraform). Analisa cinco categorias críticas: Banco Sem Tranca (isolamento de inquilino/dono/RLS), Permissão Definida no Navegador (autorização somente no cliente), IDOR (referência insegura a objetos diretos sem checagem de posse), Chaves Expostas e Defaults Inseguros (hardcode/credenciais/falta de validação no startup) e Inputs Sem Tratamento (XSS e injeções). Gera relatório executivo e técnico em PDF (A4) com gráficos de rosca e barras, pontos fortes, tabela linha a linha e pacote completo de issues prontas para o GitHub com checklists acionáveis.'
-argument-hint: 'Caminho do repositório ou módulos a auditar (opcional, padrão: workspace atual)'
+description: 'Auditoria de segurança estática e somente leitura focada em 5 categorias críticas: Banco Sem Tranca (isolamento de inquilino/dono), Permissão Definida no Navegador, IDOR, Chaves Expostas e Inputs Sem Tratamento (XSS/injeção em saída). Produz findings.json, relatório PDF pt-BR com gráficos, matriz de cobertura e issues prontas para o GitHub. Pode auditar o repositório inteiro ou apenas uma funcionalidade (modo funcionalidade), gravando o relatório na pasta da funcionalidade. É chamada pela skill solucao-angular-incremental-frontend após o código ser criado.'
+argument-hint: 'Opcional: caminho do repositório ou da pasta da funcionalidade a auditar, e pasta de saída (padrão: repositório atual e docs/security-audit/)'
 user-invocable: true
 ---
 
-# Auditoria Avançada de Segurança de Código e Governança de Riscos
+# Auditoria de Segurança — 5 categorias críticas
 
-Esta skill executa uma auditoria profunda, sistemática e orientada a evidências no código-fonte, configurações de infraestrutura e pipelines do projeto, identificando vulnerabilidades arquiteturais e operacionais em **cinco dimensões críticas de segurança**.
+Você vai fazer uma auditoria de segurança estática e somente leitura deste repositório, focada em cinco categorias de falha. O objetivo é produzir achados verificados, reproduzíveis e acionáveis, com prova de cobertura, além de um relatório em PDF e issues prontas para o GitHub.
 
-A auditoria opera sob o princípio de **Fato Comprovado**: não relata vulnerabilidades teóricas ou especulativas sem evidência no código real e documenta rigorosamente tanto os pontos fracos quanto as defesas efetivas (pontos fortes) encontradas no projeto.
+## PARÂMETROS DE EXECUÇÃO — escopo e pasta de saída
 
----
+Antes de começar, defina o **modo**, o **escopo** e a **`<PASTA_SAIDA>`**. Em todo este documento, `<PASTA_SAIDA>` substitui a pasta de entregáveis.
 
-## Quando Utilizar Esta Skill
+| Modo | Quando | Escopo auditado | `<PASTA_SAIDA>` |
+|---|---|---|---|
+| **Repositório** (padrão) | Invocação direta pelo usuário sem indicar funcionalidade | Repositório inteiro | `docs/security-audit/` |
+| **Funcionalidade** | Chamada por outra skill (ex.: `solucao-angular-incremental-frontend`) ou usuário indica uma funcionalidade | Arquivos criados/alterados pela funcionalidade (pasta da feature, serviços, modelos, rotas, guards, navegação, traduções, ambientes) **e** os endpoints de backend que ela consome, quando o path do backend foi informado | `<pasta da funcionalidade>/security-audit/` (ex.: `src/app/features/<feature>/security-audit/`) |
 
-- Quando o usuário solicitar:
-  - *"Auditar segurança do código"*
-  - *"Revisar vulnerabilidades no repositório"*
-  - *"Fazer pentest estático / code review de segurança"*
-  - *"Verificar falhas de autorização, IDOR, chaves expostas ou isolamento multitenant"*
-  - *"Gerar relatório de auditoria de segurança em PDF com issues para o GitHub"*
+Regras do modo funcionalidade:
+- A lista de arquivos do escopo vem de quem chamou a skill (a skill chamadora deve repassá-la) ou de `git status`/`git diff` contra a branch base. Registre essa lista no `findings.json` (`metadados.escopo`) e na capa do PDF.
+- O inventário de pontos de entrada (1.2) e a matriz de cobertura cobrem os pontos de entrada **da funcionalidade**: rotas Angular e seus guards, chamadas HTTP do serviço da feature e os handlers backend correspondentes (resource/controller). Ainda assim, leia o contexto necessário fora do escopo (interceptors, guards globais, configuração de autenticação, ambientes, `.gitignore`) para validar os achados, e declare como "fora do escopo" o restante do repositório.
+- O venv **não** pode ficar dentro de `src/` nem de qualquer pasta incluída no build/lint/testes: use um diretório temporário fora do repositório (ex.: diretório temporário do sistema ou scratchpad da sessão). Os demais entregáveis vão para `<PASTA_SAIDA>`.
+- Se o projeto tiver ferramentas que varrem `src/` (tsconfig `include`, ESLint, Karma, Sonar), confira que `<PASTA_SAIDA>` não quebra build, lint nem testes (ela só contém `.json`, `.md`, `.pdf`, `.py`, `.txt` e `.png`); se quebrar, informe a quem chamou e proponha a exclusão adequada.
+- A auditoria não corrige código. Os achados são devolvidos à skill chamadora, que decide com o usuário o que corrigir.
 
----
+Em ambos os modos, considere a pasta de saída como a única área onde é permitido gravar arquivos.
 
-## 1. Fase 1: Reconhecimento e Adaptação Contextual à Stack
+## 0. REGRAS INVIOLÁVEIS
 
-Antes de iniciar a busca por falhas, o agente **DEVE INSPECIONAR O REPOSITÓRIO** para detectar a composição tecnológica e definir a matriz de equivalência:
+- Não altere código da aplicação. Você só pode criar arquivos dentro de `<PASTA_SAIDA>` (e um venv fora do repo ou em `<PASTA_SAIDA>/.venv` — apenas no modo repositório —, que deve ser adicionado ao `.gitignore` local da pasta).
+- Não execute exploits contra ambientes reais, não faça requisições a URLs de produção/staging encontradas no código e não use credenciais encontradas para testar acesso.
+- Nunca reproduza um segredo completo no chat, no PDF, nos arquivos gerados ou nas issues. Mascare sempre: mostre só o tipo, os 4 primeiros caracteres e o tamanho (ex: `sk_live_51Hx…` → `sk_l…(107 chars)`). Issues podem ir para repositórios públicos.
+- Só reporte o que foi verificado no código real. Cada achado precisa de arquivo, linha(s), trecho e cadeia de exploração concreta. Se algo depende de comportamento em runtime que você não conseguiu confirmar, classifique como **Confiança: provável** e diga exatamente o que falta confirmar — nunca apresente suposição como fato.
+- Cobertura sistemática, não amostragem. Quando a instrução disser "todos", são todos. Se o repositório (ou o escopo) for grande demais para cobrir integralmente, declare explicitamente o que ficou de fora e por quê, em vez de dar a entender cobertura total.
+- Instale dependências apenas em ambiente isolado (venv Python, `npx` sem `-g`, binário baixado para pasta temporária). Nada global.
 
-1. **Linguagem e Runtime**: Java (17/21/24), TypeScript, JavaScript, Python, Go, C# (.NET), PHP, etc.
-2. **Framework Backend**: Quarkus, Spring Boot, NestJS, Express, FastAPI, Django, ASP.NET Core, etc.
-3. **Persistência / ORM / Query Engine**: Panache/Hibernate JPA, Prisma, TypeORM, SQLAlchemy, Dapper, Native SQL/JDBC, Supabase RLS, MongoDB.
-4. **Mecanismo de Autenticação e Autorização**: OIDC Keycloak, JWT Bearer, Spring Security, Quarkus Security, NextAuth, Casbin, RBAC/ABAC customizado.
-5. **Camada Frontend**: React, Angular, Vue, Next.js, Nuxt, Thymeleaf, JSP, Blade, ou API pura (Headless).
-6. **Infraestrutura e Deploy**: Dockerfile, docker-compose, Helm Charts, Kubernetes manifests, Bicep, Terraform, GitHub Actions, GitLab CI.
+## 1. FASE DE RECONHECIMENTO (obrigatória antes de qualquer achado)
 
-### Matriz de Equivalência Técnica das 5 Dimensões:
+Produza, e registre no relatório, um mapa da stack e da superfície de ataque:
 
-| Dimensão | Java (Quarkus / Spring) | Node.js / TypeScript | Python (FastAPI / Django) | Supabase / BaaS / SQL |
-|---|---|---|---|---|
-| **1. Banco Sem Tranca** | Falta de filtro por `tenantId`/`codUsuario` em Panache/JPA/NamedQuery; ausência de `@Filter` Hibernate | Queries sem `where: { tenantId }` no Prisma/TypeORM; queries SQL cruas sem tenancy | Model.objects.filter() sem `user`/`organization`; queries raw | RLS desabilitado ou com `USING (true)` em tabelas com dados de clientes |
-| **2. Permissão no Navegador** | Endpoints `@Path` ou `@RestController` sem `@RolesAllowed`, `@PreAuthorize` ou checagem de claims do SecurityIdentity | Frontend omite botões com `v-if="isAdmin"` mas rota Express/Nest não possui Guard | Views com UI restrita por template sem decorators `@user_passes_test` ou `@permission_required` | Políticas RLS que checam apenas autenticado (`TO authenticated`) sem verificar role na tabela de perfil |
-| **3. IDOR** | `@GET /api/recursos/{id}` buscando por chave primária pura sem cruzar com `usuarioLogado.id` | `findOne({ where: { id: req.params.id } })` sem incluir `tenant_id: req.user.tenantId` | `get_object_or_404(Model, pk=id)` sem filtrar `user=request.user` | `SELECT * FROM tbl WHERE id = $1` permitido a qualquer usuário autenticado |
-| **4. Chaves Expostas** | `application.properties` com `senha=default`, secrets embutidos em `${VAR:segredo-real}`, ausência de `@ConfigMapping` com validação | `.env` commitado, chaves `NEXT_PUBLIC_` contendo secrets de serviço, fallbacks `process.env.KEY || 'secret'` | `settings.py` com `SECRET_KEY = "django-insecure-..."` ou tokens de IA hardcoded | Arquivos `wrangler.toml`, `supabase/config.toml` ou docker-compose com tokens de admin commitados |
-| **5. Inputs Sem Tratamento** | Concatenação de string em JPQL/Native Query, geração de HTML/e-mail sem escape contextual | Uso de `dangerouslySetInnerHTML`, `v-html`, `innerHTML`, interpolação crua em e-mails HTML | `mark_safe()`, templates Jinja com `autoescape=False`, f-strings em queries SQL | Interpolação de variáveis em queries dinâmicas sem parâmetros bind |
+### 1.1 Stack
 
----
+- Linguagem(ns) e versões; framework(s) backend e frontend; monorepo/workspaces.
+- ORM / query builder / SQL cru; banco(s); cache; filas; storage de arquivos; busca (Elastic, Algolia, pgvector…).
+- Mecanismo de autenticação (sessão, JWT próprio, Supabase Auth, Auth0, Clerk, NextAuth, Firebase…) e onde a identidade do usuário é extraída em cada requisição.
+- Modelo de autorização: papéis, permissões, multi-tenant (organização/workspace/conta/time), e qual é o mecanismo de isolamento (RLS, middleware de tenant, escopo global do ORM, filtro manual por `user_id`/`org_id`, schema-por-tenant, banco-por-tenant).
+- Deploy e infra: Dockerfile, docker-compose, CI/CD, Helm, Terraform, Vercel/Netlify/Fly, edge functions, serverless.
+- Se o projeto integra LLMs: onde a saída do modelo é renderizada e quais ferramentas/ações o modelo pode disparar.
 
-## 2. Fase 2: Execução Sistemática da Auditoria (As 5 Categorias)
+### 1.2 Inventário de pontos de entrada
 
-O auditor deve analisar **todos os arquivos relevantes**, sem se limitar a amostragens.
+Liste todos os pontos de entrada que recebem input externo, com `arquivo:linha`:
 
-### Categoria 1: BANCO SEM TRANCA (Isolamento de Inquilino / Dono)
-- **O que inspecionar**:
-  - Mecanismo central de isolamento adotado pelo projeto (RLS no banco, multi-schema, discriminator column com `@FilterDef`, middlewares de tenant).
-  - Rotas de listagem, busca, relatórios, exportações de dados e agregações (`COUNT`, `SUM`).
-  - Queries de segundo plano, schedulers e processamento assíncrono.
-- **Evidência de Falha**:
-  - Uma query de listagem (ex: `BeneficioContaDao.listarTodos()`) que executa `SELECT * FROM TABELA` sem cláusula `WHERE COD_EMPRESA = :empresa` ou `WHERE COD_USUARIO = :usuario`.
-- **Registro de Ponto Forte**:
-  - Quando um DAO ou repositório injeta o contexto de segurança e garante o filtro em 100% das operações de leitura.
+- Rotas HTTP/REST, resolvers GraphQL (queries, mutations, subscriptions, field resolvers), tRPC/RPC, Server Actions, API routes, route handlers.
+- WebSockets / Realtime / SSE.
+- Webhooks recebidos (Stripe, GitHub, etc.).
+- Edge/serverless functions, Supabase Edge Functions, funções Postgres expostas via RPC.
+- Jobs, workers, cron e consumidores de fila que processam dados vindos de usuários.
+- Upload/download de arquivos, URLs assinadas.
 
-### Categoria 2: PERMISSÃO DEFINIDA NO NAVEGADOR (Client-Side Only Authorization)
-- **O que inspecionar**:
-  - Cruzamento de cada barreira visual do frontend (`canEdit`, `isAdmin`, `roles.includes(...)`, menus condicionais) com o backend correspondente.
-  - Endpoints de escrita (`POST`, `PUT`, `PATCH`, `DELETE`) e endpoints com dados sensíveis (gestão de usuários, parâmetros, relatórios financeiros).
-  - APIs internas que presumem que "se o usuário chamou, ele tem o papel necessário".
-- **Evidência de Falha**:
-  - Frontend esconde o botão "Excluir Conta" se `user.role !== 'ADMIN'`, mas o endpoint `DELETE /api/v1/contas/{id}` possui apenas autenticação genérica sem validar se o token possui a role `ADMIN`.
+Esse inventário vira a matriz de cobertura (seção 4.3). Todo ponto de entrada deve aparecer nela com o resultado da verificação para as categorias 1, 2 e 3.
 
-### Categoria 3: IDOR (Insecure Direct Object Reference)
-- **O que inspecionar**:
-  - Handlers de rota que recebem identificadores externos via PathParam, QueryParam ou Body (ex: `uuid`, `id`, `numeroConta`, `codigoBeneficio`).
-  - Operações de leitura individual (`GET /itens/{id}`), alteração (`PUT /itens/{id}`) e remoção (`DELETE /itens/{id}`).
-- **Evidência de Falha**:
-  - O backend recupera a entidade pelo `id` fornecido e retorna/altera o registro diretamente, sem checar se `entidade.donoId == usuarioAutenticado.id` ou se o usuário tem privilégio de acesso sobre aquele objeto específico.
+## 2. AS CINCO CATEGORIAS
 
-### Categoria 4: CHAVES EXPOSTAS E DEFAULTS INSEGUROS (Hardcoded Secrets & Defaults)
-- **O que inspecionar**:
-  - Arquivos de configuração (`application.properties`, `application.yml`, `.env*`, `settings.py`, `config.json`).
-  - Fallbacks perigosos no código: `${VAR:valor-default}`, `process.env.SECRET || 'secret123'`, `os.getenv("KEY", "chave-fixa")`.
-  - Ausência de validação de startup: a aplicação sobe em modo de produção aceitando senhas ou segredos padrão?
-  - Histórico git recente e commits à procura de tokens, senhas de banco de dados, chaves privadas PEM/JKS ou certificados embutidos.
-  - Bundles de frontend: secrets de backend vazados em variáveis expostas ao cliente (ex: `REACT_APP_`, `NEXT_PUBLIC_`, `VITE_`).
+Para cada categoria, adapte à stack detectada. Se não se aplicar (ex: projeto sem frontend), diga explicitamente e explique por quê.
 
-### Categoria 5: INPUTS SEM TRATAMENTO (XSS, Injection e Context Escape)
-- **O que inspecionar**:
-  - **Frontend**: `innerHTML`, `dangerouslySetInnerHTML`, `v-html`, diretivas sem sanitização, URLs controladas por usuário em links (`href="javascript:..."`).
-  - **Backend**: Entradas de usuário injetadas em templates de e-mail, geradores de PDF/HTML (Thymeleaf, Freemarker, Jinja, Handlebars) sem escape de contexto.
-  - **Consultas a Banco**: Concatenação direta de strings em comandos SQL, JPQL, HQL ou NoSQL em vez de binds nomeados (`:param` ou `?`).
-  - **Cabeçalhos e Respostas**: Reflexão de parâmetros de requisição em cabeçalhos HTTP (CRLF injection) ou mensagens de erro cruas retornadas com dados do atacante.
+### Categoria 1 — BANCO SEM TRANCA (isolamento de inquilino/dono)
 
----
+Identifique o mecanismo de isolamento e procure onde ele está ausente, furado ou contornado.
 
-## 3. Critérios Obrigatórios para Validação de Achados
+**Se Supabase/Postgres com RLS:**
 
-Para evitar qualquer falso positivo ou ruído na entrega:
-1. **Verificação Direta**: Cada apontamento deve ser comprovado diretamente no código existente no repositório.
-2. **Severidade Padronizada**:
-   - **CRÍTICA**: Permite comprometimento imediato de dados de múltiplos inquilinos, bypass completo de autenticação ou execução de código sem autenticação prévia.
-   - **ALTA**: Permite acesso a recursos sensíveis de outros usuários (IDOR direto), quebra de autorização em ações administrativas ou vazamento de segredos de produção.
-   - **MÉDIA**: Vulnerabilidades que requerem pré-condições específicas, falhas em ambientes secundários, defaults inseguros sem validação no startup ou XSS com escopo restrito.
-   - **BAIXA**: Falta de cabeçalhos de proteção suplementares, mensagens de erro excessivamente detalhadas ou inconsistências menores de sanitização.
-   - **INFORMATIVA / PONTO FORTE**: Medidas defensivas bem implementadas ou recomendações de endurecimento arquitetural.
-3. **Formato Obrigatório de Cada Achado no Chat e no Relatório**:
-   - **ID**: `SEC-001`, `SEC-002`, etc.
-   - **Categoria**: 1 a 5.
-   - **Severidade**: Crítica, Alta, Média, Baixa.
-   - **Localização**: `caminho/do/arquivo:linha` (link Markdown).
-   - **Evidência de Código**: Trecho exato das linhas auditadas.
-   - **Vetor de Exploração**: Como um atacante explora a falha no cenário real.
-   - **Ação de Remediação**: Código de correção recomendado.
+- Tabelas em schemas expostos (`public` e outros em `db_schemas`) sem `ENABLE ROW LEVEL SECURITY`. Revise todas as migrations, não só a mais recente (uma migration posterior pode desabilitar RLS ou recriar a tabela).
+- Políticas permissivas: `USING (true)`, `TO public`/`anon` onde não deveria, políticas que confiam em coluna editável pelo próprio usuário.
+- `UPDATE`/`INSERT` sem `WITH CHECK` (permite mover uma linha para outro dono/tenant).
+- Operações sem política correspondente (ex: há `SELECT` mas `DELETE` cai em política genérica).
+- Políticas baseadas em `auth.jwt() -> 'user_metadata'` — `user_metadata` é editável pelo próprio usuário; papel/tenant deve vir de `app_metadata` ou tabela controlada pelo servidor.
+- Views sem `security_invoker = true` (ignoram RLS da tabela base), funções `SECURITY DEFINER` sem checagem interna de posse e sem `search_path` fixo, funções expostas via RPC.
+- Policies de Storage (`storage.objects`) e de Realtime.
+- Uso de `service_role` key: onde é usada, se alguma rota a usa para atender requisição de usuário sem refazer o filtro manualmente, e se ela vaza para o cliente.
 
----
+**Se API própria (ORM/SQL):**
 
-## 4. Fase 3: Geração Automatizada do Relatório em PDF
+- Queries de listagem, busca, contagem, agregação, relatório, exportação (CSV/XLSX/PDF), dashboard e autocomplete sem filtro por usuário/tenant.
+- Escopo global do ORM que existe mas é contornado (`unscoped`, `withoutGlobalScope`, `$queryRaw`, SQL cru, `knex.raw`).
+- Middleware de tenant que não cobre todas as rotas (matcher incompleto, rotas registradas antes do middleware, rotas de outra versão da API).
+- Tenant/org ID lido do body, query ou header controlado pelo cliente em vez da sessão.
+- Jobs/workers que processam dados sem contexto de tenant.
+- Caches, chaves de Redis, índices de busca e vetoriais (embeddings/RAG) sem segregação por tenant — em apps de LLM, verifique se a recuperação de contexto filtra por dono.
+- Caminhos de arquivos em storage previsíveis e não vinculados ao tenant.
 
-A skill deve gerar um relatório executivo e técnico em PDF no caminho:
-`docs/security-audit/relatorio-auditoria-seguranca.pdf`
+### Categoria 2 — PERMISSÃO DEFINIDA NO NAVEGADOR
 
-### 4.1. Requisitos Técnicos de Execução Isolada
-- **NUNCA instalar pacotes globalmente na máquina**.
-- Utilizar um ambiente Python isolado (`.venv` criado temporariamente ou reaproveitado dentro de `docs/security-audit/.venv`) contendo as bibliotecas `reportlab` e `matplotlib` para compor o documento e renderizar os gráficos de rosca e barras.
-- Caso o ambiente já disponha de Chromium headless, Pandoc ou ferramenta equivalente compatível com a stack local, a conversão HTML5/CSS Print para PDF também é aceita, desde que respeite rigorosamente o padrão visual A4.
-- O script gerador DEVE ser salvo em `docs/security-audit/generate_audit_report.py` para permitir que o usuário regere o relatório a qualquer momento com um único comando.
+- Mapeie todo gate de papel no frontend (`isAdmin`, `canEdit`, `role ===`, `hasPermission`, rotas protegidas, menus condicionais, feature flags no cliente) e cruze cada um com o endpoint que ele protege. Para cada par, confirme se o backend faz a verificação equivalente. Registre os pares corretos também.
+- Rotas/ações sensíveis sem checagem de papel no servidor: admin, configurações, billing, convites, gestão de membros/papéis, exclusões em massa, exportações, impersonação.
+- Mass assignment: endpoints de update/cadastro que aceitam o objeto inteiro do body e permitem setar `role`, `is_admin`, `org_id`, `owner_id`, `plan`, `credits`, `verified`, `status`.
+- Confiança em dados do cliente: papel vindo de `localStorage`, cookie não assinado, header customizado, claim de JWT não verificado (`jwt.decode` sem verify, `alg: none`, segredo fraco), `user_metadata`.
+- Server Actions/tRPC/GraphQL mutations expostas sem checagem (o fato de não haver botão na UI não impede a chamada).
+- Divergência de método (GET protegido, POST/PUT/PATCH/DELETE da mesma rota não).
+- Escalada horizontal de papel: um admin de tenant A conseguindo agir no tenant B.
 
-### 4.2. Estrutura e Identidade Visual do PDF (Padrão A4)
-- **Margens**: ~2 cm em todas as bordas.
-- **Cabeçalho e Rodapé**: Nome do relatório, data, numeração de página sequencial (ex: `Página X de Y`).
-- **Paleta de Cores Estrita**:
-  - **Crítica**: `#B91C1C` (Vermelho escuro)
-  - **Alta**: `#EA580C` (Laranja)
-  - **Média**: `#D97706` (Âmbar)
-  - **Baixa**: `#2563EB` (Azul)
-  - **Ponto Forte**: `#059669` (Verde esmeralda)
-  - **Neutros/Texto**: `#1E293B` (Texto primário), `#64748B` (Texto secundário), `#F8FAFC` (Fundo claro de tabelas/cards)
+### Categoria 3 — IDOR
 
-### 4.3. Seções Obrigatórias do PDF:
-1. **Capa**:
-   - Título: `Relatório de Auditoria de Segurança — <Nome do Projeto>`
-   - Data da auditoria, versão do documento, analista/auditor responsável.
-   - Escopo auditado (repositório, branches, commits e módulos incluídos).
-   - Nota Metodológica: explicação de como as 5 dimensões foram mapeadas para a stack detectada.
-2. **Resumo Executivo**:
-   - Resumo consolidado de postura de segurança.
-   - **Gráfico 1 (Rosca)**: Distribuição percentual e quantitativa dos achados por severidade (Crítica, Alta, Média, Baixa).
-   - **Gráfico 2 (Barras)**: Distribuição quantitativa de achados e pontos fortes por categoria (1 a 5).
-3. **Quadro de Pontos Fortes e Riscos Centrais**:
-   - Listagem explícita dos mecanismos de defesa que foram auditados e estão **corretos e aprovados**.
-   - Síntese dos riscos centrais que exigem atenção imediata da equipe.
-4. **Tabela Detalhada de Achados por Categoria**:
-   - Colunas: `ID` | `Severidade (badge colorido)` | `Localização (Arquivo:Linha)` | `Resumo da Vulnerabilidade`.
-   - Cards de detalhamento para achados de severidade Crítica e Alta com trechos de código e impacto.
-5. **Plano de Remediação Priorizado**:
-   - Tabela de ações ordenadas por prioridade técnica (`P1 - Imediato`, `P2 - Curto Prazo`, `P3 - Melhoria Contínua`).
-6. **Seção "ISSUES PARA O GITHUB" (Prontas para Uso)**:
-   - Ao final do PDF, cada achado acionável (ou grupo de achados correlatos) deve ser transcrito no formato exato de uma Issue de GitHub em Markdown.
-   - Cada issue deve ficar em bloco delimitado:
-     ```markdown
-     --- ISSUE <N> ---
-     ### [Segurança] <Título curto da falha>
-     **Labels**: `security`, `<severidade>`
+Percorra todos os handlers do inventário que recebem um identificador (path, query, body, header, nome de arquivo, ID de nó GraphQL, canal de WebSocket) e verifique se há checagem de posse/tenant antes de ler, alterar ou excluir. Atenção a:
 
-     #### Descrição do Problema
-     ...
+- Recursos aninhados (`/orgs/:orgId/projects/:projectId`) que validam o `orgId` mas não verificam se o `projectId` pertence a ele.
+- Endpoints em lote (`ids: [...]`) que validam só o primeiro item ou nenhum.
+- Updates que permitem trocar a FK (`project_id`, `org_id`) para mover o objeto para outro tenant.
+- Download de arquivo, geração de URL assinada, anexos, avatares, exports.
+- Subscriptions/realtime/canais por ID.
+- Objetos com soft delete ou arquivados ainda acessíveis.
+- UUID não é controle de acesso: registre o IDOR mesmo com UUID, ajustando a severidade conforme a facilidade de obter/vazar o ID (aparece em URLs compartilhadas, logs, respostas de outros endpoints?).
 
-     #### Evidência
-     - **Arquivo**: `caminho/do/arquivo:linha`
-     ```<linguagem>
-     // Trecho do código vulnerável
-     ```
+### Categoria 4 — CHAVES EXPOSTAS
 
-     #### Impacto
-     ...
+Procure em código, configs, `.env*` versionados, docker-compose, Dockerfile (`ENV`, `ARG`), charts Helm, Terraform (`*.tfvars`, state), CI (`.github/workflows`, GitLab CI), scripts, notebooks, fixtures de teste, seeds, documentação e README:
 
-     #### Sugestão de Correção
-     ```<linguagem>
-     // Trecho corrigido
-     ```
+- API keys, tokens, senhas, connection strings com senha, segredos de assinatura (JWT, sessão, webhooks, cookies), chaves privadas (PEM, SSH), credenciais de cloud.
+- Defaults públicos que viram segredo real (`${VAR:-valor}`, `os.getenv("X", "changeme")`, `process.env.X || "secret"`) e ausência de validação no startup que rejeite esses defaults em produção.
+- Credenciais padrão de serviços (Postgres `postgres/postgres`, MinIO, Redis sem senha, painéis admin).
+- Frontend/bundle: variáveis com prefixo público (`NEXT_PUBLIC_`, `VITE_`, `REACT_APP_`, `EXPO_PUBLIC_`, `PUBLIC_`) contendo segredo; source maps publicados; chaves em apps mobile. Se houver build pronto (`dist/`, `.next/`, `build/`), faça grep nele; se não houver, analise estaticamente o que entraria no bundle (no Angular, inclua `src/environments/*.ts`).
+- Diferencie chaves públicas por design (Supabase anon, Stripe `pk_`, Firebase config, Google Maps com restrição) — classifique como informativa, mas confirme que a segurança não depende delas — de chaves privilegiadas (`service_role`, `sk_live`, AWS secret), que são críticas.
+- Histórico git: busque segredos já removidos do HEAD mas presentes em commits antigos (`git log -p --all`, `git log --all --diff-filter=D`). Se disponível sem instalação global, use gitleaks ou trufflehog em binário local; caso contrário, regex direcionadas (`AKIA`, `sk_live_`, `ghp_`, `xox[bp]-`, `-----BEGIN .*PRIVATE KEY`, `eyJ` longos, `service_role`, `password\s*[:=]`). No modo funcionalidade, restrinja o histórico aos arquivos do escopo.
+- Para cada segredo, indique se continua no HEAD, só no histórico, e se parece real ou placeholder. A recomendação deve sempre incluir rotação, não só remoção.
+- Verifique `.gitignore` (cobre `.env`, chaves, `*.pem`, `tfstate`?) e se segredos aparecem em logs (`console.log(process.env)`, log de headers de autorização).
 
-     #### Critérios de Aceite (Checklist)
-     - [ ] Critério 1 verificável
-     - [ ] Critério 2 verificável
-     --- FIM ISSUE <N> ---
-     ```
+### Categoria 5 — INPUTS SEM TRATAMENTO (XSS e injeção em saída)
 
----
+**Frontend:**
 
-## 5. Roteiro Passo a Passo de Execução da Skill
+- `innerHTML`, `outerHTML`, `insertAdjacentHTML`, `document.write`, `dangerouslySetInnerHTML`, `v-html`, `[innerHTML]`/`bypassSecurityTrust*`, `{@html}` (Svelte), `$sce.trustAsHtml`, jQuery `.html()`/`$(userInput)`.
+- Renderização de Markdown/HTML sem sanitização (marked, markdown-it com `html: true`, react-markdown com rehype-raw, remark-html sem sanitize).
+- Saída de LLM renderizada como HTML/Markdown: trate como input não confiável (prompt injection → XSS, links/imagens que exfiltram dados via URL).
+- URLs controladas pelo usuário em `href`, `src`, `action`, `formaction`, `window.location`, `window.open` sem bloquear `javascript:`/`data:`.
+- `eval`, `new Function`, `setTimeout(string)`, templates compilados em runtime.
+- `postMessage` sem validação de origin; JSON de estado embutido em `<script>` sem escape de `</script>`.
+- Uploads de SVG/HTML servidos no mesmo domínio ou com Content-Type controlado pelo usuário.
 
-```mermaid
-graph TD
-    A[1. Detecção da Stack e Configurações] --> B[2. Mapeamento das 5 Dimensões de Risco]
-    B --> C[3. Varredura Estática Arquivo por Arquivo]
-    C --> D[4. Validação Factual e Eliminação de Suposições]
-    D --> E[5. Registro de Pontos Fortes e Falhas]
-    E --> F[6. Criação do Ambiente Isolado e Geração do PDF]
-    F --> G[7. Validação Visual do PDF e Renderização dos Gráficos]
-    G --> H[8. Apresentação no Chat com Links e Checklist]
-```
+**Backend:**
 
-### Passo 1: Detecção e Mapeamento
-Identifique `pom.xml`, `package.json`, `requirements.txt`, `Dockerfile`, configurações e mapeie o pacote corporativo (ex: `br.com.imac.<projeto>.api`).
+- Input do usuário em HTML de e-mails, templates (Jinja `|safe`/autoescape false, Handlebars `{{{ }}}`, EJS `<%-`, Blade `{!! !!}`), PDFs gerados a partir de HTML e respostas `text/html`.
+- Respostas de erro que refletem input sem escape.
 
-### Passo 2: Execução das Varreduras
-Use buscas por padrões (`grep_search` / `file_search`) para encontrar pontos sensíveis em DAOs, Services, Resources/Controllers, templates e arquivos de configuração.
+**Defesas a verificar (registrar como ponto forte ou fraco):**
 
-### Passo 3: Geração do Script e PDF
-Crie `docs/security-audit/generate_audit_report.py` utilizando o template padrão em [pdf-generator-template.py](./references/pdf-generator-template.py), instale em ambiente isolado as dependências (`reportlab`, `matplotlib`) e execute o script.
+- Lib de sanitização no projeto (DOMPurify, sanitize-html, bleach, rehype-sanitize) e se ela é de fato aplicada em cada ponto encontrado, com configuração segura.
+- Cabeçalho CSP (e se usa `unsafe-inline`/`unsafe-eval`), cookies de sessão com `HttpOnly`/`Secure`/`SameSite`, tokens em `localStorage` (amplia o impacto de XSS).
 
-### Passo 4: Verificação da Integridade
-Valide se `docs/security-audit/relatorio-auditoria-seguranca.pdf` foi gerado sem erros, verifique o número de páginas e assegure que os gráficos estão legíveis e bem formatados.
+## 3. CLASSIFICAÇÃO
 
-### Passo 5: Entrega Final
-Apresente no chat:
-1. Caminho do PDF gerado.
-2. Tabela resumida de achados linha a linha.
-3. Relação dos pontos fortes auditados.
-4. Lista de todos os arquivos criados ou atualizados.
+### Severidade (use estes critérios, não intuição)
+
+- **Crítica:** explorável remotamente por usuário não autenticado ou por qualquer usuário autenticado, com acesso/alteração de dados de outros tenants em massa, tomada de conta, ou segredo privilegiado ativo exposto.
+- **Alta:** explorável por usuário autenticado comum contra dados ou ações de outros usuários/tenants, ou escalada para admin; XSS armazenado.
+- **Média:** exige condição adicional (ID difícil de obter, interação da vítima, config não padrão, feature flag), ou impacto limitado; XSS refletido.
+- **Baixa:** defesa em profundidade ausente, impacto mínimo ou exploração muito improvável.
+- **Informativa:** boa prática, chave pública por design, observação sem risco direto.
+
+### Para cada achado registre
+
+- ID (`SEC-001`…), categoria, severidade, confiança (confirmado / provável).
+- Arquivo e linha(s) exatas; trecho de código (máx. ~15 linhas, segredos mascarados).
+- Cadeia de exploração: quem é o atacante, pré-requisitos, passos (ex: "usuário autenticado do tenant A faz `GET /api/invoices/123` com ID do tenant B").
+- Condições de explorabilidade (feature flag, variável de ambiente, config insegura, rota só ativa em dev).
+- Impacto (confidencialidade, integridade, disponibilidade; dados afetados).
+- Causa raiz. Se vários achados têm a mesma causa (ex: middleware de tenant não aplicado a um router inteiro), agrupe sob a causa raiz e liste as ocorrências, em vez de inflar a contagem.
+- Correção sugerida, específica para a stack.
+
+### Fora do escopo
+
+Se durante a varredura você notar falhas graves de outras categorias (SQL injection, SSRF, CSRF, path traversal, rate limiting ausente em login, deserialização insegura), registre-as brevemente numa seção "Observações fora do escopo", sem aprofundar e sem incluí-las na contagem principal.
+
+## 4. ENTREGÁVEIS
+
+Tudo em `<PASTA_SAIDA>`:
+
+### 4.1 `findings.json` — fonte única da verdade
+
+Todos os achados, pontos fortes, matriz de cobertura, inventário e metadados (projeto, data, commit SHA auditado, escopo, modo de execução). O gerador do PDF e das issues lê deste arquivo, para que o relatório possa ser regerado após correções.
+
+### 4.2 Relatório `relatorio-auditoria-seguranca.pdf` (pt-BR, visualmente amigável)
+
+- a) **Capa:** "Relatório de Auditoria de Segurança — <nome do projeto>" (no modo funcionalidade: "— <nome do projeto> / <funcionalidade>"), data, commit SHA, escopo auditado (diretórios incluídos/excluídos) e nota metodológica (como cada categoria foi mapeada para a stack detectada, ferramentas usadas e limitações da análise estática).
+- b) **Sumário** com números de página.
+- c) **Resumo executivo:** total de achados por severidade, gráfico de rosca por severidade, gráfico de barras empilhadas por categoria × severidade, e um parágrafo em linguagem não técnica com os 3 riscos principais. Paleta: crítica `#B91C1C`, alta `#EA580C`, média `#D97706`, baixa `#2563EB`, informativa `#6B7280`, ponto forte `#059669`.
+- d) **Stack e superfície de ataque:** resumo da fase de reconhecimento.
+- e) **Pontos fortes** (o que está protegido, com evidência `arquivo:linha`) e **pontos fracos** (riscos centrais e causas raiz).
+- f) **Achados detalhados por categoria:** tabela ID | Severidade | Confiança | Arquivo:linha | Descrição, com chip de severidade colorido, seguida do detalhamento de cada achado (trecho de código em fonte monoespaçada, exploração, impacto, correção).
+- g) **Matriz de cobertura:** cada ponto de entrada × categorias 1/2/3 com status (✔ protegido / ✘ achado / — não se aplica), provando que nada foi pulado. Pode ir em apêndice.
+- h) **Recomendações priorizadas:** P1 (corrigir imediatamente, inclui rotação de segredos), P2, P3…, cada uma ligada aos IDs dos achados, com esforço estimado (baixo/médio/alto).
+- i) **Observações fora do escopo.**
+- j) **ISSUES PARA O GITHUB** (última seção): para cada achado acionável, o texto completo de uma issue em Markdown dentro de um bloco delimitado por `--- ISSUE n ---` e `--- FIM ISSUE n ---`. Cada issue contém:
+  - Título: `[Segurança] <descrição curta da falha>`
+  - Labels sugeridas: `security`, `severity:<nível>`, `area:<categoria>`
+  - Descrição do problema e por que é explorável
+  - Evidência: `arquivo:linha` com trecho de código (segredos sempre mascarados)
+  - Impacto
+  - Sugestão de correção
+  - Critérios de aceite (checklist verificável, incluindo teste automatizado que impeça regressão quando aplicável)
+  - Referência ao ID do achado (`SEC-00x`)
+
+Agrupe achados triviais relacionados numa issue única (ex: vários defaults de segredo no mesmo tema). Achados informativos não viram issue.
+
+### 4.3 Issues também como arquivos
+
+`<PASTA_SAIDA>/issues/NN-<slug>.md`, uma por issue, com o mesmo conteúdo do PDF, para facilitar uso com `gh issue create --body-file`. Não crie issues no GitHub — apenas prepare os arquivos.
+
+### 4.4 Script gerador
+
+`<PASTA_SAIDA>/gerar_relatorio.py` (ou equivalente na stack), que lê `findings.json` e gera o PDF e os arquivos de issue, com um `requirements.txt` ou instrução de uso no topo do script.
+
+## 5. GERAÇÃO DO PDF — REGRAS TÉCNICAS
+
+- Ambiente isolado: venv Python com reportlab + matplotlib (ou HTML→PDF se houver navegador headless, wkhtmltopdf ou weasyprint disponível no venv). Crie o venv com `python -m venv <dir>` e use o executável do venv (`<dir>/bin/python` no macOS/Linux, `<dir>\Scripts\python.exe` no Windows).
+- A4, margens ~2 cm, cabeçalho com o nome do relatório e rodapé com "Página X de Y" e data.
+- Fonte com suporte completo a acentos (ex: DejaVu Sans / DejaVu Sans Mono registradas no reportlab). Não use as fontes base14, que quebram caracteres pt-BR e símbolos como ✔/✘.
+- Trechos de código com quebra de linha automática (sem texto saindo da página), escape de `<`, `>` e `&`.
+- Tabelas com cabeçalho repetido ao quebrar página, larguras de coluna definidas e texto quebrado dentro das células.
+- Evite títulos órfãos no fim da página (`keepWithNext`).
+- Gráficos em PNG com DPI ≥ 200 ou em vetor.
+
+### Verificação obrigatória antes de entregar
+
+1. Conte as páginas e confira se o sumário bate com a numeração real.
+2. Extraia o texto (pdftotext ou pypdf) e confirme que acentos e símbolos aparecem corretamente.
+3. Rasterize todas as páginas (pdftoppm ou pdf2image) e inspecione visualmente: gráficos renderizados, tabelas legíveis, nada cortado ou sobreposto, chips coloridos visíveis.
+4. Busque no PDF e nos arquivos de issue por padrões de segredo para garantir que nenhum foi impresso sem máscara.
+5. Corrija qualquer defeito e repita a verificação.
+
+## 6. ENTREGA FINAL NO CHAT
+
+- Resumo da stack detectada e do mecanismo de isolamento identificado.
+- Placar: total por severidade e por categoria.
+- Lista de achados arquivo por arquivo, linha por linha, ordenada por severidade dentro de cada arquivo, com ID, severidade, confiança e uma linha de descrição.
+- Pontos fortes verificados (resumido).
+- Lacunas de cobertura e limitações (o que não pôde ser verificado estaticamente e por quê).
+- Ações imediatas: segredos que devem ser rotacionados agora.
+- Caminho de todos os arquivos gerados.
+
+No modo funcionalidade, essa entrega é devolvida à skill chamadora, que a inclui no seu resumo final ao usuário.
